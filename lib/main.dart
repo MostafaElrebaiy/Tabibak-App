@@ -5,8 +5,7 @@ import 'tabibk_app.dart';
 
 
 void main() {
-  
-  runApp(TabibkApp(
+    runApp(TabibkApp(
     appRouter: AppRouter(),
   ));
 }
