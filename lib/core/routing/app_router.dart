@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:tabibk/core/routing/custom_page_route.dart';
 import 'package:tabibk/core/routing/routes.dart';
+import 'package:tabibk/features/login/ui/login_screen.dart';
 import 'package:tabibk/features/on_boarding/presentation/on_boarding_view.dart';
 import 'package:tabibk/features/on_boarding/presentation/widgets/on_boarding_last.dart';
+import 'package:tabibk/features/signup/ui/signup_screen.dart';
 import 'package:tabibk/features/splash/presentation/splash_view.dart';
 import 'package:tabibk/features/splash/presentation/widgets/second_splash_screen.dart';
 
@@ -22,6 +24,10 @@ class AppRouter {
 
          case Routes.secondOnBoardingScreen:
         return CustomPageRoute(child: const OnBoardingLast());
+         case Routes.signUpScreen:
+        return CustomPageRoute(child:  SignUpScreen()); 
+        case Routes.loginScreen:
+        return CustomPageRoute(child: const LoginScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
