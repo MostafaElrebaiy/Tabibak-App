@@ -36,7 +36,8 @@ flutter:
 
   uses-material-design: true
   assets:
-    - assets/image/
+    - assets/images/png/
+    - assets/images/svg/
 
   fonts:
     - family: Lato

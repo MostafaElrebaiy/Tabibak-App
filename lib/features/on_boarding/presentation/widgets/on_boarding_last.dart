@@ -4,10 +4,8 @@ import 'package:tabibk/core/helper/app_assets.dart';
 import 'package:tabibk/core/helper/app_string.dart';
 import 'package:tabibk/core/helper/extensions.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
-import 'package:tabibk/core/routing/custom_page_route.dart';
 import 'package:tabibk/core/routing/routes.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
-import 'package:tabibk/features/on_boarding/presentation/on_boarding_view.dart';
 import 'package:tabibk/features/on_boarding/presentation/widgets/build_create_account_button.dart';
 import 'package:tabibk/features/on_boarding/presentation/widgets/build_login_button.dart';
 import 'package:tabibk/features/on_boarding/presentation/widgets/build_on_boarding_logo.dart';
@@ -79,12 +77,19 @@ class OnBoardingLast extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                buildLoginButton(text: AppString.login, onPressed: () {}),
+                buildLoginButton(
+                    text: AppString.login,
+                    onPressed: () {
+                      context.pushNamed(Routes.loginScreen);
+                    }),
                 SizedBox(
                   height: AppSize.s10.h,
                 ),
                 buildCreateAccountButton(
-                    text: AppString.createAccount, onTap: () {}),
+                    text: AppString.createAccount,
+                    onTap: () {
+                      context.pushNamed(Routes.signUpScreen);
+                    }),
               ],
             ),
           ),
