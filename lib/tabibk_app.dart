@@ -4,10 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
 import 'package:tabibk/core/theme/constant.dart';
 
-
 import 'core/routing/app_router.dart';
 import 'core/routing/routes.dart';
-
 
 class TabibkApp extends StatelessWidget {
   final AppRouter appRouter;
@@ -15,29 +13,25 @@ class TabibkApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-        SystemChrome.setSystemUIOverlayStyle(
+    SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
         // systemNavigationBarColor: Colors.black,
       ),
     );
-    return  ScreenUtilInit(
+    return ScreenUtilInit(
       designSize: const Size(375, 926),
       minTextAdapt: true,
       splitScreenMode: true,
-
       child: MaterialApp(
-  
         theme: ThemeData(
           primaryColor: AppColor.mainBlue,
           scaffoldBackgroundColor: AppColor.white,
-        fontFamily: primaryFontFamily
+          fontFamily: primaryFontFamily,
         ),
         debugShowCheckedModeBanner: false,
-        initialRoute: Routes.splashScreen,
-        onGenerateRoute:appRouter.generateRoute,
-        
-        
+        initialRoute: Routes.secondSplashScreen,
+        onGenerateRoute: appRouter.generateRoute,
       ),
     );
   }

@@ -1,88 +1,93 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tabibk/core/helper/extensions.dart';
+import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
-import 'package:tabibk/features/on_boarding/logic/cubit/on_boarding_cubit.dart';
-import 'package:tabibk/features/on_boarding/presentation/widgets/build_button_widget.dart';
+import 'package:tabibk/core/routing/routes.dart';
+import 'package:tabibk/features/on_boarding/presentation/widgets/on_boarding_button.dart';
 import 'package:tabibk/features/on_boarding/presentation/widgets/build_dot_widget.dart';
-import 'package:tabibk/features/on_boarding/presentation/widgets/build_shape_widget.dart';
-import 'package:tabibk/features/on_boarding/presentation/widgets/build_text_widget.dart';
+import 'package:tabibk/features/on_boarding/presentation/widgets/on_boarding_shape.dart';
+import 'package:tabibk/features/on_boarding/presentation/widgets/on_boarding_text.dart';
 import 'package:tabibk/features/on_boarding/presentation/widgets/on_boarding_content_model.dart';
 
-
-class OnBoardingBody extends StatelessWidget {
+class OnBoardingBody extends StatefulWidget {
   const OnBoardingBody({super.key});
 
   @override
+  State<OnBoardingBody> createState() => _OnBoardingBodyState();
+}
+
+class _OnBoardingBodyState extends State<OnBoardingBody> {
+  int currentPageIndex = 0;
+  final PageController _pageController = PageController(initialPage: 0);
+
+  @override
   Widget build(BuildContext context) {
-    
-    return BlocBuilder<OnBoardingCubit, OnBoardingState>(
-      builder: (context, state) {
-        return PageView.builder(
-          physics: const NeverScrollableScrollPhysics(),
-          onPageChanged: (page) {
-            state.pageIndex = page;
-          },
-          controller: state.controller,
-          pageSnapping: false,
-          itemCount: onBoardingContent.length,
-          itemBuilder: (_, index) {
-            return Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return PageView.builder(
+      onPageChanged: (int page) {
+        setState(() {
+          currentPageIndex = page;
+        });
+      },
+      controller: _pageController,
+      itemCount: onBoardingContent.length,
+      itemBuilder: (_, index) {
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Column(
+              mainAxisSize: MainAxisSize.min,
               children: [
-                Column(
-                  children: [
-                    buildShapeWidget(shape: onBoardingContent[index].shape),
-                    SizedBox(
-                      height: AppSize.s55.h,
-                    ),
-                    buildTextWidget(
-                        headLine: onBoardingContent[index].headLine,
-                        textBody: onBoardingContent[index].textBody)
-                  ],
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: AppPadding.p16),
-                  child: Column(
+                OnBoardingShape(shape: onBoardingContent[index].shape),
+                verticalSpace(AppSize.s55),
+                OnBoardingText(
+                    headLine: onBoardingContent[index].headLine,
+                    textBody: onBoardingContent[index].textBody)
+              ],
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                  horizontal: AppPadding.p16.w, vertical: AppPadding.p30.h),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      SizedBox(
-                        height: AppSize.s40.h,
-                        width: AppSize.s343.w,
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: List.generate(
-                                  2,
-                                  (index) => buildDotWidget(
-                                        index: index,
-                                        currentPage: state.pageIndex,
-                                      )),
-                            ),
-                            buildButtonWidget(onTap: () {
-                              context
-                                  .read<OnBoardingCubit>()
-                                  .checkCurrentPage(state.pageIndex, context);
-                            }),
-                          ],
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: List.generate(
+                          onBoardingContent.length,
+                          (index) => buildDotWidget(
+                              index: index, currentPage: currentPageIndex),
                         ),
                       ),
-                      SizedBox(
-                        height: AppSize.s30.h,
-                      )
+                      OnBoardingButton(onTap: () {
+                        if (currentPageIndex < onBoardingContent.length - 1) {
+                          _pageController.nextPage(
+                              duration: const Duration(milliseconds: 250),
+                              curve: Curves.easeIn);
+                        } else {
+                          context.pushReplacementNamed(
+                              Routes.secondOnBoardingScreen);
+                        }
+                      }),
                     ],
                   ),
-                ),
-              ],
-            );
-          },
+                ],
+              ),
+            ),
+          ],
         );
       },
     );
+  }
 
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
   }
 }

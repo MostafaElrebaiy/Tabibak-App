@@ -1,11 +1,8 @@
-
-
 import 'package:tabibk/core/helper/app_assets.dart';
 import 'package:tabibk/core/helper/app_string.dart';
 
 class OnBoardingContent {
-  final String headLine;
-  final String textBody;
+  final String headLine, textBody;
   final String shape;
 
   OnBoardingContent(

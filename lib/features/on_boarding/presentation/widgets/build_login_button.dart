@@ -11,25 +11,23 @@ Widget buildLoginButton(
     style: ElevatedButton.styleFrom(
       animationDuration: const Duration(milliseconds: 300),
       elevation: 0,
-      backgroundColor: AppColor.mainBlue,
+      backgroundColor: AppColor.primaryBlue,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(AppSize.s250.w))),
-      fixedSize: Size(AppSize.s337.w, AppSize.s48.h),
+      minimumSize: Size(AppSize.s337.w, AppSize.s48.h),
     ),
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text(
-          text,
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontFamily: secondFontFamily,
-            fontSize: AppSize.s16.sp,
-            fontWeight: FontWeight.w600,
-            color: AppColor.white,
-          ),
+    child: Padding(
+      padding: EdgeInsets.symmetric(vertical: AppPadding.p12.h),
+      child: Text(
+        text,
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          fontFamily: secondFontFamily,
+          fontSize: AppSize.s16.sp,
+          fontWeight: FontWeight.w600,
+          color: AppColor.white,
         ),
-      ],
+      ),
     ),
   );
 }
