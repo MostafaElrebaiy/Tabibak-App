@@ -16,32 +16,34 @@ class OnBoardingLastScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-      const OnBoardingSpecialShape(),
-          verticalSpace(AppSize.s37),
-          const OnBoardingText(
-              headLine: AppString.pharmacies, textBody: AppString.lorem),
-          verticalSpace(AppSize.s30),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              buildLoginButton(
-                  text: AppString.login,
-                  onPressed: () {
-                    context.pushReplacementNamed(Routes.loginScreen);
-                  }),
-              SizedBox(
-                height: AppSize.s10.h,
-              ),
-              buildCreateAccountButton(
-                  text: AppString.createAccount,
-                  onTap: () {
-                    context.pushReplacementNamed(Routes.signUpScreen);
-                  }),
-            ],
-          ),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+        const OnBoardingSpecialShape(),
+            verticalSpace(AppSize.s37),
+            const OnBoardingText(
+                headLine: AppString.pharmacies, textBody: AppString.lorem),
+            verticalSpace(AppSize.s30),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                buildLoginButton(
+                    text: AppString.login,
+                    onPressed: () {
+                      context.pushReplacementNamed(Routes.loginScreen);
+                    }),
+                SizedBox(
+                  height: AppSize.s10.h,
+                ),
+                buildCreateAccountButton(
+                    text: AppString.createAccount,
+                    onTap: () {
+                      context.pushReplacementNamed(Routes.signUpScreen);
+                    }),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

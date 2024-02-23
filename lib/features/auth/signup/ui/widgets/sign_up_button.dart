@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/custom_widget/app_text_button.dart';
+import '../../../../../core/widgets/custom_widget/app_text_button.dart';
 import '../../../../../core/theme/styles.dart';
 
 class SignUpButton extends StatelessWidget {

@@ -5,9 +5,9 @@ import 'package:tabibk/core/helper/extensions.dart';
 import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/core/routing/routes.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
-import '../../../../core/custom_widget/already_have_an_account.dart';
-import '../../../../core/custom_widget/app_text_button.dart';
-import '../../../../core/custom_widget/forget_password_to_bk.dart';
+import '../../../../core/widgets/custom_widget/already_have_an_account.dart';
+import '../../../../core/widgets/custom_widget/app_text_button.dart';
+import '../../../../core/widgets/custom_widget/forget_password_to_bk.dart';
 import '../../../../core/theme/styles.dart';
 
 

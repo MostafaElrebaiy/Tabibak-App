@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../core/custom_widget/app_text_form_field.dart';
+import '../../../../../core/widgets/custom_widget/app_text_form_field.dart';
 import '../../../../../core/helper/spacing.dart';
 
 class LoginTextFormField extends StatelessWidget {

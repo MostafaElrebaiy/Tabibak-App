@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tabibk/core/helper/extensions.dart';
 
-import '../routing/routes.dart';
-import '../theme/styles.dart';
+import '../../routing/routes.dart';
+import '../../theme/styles.dart';
 
 class AlreadyHaveAnAccount extends StatelessWidget {
   const AlreadyHaveAnAccount({super.key});

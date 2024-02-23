@@ -32,54 +32,55 @@ class _OnBoardingBodyState extends State<OnBoardingBody> {
       controller: _pageController,
       itemCount: onBoardingContent.length,
       itemBuilder: (_, index) {
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                OnBoardingShape(shape: onBoardingContent[index].shape),
-                verticalSpace(AppSize.s55),
-                OnBoardingText(
-                    headLine: onBoardingContent[index].headLine,
-                    textBody: onBoardingContent[index].textBody)
-              ],
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(
-                  horizontal: AppPadding.p16.w, vertical: AppPadding.p30.h),
-              child: Column(
+        return SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: List.generate(
-                          onBoardingContent.length,
-                          (index) => buildDotWidget(
-                              index: index, currentPage: currentPageIndex),
-                        ),
-                      ),
-                      OnBoardingButton(onTap: () {
-                        if (currentPageIndex < onBoardingContent.length - 1) {
-                          _pageController.nextPage(
-                              duration: const Duration(milliseconds: 250),
-                              curve: Curves.easeIn);
-                        } else {
-                          context.pushReplacementNamed(
-                              Routes.secondOnBoardingScreen);
-                        }
-                      }),
-                    ],
-                  ),
+                  OnBoardingShape(shape: onBoardingContent[index].shape),
+                  verticalSpace(AppSize.s55),
+                  OnBoardingText(
+                      headLine: onBoardingContent[index].headLine,
+                      textBody: onBoardingContent[index].textBody)
                 ],
               ),
-            ),
-          ],
+              Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: AppPadding.p16.w, vertical: AppPadding.p30.h),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: List.generate(
+                            onBoardingContent.length,
+                            (index) => buildDotWidget(
+                                index: index, currentPage: currentPageIndex),
+                          ),
+                        ),
+                        OnBoardingButton(onTap: () {
+                          if (currentPageIndex < onBoardingContent.length - 1) {
+                            _pageController.nextPage(
+                                duration: const Duration(milliseconds: 250),
+                                curve: Curves.easeIn);
+                          } else {
+                            context.pushReplacementNamed(
+                                Routes.secondOnBoardingScreen);
+                          }
+                        }),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         );
       },
     );

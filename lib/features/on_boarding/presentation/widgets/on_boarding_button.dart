@@ -14,8 +14,8 @@ class OnBoardingButton extends StatelessWidget {
       onTap: onTap,
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 300),
-        height: AppSize.s55.h,
-        width: AppSize.s55.w,
+        height: AppSize.s40.h,
+        width: AppSize.s40.w,
         decoration: const BoxDecoration(
           shape: BoxShape.circle,
           color: AppColor.primaryBlue,
