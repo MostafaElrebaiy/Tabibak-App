@@ -4,50 +4,43 @@ import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
 import 'package:tabibk/core/theme/constant.dart';
 
-
-Widget buildCreateAccountButton({
-  required String text, required VoidCallback onTap}) {
-
-  return InkWell(
-    splashColor: Colors.transparent,
-    borderRadius:  BorderRadius.all(
-      Radius.circular(AppSize.s250.w),
-    ),
+Widget buildCreateAccountButton(
+    {required String text, required VoidCallback onTap}) {
+  return GestureDetector(
     onTap: onTap,
     child: Container(
       width: AppSize.s337.w,
-      height: AppSize.s48.h,
+      padding: EdgeInsets.zero,
+      // height: AppSize.s48.h,
       decoration: BoxDecoration(
         border: Border.all(
           width: AppSize.s1,
-          color: AppColor.mainBlue,
+          color: AppColor.primaryBlue,
         ),
         color: AppColor.white,
         boxShadow: [
           BoxShadow(
-
             blurRadius: AppSize.s4,
             blurStyle: BlurStyle.outer,
             color: AppColor.buttonShadowColor.withOpacity(0.2),
           ),
         ],
-        borderRadius:  BorderRadius.all(
+        borderRadius: BorderRadius.all(
           Radius.circular(AppSize.s250.w),
-        ),),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            text,
-            textAlign: TextAlign.center,
-            style:  TextStyle(
-              fontFamily: secondFontFamily,
-              fontSize: AppSize.s16.sp,
-              color: AppColor.mainBlue,
-              fontWeight: FontWeight.w600,
-            ),
+        ),
+      ),
+      child: Padding(
+        padding: EdgeInsets.symmetric(vertical: AppPadding.p12.h),
+        child: Text(
+          text,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontFamily: secondFontFamily,
+            fontSize: AppSize.s16.sp,
+            color: AppColor.primaryBlue,
+            fontWeight: FontWeight.w600,
           ),
-        ],
+        ),
       ),
     ),
   );

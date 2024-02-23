@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:tabibk/core/helper/extensions.dart';
 import 'package:tabibk/core/routing/routes.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
-import 'package:tabibk/features/splash/presentation/widgets/second_splash_screen.dart';
 
 import 'build_logo_widget.dart';
 
