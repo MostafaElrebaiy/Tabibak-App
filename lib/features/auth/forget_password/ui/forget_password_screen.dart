@@ -11,16 +11,17 @@ import 'widgets/text_forget_password.dart';
 import 'widgets/top_bk_forget_password.dart';
 
 class ForgetPasswordScreen extends StatelessWidget {
-  const ForgetPasswordScreen({super.key});
-
+   const ForgetPasswordScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
+        reverse: true,
+        
         child: Column(children: [
           const TopBackgroundForgetPasswordScreen(),
           Padding(
-            padding: EdgeInsets.only(bottom: 20.h, left: 20.w, right: 30.w),
+            padding: EdgeInsets.only(  top: 20.h,bottom: 20.h, left: 20.w, right: 30.w),
             child: Column(
               children: [
                 const TextForgetPassword(),
@@ -32,7 +33,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                         return 'Please enter a valid Email or Phone';
                       }
                     }),
-                verticalSpace(40),
+                verticalSpace(25),
                 AppTextButton(
                   buttonText: 'Send',
                   textStyle: AppStyle.font16WhiteSemiBold,
@@ -40,7 +41,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                     context.pushNamed(Routes.otpScreen);
                   },
                 ),
-                verticalSpace(10),
+                verticalSpace(20),
                 const AlreadyHaveAnAccount(),
               ],
             ),

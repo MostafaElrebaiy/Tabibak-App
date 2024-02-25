@@ -49,7 +49,7 @@ class AppRouter {
       case Routes.forgetPasswordScreen:
         return CustomPageRoute(child: const ForgetPasswordScreen());
       case Routes.updatePasswordScreen:
-        return CustomPageRoute(child: const UpdatePasswordScreen());
+        return CustomPageRoute(child: UpdatePasswordScreen());
       case Routes.otpScreen:
         return CustomPageRoute(child: const OtpScreen());
       case Routes.successfulyUpdatePasswordScreen:

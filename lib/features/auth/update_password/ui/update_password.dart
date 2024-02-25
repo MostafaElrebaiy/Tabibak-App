@@ -5,7 +5,7 @@ import 'package:tabibk/core/helper/extensions.dart';
 import 'package:tabibk/core/helper/spacing.dart';
 
 import '../../../../core/widgets/custom_widget/app_text_button.dart';
-import '../../../../core/widgets/custom_widget/forget_password_to_bk.dart';
+import '../../../../core/widgets/custom_widget/image2_curve_top_bk.dart';
 import '../../../../core/routing/routes.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/styles.dart';
@@ -13,12 +13,15 @@ import '../../../../core/theme/styles.dart';
 
 
 class UpdatePasswordScreen extends StatelessWidget {
-  const UpdatePasswordScreen({super.key});
-
+   UpdatePasswordScreen({super.key});
+ FocusNode updatePassword = FocusNode();
+  FocusNode reenterNewPassword = FocusNode();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
+        reverse: true,
+
         child: Column(children: [
           Column(children: [
             Stack(children: [
@@ -58,6 +61,10 @@ class UpdatePasswordScreen extends StatelessWidget {
                 ),
                 verticalSpace(50),
                 AppTextFormField(
+                  focusNode: updatePassword,
+                   onFieldSubmitted: (value) {
+            FocusScope.of(context).requestFocus(reenterNewPassword);
+          },
                     suffixIcon: const Icon(Icons.visibility),
 
                     isObscureText: true,
@@ -69,6 +76,8 @@ class UpdatePasswordScreen extends StatelessWidget {
                     }),
                 verticalSpace(10),
                 AppTextFormField(
+                  focusNode: reenterNewPassword,
+                 
                     suffixIcon: const Icon(Icons.visibility),
 
                     isObscureText: true,

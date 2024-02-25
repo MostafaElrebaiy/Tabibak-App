@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tabibk/core/widgets/custom_widget/forget_password_to_bk.dart';
 import 'package:tabibk/core/helper/extensions.dart';
 
 import '../../../../../core/routing/routes.dart';
 import '../../../../../core/theme/app_colors.dart';
+import '../../../../../core/widgets/custom_widget/image2_curve_top_bk.dart';
 
 class TopBackgroundOTPScreen extends StatelessWidget {
   const TopBackgroundOTPScreen({super.key});

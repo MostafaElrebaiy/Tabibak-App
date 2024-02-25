@@ -30,7 +30,7 @@ class OnBoardingLastScreen extends StatelessWidget {
                 buildLoginButton(
                     text: AppString.login,
                     onPressed: () {
-                      context.pushReplacementNamed(Routes.loginScreen);
+                      context.pushNamed(Routes.loginScreen);
                     }),
                 SizedBox(
                   height: AppSize.s10.h,
@@ -38,7 +38,7 @@ class OnBoardingLastScreen extends StatelessWidget {
                 buildCreateAccountButton(
                     text: AppString.createAccount,
                     onTap: () {
-                      context.pushReplacementNamed(Routes.signUpScreen);
+                      context.pushNamed(Routes.signUpScreen);
                     }),
               ],
             ),
