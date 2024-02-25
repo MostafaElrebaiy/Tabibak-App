@@ -44,6 +44,8 @@ class _OtpScreenState extends State<OtpScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
+        reverse: true,
+
         child: Column(children: [
           const TopBackgroundOTPScreen(),
           Padding(
@@ -63,7 +65,7 @@ class _OtpScreenState extends State<OtpScreen> {
                 ),
                 verticalSpace(30),
                 Text("$counter", style: AppStyle.font14BlackSemiBold),
-                verticalSpace(16),
+                verticalSpace(20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -99,7 +101,7 @@ class _OtpScreenState extends State<OtpScreen> {
                     ),
                   ],
                 ),
-                verticalSpace(25),
+                verticalSpace(30),
                 AppTextButton(
                   buttonText: 'Verify',
                   textStyle: AppStyle.font16WhiteSemiBold,
@@ -107,7 +109,7 @@ class _OtpScreenState extends State<OtpScreen> {
                     context.pushNamed(Routes.updatePasswordScreen);
                   },
                 ),
-                verticalSpace(20),
+                verticalSpace(25),
                 const Resend(),
               ],
             ),

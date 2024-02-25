@@ -47,6 +47,7 @@ class _OnBoardingBodyState extends State<OnBoardingBody> {
                       textBody: onBoardingContent[index].textBody)
                 ],
               ),
+              verticalSpace(150.h),
               Padding(
                 padding: EdgeInsets.symmetric(
                     horizontal: AppPadding.p16.w, vertical: AppPadding.p30.h),

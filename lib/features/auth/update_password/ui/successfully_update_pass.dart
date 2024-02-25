@@ -7,9 +7,8 @@ import 'package:tabibk/core/routing/routes.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
 import '../../../../core/widgets/custom_widget/already_have_an_account.dart';
 import '../../../../core/widgets/custom_widget/app_text_button.dart';
-import '../../../../core/widgets/custom_widget/forget_password_to_bk.dart';
 import '../../../../core/theme/styles.dart';
-
+import '../../../../core/widgets/custom_widget/image2_curve_top_bk.dart';
 
 class SuccessfulyUpdatePasswordScreen extends StatelessWidget {
   const SuccessfulyUpdatePasswordScreen({super.key});
@@ -18,6 +17,7 @@ class SuccessfulyUpdatePasswordScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
+        reverse: true,
         child: Column(children: [
           Column(children: [
             Stack(children: [

@@ -14,12 +14,13 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
+        reverse: true,
         child: Column(
           children: [
             const TopBackgroundLoginScreen(),
             Padding(
               padding: EdgeInsets.only(
-                  top: 30.h, bottom: 20.h, left: 30.w, right: 30.w),
+                  top: 50.h, bottom: 20.h, left: 30.w, right: 30.w),
               child: Column(
                 children: [
                   const LoginTextFormField(),
@@ -27,9 +28,9 @@ class LoginScreen extends StatelessWidget {
                   const LoginForgetPassword(),
                   verticalSpace(25.h),
                   const LoginButton(),
-                  verticalSpace(16.h),
+                  verticalSpace(30.h),
                   const OrLoginWith(),
-                  verticalSpace(16.h),
+                  verticalSpace(30.h),
                   const LoginCreateAccount(),
                 ],
               ),
