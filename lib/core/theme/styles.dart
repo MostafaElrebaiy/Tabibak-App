@@ -49,6 +49,13 @@ class AppStyle {
     fontWeight: FontWeightHelper.regular,
     color: AppColor.gray,
   );
+  static TextStyle f14BlackW700 = TextStyle(
+    //hintText
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: AppColor.black,
+  );
+
   static TextStyle font14BlackSemiBold = TextStyle(
     fontSize: 14.sp,
     fontWeight: FontWeightHelper.semiBold,
@@ -87,6 +94,19 @@ class AppStyle {
     color: AppColor.black,
   );
 
+  static TextStyle f20W700BlackMulish = TextStyle(
+    fontSize: 20.sp,
+    fontFamily: secondFontFamily,
+    fontWeight: FontWeightHelper.bold,
+    color: AppColor.black,
+  );
+  
+  static TextStyle f22blackW700Mulish = TextStyle(
+    fontSize: 22.sp,
+    fontFamily: secondFontFamily,
+    fontWeight: FontWeightHelper.bold,
+    color: AppColor.black,
+  );
   static TextStyle font24WhiteBold = TextStyle(
     fontSize: 24.sp,
     fontWeight: FontWeightHelper.bold,
