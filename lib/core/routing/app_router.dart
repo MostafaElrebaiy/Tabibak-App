@@ -5,12 +5,12 @@ import 'package:tabibk/features/auth/forget_password/ui/forget_password_screen.d
 import 'package:tabibk/features/auth/otp/ui/otp.dart';
 import 'package:tabibk/features/auth/update_password/ui/successfully_update_pass.dart';
 import 'package:tabibk/features/auth/update_password/ui/update_password.dart';
-
 import 'package:tabibk/features/check_out/presentation/check_out_view.dart';
 import 'package:tabibk/features/check_out/presentation/widgets/add_shipping_screen.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/clinic_info/presentation/clinic_info_view.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/presentation/hospital_screen_view.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital_info/presentation/hospital_info_view.dart';
+import 'package:tabibk/features/home/ui/home_screen.dart';
 import 'package:tabibk/features/on_boarding/presentation/on_boarding_view.dart';
 import 'package:tabibk/features/on_boarding/presentation/widgets/on_boarding_last_screen.dart';
 import 'package:tabibk/features/product/presentation/product_view.dart';
@@ -51,6 +51,9 @@ class AppRouter {
 
       case Routes.addShippingAddressScreen:
         return CustomPageRoute(child: const AddShippingAddressScreen());
+
+      case Routes.homeScreen:
+        return CustomPageRoute(child: HomeScreen());
       case Routes.signUpScreen:
         return CustomPageRoute(child: SignUpScreen());
       case Routes.loginScreen:
