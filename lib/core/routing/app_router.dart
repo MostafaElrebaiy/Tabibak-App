@@ -5,9 +5,11 @@ import 'package:tabibk/features/auth/forget_password/ui/forget_password_screen.d
 import 'package:tabibk/features/auth/otp/ui/otp.dart';
 import 'package:tabibk/features/auth/update_password/ui/successfully_update_pass.dart';
 import 'package:tabibk/features/auth/update_password/ui/update_password.dart';
-
 import 'package:tabibk/features/check_out/presentation/check_out_view.dart';
 import 'package:tabibk/features/check_out/presentation/widgets/add_shipping_screen.dart';
+import 'package:tabibk/features/hospital_and_clinic_system/clinic_info/presentation/clinic_info_view.dart';
+import 'package:tabibk/features/hospital_and_clinic_system/hospital/presentation/hospital_screen_view.dart';
+import 'package:tabibk/features/hospital_and_clinic_system/hospital_info/presentation/hospital_info_view.dart';
 import 'package:tabibk/features/home/ui/home_screen.dart';
 import 'package:tabibk/features/on_boarding/presentation/on_boarding_view.dart';
 import 'package:tabibk/features/on_boarding/presentation/widgets/on_boarding_last_screen.dart';
@@ -27,8 +29,8 @@ class AppRouter {
       case Routes.onBoardingView:
         return CustomPageRoute(child: const OnBoardingView());
 
-      case Routes.splashScreen:
-        return CustomPageRoute(child: const SplashView());
+      // case Routes.splashScreen:
+      //   return CustomPageRoute(child: const SplashView());
 
       case Routes.secondSplashScreen:
         return CustomPageRoute(child: const SecondSplashScreen());
@@ -38,8 +40,14 @@ class AppRouter {
 
       case Routes.checkOutView:
         return CustomPageRoute(child: const CheckOutView());
+      case Routes.hospitalView:
+        return CustomPageRoute(child: const HospitalScreenView());
       case Routes.productView:
         return CustomPageRoute(child: const ProductView());
+      case Routes.clinicInfoView:
+        return CustomPageRoute(child: const ClinicInfoView());
+      case Routes.hospitalInfoView:
+        return CustomPageRoute(child: const HospitalInfoView());
 
       case Routes.addShippingAddressScreen:
         return CustomPageRoute(child: const AddShippingAddressScreen());

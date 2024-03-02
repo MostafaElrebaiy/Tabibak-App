@@ -22,5 +22,8 @@ static const Color darkgray = Color(0xFF656F77);//text
   static const grayScale = Color(0xFF333333);
   static const priceColor = Color(0xFFFE6806);
   static const shadowColor = Color(0xFF090115);
+  static const notificationsDotColor = Color(0xFFDB0E32);
+  static const colorF5F5F5 = Color(0xFFF5F5F5);
+  static const colorACB8C2 = Color(0xFFACB8C2);
 
 }

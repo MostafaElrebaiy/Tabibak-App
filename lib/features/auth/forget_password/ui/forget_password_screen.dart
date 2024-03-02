@@ -8,7 +8,7 @@ import '../../../../core/widgets/custom_widget/app_text_form_field.dart';
 import '../../../../core/theme/styles.dart';
 import '../../../../core/widgets/custom_widget/already_have_an_account.dart';
 import 'widgets/text_forget_password.dart';
-import 'widgets/top_bk_forget_password.dart';
+import '../../../../core/widgets/top_back_ground_two.dart';
 
 class ForgetPasswordScreen extends StatelessWidget {
    const ForgetPasswordScreen({super.key});
@@ -19,7 +19,7 @@ class ForgetPasswordScreen extends StatelessWidget {
         reverse: true,
         
         child: Column(children: [
-          const TopBackgroundForgetPasswordScreen(),
+          const TopBackgroundTwo(),
           Padding(
             padding: EdgeInsets.only(  top: 20.h,bottom: 20.h, left: 20.w, right: 30.w),
             child: Column(
