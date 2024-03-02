@@ -28,9 +28,14 @@ class TabibkApp extends StatelessWidget {
           primaryColor: AppColor.mainBlue,
           scaffoldBackgroundColor: AppColor.white,
           fontFamily: primaryFontFamily,
+          appBarTheme: const AppBarTheme(
+            backgroundColor: AppColor.appbar,
+            elevation: 10,
+            iconTheme: IconThemeData(color: AppColor.white),
+          ),
         ),
         debugShowCheckedModeBanner: false,
-        initialRoute: Routes.secondSplashScreen,
+        initialRoute: Routes.hospitalView,
         onGenerateRoute: appRouter.generateRoute,
       ),
     );

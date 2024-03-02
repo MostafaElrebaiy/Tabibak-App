@@ -4,7 +4,7 @@ import 'package:tabibk/core/helper/app_string.dart';
 import 'package:tabibk/core/helper/extensions.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/widgets/main_button._widget.dart';
-import 'package:tabibk/features/check_out/presentation/widgets/build_check_out_app_bar.dart';
+import 'package:tabibk/core/widgets/build_custom_app_bar.dart';
 import 'package:tabibk/features/check_out/presentation/widgets/shipping_address_text_field.dart';
 
 class AddShippingAddressScreen extends StatelessWidget {
@@ -13,7 +13,7 @@ class AddShippingAddressScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildCheckOutAppBar(text: AppString.addShippingAddress),
+      appBar: buildCustomAppBar(text: AppString.addShippingAddress),
       body: SingleChildScrollView(
         // ToDO:Solve The problem of SingleChildScrollView
         keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
