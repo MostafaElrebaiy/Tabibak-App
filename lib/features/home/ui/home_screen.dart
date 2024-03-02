@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tabibk/features/auth/forget_password/ui/forget_password_screen.dart';
 import 'package:tabibk/features/auth/login/ui/login_screen.dart';
 import 'package:tabibk/features/auth/signup/ui/signup_screen.dart';
-import 'package:tabibk/features/home/ui/widgets/home_screen_body.dart';
-
+//delet
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
