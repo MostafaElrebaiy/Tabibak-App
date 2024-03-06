@@ -3,36 +3,32 @@ description: "A new Flutter project."
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
-
 version: 1.0.0+1
 
 environment:
   sdk: '>=3.2.5 <4.0.0'
 
-
 dependencies:
+  animations: ^2.0.11
+  cached_network_image: ^3.3.1
+  connectivity_plus: ^5.0.2
   cupertino_icons: ^1.0.2
+  dio: ^5.4.0
+  equatable: ^2.0.5
   flutter:
     sdk: flutter
-  flutter_svg: ^2.0.9
-  shimmer: ^3.0.0
   flutter_bloc: ^8.1.4
-  connectivity_plus: ^5.0.2
-  lottie: ^2.7.0
-  dio: ^5.4.0
-  get_it: ^7.6.4
-  cached_network_image: ^3.3.1
-  equatable: ^2.0.5
-  flutter_screenutil: ^5.9.0
-  animations: ^2.0.11
-  #  Customize Flutter's default white native splash screen with background color and splash image.
   flutter_native_splash: ^2.3.10
+  flutter_screenutil: ^5.9.0
+  flutter_svg: ^2.0.9
+  get_it: ^7.6.7
+  lottie: ^2.7.0
+  shimmer: ^3.0.0
 
 dev_dependencies:
   flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
-
 
 flutter:
 

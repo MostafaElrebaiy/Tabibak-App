@@ -7,9 +7,6 @@ import 'package:tabibk/core/theme/constant.dart';
 import 'font_weight_helper.dart';
 
 class AppStyle {
-  
-
-  
   static TextStyle font10MainBlueRegular = TextStyle(
     // Already
     fontSize: 10.sp,
@@ -49,11 +46,36 @@ class AppStyle {
     fontWeight: FontWeightHelper.regular,
     color: AppColor.gray,
   );
+  static TextStyle f7BlackW600 = TextStyle(
+    //hintText
+    fontSize: 7.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: AppColor.gray,
+    decoration: TextDecoration.lineThrough
+  );
+  static TextStyle f9BlackW700 = TextStyle(
+    //hintText
+    fontSize: 9.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: AppColor.black,
+  );
+  static TextStyle f10BlackW400 = TextStyle(
+    //hintText
+    fontSize: 10.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: AppColor.black,
+  );
   static TextStyle f14BlackW700 = TextStyle(
     //hintText
     fontSize: 14.sp,
     fontWeight: FontWeightHelper.bold,
     color: AppColor.black,
+  );
+  static TextStyle f14MAinBlueW700 = TextStyle(
+    //hintText
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: AppColor.mainBlue,
   );
 
   static TextStyle font14BlackSemiBold = TextStyle(
@@ -100,7 +122,7 @@ class AppStyle {
     fontWeight: FontWeightHelper.bold,
     color: AppColor.black,
   );
-  
+
   static TextStyle f22blackW700Mulish = TextStyle(
     fontSize: 22.sp,
     fontFamily: secondFontFamily,
@@ -135,7 +157,6 @@ class AppStyle {
     color: AppColor.darkBlue,
   );
 
-
   static TextStyle f16BlackW700Mulish = TextStyle(
     fontSize: 16.sp,
     fontFamily: secondFontFamily,
@@ -143,13 +164,12 @@ class AppStyle {
     color: AppColor.dotColorTwo,
   );
 
-   static TextStyle f13GrayW400Mulish = TextStyle(
+  static TextStyle f13GrayW400Mulish = TextStyle(
     fontSize: 13.sp,
     fontFamily: secondFontFamily,
     fontWeight: FontWeightHelper.regular,
     color: AppColor.popUpMenuColor,
   );
-
 
   static TextStyle font13GrayRegular = TextStyle(
     fontSize: 13.sp,
@@ -169,8 +189,6 @@ class AppStyle {
     color: AppColor.white,
   );
 
-  
-
   static TextStyle f14GrayTwoW600Mulish = TextStyle(
     fontSize: 14.sp,
     fontFamily: secondFontFamily,
@@ -183,7 +201,6 @@ class AppStyle {
     color: AppColor.lightGray,
   );
 
- 
   static TextStyle font14DarkBluesemiBold = TextStyle(
     fontSize: 14.sp,
     fontWeight: FontWeightHelper.semiBold,
@@ -200,14 +217,13 @@ class AppStyle {
     color: Colors.white,
   );
 
-
   static TextStyle f18PrimaryBlueW700Mulish = TextStyle(
     fontSize: 18.sp,
     fontFamily: secondFontFamily,
     fontWeight: FontWeightHelper.bold,
     color: AppColor.primaryBlue,
   );
-    static TextStyle f18BalckW400Mulish = TextStyle(
+  static TextStyle f18BalckW400Mulish = TextStyle(
     fontSize: 18.sp,
     fontFamily: secondFontFamily,
     fontWeight: FontWeightHelper.medium,

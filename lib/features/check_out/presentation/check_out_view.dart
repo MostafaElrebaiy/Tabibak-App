@@ -11,7 +11,9 @@ class CheckOutView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildCustomAppBar(text: AppString.checkOut),
+      appBar: buildCustomAppBar(
+        backarrow: true,
+        text1: AppString.checkOut),
       body: Padding(
         padding: EdgeInsets.symmetric(
           horizontal: AppPadding.p16.w,
