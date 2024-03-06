@@ -1,41 +1,54 @@
 import 'package:flutter/material.dart';
-import 'package:tabibk/features/auth/forget_password/ui/forget_password_screen.dart';
-import 'package:tabibk/features/auth/login/ui/login_screen.dart';
-import 'package:tabibk/features/auth/signup/ui/signup_screen.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:tabibk/core/helper/app_assets.dart';
+import 'package:tabibk/features/home/logic/cubit/home_cubit.dart';
+
+import '../../../core/theme/app_colors.dart';
+import '../logic/cubit/home_state.dart';
+
 //delet
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  int currentindex = 0;
-  List<Widget> screens = [
-    const LoginScreen(),
-    const SignUpScreen(),
-    const ForgetPasswordScreen(),
-  ];
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          currentIndex: currentindex,
-          onTap: (index) {
-            setState(() {
-              currentindex = index;
-            });
-          },
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.stacked_line_chart_sharp), label: "pharmacy"),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.local_hospital), label: "Hospital"),
-          ]),
-      body: screens[currentindex],
+  Widget build(context) {
+    return BlocConsumer<HomeCubit, HomeState>(
+      listener: (BuildContext context, HomeState state) {},
+      builder: (BuildContext context, HomeState state) {
+        return Scaffold(
+          bottomNavigationBar: BottomNavigationBar(
+              type: BottomNavigationBarType.fixed,
+              // fixedColor: AppColor.mainBlue,
+              selectedItemColor: AppColor.mainBlue,
+              unselectedItemColor: AppColor.gray,
+              currentIndex: HomeCubit.get(context).currentindex,
+              onTap: (index) {
+                HomeCubit.get(context).changeIndex(index);
+              },
+              items: [
+                                BottomNavigationBarItem(
+                    icon: SvgPicture.asset(AppAsset.homeIcon,
+                    
+                    ),
+                     label: "Home"),
+                BottomNavigationBarItem(
+                    icon: SvgPicture.asset(AppAsset.pharmacyIcon,),
+                    label: "pharmacy"),
+                BottomNavigationBarItem(
+                    icon: SvgPicture.asset(AppAsset.hospitalIcon),
+                    label: "Hospital"),
+                BottomNavigationBarItem(
+                    icon: SvgPicture.asset(AppAsset.blodlIcon),
+                    label: "Blood bank"),
+                BottomNavigationBarItem(
+                    icon: SvgPicture.asset(AppAsset.profileIcon,),
+                    label: "Profile"),
+              ]),
+          body: HomeCubit.get(context)
+              .screens[HomeCubit.get(context).currentindex],
+        );
+      },
     );
   }
 }

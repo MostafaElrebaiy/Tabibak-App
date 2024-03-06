@@ -13,7 +13,9 @@ class AddShippingAddressScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildCustomAppBar(text: AppString.addShippingAddress),
+      appBar: buildCustomAppBar(
+        backarrow: true,
+        text1: AppString.addShippingAddress),
       body: SingleChildScrollView(
         // ToDO:Solve The problem of SingleChildScrollView
         keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
