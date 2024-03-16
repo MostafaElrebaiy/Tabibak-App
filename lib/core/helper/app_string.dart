@@ -61,4 +61,5 @@ class AppString {
   static const String anotherDepartments = 'Another Departments';
   static const String num1 = '01006257074';
   static const String location = '76, Kafr el-Dawar';
+  static const String productDetails = 'ProductDetails';
 }

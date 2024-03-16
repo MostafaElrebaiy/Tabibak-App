@@ -47,12 +47,11 @@ class AppStyle {
     color: AppColor.gray,
   );
   static TextStyle f7BlackW600 = TextStyle(
-    //hintText
-    fontSize: 7.sp,
-    fontWeight: FontWeightHelper.semiBold,
-    color: AppColor.gray,
-    decoration: TextDecoration.lineThrough
-  );
+      //hintText
+      fontSize: 7.sp,
+      fontWeight: FontWeightHelper.semiBold,
+      color: AppColor.gray,
+      decoration: TextDecoration.lineThrough);
   static TextStyle f9BlackW700 = TextStyle(
     //hintText
     fontSize: 9.sp,
@@ -108,6 +107,18 @@ class AppStyle {
     fontSize: 16.sp,
     fontWeight: FontWeightHelper.regular,
     color: AppColor.lightGray,
+  );
+  static TextStyle font16blackRegular = TextStyle(
+    //OnBoarding
+    fontSize: 16.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: AppColor.black,
+  );
+  static TextStyle font16MainBLueBold = TextStyle(
+    //OnBoarding
+    fontSize: 16.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: AppColor.mainBlue,
   );
 
   static TextStyle font24BlacksemiBold = TextStyle(
