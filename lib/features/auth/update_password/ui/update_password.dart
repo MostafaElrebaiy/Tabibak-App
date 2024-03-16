@@ -10,18 +10,16 @@ import '../../../../core/routing/routes.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/styles.dart';
 
-
-
+// ignore: must_be_immutable
 class UpdatePasswordScreen extends StatelessWidget {
-   UpdatePasswordScreen({super.key});
- FocusNode updatePassword = FocusNode();
+  UpdatePasswordScreen({super.key});
+  FocusNode updatePassword = FocusNode();
   FocusNode reenterNewPassword = FocusNode();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         reverse: true,
-
         child: Column(children: [
           Column(children: [
             Stack(children: [
@@ -56,17 +54,15 @@ class UpdatePasswordScreen extends StatelessWidget {
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Text('Please enter your new password.',
-                  
                       style: AppStyle.font14GrayRegular),
                 ),
                 verticalSpace(50),
                 AppTextFormField(
-                  focusNode: updatePassword,
-                   onFieldSubmitted: (value) {
-            FocusScope.of(context).requestFocus(reenterNewPassword);
-          },
+                    focusNode: updatePassword,
+                    onFieldSubmitted: (value) {
+                      FocusScope.of(context).requestFocus(reenterNewPassword);
+                    },
                     suffixIcon: const Icon(Icons.visibility),
-
                     isObscureText: true,
                     hintText: 'Enter New Password',
                     validator: (value) {
@@ -76,10 +72,8 @@ class UpdatePasswordScreen extends StatelessWidget {
                     }),
                 verticalSpace(10),
                 AppTextFormField(
-                  focusNode: reenterNewPassword,
-                 
+                    focusNode: reenterNewPassword,
                     suffixIcon: const Icon(Icons.visibility),
-
                     isObscureText: true,
                     hintText: 'Re-enter New Password ',
                     validator: (value) {
