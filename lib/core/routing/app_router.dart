@@ -16,6 +16,7 @@ import 'package:tabibk/features/hospital_and_clinic_system/hospital_info/present
 import 'package:tabibk/features/home/ui/home_screen.dart';
 import 'package:tabibk/features/on_boarding/presentation/on_boarding_view.dart';
 import 'package:tabibk/features/on_boarding/presentation/widgets/on_boarding_last_screen.dart';
+import 'package:tabibk/features/pharmacy/ui/pharmacy_details_screen.dart';
 import 'package:tabibk/features/product/presentation/product_view.dart';
 import 'package:tabibk/features/splash/presentation/widgets/second_splash_screen.dart';
 import '../../features/auth/login/ui/login_screen.dart';
@@ -76,6 +77,8 @@ class AppRouter {
         return CustomPageRoute(child: const OtpScreen());
       case Routes.successfulyUpdatePasswordScreen:
         return CustomPageRoute(child: const SuccessfulyUpdatePasswordScreen());
+      case Routes.pharmacyDetails:
+        return CustomPageRoute(child: const PharmacyDetailsScreen());
 
       default:
         return MaterialPageRoute(

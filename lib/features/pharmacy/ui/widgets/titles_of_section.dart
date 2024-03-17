@@ -4,6 +4,7 @@ import 'package:tabibk/core/helper/spacing.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/styles.dart';
 
+// ignore: must_be_immutable
 class TitlesOfSection extends StatelessWidget {
   TitlesOfSection({required this.title, required this.subTitle, super.key});
   String title;
@@ -16,10 +17,7 @@ class TitlesOfSection extends StatelessWidget {
       children: [
         Column(
           children: [
-            Text(
-              title,
-              style: AppStyle.font24BlacksemiBold,
-            ),
+            Text(title, style: AppStyle.font24BlacksemiBold),
             verticalSpace(5),
             Align(
               alignment: Alignment.bottomLeft,
