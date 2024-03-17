@@ -36,6 +36,7 @@ class TabibkApp extends StatelessWidget {
         ),
         debugShowCheckedModeBanner: false,
         initialRoute: Routes.onBoardingView,
+
         onGenerateRoute: appRouter.generateRoute,
       ),
     );
