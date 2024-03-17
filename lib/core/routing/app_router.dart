@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tabibk/core/routing/custom_page_route.dart';
 import 'package:tabibk/core/routing/routes.dart';
 import 'package:tabibk/features/auth/forget_password/ui/forget_password_screen.dart';
+import 'package:tabibk/features/auth/login/logic/cubit/login_cubit.dart';
 import 'package:tabibk/features/auth/otp/ui/otp.dart';
 import 'package:tabibk/features/auth/update_password/ui/successfully_update_pass.dart';
 import 'package:tabibk/features/auth/update_password/ui/update_password.dart';
@@ -19,6 +20,7 @@ import 'package:tabibk/features/product/presentation/product_view.dart';
 import 'package:tabibk/features/splash/presentation/widgets/second_splash_screen.dart';
 import '../../features/auth/login/ui/login_screen.dart';
 import '../../features/auth/signup/ui/signup_screen.dart';
+import '../di/dependancy_injection.dart';
 
 class AppRouter {
   Route generateRoute(RouteSettings settings) {
@@ -51,18 +53,21 @@ class AppRouter {
       case Routes.addShippingAddressScreen:
         return CustomPageRoute(child: const AddShippingAddressScreen());
 
-     
-        case Routes.homeScreen:
+      case Routes.homeScreen:
         return MaterialPageRoute(
-          builder: (_) =>  BlocProvider(
-            create: (BuildContext context) =>HomeCubit(),
+          builder: (_) => BlocProvider(
+            create: (BuildContext context) => HomeCubit(),
             child: const HomeScreen(),
           ),
         );
       case Routes.signUpScreen:
         return CustomPageRoute(child: SignUpScreen());
       case Routes.loginScreen:
-        return CustomPageRoute(child: const LoginScreen());
+        return CustomPageRoute(
+            child: BlocProvider(
+          create: (context) => getIt<LoginCubit>(),
+          child: const LoginScreen(),
+        ));
       case Routes.forgetPasswordScreen:
         return CustomPageRoute(child: const ForgetPasswordScreen());
       case Routes.updatePasswordScreen:
