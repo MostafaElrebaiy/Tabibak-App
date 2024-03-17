@@ -26,7 +26,7 @@ class HospitalInfoBody extends StatelessWidget {
                 right: 0,
                 top: 50.h,
                 child: const ImageNameAndDistanceSection(
-                  distance: 2.4,
+                  distance: "2.4K",
                   isDoctor: false,
                   pngImage: AppAsset.hospitalImage,
                   title: AppString.cardiothoracicDepartment,

@@ -6,6 +6,7 @@ class AppString {
   static const String hospitalsAndClinics = 'Hospitals and Clinics';
   static const String pharmacies = 'Pharmacies';
   static const String login = 'Login';
+  static const String save = 'Save';
   static const String hp = 'Hp. ';
   static const String dr = 'Dr. ';
   static const String abdallhMostafa = 'Abdallh Mostafa';
@@ -15,10 +16,17 @@ class AppString {
   static const String myCart = 'My Cart';
   static const String productName = 'Product Name';
   static const String size = 'Size: ';
+  static const String profile = 'Profile';
+  static const String language = 'Language';
+  static const String contactUs = 'Contact Us';
+  static const String logout = 'Logout';
+  static const String editProfile = 'Edit profile';
   static const String color = 'Color: ';
   static const String blue = 'Blue';
   static const String checkOut = 'Check Out';
   static const String hospitals = 'Hospitals';
+  static const String english = 'English';
+  static const String arabic = 'Arabic';
   static const String clinics = 'Clinics';
   static const String m150 = '150 M';
   static const String totalAmount = 'Total amount';
@@ -44,6 +52,11 @@ class AppString {
   static const String firstName = 'First Name';
   static const String lastName = 'Last Name';
   static const String address = 'Address';
+  static const String enterYourName = 'Enter Your Name';
+  static const String email = 'Email';
+  static const String name = 'Name';
+  static const String password = 'Password';
+  static const String phone = 'Phone';
   static const String city = 'City';
   static const String zipCode = 'ZIP code';
   static const String state = 'State';

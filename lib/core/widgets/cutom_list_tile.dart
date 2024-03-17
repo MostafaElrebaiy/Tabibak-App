@@ -10,10 +10,13 @@ class CustomListTile extends StatelessWidget {
       {super.key,
       required this.title,
       required this.image,
-      required this.isSvgImage});
+      required this.isSvgImage,
+      this.onTap, this.thereTrailing=false});
   final String title;
   final String image;
   final bool isSvgImage;
+  final bool thereTrailing;
+  final VoidCallback? onTap;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -35,15 +38,20 @@ class CustomListTile extends StatelessWidget {
         ],
       ),
       child: ListTile(
-        contentPadding: EdgeInsets.zero,
-        onTap: () {},
-        splashColor: AppColor.primaryBlue.withOpacity(0.1),
-        leading: isSvgImage ? SvgPicture.asset(image) : Image.asset(image),
-        title: Text(
-          title,
-          style: AppStyle.f16BlackW700Mulish,
-        ),
-      ),
+          contentPadding: EdgeInsets.zero,
+          onTap: onTap,
+          splashColor: AppColor.primaryBlue.withOpacity(0.1),
+          leading: isSvgImage ? SvgPicture.asset(image) : Image.asset(image),
+          title: Text(
+            title,
+            style: AppStyle.f16BlackW700Mulish,
+          ),
+          trailing: thereTrailing? Icon(
+            Icons.arrow_forward_ios_rounded,
+            size: 22.w,
+            color: AppColor.gray.withOpacity(0.8),
+          ):null,
+          ),
     );
   }
 }

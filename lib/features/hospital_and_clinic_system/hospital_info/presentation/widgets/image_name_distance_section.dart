@@ -17,7 +17,7 @@ class ImageNameAndDistanceSection extends StatelessWidget {
   final String title;
   final String name;
   final String pngImage;
-  final double distance;
+  final String distance;
   final bool isDoctor;
   @override
   Widget build(BuildContext context) {

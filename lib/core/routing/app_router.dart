@@ -18,6 +18,9 @@ import 'package:tabibk/features/on_boarding/presentation/on_boarding_view.dart';
 import 'package:tabibk/features/on_boarding/presentation/widgets/on_boarding_last_screen.dart';
 import 'package:tabibk/features/pharmacy/ui/pharmacy_details_screen.dart';
 import 'package:tabibk/features/product/presentation/product_view.dart';
+import 'package:tabibk/features/profile/presentation/profile_view.dart';
+import 'package:tabibk/features/profile/presentation/widgets/language_screen.dart';
+import 'package:tabibk/features/splash/presentation/splash_view.dart';
 import 'package:tabibk/features/splash/presentation/widgets/second_splash_screen.dart';
 import '../../features/auth/login/ui/login_screen.dart';
 import '../../features/auth/signup/ui/signup_screen.dart';
@@ -50,10 +53,12 @@ class AppRouter {
         return CustomPageRoute(child: const ClinicInfoView());
       case Routes.hospitalInfoView:
         return CustomPageRoute(child: const HospitalInfoView());
-
+      case Routes.profileView:
+        return CustomPageRoute(child: const ProfileView());
       case Routes.addShippingAddressScreen:
         return CustomPageRoute(child: const AddShippingAddressScreen());
-
+case Routes.languageScreen:
+        return CustomPageRoute(child: const LanguageScreen());
       case Routes.homeScreen:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(

@@ -68,7 +68,7 @@ class BuildProductWidget extends StatelessWidget {
                             borderRadius:
                                 BorderRadius.all(Radius.circular(AppSize.s8))),
                         shadowColor: Colors.white,
-                        iconColor: AppColor.popUpMenuColor.withOpacity(0.54),
+                        iconColor: AppColor.color9B9B9B.withOpacity(0.54),
                         itemBuilder: (_) {
                           return [
                             PopupMenuItem(
