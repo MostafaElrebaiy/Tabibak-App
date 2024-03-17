@@ -26,5 +26,7 @@ static const Color darkgray = Color(0xFF656F77);//text
   static const colorF5F5F5 = Color(0xFFF5F5F5);
   static const colorACB8C2 = Color(0xFFACB8C2);
   static const errorColor = Colors.redAccent;
+  static const colorF0F0F0 = Color(0xFFF0F0F0);
+
 
 }

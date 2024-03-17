@@ -8,6 +8,7 @@ import 'package:tabibk/core/theme/styles.dart';
 
 class BuildSearchScetion extends StatelessWidget {
   const BuildSearchScetion({super.key});
+  
 
   @override
   Widget build(BuildContext context) {

@@ -6,6 +6,8 @@ import 'package:tabibk/core/widgets/build_custom_app_bar.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/presentation/widgets/build_hospital_app_bar_action.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/presentation/widgets/hosptial_body.dart';
 
+import '../../../../core/theme/styles.dart';
+
 class HospitalScreenView extends StatelessWidget {
   const HospitalScreenView({super.key});
 
@@ -13,8 +15,16 @@ class HospitalScreenView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildCustomAppBar(
-          text: AppString.tabibak,
-          actions: [BuildHospitalAppBarAction(onTap: () {})]),
+        backarrow: true,
+       
+          text1: AppString.tabibak,
+          style1:AppStyle.f20WhiteW600,
+          actions: [BuildHospitalAppBarAction(
+            icon: const Icon(Icons.notifications_none_rounded),
+             right: AppSize.s3.w,
+            bottom: AppSize.s10.h,
+            onTap: () {}),
+            ]),
       body: Padding(
         padding: EdgeInsets.symmetric(
             horizontal: AppPadding.p24.w, vertical: AppPadding.p20.h),

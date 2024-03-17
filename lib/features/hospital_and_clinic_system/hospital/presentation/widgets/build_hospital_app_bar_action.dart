@@ -4,8 +4,15 @@ import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
 
 class BuildHospitalAppBarAction extends StatelessWidget {
-  const BuildHospitalAppBarAction({super.key, required this.onTap});
+  const BuildHospitalAppBarAction({super.key, required this.onTap,  this.icon, this.right, this.top, this.left, this.bottom});
   final VoidCallback onTap;
+  final Icon? icon;
+  final double? right;
+  final double? top;
+  final double? left;
+  final double? bottom;
+
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -18,15 +25,13 @@ class BuildHospitalAppBarAction extends StatelessWidget {
             highlightColor: Colors.transparent,
             hoverColor: Colors.transparent,
             splashColor: Colors.transparent,
-            child: Icon(
-              Icons.notifications_none_rounded,
-              color: AppColor.white,
-              size: AppSize.s26.w,
-            ),
+            child: icon
           ),
           Positioned(
-            right: AppSize.s3.w,
-            bottom: AppSize.s10.h,
+            right: right,
+            bottom: bottom,
+            top:top,
+            left:left,
             child: Container(
               width: AppSize.s8.w,
               height: AppSize.s8.h,
