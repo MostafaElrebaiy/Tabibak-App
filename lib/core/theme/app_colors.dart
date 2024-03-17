@@ -15,7 +15,7 @@ static const Color darkgray = Color(0xFF656F77);//text
   static const buttonShadowColor = Color(0xFF0D8BFF);
   static const dotColor = Color(0xFF8F8F8F);
   static const dotColorTwo = Color(0xFF222222);
-  static const popUpMenuColor = Color(0xFF9B9B9B);
+  static const color9B9B9B = Color(0xFF9B9B9B);
   static const addIconColor = Color(0xFFC4C4C4);
   static const appbar = Color(0xFF011728);
   static const checkOutColor = Color(0xFFCECCD1);
@@ -25,5 +25,6 @@ static const Color darkgray = Color(0xFF656F77);//text
   static const notificationsDotColor = Color(0xFFDB0E32);
   static const colorF5F5F5 = Color(0xFFF5F5F5);
   static const colorACB8C2 = Color(0xFFACB8C2);
+  static const errorColor = Colors.redAccent;
 
 }

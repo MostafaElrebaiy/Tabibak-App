@@ -35,5 +35,9 @@ class AppAsset {
   static const String numberTwo = '$_basePathSvg/numberTwo.svg';
   static const String location = '$_basePathSvg/location.svg';
   static const String timeIcon = '$_basePathSvg/time_icon.svg';
+  static const String emptyIcon = '$_basePathSvg/empty.svg';
+  static const String profileIcon = '$_basePathSvg/profile.svg';
+  static const String logoutIcon = '$_basePathSvg/logout.svg';
+  static const String contactUsIcon = '$_basePathSvg/contactUs.svg';
 
 }

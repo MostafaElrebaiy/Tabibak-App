@@ -27,6 +27,7 @@ dependencies:
   animations: ^2.0.11
   #  Customize Flutter's default white native splash screen with background color and splash image.
   flutter_native_splash: ^2.3.10
+  image_picker: ^1.0.7
 
 dev_dependencies:
   flutter_lints: ^2.0.0

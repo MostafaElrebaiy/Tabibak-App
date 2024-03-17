@@ -13,7 +13,7 @@ class ClinicTabBody extends StatelessWidget {
     return ListView.builder(
       itemCount: 5,
       itemBuilder: (_, __) => CustomListTileWidget(
-        distance: 4.5,
+        distance: "4.5K",
         isHospital: false,
         title: AppString.abdallhMostafa,
         image: AppAsset.doctorImage,
