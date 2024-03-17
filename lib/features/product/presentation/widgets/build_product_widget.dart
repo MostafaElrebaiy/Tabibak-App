@@ -9,6 +9,7 @@ import 'package:tabibk/core/theme/styles.dart';
 import 'package:tabibk/features/product/presentation/widgets/build_product_icon_button.dart';
 import 'package:tabibk/features/product/presentation/widgets/product_content.dart';
 
+// ignore: must_be_immutable
 class BuildProductWidget extends StatelessWidget {
   BuildProductWidget({super.key, required this.index});
   int index;
@@ -93,7 +94,6 @@ class BuildProductWidget extends StatelessWidget {
                     ],
                   ),
                   Row(
-
                     children: [
                       Expanded(
                         child: Row(
@@ -112,7 +112,6 @@ class BuildProductWidget extends StatelessWidget {
                           ],
                         ),
                       ),
-                   
                       Expanded(
                         child: Row(
                           children: [
