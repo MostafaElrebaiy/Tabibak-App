@@ -9,7 +9,6 @@ import 'package:tabibk/core/routing/routes.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
 import 'package:tabibk/core/widgets/cutom_list_tile.dart';
 import 'package:tabibk/core/widgets/top_back_ground_two.dart';
-import 'package:tabibk/features/profile/presentation/widgets/edit_profile_screen.dart';
 import 'package:tabibk/features/profile/presentation/widgets/image_name_email_section.dart';
 
 class ProfileViewBody extends StatelessWidget {
