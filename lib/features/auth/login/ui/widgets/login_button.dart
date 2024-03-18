@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tabibk/core/helper/extensions.dart';
-import 'package:tabibk/core/routing/routes.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tabibk/features/auth/login/data/models/login_request_body.dart';
+import 'package:tabibk/features/auth/login/logic/cubit/login_cubit.dart';
 
 import '../../../../../core/widgets/custom_widget/app_text_button.dart';
 import '../../../../../core/theme/styles.dart';
@@ -14,8 +15,17 @@ class LoginButton extends StatelessWidget {
       buttonText: 'Login',
       textStyle: AppStyle.font16WhiteSemiBold,
       onPressed: () {
-        context.pushReplacementNamed(Routes.homeScreen);
+        // context.pushReplacementNamed(Routes.homeScreen);
+        ValidateToLogin(context);
       },
     );
+  }
+
+  void ValidateToLogin(BuildContext context) {
+    if (context.read<LoginCubit>().formKey.currentState!.validate()) {
+      context.read<LoginCubit>().emitLoginState(LoginRequestBody(
+          email: context.read<LoginCubit>().emailController.text,
+          password: context.read<LoginCubit>().passwordController.text));
+    }
   }
 }
