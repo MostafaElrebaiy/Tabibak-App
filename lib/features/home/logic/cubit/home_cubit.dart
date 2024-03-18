@@ -4,7 +4,6 @@ import 'package:tabibk/features/home/logic/cubit/home_state.dart';
 import 'package:tabibk/features/pharmacy/ui/pharmacy_screen.dart';
 
 import '../../../../core/theme/app_colors.dart';
-import '../../../auth/login/ui/login_screen.dart';
 import '../../../hospital_and_clinic_system/hospital/presentation/hospital_screen_view.dart';
 
 class HomeCubit extends Cubit<HomeState> {
@@ -14,7 +13,6 @@ class HomeCubit extends Cubit<HomeState> {
   int currentindex = 0;
   Color color = AppColor.gray;
   List<Widget> screens = [
-    const LoginScreen(),
     const PharmacyScreen(),
     const HospitalScreenView(),
   ];
@@ -23,5 +21,4 @@ class HomeCubit extends Cubit<HomeState> {
     color = color;
     emit(ChangeBottomNavBarState());
   }
-  
 }
