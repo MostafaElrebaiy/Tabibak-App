@@ -179,7 +179,7 @@ class AppStyle {
     fontSize: 13.sp,
     fontFamily: secondFontFamily,
     fontWeight: FontWeightHelper.regular,
-    color: AppColor.popUpMenuColor,
+    color: AppColor.color9B9B9B,
   );
 
   static TextStyle font13GrayRegular = TextStyle(
@@ -204,7 +204,7 @@ class AppStyle {
     fontSize: 14.sp,
     fontFamily: secondFontFamily,
     fontWeight: FontWeightHelper.semiBold,
-    color: AppColor.popUpMenuColor,
+    color: AppColor.color9B9B9B,
   );
   static TextStyle font14LightGrayRegular = TextStyle(
     fontSize: 14.sp,

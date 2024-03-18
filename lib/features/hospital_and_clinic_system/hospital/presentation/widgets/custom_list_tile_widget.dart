@@ -18,7 +18,7 @@ class CustomListTileWidget extends StatelessWidget {
       required this.onTap});
   final String image;
   final String title;
-  final double distance;
+  final String distance;
   final bool isHospital;
   final VoidCallback onTap;
 

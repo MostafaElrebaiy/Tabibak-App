@@ -13,7 +13,7 @@ class HostpitalTabBody extends StatelessWidget {
     return ListView.builder(
       itemCount: 5,
       itemBuilder: (_, __) => CustomListTileWidget(
-        distance: 2.5,
+        distance:"2.5K",
         image: AppAsset.hospitalImage,
         title: AppString.elAndlosia,
         onTap: () {
