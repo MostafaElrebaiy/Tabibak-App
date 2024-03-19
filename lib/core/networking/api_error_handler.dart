@@ -17,6 +17,7 @@ enum DataSource {
   SEND_TIMEOUT,
   CACHE_ERROR,
   NO_INTERNET_CONNECTION,
+  API_LOGIC_ERROR,
   // API_LOGIC_ERROR,
   DEFAULT
 }
@@ -42,6 +43,7 @@ class ResponseCode {
 }
 
 class ResponseMessage {
+  static const String SUCCESS = ApiErrors.success; // success with data
   static const String NO_CONTENT =
       ApiErrors.noContent; // success with no data (no content)
   static const String BAD_REQUEST =
@@ -52,8 +54,9 @@ class ResponseMessage {
       ApiErrors.forbiddenError; //  failure, API rejected request
   static const String INTERNAL_SERVER_ERROR =
       ApiErrors.internalServerError; // failure, crash in server side
-  static const String NOT_FOUND =
-      ApiErrors.notFoundError; // failure, crash in server side
+  static const String NOT_FOUND = ApiErrors.notFoundError;
+  static const String API_LOGIC_ERROR =
+      ApiErrors.apiLogicErorr; // failure, crash in server side
 
   // local status code
   static String CONNECT_TIMEOUT = ApiErrors.timeoutError;
@@ -83,6 +86,10 @@ extension DataSourceExtension on DataSource {
             code: ResponseCode.UNAUTORISED,
             message: ResponseMessage.UNAUTORISED);
       case DataSource.NOT_FOUND:
+        return ApiErrorModel(
+            code: ResponseCode.API_LOGIC_ERROR,
+            message: ResponseMessage.API_LOGIC_ERROR);
+      case DataSource.API_LOGIC_ERROR:
         return ApiErrorModel(
             code: ResponseCode.NOT_FOUND, message: ResponseMessage.NOT_FOUND);
       case DataSource.INTERNAL_SERVER_ERROR:
