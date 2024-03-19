@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/widgets/custom_widget/app_text_button.dart';
 import '../../../../../core/theme/styles.dart';
+import '../../logic/sign_up_cubit.dart';
 
 class SignUpButton extends StatelessWidget {
   const SignUpButton({super.key});
@@ -11,7 +13,15 @@ class SignUpButton extends StatelessWidget {
     return AppTextButton(
       buttonText: 'Sign Up',
       textStyle: AppStyle.font16WhiteSemiBold,
-      onPressed: () {},
+      onPressed: () {
+        validateThenDoSignup(context);
+      },
     );
+  }
+
+  void validateThenDoSignup(BuildContext context) {
+    if (context.read<SignupCubit>().formKey.currentState!.validate()) {
+      context.read<SignupCubit>().emitSignupStates();
+    }
   }
 }

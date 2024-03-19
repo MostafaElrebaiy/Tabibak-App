@@ -5,9 +5,11 @@ part 'api_error_model.g.dart';
 class ApiErrorModel {
   final String? message;
   final int? code;
+  List<String>? data;
 
   ApiErrorModel({
     required this.message,
+    this.data,
     this.code,
   });
 
