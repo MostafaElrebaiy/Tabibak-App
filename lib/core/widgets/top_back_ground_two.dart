@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/extensions.dart';
-import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/core/theme/constant.dart';
 import 'package:tabibk/core/theme/styles.dart';
 

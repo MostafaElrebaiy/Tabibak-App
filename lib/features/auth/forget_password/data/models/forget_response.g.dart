@@ -1,21 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'api_error_model.dart';
+part of 'forget_response.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-ApiErrorModel _$ApiErrorModelFromJson(Map<String, dynamic> json) =>
-    ApiErrorModel(
+ForgetResponse _$ForgetResponseFromJson(Map<String, dynamic> json) =>
+    ForgetResponse(
       message: json['message'] as String?,
       data: (json['data'] as List<dynamic>?)?.map((e) => e as String).toList(),
       code: json['code'] as int?,
     );
 
-Map<String, dynamic> _$ApiErrorModelToJson(ApiErrorModel instance) =>
+Map<String, dynamic> _$ForgetResponseToJson(ForgetResponse instance) =>
     <String, dynamic>{
       'message': instance.message,
-      'code': instance.code,
       'data': instance.data,
+      'code': instance.code,
     };
