@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/features/pharmacy/ui/widgets/titles_of_section.dart';
 import '../../../../core/helper/app_assets.dart';
 import '../../../../core/helper/spacing.dart';
-import '../../../hospital_and_clinic_system/hospital/presentation/widgets/build_search_scetion.dart';
+import '../../../hospital_and_clinic_system/hospital/view/widgets/build_search_scetion.dart';
 import 'categories_scetion.dart';
 import 'recommendedsection.dart';
 

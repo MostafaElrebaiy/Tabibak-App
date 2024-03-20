@@ -4,7 +4,7 @@ import 'package:tabibk/features/home/logic/cubit/home_state.dart';
 import 'package:tabibk/features/pharmacy/ui/pharmacy_screen.dart';
 
 import '../../../../core/theme/app_colors.dart';
-import '../../../hospital_and_clinic_system/hospital/presentation/hospital_screen_view.dart';
+import '../../../hospital_and_clinic_system/hospital/view/hospital_screen_view.dart';
 
 class HomeCubit extends Cubit<HomeState> {
   HomeCubit() : super(HomeInitial());
