@@ -11,12 +11,15 @@ class AppString {
   static const String dr = 'Dr. ';
   static const String abdallhMostafa = 'Abdallh Mostafa';
   static const String elAndlosia = 'ElAndlosia';
+  static const String chooseImageFrom = 'Choose Image From';
   static const String searchDepartment = 'Search department';
   static const String createAccount = 'Create account';
   static const String myCart = 'My Cart';
   static const String productName = 'Product Name';
   static const String size = 'Size: ';
   static const String profile = 'Profile';
+  static const String camera = 'Camera';
+  static const String gallery = 'Gallery';
   static const String language = 'Language';
   static const String contactUs = 'Contact Us';
   static const String logout = 'Logout';
