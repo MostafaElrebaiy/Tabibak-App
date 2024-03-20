@@ -4,6 +4,7 @@ import '../../../../core/helper/spacing.dart';
 import '../../../../core/widgets/custom_widget/already_have_an_account.dart';
 import 'widgets/or_sign_up_with.dart';
 import 'widgets/sigh_up_top_bk.dart';
+import 'widgets/sign_up_bloc_listener.dart';
 import 'widgets/sign_up_button.dart';
 import 'widgets/sign_up_text_form_field.dart';
 
@@ -14,8 +15,7 @@ class SignUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SingleChildScrollView(
-        reverse: true,
-
+      reverse: true,
       child: Column(
         children: [
           const SignUpTopBackground(),
@@ -31,6 +31,7 @@ class SignUpScreen extends StatelessWidget {
                   const OrSignUpWith(),
                   verticalSpace(25.h),
                   const AlreadyHaveAnAccount(),
+                  const SignupBlocListener(),
                 ],
               )),
         ],

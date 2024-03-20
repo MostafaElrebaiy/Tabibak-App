@@ -27,13 +27,15 @@ class HomeScreen extends StatelessWidget {
                 HomeCubit.get(context).changeIndex(index);
               },
               items: [
-                                BottomNavigationBarItem(
-                    icon: SvgPicture.asset(AppAsset.homeIcon,
-                    
-                    ),
-                     label: "Home"),
+                //             BottomNavigationBarItem(
+                // icon: SvgPicture.asset(AppAsset.homeIcon,
+
+                // ),
+                //  label: "Home"),
                 BottomNavigationBarItem(
-                    icon: SvgPicture.asset(AppAsset.pharmacyIcon,),
+                    icon: SvgPicture.asset(
+                      AppAsset.pharmacyIcon,
+                    ),
                     label: "pharmacy"),
                 BottomNavigationBarItem(
                     icon: SvgPicture.asset(AppAsset.hospitalIcon),
@@ -42,7 +44,9 @@ class HomeScreen extends StatelessWidget {
                     icon: SvgPicture.asset(AppAsset.blodlIcon),
                     label: "Blood bank"),
                 BottomNavigationBarItem(
-                    icon: SvgPicture.asset(AppAsset.profileIcon,),
+                    icon: SvgPicture.asset(
+                      AppAsset.profileIcon,
+                    ),
                     label: "Profile"),
               ]),
           body: HomeCubit.get(context)

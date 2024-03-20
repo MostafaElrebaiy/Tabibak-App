@@ -43,12 +43,9 @@ class AppAsset {
   static const String profileIcon = '$_basePathSvg/profile.svg';
   static const String logoutIcon = '$_basePathSvg/logout.svg';
   static const String contactUsIcon = '$_basePathSvg/contactUs.svg';
-
   static const String homeIcon = '$_basePathSvg/home.svg';
-  
-  
+
   static const String pharmacyIcon = '$_basePathSvg/pharmacyicon.svg';
   static const String hospitalIcon = '$_basePathSvg/hospital.svg';
   static const String blodlIcon = '$_basePathSvg/blod.svg';
-
 }
