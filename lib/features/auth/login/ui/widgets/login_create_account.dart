@@ -18,7 +18,7 @@ class LoginCreateAccount extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
-            context.pushNamed(Routes.signUpScreen);
+            context.pushReplacementNamed(Routes.signUpScreen);
           },
           child: Text(
             ' Create Account',
