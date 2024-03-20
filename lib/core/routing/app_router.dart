@@ -69,11 +69,13 @@ class AppRouter {
           ),
         );
       case Routes.signUpScreen:
+
         return CustomPageRoute(
             child: BlocProvider(
           create: (context) => getIt<SignupCubit>(),
           child: const SignUpScreen(),
         ));
+
       case Routes.loginScreen:
         return CustomPageRoute(
             child: BlocProvider(

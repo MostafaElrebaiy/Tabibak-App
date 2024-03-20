@@ -11,7 +11,8 @@ class CustomListTile extends StatelessWidget {
       required this.title,
       required this.image,
       required this.isSvgImage,
-      this.onTap, this.thereTrailing=false});
+      this.onTap,
+      this.thereTrailing = false});
   final String title;
   final String image;
   final bool isSvgImage;
@@ -24,7 +25,7 @@ class CustomListTile extends StatelessWidget {
           vertical: AppPadding.p10.h, horizontal: AppPadding.p10.w),
       decoration: BoxDecoration(
         color: AppColor.white,
-        borderRadius: BorderRadius.circular(AppSize.s12),
+        borderRadius: const BorderRadius.all(Radius.circular(AppSize.s12)),
         border: Border.all(
           color: AppColor.gray.withOpacity(0.4),
         ),
@@ -38,20 +39,22 @@ class CustomListTile extends StatelessWidget {
         ],
       ),
       child: ListTile(
-          contentPadding: EdgeInsets.zero,
-          onTap: onTap,
-          splashColor: AppColor.primaryBlue.withOpacity(0.1),
-          leading: isSvgImage ? SvgPicture.asset(image) : Image.asset(image),
-          title: Text(
-            title,
-            style: AppStyle.f16BlackW700Mulish,
-          ),
-          trailing: thereTrailing? Icon(
-            Icons.arrow_forward_ios_rounded,
-            size: 22.w,
-            color: AppColor.gray.withOpacity(0.8),
-          ):null,
-          ),
+        contentPadding: EdgeInsets.zero,
+        onTap: onTap,
+        splashColor: AppColor.primaryBlue.withOpacity(0.1),
+        leading: isSvgImage ? SvgPicture.asset(image) : Image.asset(image),
+        title: Text(
+          title,
+          style: AppStyle.f16BlackW700Mulish,
+        ),
+        trailing: thereTrailing
+            ? Icon(
+                Icons.arrow_forward_ios_rounded,
+                size: 22.w,
+                color: AppColor.gray.withOpacity(0.8),
+              )
+            : null,
+      ),
     );
   }
 }
