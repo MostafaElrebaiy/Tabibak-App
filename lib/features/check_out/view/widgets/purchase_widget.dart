@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tabibk/core/helper/app_assets.dart';
-import 'package:tabibk/core/helper/app_string.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/extensions.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
-import 'package:tabibk/core/theme/constant.dart';
 import 'package:tabibk/core/theme/styles.dart';
 import 'package:tabibk/features/check_out/view/widgets/build_purchase_button.dart';
 import 'package:tabibk/features/check_out/view/widgets/build_purchase_divider.dart';
@@ -53,9 +52,9 @@ class PurchaseWidget extends StatelessWidget {
           const BuildPurchaseDivider(),
           SizedBox(height: AppSize.s20.h),
           Text(
-            AppString.rate,
+            "rate".tr(context),
             style: AppStyle.font24BlackBold.copyWith(
-                fontFamily: secondFontFamily, fontWeight: FontWeight.w500),
+                fontWeight: FontWeight.w500),
           ),
           SizedBox(height: AppSize.s20.h),
           Row(
@@ -82,7 +81,7 @@ class PurchaseWidget extends StatelessWidget {
                 child: BuildPurchaseButton(
                   isSubmit: true,
                   onPressed: () {},
-                  text: AppString.submit,
+                  text: "submit".tr(context),
                 ),
               ),
               SizedBox(
@@ -93,7 +92,7 @@ class PurchaseWidget extends StatelessWidget {
                 child: BuildPurchaseButton(
                   isSubmit: false,
                   onPressed: () {},
-                  text: AppString.backToHome,
+                  text: "backToHome".tr(context),
                 ),
               ),
             ],

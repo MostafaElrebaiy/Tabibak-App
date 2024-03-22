@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tabibk/core/helper/app_assets.dart';
-import 'package:tabibk/core/helper/app_string.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
+
 import 'package:tabibk/core/helper/extensions.dart';
 import 'package:tabibk/core/routing/routes.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/view/widgets/custom_list_tile_widget.dart';
@@ -15,7 +16,7 @@ class HostpitalTabBody extends StatelessWidget {
       itemBuilder: (_, __) => CustomListTileWidget(
         distance:"2.5K",
         image: AppAsset.hospitalImage,
-        title: AppString.elAndlosia,
+        title: "elAndlosia".tr(context),
         onTap: () {
           context.pushNamed(Routes.hospitalInfoView);
         },

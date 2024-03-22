@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tabibk/core/helper/app_string.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
-import 'package:tabibk/core/theme/constant.dart';
 import 'package:tabibk/core/theme/styles.dart';
 
 class Offer extends StatelessWidget {
@@ -36,15 +35,15 @@ class Offer extends StatelessWidget {
       minVerticalPadding: 0,
       trailing: isFree
           ? Text(
-              AppString.free,
+              "free".tr(context),
               style: AppStyle.font14GrayRegular.copyWith(
-                  color: AppColor.black, fontFamily: secondFontFamily),
+                  color: AppColor.black, ),
             )
           : const SizedBox(),
       title: Text(
         text,
         style: AppStyle.font14DarkBlueMedium
-            .copyWith(color: AppColor.black, fontFamily: secondFontFamily),
+            .copyWith(color: AppColor.black),
       ),
     );
   }

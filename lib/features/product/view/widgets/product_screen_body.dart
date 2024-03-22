@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tabibk/core/helper/app_string.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/extensions.dart';
 import 'package:tabibk/core/routing/routes.dart';
 import 'package:tabibk/core/theme/styles.dart';
@@ -31,7 +31,7 @@ class ProductBody extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              AppString.totalAmount,
+              "totalAmount".tr(context),
               style: AppStyle.f14GrayTwoW600Mulish,
             ),
             Text(
@@ -44,7 +44,7 @@ class ProductBody extends StatelessWidget {
           height: 30.h,
         ),
         MainButtonWidget(
-          text: AppString.checkOut.toUpperCase(),
+          text: "checkOut".tr(context).toUpperCase(),
           onPressed: () {
             context.pushNamed(Routes.checkOutView);
           },

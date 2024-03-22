@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/app_assets.dart';
-import 'package:tabibk/core/helper/app_string.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
 import 'package:tabibk/core/theme/font_weight_helper.dart';
@@ -75,7 +75,7 @@ class BuildProductWidget extends StatelessWidget {
                                 onTap: () {},
                                 child: Text(
                                   textAlign: TextAlign.center,
-                                  AppString.addToFavorites,
+                                  "addToFavorites".tr(context),
                                   style: AppStyle.font14GrayRegular
                                       .copyWith(color: AppColor.black),
                                 )),
@@ -83,7 +83,7 @@ class BuildProductWidget extends StatelessWidget {
                                 onTap: () {},
                                 child: Text(
                                   textAlign: TextAlign.center,
-                                  AppString.deleteFromList,
+                                  "deleteFromList".tr(context),
                                   style: AppStyle.font14GrayRegular
                                       .copyWith(color: AppColor.black),
                                 ))
@@ -100,11 +100,11 @@ class BuildProductWidget extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text(
-                              AppString.color,
+                              "color".tr(context),
                               style: AppStyle.f13GrayW400Mulish,
                             ),
                             Text(
-                              AppString.blue,
+                              "blue".tr(context),
                               style: AppStyle.f13GrayW400Mulish.copyWith(
                                   color: AppColor.dotColorTwo,
                                   fontWeight: FontWeightHelper.bold),
@@ -116,11 +116,11 @@ class BuildProductWidget extends StatelessWidget {
                         child: Row(
                           children: [
                             Text(
-                              AppString.size,
+                              "size".tr(context),
                               style: AppStyle.f13GrayW400Mulish,
                             ),
                             Text(
-                              AppString.m150,
+                              "M 150",
                               style: AppStyle.f13GrayW400Mulish.copyWith(
                                   color: AppColor.dotColorTwo,
                                   fontWeight: FontWeightHelper.bold),

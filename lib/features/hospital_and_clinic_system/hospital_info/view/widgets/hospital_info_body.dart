@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/app_assets.dart';
-import 'package:tabibk/core/helper/app_string.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/widgets/cutom_list_tile.dart';
@@ -25,12 +25,12 @@ class HospitalInfoBody extends StatelessWidget {
                 left: 0,
                 right: 0,
                 top: 50.h,
-                child: const ImageNameAndDistanceSection(
+                child:  ImageNameAndDistanceSection(
                   distance: "2.4K",
                   isDoctor: false,
                   pngImage: AppAsset.hospitalImage,
-                  title: AppString.cardiothoracicDepartment,
-                  name: AppString.elAndlosia,
+                  title: "cardiothoracicDepartment".tr(context),
+                  name: "elAndlosia".tr(context),
                 )),
           ],
         ),
@@ -46,8 +46,8 @@ class HospitalInfoBody extends StatelessWidget {
                     verticalSpace(20),
                     const DoctorsSection(),
                     verticalSpace(20),
-                    const CustomListTile(
-                        title: AppString.location,
+                     CustomListTile(
+                        title: "location".tr(context),
                         image: AppAsset.location,
                         isSvgImage: true),
                     verticalSpace(20),

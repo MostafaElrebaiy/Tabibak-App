@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tabibk/core/helper/app_string.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/extensions.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/routing/routes.dart';
@@ -29,7 +29,7 @@ class CheckOutBody extends StatelessWidget {
                 height: 20.0,
               ),
               Text(
-                AppString.shippingAddress.toUpperCase(),
+                "shippingAddress".tr(context).toUpperCase(),
                 style: AppStyle.font14GrayRegular.copyWith(letterSpacing: 2),
               ),
               SizedBox(height: AppSize.s10.h),
@@ -39,22 +39,22 @@ class CheckOutBody extends StatelessWidget {
                   onPressed: () {
                     context.pushNamed(Routes.addShippingAddressScreen);
                   },
-                  text: AppString.addShippingAddress,
+                  text: "addShippingAddress".tr(context),
                   isShippingAddress: true),
               SizedBox(height: AppSize.s30.h),
               Text(
-                AppString.shippingMethod.toUpperCase(),
+                "shippingMethod".tr(context).toUpperCase(),
                 style: AppStyle.font14GrayRegular.copyWith(letterSpacing: 2),
               ),
               SizedBox(height: AppSize.s10.h),
               BuildAddShippingAddress(
                 onPressed: () {},
                 isFree: true,
-                text: AppString.pickupAtStore,
+                text: "pickupAtStore".tr(context),
               ),
               SizedBox(height: AppSize.s30.h),
               Text(
-                AppString.paymentMethod.toUpperCase(),
+                "paymentMethod".tr(context).toUpperCase(),
                 style: AppStyle.font14GrayRegular.copyWith(letterSpacing: 2),
               ),
               SizedBox(height: AppSize.s10.h),

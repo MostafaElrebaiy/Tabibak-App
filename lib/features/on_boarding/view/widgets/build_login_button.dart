@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
-import 'package:tabibk/core/theme/constant.dart';
+import 'package:tabibk/core/theme/styles.dart';
 
 Widget buildLoginButton(
     {required String text, required VoidCallback onPressed}) {
@@ -21,12 +21,7 @@ Widget buildLoginButton(
       child: Text(
         text,
         textAlign: TextAlign.center,
-        style: TextStyle(
-          fontFamily: secondFontFamily,
-          fontSize: AppSize.s16.sp,
-          fontWeight: FontWeight.w600,
-          color: AppColor.white,
-        ),
+        style: AppStyle.font16MainBLueBold.copyWith(color: AppColor.white),
       ),
     ),
   );

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tabibk/core/helper/app_assets.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/extensions.dart';
 import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
@@ -23,6 +25,16 @@ class _OnBoardingBodyState extends State<OnBoardingBody> {
 
   @override
   Widget build(BuildContext context) {
+     List<OnBoardingContent> onBoardingContent = [
+      OnBoardingContent(
+          headLine: "bloodBank".tr(context),
+          textBody: "lorem".tr(context),
+          shape: AppAsset.onBoardingShape1),
+      OnBoardingContent(
+          headLine: "hospitalsAndClinics".tr(context),
+          textBody: "lorem".tr(context),
+          shape: AppAsset.onBoardingShape2),
+    ];
     return PageView.builder(
       onPageChanged: (int page) {
         setState(() {
@@ -92,4 +104,6 @@ class _OnBoardingBodyState extends State<OnBoardingBody> {
     _pageController.dispose();
     super.dispose();
   }
+ 
+
 }

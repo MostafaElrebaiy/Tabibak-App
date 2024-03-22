@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/extensions.dart';
-import 'package:tabibk/core/theme/constant.dart';
 import 'package:tabibk/core/theme/styles.dart';
 
 import 'custom_widget/image2_curve_top_bk.dart';
@@ -20,7 +19,8 @@ class TopBackgroundTwo extends StatelessWidget {
         painter: ForgetImage(),
       ),
       Positioned(
-        left: 10,
+        left: Localizations.localeOf(context).languageCode == 'ar' ? null : 10,
+        right: Localizations.localeOf(context).languageCode == 'ar' ? 10 : null,
         top: 35,
         child: Row(
           children: [
@@ -39,8 +39,7 @@ class TopBackgroundTwo extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: AppStyle.f20WhiteW600
-                        .copyWith(fontFamily: secondFontFamily),
+                    style: AppStyle.f20WhiteW600,
                   ),
                 ],
               ),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tabibk/core/helper/app_assets.dart';
-import 'package:tabibk/core/helper/app_string.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
@@ -53,7 +53,7 @@ class CustomListTileWidget extends StatelessWidget {
             text: TextSpan(
               children: [
                 TextSpan(
-                    text: isHospital ? AppString.hp : AppString.dr,
+                    text: isHospital ? "hp".tr(context) : "dr".tr(context),
                     style: AppStyle.f22blackW700Mulish),
                 TextSpan(
                     text: title,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tabibk/core/helper/app_string.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/extensions.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/widgets/main_button._widget.dart';
@@ -15,7 +15,7 @@ class AddShippingAddressScreen extends StatelessWidget {
     return Scaffold(
       appBar: buildCustomAppBar(
         backarrow: true,
-        text1: AppString.addShippingAddress),
+        text1: "addShippingAddress".tr(context)),
       body: SingleChildScrollView(
         // ToDO:Solve The problem of SingleChildScrollView
         keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
@@ -29,42 +29,42 @@ class AddShippingAddressScreen extends StatelessWidget {
               Column(mainAxisSize: MainAxisSize.min, children: [
                 Row(
                   children: [
-                    const Expanded(
+                     Expanded(
                         child: ShippingAddressTextField(
-                            hintText: AppString.firstName)),
+                            hintText: "firstName".tr(context))),
                     SizedBox(width: AppSize.s20.w),
-                    const Expanded(
+                     Expanded(
                         child: ShippingAddressTextField(
-                            hintText: AppString.lastName)),
+                            hintText: "lastName".tr(context))),
                   ],
                 ),
                 SizedBox(height: AppSize.s30.h),
-                const ShippingAddressTextField(
-                  hintText: AppString.address,
+                 ShippingAddressTextField(
+                  hintText: "address".tr(context),
                 ),
                 SizedBox(height: AppSize.s30.h),
-                const ShippingAddressTextField(
-                  hintText: AppString.city,
+                 ShippingAddressTextField(
+                  hintText: "city".tr(context),
                 ),
                 SizedBox(height: AppSize.s30.h),
                 Row(
                   children: [
-                    const Expanded(
+                     Expanded(
                         child: ShippingAddressTextField(
-                      hintText: AppString.state,
+                      hintText: "state".tr(context),
                     )),
                     SizedBox(width: AppSize.s20.w),
-                    const Expanded(
+                     Expanded(
                         child: ShippingAddressTextField(
-                            hintText: AppString.zipCode, isNum: true)),
+                            hintText: "zipCode".tr(context), isNum: true)),
                   ],
                 ),
                 SizedBox(height: AppSize.s30.h),
-                const ShippingAddressTextField(
-                    hintText: AppString.phoneNumber, isLast: true, isNum: true),
+                 ShippingAddressTextField(
+                    hintText: "phoneNumber".tr(context), isLast: true, isNum: true),
               ]),
               MainButtonWidget(
-                  text: AppString.addNow,
+                  text: "addNow".tr(context),
                   onPressed: () {
                     context.pop();
                   }),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tabibk/core/helper/app_string.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital_info/view/widgets/custom_expansion_tile.dart';
@@ -16,8 +16,8 @@ class AnotherDepartmentSection extends StatelessWidget {
           bottom: BorderSide(color: AppColor.gray.withOpacity(0.4), width: 2),
         ),
       ),
-      child: const CustomExpansionTile(
-          title: AppString.anotherDepartments, isThereSVG: false, children: []),
+      child:  CustomExpansionTile(
+          title: "anotherDepartments".tr(context), isThereSVG: false, children: []),
     );
   }
 }

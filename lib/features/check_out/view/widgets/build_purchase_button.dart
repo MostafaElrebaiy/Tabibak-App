@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
-import 'package:tabibk/core/theme/constant.dart';
 import 'package:tabibk/core/theme/styles.dart';
 
 class BuildPurchaseButton extends StatelessWidget {
@@ -35,10 +34,10 @@ class BuildPurchaseButton extends StatelessWidget {
       ),
       child: Text(
         text,
+        textAlign: TextAlign.center,
         style: isSubmit
-            ? AppStyle.font16WhiteMedium.copyWith(fontFamily: secondFontFamily)
-            : AppStyle.font16WhiteMedium
-                .copyWith(fontFamily: secondFontFamily, color: AppColor.gray),
+            ? AppStyle.font16WhiteMedium
+            : AppStyle.font16WhiteMedium.copyWith(color: AppColor.gray),
       ),
     );
   }

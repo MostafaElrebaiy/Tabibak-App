@@ -36,7 +36,12 @@ class OnBoardingSpecialShape extends StatelessWidget {
           ),
         ),
         Positioned(
-          left: AppSize.s20.w,
+          left: Localizations.localeOf(context).languageCode == 'ar'
+              ? null
+              : AppSize.s20.w,
+          right: Localizations.localeOf(context).languageCode == 'ar'
+              ? AppSize.s20.w
+              : null,
           top: AppSize.s60.h,
           child: SizedBox(
             width: AppSize.s32.w,

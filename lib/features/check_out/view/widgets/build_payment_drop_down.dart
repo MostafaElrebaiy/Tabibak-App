@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tabibk/core/helper/app_string.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
 import 'package:tabibk/core/theme/font_weight_helper.dart';
@@ -13,7 +13,6 @@ class BuildPaymentDropDown extends StatefulWidget {
   State<BuildPaymentDropDown> createState() => _BuildPaymentDropDownState();
 }
 
-String value = AppString.selectPaymentMethod;
 
 class _BuildPaymentDropDownState extends State<BuildPaymentDropDown> {
   @override
@@ -45,24 +44,24 @@ class _BuildPaymentDropDownState extends State<BuildPaymentDropDown> {
           ),
         ),
         expandedInsets: EdgeInsets.zero,
-        hintText: AppString.selectPaymentMethod,
+        hintText: "selectPaymentMethod".tr(context),
         textStyle: AppStyle.font14GrayRegular
             .copyWith(fontSize: AppSize.s16.sp, color: AppColor.black),
         dropdownMenuEntries: [
           DropdownMenuEntry(
-            value: AppString.cashOnDelivery,
-            label: AppString.cashOnDelivery,
+            value: "cashOnDelivery".tr(context),
+            label: "cashOnDelivery".tr(context),
             labelWidget: Text(
-              AppString.cashOnDelivery,
+              "cashOnDelivery".tr(context),
               style: AppStyle.f16BlackW700Mulish
                   .copyWith(fontWeight: FontWeightHelper.medium),
             ),
           ),
           DropdownMenuEntry(
-            value: AppString.vodafone,
-            label: AppString.vodafone,
+            value: "vodafone".tr(context),
+            label: "vodafone".tr(context),
             labelWidget: Text(
-              AppString.vodafone,
+              "vodafone".tr(context),
               style: AppStyle.f16BlackW700Mulish
                   .copyWith(fontWeight: FontWeightHelper.medium),
             ),

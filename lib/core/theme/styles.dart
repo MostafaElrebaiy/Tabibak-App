@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
-import 'package:tabibk/core/theme/constant.dart';
 
 import 'font_weight_helper.dart';
 
@@ -129,14 +128,12 @@ class AppStyle {
 
   static TextStyle f20W700BlackMulish = TextStyle(
     fontSize: 20.sp,
-    fontFamily: secondFontFamily,
     fontWeight: FontWeightHelper.bold,
     color: AppColor.black,
   );
 
   static TextStyle f22blackW700Mulish = TextStyle(
     fontSize: 22.sp,
-    fontFamily: secondFontFamily,
     fontWeight: FontWeightHelper.bold,
     color: AppColor.black,
   );
@@ -170,14 +167,12 @@ class AppStyle {
 
   static TextStyle f16BlackW700Mulish = TextStyle(
     fontSize: 16.sp,
-    fontFamily: secondFontFamily,
     fontWeight: FontWeightHelper.bold,
     color: AppColor.dotColorTwo,
   );
 
   static TextStyle f13GrayW400Mulish = TextStyle(
     fontSize: 13.sp,
-    fontFamily: secondFontFamily,
     fontWeight: FontWeightHelper.regular,
     color: AppColor.color9B9B9B,
   );
@@ -195,14 +190,12 @@ class AppStyle {
   );
   static TextStyle f20WhiteW600 = TextStyle(
     fontSize: 20.sp,
-    fontFamily: secondFontFamily,
     fontWeight: FontWeightHelper.semiBold,
     color: AppColor.white,
   );
 
   static TextStyle f14GrayTwoW600Mulish = TextStyle(
     fontSize: 14.sp,
-    fontFamily: secondFontFamily,
     fontWeight: FontWeightHelper.semiBold,
     color: AppColor.color9B9B9B,
   );
@@ -230,13 +223,11 @@ class AppStyle {
 
   static TextStyle f18PrimaryBlueW700Mulish = TextStyle(
     fontSize: 18.sp,
-    fontFamily: secondFontFamily,
     fontWeight: FontWeightHelper.bold,
     color: AppColor.primaryBlue,
   );
   static TextStyle f18BalckW400Mulish = TextStyle(
     fontSize: 18.sp,
-    fontFamily: secondFontFamily,
     fontWeight: FontWeightHelper.medium,
     color: AppColor.black,
   );

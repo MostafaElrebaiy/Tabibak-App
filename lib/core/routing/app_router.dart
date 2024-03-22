@@ -21,11 +21,11 @@ import 'package:tabibk/features/on_boarding/view/widgets/on_boarding_last_screen
 import 'package:tabibk/features/pharmacy/ui/pharmacy_details_screen.dart';
 import 'package:tabibk/features/pharmacy/ui/pharmacy_screen.dart';
 import 'package:tabibk/features/product/view/product_view.dart';
+import 'package:tabibk/features/profile_screens/edit_profile_screen/logic/cubit/edit_profile_view_cubit.dart';
+import 'package:tabibk/features/profile_screens/edit_profile_screen/view/edit_profile_view.dart';
+import 'package:tabibk/features/profile_screens/language_profile_view/view/language_profile_view.dart';
+import 'package:tabibk/features/profile_screens/profile/view/profile_view.dart';
 import 'package:tabibk/features/splash/view/widgets/second_splash_screen.dart';
-import 'package:tabibk/profile_screens/edit_profile_screen/logic/cubit/edit_profile_view_cubit.dart';
-import 'package:tabibk/profile_screens/edit_profile_screen/view/edit_profile_view.dart';
-import 'package:tabibk/profile_screens/language_profile_view/view/language_profile_view.dart';
-import 'package:tabibk/profile_screens/profile/view/profile_view.dart';
 import '../../features/auth/login/ui/login_screen.dart';
 import '../../features/auth/signup/ui/signup_screen.dart';
 import '../di/dependancy_injection.dart';

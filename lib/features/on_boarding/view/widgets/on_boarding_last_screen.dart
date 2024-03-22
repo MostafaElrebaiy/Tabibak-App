@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tabibk/core/helper/app_string.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/extensions.dart';
 import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
@@ -21,14 +21,14 @@ class OnBoardingLastScreen extends StatelessWidget {
           children: [
         const OnBoardingSpecialShape(),
             verticalSpace(AppSize.s37),
-            const OnBoardingText(
-                headLine: AppString.pharmacies, textBody: AppString.lorem),
+             OnBoardingText(
+                headLine: "pharmacies".tr(context), textBody: "lorem".tr(context)),
             verticalSpace(AppSize.s30),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 buildLoginButton(
-                    text: AppString.login,
+                    text: "login".tr(context),
                     onPressed: () {
                       context.pushReplacementNamed(Routes.loginScreen);
                     }),
@@ -36,7 +36,7 @@ class OnBoardingLastScreen extends StatelessWidget {
                   height: AppSize.s10.h,
                 ),
                 buildCreateAccountButton(
-                    text: AppString.createAccount,
+                    text: "createAccount".tr(context),
                     onTap: () {
                       context.pushReplacementNamed(Routes.signUpScreen);
                     }),

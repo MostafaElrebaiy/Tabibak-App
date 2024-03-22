@@ -1,6 +1,5 @@
  import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tabibk/core/helper/app_string.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
 
@@ -16,7 +15,7 @@ Widget buildLogoWidget(){
           shape: BoxShape.circle, color: AppColor.mainBlue),
       child:  Center(
         child: Text(
-          AppString.p,
+          "P",
           textAlign: TextAlign.center,
           style: TextStyle(
               color: AppColor.white,

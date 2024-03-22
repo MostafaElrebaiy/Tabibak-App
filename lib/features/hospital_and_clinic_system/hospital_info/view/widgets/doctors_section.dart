@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tabibk/core/helper/app_assets.dart';
-import 'package:tabibk/core/helper/app_string.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/theme/styles.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital_info/view/widgets/custom_expansion_tile.dart';
 import 'package:tabibk/features/product/view/widgets/build_divider_widget.dart';
@@ -18,7 +18,7 @@ class DoctorsSection extends StatelessWidget {
         ListTile(
           leading: Image.asset(AppAsset.doctorImage),
           title: Text(
-            "Dr.${AppString.drName}",
+            "${"dr".tr(context)}${"abdallhMostafa".tr(context)}",
             style: AppStyle.f16BlackW700Mulish
                 .copyWith(fontWeight: FontWeight.w500),
           ),
@@ -27,7 +27,7 @@ class DoctorsSection extends StatelessWidget {
         ListTile(
           leading: Image.asset(AppAsset.doctorImage),
           title: Text(
-            "Dr.${AppString.drName}",
+            "Dr.${"abdallhMostafa".tr(context)}",
             style: AppStyle.f16BlackW700Mulish
                 .copyWith(fontWeight: FontWeight.w500),
           ),
@@ -36,7 +36,7 @@ class DoctorsSection extends StatelessWidget {
         ListTile(
           leading: Image.asset(AppAsset.doctorImage),
           title: Text(
-            "Dr.${AppString.drName}",
+            "Dr.${"abdallhMostafa".tr(context)}",
             style: AppStyle.f16BlackW700Mulish
                 .copyWith(fontWeight: FontWeight.w500),
           ),
