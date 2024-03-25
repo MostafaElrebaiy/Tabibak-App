@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/app_localization.dart';
-import 'package:tabibk/core/helper/app_string.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
 import 'package:tabibk/core/theme/styles.dart';
@@ -19,7 +18,7 @@ class BuildHospitalAndClinicsTab extends StatefulWidget {
 class _BuildHospitalAndClinicsTabState extends State<BuildHospitalAndClinicsTab>
     with SingleTickerProviderStateMixin {
   late final TabController _tabController;
-  
+
   final List<Widget> _tabsBody = const [HostpitalTabBody(), ClinicTabBody()];
   @override
   void initState() {
@@ -29,7 +28,7 @@ class _BuildHospitalAndClinicsTabState extends State<BuildHospitalAndClinicsTab>
 
   @override
   Widget build(BuildContext context) {
-    final List<Tab> _tabs =  [
+    final List<Tab> _tabs = [
       Tab(text: "hospitals".tr(context)),
       Tab(text: "clinics".tr(context)),
     ];
