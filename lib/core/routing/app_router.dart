@@ -5,12 +5,16 @@ import 'package:tabibk/core/routing/routes.dart';
 import 'package:tabibk/features/auth/forget_password/logic/forget_password_cubit.dart';
 import 'package:tabibk/features/auth/forget_password/ui/forget_password_screen.dart';
 import 'package:tabibk/features/auth/login/logic/cubit/login_cubit.dart';
+import 'package:tabibk/features/auth/otp/logic/check_code_cubit.dart';
 import 'package:tabibk/features/auth/otp/ui/otp.dart';
 import 'package:tabibk/features/auth/signup/logic/sign_up_cubit.dart';
 import 'package:tabibk/features/auth/update_password/ui/successfully_update_pass.dart';
 import 'package:tabibk/features/auth/update_password/ui/update_password.dart';
-import 'package:tabibk/features/check_out/view/check_out_view.dart';
-import 'package:tabibk/features/check_out/view/widgets/add_shipping_screen.dart';
+
+import 'package:tabibk/features/auth/update_password/ui/widgets/update_password_text_field.dart';
+import 'package:tabibk/features/check_out/presentation/check_out_view.dart';
+import 'package:tabibk/features/check_out/presentation/widgets/add_shipping_screen.dart';
+
 import 'package:tabibk/features/home/logic/cubit/home_cubit.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/clinic_info/view/clinic_info_view.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/view/hospital_screen_view.dart';
@@ -28,6 +32,7 @@ import 'package:tabibk/features/profile_screens/profile/view/profile_view.dart';
 import 'package:tabibk/features/splash/view/widgets/second_splash_screen.dart';
 import '../../features/auth/login/ui/login_screen.dart';
 import '../../features/auth/signup/ui/signup_screen.dart';
+import '../../features/auth/update_password/logic/reset_password_cubit.dart';
 import '../di/dependancy_injection.dart';
 
 class AppRouter {
@@ -96,15 +101,25 @@ class AppRouter {
           child: const ForgetPasswordScreen(),
         ));
       case Routes.updatePasswordScreen:
-        return CustomPageRoute(child: UpdatePasswordScreen());
+        return CustomPageRoute(
+            child: BlocProvider(
+          create: (context) => getIt<ResetPasswordCubit>(),
+          child: UpdatePasswordScreen(),
+        ));
       case Routes.otpScreen:
-        return CustomPageRoute(child: const OtpScreen());
+        return CustomPageRoute(
+            child: BlocProvider(
+          create: (context) => getIt<CheckCodeCubit>(),
+          child: const OtpScreen(),
+        ));
       case Routes.successfulyUpdatePasswordScreen:
         return CustomPageRoute(child: const SuccessfulyUpdatePasswordScreen());
       case Routes.pharmacy:
         return CustomPageRoute(child: const PharmacyScreen());
       case Routes.pharmacyDetails:
         return CustomPageRoute(child: const PharmacyDetailsScreen());
+      case Routes.updatePasswordTextField:
+        return CustomPageRoute(child: const UpdatePasswordTextField());
 
       default:
         return MaterialPageRoute(

@@ -1,7 +1,7 @@
 class Routes {
   // static const String splashScreen = "/";
   static const String secondSplashScreen = "/secondSplashScreen";
-  static const String onBoardingView = "/onBoardingView";
+  static const String onBoardingView = "/";
   static const String loginScreen = "/loginScreen";
   static const String signUpScreen = "/signUpScreen";
   static const String forgetPasswordScreen = "/forgetPasswordScreen";
@@ -17,11 +17,10 @@ class Routes {
   static const String hospitalView = "/hospitalView";
   static const String clinicInfoView = "/clinicInfoView";
   static const String hospitalInfoView = "/hospitalInfoView";
-
   static const String profileView = "/profileView";
   static const String editProfileView = "/editProfileView";
   static const String languageProfileView = "/languageProfileView";
   static const String pharmacy = "/pharmacy";
-
   static const String pharmacyDetails = "/pharmacyDetails";
+  static const String updatePasswordTextField = "/updatePasswordTextField";
 }
