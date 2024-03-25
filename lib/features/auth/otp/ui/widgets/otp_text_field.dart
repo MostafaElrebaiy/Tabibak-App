@@ -24,8 +24,8 @@ class OtpTextField1 extends StatelessWidget {
             context.read<CheckCodeCubit>().codee.text = verificationCode;
             verificationCode;
             validateThenSendOtp(context);
-            context.pushNamed(Routes.updatePasswordTextField,
-                arguments: verificationCode);
+            // context.pushNamed(Routes.updatePasswordTextField,
+            //     arguments: verificationCode);
           },
         ));
   }

@@ -18,7 +18,7 @@ class _UpdatePasswordTextFieldState extends State<UpdatePasswordTextField> {
 
   @override
   Widget build(BuildContext context) {
-    final String? arg = ModalRoute.of(context)!.settings.arguments as String?;
+    // final String? arg = ModalRoute.of(context)!.settings.arguments as String?;
 
     return Form(
         key: context.read<ResetPasswordCubit>().formKey,
@@ -39,8 +39,8 @@ class _UpdatePasswordTextFieldState extends State<UpdatePasswordTextField> {
             //         return 'Please enter a valid Password';
             //       }
             //     }),
-            Text(context.read<ResetPasswordCubit>().codeController.text =
-                arg.toString()),
+            // Text(context.read<ResetPasswordCubit>().codeController.text =
+            //     arg.toString()),
             AppTextFormField(
                 controller:
                     context.read<ResetPasswordCubit>().passwordController,
