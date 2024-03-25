@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../core/helper/value_manager.dart';
 import '../../../core/theme/styles.dart';
 import '../../../core/widgets/build_custom_app_bar.dart';
-import '../../hospital_and_clinic_system/hospital/presentation/widgets/build_hospital_app_bar_action.dart';
+import '../../hospital_and_clinic_system/hospital/view/widgets/build_hospital_app_bar_action.dart';
 import 'widgets/pharmacy_body.dart';
 
 class PharmacyScreen extends StatelessWidget {

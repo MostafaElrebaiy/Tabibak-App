@@ -1,2 +1,2 @@
- const String secondFontFamily='Mulish';
- const String primaryFontFamily='Lato';
+ const String arabicFontFamily='Cairo';
+ const String englishFontFamily='Mulish';
