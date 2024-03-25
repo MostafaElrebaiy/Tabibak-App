@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tabibk/core/helper/extensions.dart';
-
-import '../../../../../core/routing/routes.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../core/theme/styles.dart';
+import '../../../forget_password/logic/forget_password_cubit.dart';
 
 class Resend extends StatelessWidget {
   const Resend({super.key});
@@ -18,7 +17,7 @@ class Resend extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
-            context.pushNamed(Routes.loginScreen);
+            validateToSendEmail(context);
           },
           child: Text(
             ' Resend',
@@ -27,5 +26,11 @@ class Resend extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  void validateToSendEmail(BuildContext context) {
+    if (context.read<ForgetCubit>().formKey.currentState!.validate()) {
+      context.read<ForgetCubit>().emitLoginState();
+    }
   }
 }

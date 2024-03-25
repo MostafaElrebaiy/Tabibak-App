@@ -14,29 +14,23 @@ class PharmacyScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildCustomAppBar(
-
-        
-       backarrow: false, 
-       text1: 'Welcome, ',
-       style1: AppStyle.font16WhiteSemiBold,
-       text2: 'Mostafa',
-       style2: AppStyle.f14MAinBlueW700,
-      
-       actions: [
-        BuildHospitalAppBarAction(
-          onTap: () {},
-          icon: Icon(Icons.shopping_cart_outlined),
-          top: -1,
-          right: 0,
-        ),
-      ]),
+          backarrow: false,
+          text1: 'Welcome, ',
+          style1: AppStyle.font16WhiteSemiBold,
+          text2: 'Mostafa',
+          style2: AppStyle.f14MAinBlueW700,
+          actions: [
+            BuildHospitalAppBarAction(
+              onTap: () {},
+              top: -1,
+              right: 0,
+            ),
+          ]),
       body: Padding(
-      padding: EdgeInsets.symmetric(
-          horizontal: AppPadding.p18.w, vertical: AppPadding.p20.h),
-      child: PharmacyBody(),
-    ),
+        padding: EdgeInsets.symmetric(
+            horizontal: AppPadding.p18.w, vertical: AppPadding.p20.h),
+        child: const PharmacyBody(),
+      ),
     );
-
-    
   }
 }

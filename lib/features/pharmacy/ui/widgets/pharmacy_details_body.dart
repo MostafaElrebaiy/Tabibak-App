@@ -82,20 +82,22 @@ class PharmacyDetailsBody extends StatelessWidget {
                   verticalSpace(10.h),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                        const RecommendedSection(),
-                        horizontalSpace(5.w),
-                        const RecommendedSection(),
-                        horizontalSpace(5.w),
-                        const RecommendedSection(),
-                        horizontalSpace(5.w),
-                        const RecommendedSection(),
-                        horizontalSpace(5.w),
-                        const RecommendedSection(),
-                        horizontalSpace(5.w),
-                        const RecommendedSection(),
-                      ],
+                    child: IntrinsicHeight(
+                      child: Row(
+                        children: [
+                          const RecommendedSection(),
+                          horizontalSpace(5.w),
+                          const RecommendedSection(),
+                          horizontalSpace(5.w),
+                          const RecommendedSection(),
+                          horizontalSpace(5.w),
+                          const RecommendedSection(),
+                          horizontalSpace(5.w),
+                          const RecommendedSection(),
+                          horizontalSpace(5.w),
+                          const RecommendedSection(),
+                        ],
+                      ),
                     ),
                   ),
                 ],
