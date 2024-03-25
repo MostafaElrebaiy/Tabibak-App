@@ -23,7 +23,8 @@ class ForgetCubit extends Cubit<ForgetState> {
         emit(ForgetState.forgetSuccess(forgetResponse));
       },
       failure: (error) {
-        emit(ForgetState.forgetError(error: error.apiErrorModel.message ?? ''));
+        emit(
+            ForgetState.forgetError(error: error.apiErrorModel.data?[0] ?? ''));
       },
     );
   }

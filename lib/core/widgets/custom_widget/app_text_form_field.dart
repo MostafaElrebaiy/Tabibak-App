@@ -29,7 +29,7 @@ class AppTextFormField extends StatelessWidget {
     required this.hintText,
     this.isObscureText,
     this.suffixIcon,
-    this.controller,
+    required this.controller,
     required this.validator,
     this.onFieldSubmitted,
     this.focusNode,
