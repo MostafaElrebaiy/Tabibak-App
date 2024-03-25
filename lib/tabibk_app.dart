@@ -25,6 +25,7 @@ class TabibkApp extends StatelessWidget {
       splitScreenMode: true,
       child: MaterialApp(
         theme: ThemeData(
+        
           primaryColor: AppColor.mainBlue,
           scaffoldBackgroundColor: AppColor.white,
           fontFamily: primaryFontFamily,
