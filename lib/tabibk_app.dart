@@ -26,6 +26,7 @@ class TabibkApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       child: MaterialApp(
+
         supportedLocales: const <Locale>[
           Locale('en'),
           Locale('ar'),
@@ -49,7 +50,7 @@ class TabibkApp extends StatelessWidget {
           primaryColor: AppColor.mainBlue,
           scaffoldBackgroundColor: AppColor.white,
           // fontFamily:  Localizations.maybeLocaleOf(context)?.languageCode== 'ar'? "Cairo":primaryFontFamily,
-          fontFamily: englishFontFamily,
+          fontFamily: arabicFontFamily,
           appBarTheme: const AppBarTheme(
             backgroundColor: AppColor.appbar,
             elevation: 10,

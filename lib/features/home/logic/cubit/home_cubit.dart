@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tabibk/features/home/logic/cubit/home_state.dart';
+import 'package:tabibk/features/hospital_and_clinic_system/hospital/view/hospital_screen_view.dart';
 import 'package:tabibk/features/pharmacy/ui/pharmacy_screen.dart';
+import 'package:tabibk/features/profile_screens/profile/view/profile_view.dart';
 
 import '../../../../core/theme/app_colors.dart';
 import '../../../hospital_and_clinic_system/hospital/view/hospital_screen_view.dart';

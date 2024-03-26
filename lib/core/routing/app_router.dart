@@ -9,8 +9,11 @@ import 'package:tabibk/features/auth/otp/ui/otp.dart';
 import 'package:tabibk/features/auth/signup/logic/sign_up_cubit.dart';
 import 'package:tabibk/features/auth/update_password/ui/successfully_update_pass.dart';
 import 'package:tabibk/features/auth/update_password/ui/update_password.dart';
+
+import 'package:tabibk/features/auth/update_password/ui/widgets/update_password_text_field.dart';
 import 'package:tabibk/features/check_out/view/check_out_view.dart';
 import 'package:tabibk/features/check_out/view/widgets/add_shipping_screen.dart';
+
 import 'package:tabibk/features/home/logic/cubit/home_cubit.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/clinic_info/view/clinic_info_view.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/view/hospital_screen_view.dart';
