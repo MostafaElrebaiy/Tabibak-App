@@ -5,7 +5,6 @@ import 'package:tabibk/core/helper/extensions.dart';
 import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/core/routing/routes.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
-import '../../../../core/widgets/custom_widget/already_have_an_account.dart';
 import '../../../../core/widgets/custom_widget/app_text_button.dart';
 import '../../../../core/theme/styles.dart';
 import '../../../../core/widgets/custom_widget/image2_curve_top_bk.dart';
@@ -69,12 +68,13 @@ class SuccessfulyUpdatePasswordScreen extends StatelessWidget {
                 ),
                 verticalSpace(30),
                 AppTextButton(
-                  buttonText: 'Home',
+                  buttonText: 'Back to Login',
                   textStyle: AppStyle.font16WhiteSemiBold,
-                  onPressed: () {},
+                  onPressed: () {
+                    context.pushNamed(Routes.loginScreen);
+                  },
                 ),
                 verticalSpace(10),
-                const AlreadyHaveAnAccount(),
               ],
             ),
           ),
