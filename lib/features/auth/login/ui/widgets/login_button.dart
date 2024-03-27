@@ -14,7 +14,6 @@ class LoginButton extends StatelessWidget {
       buttonText: 'Login',
       textStyle: AppStyle.font16WhiteSemiBold,
       onPressed: () {
-        // context.pushReplacementNamed(Routes.homeScreen);
         validateToLogin(context);
       },
     );
