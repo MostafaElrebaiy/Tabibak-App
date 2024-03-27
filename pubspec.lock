@@ -106,7 +106,11 @@ packages:
     source: hosted
     version: "2.4.2"
   build_runner:
+<<<<<<< HEAD
+    dependency: "direct dev"
+=======
     dependency: "direct main"
+>>>>>>> 9393be7b508487fcd27c2a321fd2d207285452a5
     description:
       name: build_runner
       sha256: "581bacf68f89ec8792f5e5a0b2c4decd1c948e97ce659dc783688c8a88fbec21"
@@ -378,7 +382,11 @@ packages:
     dependency: "direct dev"
     description:
       name: flutter_lints
+<<<<<<< HEAD
+      sha256: a25a15ebbdfc33ab1cd26c63a6ee519df92338a9c10f122adda92938253bef04
+=======
       sha256: e2a421b7e59244faef694ba7b30562e489c2b489866e505074eb005cd7060db7
+>>>>>>> 9393be7b508487fcd27c2a321fd2d207285452a5
       url: "https://pub.dev"
     source: hosted
     version: "3.0.1"
@@ -391,7 +399,11 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_native_splash
+<<<<<<< HEAD
+      sha256: "558f10070f03ee71f850a78f7136ab239a67636a294a44a06b6b7345178edb1e"
+=======
       sha256: edf39bcf4d74aca1eb2c1e43c3e445fd9f494013df7f0da752fefe72020eedc0
+>>>>>>> 9393be7b508487fcd27c2a321fd2d207285452a5
       url: "https://pub.dev"
     source: hosted
     version: "2.4.0"
@@ -437,6 +449,8 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+<<<<<<< HEAD
+=======
   freezed:
     dependency: "direct main"
     description:
@@ -453,6 +467,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.4.1"
+>>>>>>> 9393be7b508487fcd27c2a321fd2d207285452a5
   frontend_server_client:
     dependency: transitive
     description:
@@ -525,6 +540,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.1.7"
+<<<<<<< HEAD
+=======
   image_picker:
     dependency: "direct main"
     description:
@@ -597,6 +614,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.18.1"
+>>>>>>> 9393be7b508487fcd27c2a321fd2d207285452a5
   io:
     dependency: transitive
     description:
@@ -622,7 +640,11 @@ packages:
     source: hosted
     version: "4.8.1"
   json_serializable:
+<<<<<<< HEAD
+    dependency: "direct dev"
+=======
     dependency: "direct main"
+>>>>>>> 9393be7b508487fcd27c2a321fd2d207285452a5
     description:
       name: json_serializable
       sha256: aa1f5a8912615733e0fdc7a02af03308933c93235bdc8d50d0b0c8a8ccb0b969
@@ -657,10 +679,17 @@ packages:
     dependency: transitive
     description:
       name: lints
+<<<<<<< HEAD
+      sha256: "0a217c6c989d21039f1498c3ed9f3ed71b354e69873f13a8dfc3c9fe76f1b452"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.1"
+=======
       sha256: cbf8d4b858bb0134ef3ef87841abdf8d63bfc255c266b7bf6b39daa1085c4290
       url: "https://pub.dev"
     source: hosted
     version: "3.0.0"
+>>>>>>> 9393be7b508487fcd27c2a321fd2d207285452a5
   logging:
     dependency: transitive
     description:
@@ -673,7 +702,11 @@ packages:
     dependency: "direct main"
     description:
       name: lottie
+<<<<<<< HEAD
+      sha256: a93542cc2d60a7057255405f62252533f8e8956e7e06754955669fd32fb4b216
+=======
       sha256: ce2bb2605753915080e4ee47f036a64228c88dc7f56f7bc1dbe912d75b55b1e2
+>>>>>>> 9393be7b508487fcd27c2a321fd2d207285452a5
       url: "https://pub.dev"
     source: hosted
     version: "3.1.0"
@@ -902,7 +935,11 @@ packages:
     source: hosted
     version: "4.1.0"
   retrofit_generator:
+<<<<<<< HEAD
+    dependency: "direct dev"
+=======
     dependency: "direct main"
+>>>>>>> 9393be7b508487fcd27c2a321fd2d207285452a5
     description:
       name: retrofit_generator
       sha256: a962be21403c2ecdd82d06c863340cff759642ae6ecac5a2c74a9a60377592c3
@@ -990,7 +1027,11 @@ packages:
     dependency: transitive
     description:
       name: sqflite_common
+<<<<<<< HEAD
+      sha256: "28d8c66baee4968519fb8bd6cdbedad982d6e53359091f0b74544a9f32ec72d5"
+=======
       sha256: "3da423ce7baf868be70e2c0976c28a1bb2f73644268b7ffa7d2e08eab71f16a4"
+>>>>>>> 9393be7b508487fcd27c2a321fd2d207285452a5
       url: "https://pub.dev"
     source: hosted
     version: "2.5.4"
@@ -1050,6 +1091,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.6.1"
+<<<<<<< HEAD
+=======
   timer_count_down:
     dependency: "direct main"
     description:
@@ -1058,6 +1101,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.2.2"
+>>>>>>> 9393be7b508487fcd27c2a321fd2d207285452a5
   timing:
     dependency: transitive
     description:
@@ -1196,4 +1240,8 @@ packages:
     version: "3.1.2"
 sdks:
   dart: ">=3.3.0 <4.0.0"
+<<<<<<< HEAD
+  flutter: ">=3.16.0"
+=======
   flutter: ">=3.19.0"
+>>>>>>> 9393be7b508487fcd27c2a321fd2d207285452a5
