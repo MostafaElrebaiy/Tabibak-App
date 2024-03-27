@@ -19,6 +19,7 @@ class AppAsset {
   static const String heartattackImage = '$_basePathPng/Heartattack.png';
   static const String diabetesImage = '$_basePathPng/Diabetes.png';
   static const String comatrixImage = '$_basePathPng/comatrex.png';
+  static const String detailsImage = '$_basePathPng/details.png';
 
   // ----------------- SVG Images ----------------- //
   static const String splash = '$_basePathSvg/logo_splash.svg';
