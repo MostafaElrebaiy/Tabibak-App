@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tabibk/core/helper/app_localization.dart';
-import 'package:tabibk/core/theme/app_colors.dart';
 import 'package:tabibk/core/theme/styles.dart';
 import 'package:tabibk/core/widgets/build_custom_app_bar.dart';
 import 'package:tabibk/features/product/view/widgets/product_screen_body.dart';

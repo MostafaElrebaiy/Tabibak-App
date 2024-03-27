@@ -8,9 +8,6 @@ import 'package:tabibk/features/profile_screens/profile/view/profile_view.dart';
 
 import '../../../../core/theme/app_colors.dart';
 
-import '../../../hospital_and_clinic_system/hospital/presentation/hospital_screen_view.dart';
-import '../../../profile/presentation/profile_view.dart';
-
 
 class HomeCubit extends Cubit<HomeState> {
   HomeCubit() : super(HomeInitial());
