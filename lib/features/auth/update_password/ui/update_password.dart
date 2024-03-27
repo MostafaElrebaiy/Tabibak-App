@@ -1,27 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tabibk/core/widgets/custom_widget/app_text_form_field.dart';
 import 'package:tabibk/core/helper/extensions.dart';
 import 'package:tabibk/core/helper/spacing.dart';
+import 'package:tabibk/features/auth/update_password/logic/reset_password_cubit.dart';
+import 'package:tabibk/features/auth/update_password/ui/widgets/update_password_text_field.dart';
 
 import '../../../../core/widgets/custom_widget/app_text_button.dart';
 import '../../../../core/widgets/custom_widget/image2_curve_top_bk.dart';
 import '../../../../core/routing/routes.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/styles.dart';
+import 'widgets/update_password_bloc_listener.dart';
 
-
-
+// ignore: must_be_immutable
 class UpdatePasswordScreen extends StatelessWidget {
-   UpdatePasswordScreen({super.key});
- FocusNode updatePassword = FocusNode();
-  FocusNode reenterNewPassword = FocusNode();
+  UpdatePasswordScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         reverse: true,
-
         child: Column(children: [
           Column(children: [
             Stack(children: [
@@ -39,7 +39,7 @@ class UpdatePasswordScreen extends StatelessWidget {
                     size: 35,
                   ),
                   onPressed: () {
-                    context.pushNamed(Routes.loginScreen);
+                    context.pushNamed(Routes.otpScreen);
                   },
                 ),
               ),
@@ -56,50 +56,30 @@ class UpdatePasswordScreen extends StatelessWidget {
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Text('Please enter your new password.',
-                  
                       style: AppStyle.font14GrayRegular),
                 ),
                 verticalSpace(50),
-                AppTextFormField(
-                  focusNode: updatePassword,
-                   onFieldSubmitted: (value) {
-            FocusScope.of(context).requestFocus(reenterNewPassword);
-          },
-                    suffixIcon: const Icon(Icons.visibility),
-
-                    isObscureText: true,
-                    hintText: 'Enter New Password',
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Please enter a valid Password';
-                      }
-                    }),
-                verticalSpace(10),
-                AppTextFormField(
-                  focusNode: reenterNewPassword,
-                 
-                    suffixIcon: const Icon(Icons.visibility),
-
-                    isObscureText: true,
-                    hintText: 'Re-enter New Password ',
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Please enter a valid Password';
-                      }
-                    }),
+                const UpdatePasswordTextField(),
                 verticalSpace(30),
                 AppTextButton(
                   buttonText: 'Send',
                   textStyle: AppStyle.font16WhiteSemiBold,
                   onPressed: () {
-                    context.pushNamed(Routes.otpScreen);
+                    validateThenResetPassword(context);
                   },
                 ),
+                const UpdatePasswordBlocListener(),
               ],
             ),
           ),
         ]),
       ),
     );
+  }
+
+  void validateThenResetPassword(BuildContext context) {
+    if (context.read<ResetPasswordCubit>().formKey.currentState!.validate()) {
+      context.read<ResetPasswordCubit>().emitResetPasswordStates();
+    }
   }
 }

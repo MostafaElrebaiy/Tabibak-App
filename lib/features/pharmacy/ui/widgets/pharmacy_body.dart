@@ -3,9 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/features/pharmacy/ui/widgets/titles_of_section.dart';
 import '../../../../core/helper/app_assets.dart';
 import '../../../../core/helper/spacing.dart';
-import '../../../../core/theme/app_colors.dart';
-import '../../../../core/theme/styles.dart';
-import '../../../hospital_and_clinic_system/hospital/presentation/widgets/build_search_scetion.dart';
+import '../../../hospital_and_clinic_system/hospital/view/widgets/build_search_scetion.dart';
 import 'categories_scetion.dart';
 import 'recommendedsection.dart';
 
@@ -53,25 +51,28 @@ class PharmacyBody extends StatelessWidget {
             subTitle: "You've never seen it before!",
           ),
           verticalSpace(10.h),
-        
+
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            child:Row(
-            children: [
-              const RecommendedSection(),
-              horizontalSpace(5.w),
-              const RecommendedSection(),
-              horizontalSpace(5.w),
-              const RecommendedSection(),
-              horizontalSpace(5.w),
-              const RecommendedSection(),
-              horizontalSpace(5.w),
-              const RecommendedSection(),
-              horizontalSpace(5.w),
-              const RecommendedSection(),
-            ],
-          ),),
-        
+            child: IntrinsicHeight(
+              child: Row(
+                children: [
+                  const RecommendedSection(),
+                  horizontalSpace(5.w),
+                  const RecommendedSection(),
+                  horizontalSpace(5.w),
+                  const RecommendedSection(),
+                  horizontalSpace(5.w),
+                  const RecommendedSection(),
+                  horizontalSpace(5.w),
+                  const RecommendedSection(),
+                  horizontalSpace(5.w),
+                  const RecommendedSection(),
+                ],
+              ),
+            ),
+          ),
+
           //Best Deals
           verticalSpace(20.h),
           TitlesOfSection(
@@ -79,24 +80,25 @@ class PharmacyBody extends StatelessWidget {
             subTitle: "You've never seen it before!",
           ),
           verticalSpace(10.h),
-        
+
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            child:Row(
-            children: [
-              const RecommendedSection(),
-              horizontalSpace(5.w),
-              const RecommendedSection(),
-              horizontalSpace(5.w),
-              const RecommendedSection(),
-              horizontalSpace(5.w),
-              const RecommendedSection(),
-              horizontalSpace(5.w),
-              const RecommendedSection(),
-              horizontalSpace(5.w),
-              const RecommendedSection(),
-            ],
-          ),),
+            child: Row(
+              children: [
+                const RecommendedSection(),
+                horizontalSpace(5.w),
+                const RecommendedSection(),
+                horizontalSpace(5.w),
+                const RecommendedSection(),
+                horizontalSpace(5.w),
+                const RecommendedSection(),
+                horizontalSpace(5.w),
+                const RecommendedSection(),
+                horizontalSpace(5.w),
+                const RecommendedSection(),
+              ],
+            ),
+          ),
         ]),
       ),
     );

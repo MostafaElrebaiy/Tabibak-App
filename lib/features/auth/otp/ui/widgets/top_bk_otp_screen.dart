@@ -27,7 +27,7 @@ class TopBackgroundOTPScreen extends StatelessWidget {
               size: 35,
             ),
             onPressed: () {
-              context.pushNamed(Routes.loginScreen);
+              context.pushNamed(Routes.forgetPasswordScreen);
             },
           ),
         ),
