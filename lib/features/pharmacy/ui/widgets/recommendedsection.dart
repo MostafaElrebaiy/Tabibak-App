@@ -24,7 +24,7 @@ class RecommendedSection extends StatelessWidget {
         child: Center(
           child: GestureDetector(
             onTap: () {
-              context.pushNamed(Routes.pharmacyDetails);
+              context.pushNamed(Routes.pharmacyDetailsScreen);
             },
             child: Column(
               children: [

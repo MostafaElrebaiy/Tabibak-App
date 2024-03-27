@@ -46,7 +46,6 @@ class TabibkApp extends StatelessWidget {
           return supportedLocales.first;
         },
         theme: ThemeData(
-        
           primaryColor: AppColor.mainBlue,
           scaffoldBackgroundColor: AppColor.white,
           // fontFamily:  Localizations.maybeLocaleOf(context)?.languageCode== 'ar'? "Cairo":primaryFontFamily,
@@ -58,9 +57,7 @@ class TabibkApp extends StatelessWidget {
           ),
         ),
         debugShowCheckedModeBanner: false,
-
         initialRoute: Routes.onBoardingView,
-
         onGenerateRoute: appRouter.generateRoute,
       ),
     );

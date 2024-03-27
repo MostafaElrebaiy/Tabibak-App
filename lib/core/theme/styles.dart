@@ -243,10 +243,25 @@ class AppStyle {
     fontWeight: FontWeightHelper.bold,
     color: Colors.black,
   );
-
   static TextStyle font32BlueBold = TextStyle(
     fontSize: 32.sp,
     fontWeight: FontWeightHelper.bold,
+    color: AppColor.mainBlue,
+  );
+
+  static TextStyle font30whiteregular = TextStyle(
+    fontSize: 30.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: AppColor.white,
+  );
+  static TextStyle font30whiteSemiBold = TextStyle(
+    fontSize: 30.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: AppColor.white,
+  );
+  static TextStyle font30MainBLueSemiBold = TextStyle(
+    fontSize: 30.sp,
+    fontWeight: FontWeightHelper.semiBold,
     color: AppColor.mainBlue,
   );
 }

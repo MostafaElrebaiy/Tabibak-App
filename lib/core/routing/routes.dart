@@ -21,5 +21,6 @@ class Routes {
   static const String editProfileView = "/editProfileView";
   static const String languageProfileView = "/languageProfileView";
   static const String pharmacy = "/pharmacy";
-  static const String pharmacyDetails = "/pharmacyDetails";
+  static const String pharmacyDetailsScreen = "/pharmacyDetails";
+  static const String bloodBank = "/bloodBank";
 }

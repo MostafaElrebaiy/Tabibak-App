@@ -10,7 +10,7 @@ import 'package:tabibk/features/auth/otp/ui/otp.dart';
 import 'package:tabibk/features/auth/signup/logic/sign_up_cubit.dart';
 import 'package:tabibk/features/auth/update_password/ui/successfully_update_pass.dart';
 import 'package:tabibk/features/auth/update_password/ui/update_password.dart';
-import 'package:tabibk/features/home/logic/cubit/home_cubit.dart';
+import 'package:tabibk/features/blood_bank/ui/blood_bank_screen.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/clinic_info/view/clinic_info_view.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/view/hospital_screen_view.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital_info/view/hospital_info_view.dart';
@@ -73,10 +73,7 @@ class AppRouter {
         return CustomPageRoute(child: const LanguageProfileView());
       case Routes.homeScreen:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (BuildContext context) => HomeCubit(),
-            child: const HomeScreen(),
-          ),
+          builder: (_) => HomeScreen(),
         );
       case Routes.signUpScreen:
         return CustomPageRoute(
@@ -113,8 +110,10 @@ class AppRouter {
         return CustomPageRoute(child: const SuccessfulyUpdatePasswordScreen());
       case Routes.pharmacy:
         return CustomPageRoute(child: const PharmacyScreen());
-      case Routes.pharmacyDetails:
+      case Routes.pharmacyDetailsScreen:
         return CustomPageRoute(child: const PharmacyDetailsScreen());
+      case Routes.bloodBank:
+        return CustomPageRoute(child: const BloodBankScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
