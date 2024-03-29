@@ -57,7 +57,7 @@ class TabibkApp extends StatelessWidget {
           ),
         ),
         debugShowCheckedModeBanner: false,
-        initialRoute: Routes.bloodBank,
+        initialRoute: Routes.onBoardingView,
         onGenerateRoute: appRouter.generateRoute,
       ),
     );
