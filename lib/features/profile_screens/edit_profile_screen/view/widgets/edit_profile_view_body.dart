@@ -24,7 +24,8 @@ class EditProfileViewBody extends StatelessWidget {
           Stack(
             children: [
               TopBackgroundTwo(
-                  thereTitle: true, title: "editProfile".tr(context)),
+                  thereTitle: true,
+                  title: "editProfile".tr(context)),
               Positioned(
                 left: 0,
                 right: 0,
