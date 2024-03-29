@@ -13,7 +13,7 @@ dependencies:
   build_runner: ^2.4.8
   cached_network_image: ^3.3.1
   connectivity_plus: ^5.0.2
-  cupertino_icons: ^1.0.6
+  cupertino_icons: ^1.0.2
   dio: ^5.4.0
   equatable: ^2.0.5
   flutter:
@@ -21,13 +21,13 @@ dependencies:
   flutter_bloc: ^8.1.4
   flutter_localizations:
     sdk: flutter
-  flutter_native_splash: ^2.4.0
   flutter_otp_text_field: ^1.1.2+1
   flutter_screenutil: ^5.9.0
   flutter_svg: ^2.0.9
   freezed: ^2.4.7
   freezed_annotation: ^2.4.1
   get_it: ^7.6.7
+  image_picker: ^1.0.7
   image_picker: ^0.8.4+4
   json_annotation: ^4.8.1
   json_serializable: ^6.7.1

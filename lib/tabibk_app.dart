@@ -49,7 +49,7 @@ class TabibkApp extends StatelessWidget {
           primaryColor: AppColor.mainBlue,
           scaffoldBackgroundColor: AppColor.white,
           // fontFamily:  Localizations.maybeLocaleOf(context)?.languageCode== 'ar'? "Cairo":primaryFontFamily,
-          fontFamily: englishFontFamily,
+          fontFamily: arabicFontFamily,
           appBarTheme: const AppBarTheme(
             backgroundColor: AppColor.appbar,
             elevation: 10,
@@ -57,7 +57,7 @@ class TabibkApp extends StatelessWidget {
           ),
         ),
         debugShowCheckedModeBanner: false,
-        initialRoute: Routes.onBoardingView,
+        initialRoute: Routes.bloodBank,
         onGenerateRoute: appRouter.generateRoute,
       ),
     );
