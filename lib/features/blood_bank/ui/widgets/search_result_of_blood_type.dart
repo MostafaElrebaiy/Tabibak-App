@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/extensions.dart';
 
 import '../../../../core/helper/app_assets.dart';
-import '../../../../core/helper/value_manager.dart';
 import '../../../../core/routing/routes.dart';
 import '../../../../core/theme/styles.dart';
 import '../../../../core/widgets/build_custom_app_bar.dart';
-import '../../../hospital_and_clinic_system/hospital/view/widgets/build_hospital_app_bar_action.dart';
 import '../../../hospital_and_clinic_system/hospital/view/widgets/custom_list_tile_widget.dart';
 
 class SearchResultOfBloodType extends StatelessWidget {
