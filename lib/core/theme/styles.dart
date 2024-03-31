@@ -119,6 +119,25 @@ class AppStyle {
     fontWeight: FontWeightHelper.regular,
     color: AppColor.mainBlue,
   );
+  static TextStyle font16GrayBold = TextStyle(
+    
+    fontSize: 16.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: AppColor.gray,
+  );
+  static TextStyle font20GrayBold = TextStyle(
+    
+    fontSize: 20.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: AppColor.gray,
+  );
+  
+   static TextStyle font18whiteregular = TextStyle(
+    
+    fontSize: 18.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: AppColor.white,
+  );
 
   static TextStyle font24BlacksemiBold = TextStyle(
     fontSize: 24.sp,
@@ -136,6 +155,11 @@ class AppStyle {
     fontSize: 22.sp,
     fontWeight: FontWeightHelper.bold,
     color: AppColor.black,
+  );
+  static TextStyle f22mainBlueBold = TextStyle(
+    fontSize: 22.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: AppColor.mainBlue,
   );
   static TextStyle font24WhiteBold = TextStyle(
     fontSize: 24.sp,
@@ -231,6 +255,11 @@ class AppStyle {
     fontWeight: FontWeightHelper.medium,
     color: AppColor.black,
   );
+  static TextStyle f20Bold = TextStyle(
+    //blood type text
+    fontSize: 20.sp,
+    fontWeight: FontWeightHelper.bold,
+  );
 
   static TextStyle font24BlueBold = TextStyle(
     fontSize: 24.sp,
@@ -243,12 +272,12 @@ class AppStyle {
     fontWeight: FontWeightHelper.bold,
     color: Colors.black,
   );
+
   static TextStyle font32BlueBold = TextStyle(
     fontSize: 32.sp,
     fontWeight: FontWeightHelper.bold,
     color: AppColor.mainBlue,
   );
-
   static TextStyle font30whiteregular = TextStyle(
     fontSize: 30.sp,
     fontWeight: FontWeightHelper.regular,
@@ -260,8 +289,7 @@ class AppStyle {
     color: AppColor.white,
   );
   static TextStyle font30MainBLueSemiBold = TextStyle(
-    fontSize: 30.sp,
-    fontWeight: FontWeightHelper.semiBold,
-    color: AppColor.mainBlue,
-  );
+      fontSize: 30.sp,
+      fontWeight: FontWeightHelper.semiBold,
+      color: AppColor.mainBlue);
 }

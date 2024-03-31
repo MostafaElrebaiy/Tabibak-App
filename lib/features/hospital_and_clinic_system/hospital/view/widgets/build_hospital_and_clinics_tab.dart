@@ -18,7 +18,7 @@ class BuildHospitalAndClinicsTab extends StatefulWidget {
 class _BuildHospitalAndClinicsTabState extends State<BuildHospitalAndClinicsTab>
     with SingleTickerProviderStateMixin {
   late final TabController _tabController;
-
+  
   final List<Widget> _tabsBody = const [HostpitalTabBody(), ClinicTabBody()];
   @override
   void initState() {
@@ -28,7 +28,7 @@ class _BuildHospitalAndClinicsTabState extends State<BuildHospitalAndClinicsTab>
 
   @override
   Widget build(BuildContext context) {
-    final List<Tab> _tabs = [
+    final List<Tab> _tabs =  [
       Tab(text: "hospitals".tr(context)),
       Tab(text: "clinics".tr(context)),
     ];

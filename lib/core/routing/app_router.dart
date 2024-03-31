@@ -10,7 +10,9 @@ import 'package:tabibk/features/auth/otp/ui/otp.dart';
 import 'package:tabibk/features/auth/signup/logic/sign_up_cubit.dart';
 import 'package:tabibk/features/auth/update_password/ui/successfully_update_pass.dart';
 import 'package:tabibk/features/auth/update_password/ui/update_password.dart';
-import 'package:tabibk/features/blood_bank/ui/blood_bank_screen.dart';
+import 'package:tabibk/features/blood_bank/ui/widgets/search_result_of_blood_type.dart';
+import 'package:tabibk/features/check_out/view/check_out_view.dart';
+import 'package:tabibk/features/check_out/view/widgets/add_shipping_screen.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/clinic_info/view/clinic_info_view.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/view/hospital_screen_view.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital_info/view/hospital_info_view.dart';
@@ -28,8 +30,7 @@ import 'package:tabibk/features/splash/view/widgets/second_splash_screen.dart';
 import '../../features/auth/login/ui/login_screen.dart';
 import '../../features/auth/signup/ui/signup_screen.dart';
 import '../../features/auth/update_password/logic/reset_password_cubit.dart';
-import '../../features/check_out/view/check_out_view.dart';
-import '../../features/check_out/view/widgets/add_shipping_screen.dart';
+import '../../features/blood_bank/ui/blood_bank_screen.dart';
 import '../di/dependancy_injection.dart';
 
 class AppRouter {
@@ -114,6 +115,10 @@ class AppRouter {
         return CustomPageRoute(child: const PharmacyDetailsScreen());
       case Routes.bloodBank:
         return CustomPageRoute(child: const BloodBankScreen());
+        case Routes.bloodBankSearchScreen:
+        return CustomPageRoute(child: const SearchResultOfBloodType());
+
+
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

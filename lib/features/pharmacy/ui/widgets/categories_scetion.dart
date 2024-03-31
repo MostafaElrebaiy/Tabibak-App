@@ -4,10 +4,7 @@ import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
 
-<<<<<<< HEAD
-=======
 // ignore: must_be_immutable
->>>>>>> 9393be7b508487fcd27c2a321fd2d207285452a5
 class CategoriesScetion extends StatelessWidget {
   CategoriesScetion(
       {required this.image, required this.categoryName, super.key});

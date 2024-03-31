@@ -1,22 +1,3 @@
-<<<<<<< HEAD
-
-import 'package:flutter/material.dart';
-
-class pharmacyDetailsBody extends StatelessWidget {
-  const pharmacyDetailsBody({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-     children: [
-       SizedBox(
-        
-         
-       )
-     ],
-    );
-
-=======
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/app_assets.dart';
@@ -126,6 +107,5 @@ class PharmacyDetailsBody extends StatelessWidget {
         ),
       ),
     );
->>>>>>> 9393be7b508487fcd27c2a321fd2d207285452a5
   }
 }

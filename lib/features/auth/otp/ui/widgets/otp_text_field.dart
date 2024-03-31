@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
-
+import 'package:tabibk/core/helper/extensions.dart';
+import 'package:tabibk/core/routing/routes.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
 import 'package:tabibk/features/auth/otp/logic/check_code_cubit.dart';
 
@@ -23,11 +24,8 @@ class OtpTextField1 extends StatelessWidget {
             context.read<CheckCodeCubit>().codee.text = verificationCode;
             verificationCode;
             validateThenSendOtp(context);
-<<<<<<< HEAD
-            // context.pushNamed(Routes.updatePasswordTextField,
-            //     arguments: verificationCode);
-=======
->>>>>>> bf4882c35063008653e6f5edd836e95bf044391e
+            context.pushNamed(Routes.updatePasswordScreen,
+                arguments: verificationCode);
           },
         ));
   }
