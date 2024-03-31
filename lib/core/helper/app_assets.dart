@@ -48,4 +48,9 @@ class AppAsset {
   static const String pharmacyIcon = '$_basePathSvg/pharmacyicon.svg';
   static const String hospitalIcon = '$_basePathSvg/hospital.svg';
   static const String blodlIcon = '$_basePathSvg/blod.svg';
+  static const String peopleIcon = '$_basePathSvg/people.svg';
+  static const String dividerIcon = '$_basePathSvg/divider.svg';
+  static const String searchIcon = '$_basePathSvg/search.svg';  
+  static const String downDialogIcon = '$_basePathSvg/down_dialg.svg';
+  
 }
