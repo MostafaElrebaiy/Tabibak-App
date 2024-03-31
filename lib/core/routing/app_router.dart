@@ -10,18 +10,9 @@ import 'package:tabibk/features/auth/otp/ui/otp.dart';
 import 'package:tabibk/features/auth/signup/logic/sign_up_cubit.dart';
 import 'package:tabibk/features/auth/update_password/ui/successfully_update_pass.dart';
 import 'package:tabibk/features/auth/update_password/ui/update_password.dart';
-<<<<<<< HEAD
 import 'package:tabibk/features/blood_bank/ui/widgets/search_result_of_blood_type.dart';
 import 'package:tabibk/features/check_out/view/check_out_view.dart';
 import 'package:tabibk/features/check_out/view/widgets/add_shipping_screen.dart';
-=======
-
-import 'package:tabibk/features/auth/update_password/ui/widgets/update_password_text_field.dart';
-import 'package:tabibk/features/check_out/view/check_out_view.dart';
-import 'package:tabibk/features/check_out/view/widgets/add_shipping_screen.dart';
-
-import 'package:tabibk/features/home/logic/cubit/home_cubit.dart';
->>>>>>> 5db366e2f919570505491caf1a447d71f46fab7e
 import 'package:tabibk/features/hospital_and_clinic_system/clinic_info/view/clinic_info_view.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/view/hospital_screen_view.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital_info/view/hospital_info_view.dart';
