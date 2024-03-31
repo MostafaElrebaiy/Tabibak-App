@@ -39,6 +39,7 @@ class _UpdatePasswordTextFieldState extends State<UpdatePasswordTextField> {
             //         return 'Please enter a valid Password';
             //       }
             //     }),
+
             Text(context.read<ResetPasswordCubit>().codeController.text =
                 arg.toString()),
             AppTextFormField(
