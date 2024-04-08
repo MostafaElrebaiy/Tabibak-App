@@ -15,8 +15,8 @@ import 'widgets/update_password_bloc_listener.dart';
 
 // ignore: must_be_immutable
 class UpdatePasswordScreen extends StatelessWidget {
-  UpdatePasswordScreen({super.key});
-
+  UpdatePasswordScreen(this.arg, {super.key});
+  String arg;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,6 +65,8 @@ class UpdatePasswordScreen extends StatelessWidget {
                   buttonText: 'Send',
                   textStyle: AppStyle.font16WhiteSemiBold,
                   onPressed: () {
+                    context.read<ResetPasswordCubit>().codeController.text =
+                        arg;
                     validateThenResetPassword(context);
                   },
                 ),

@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tabibk/core/helper/extensions.dart';
 import 'package:tabibk/core/helper/spacing.dart';
-
 import '../../../../core/helper/app_assets.dart';
 import '../../../../core/routing/routes.dart';
 import '../../../../core/theme/app_colors.dart';
@@ -17,16 +16,16 @@ class FindDonarButton extends StatefulWidget {
   State<FindDonarButton> createState() => _FindDonarButtonState();
 }
 
-List<dynamic> bloodGroup = ['A+', 'A-', 'B+', 'B-', 'O+', 'O-', 'AB+', 'AB-'];
+List<dynamic> _bloodGroup = ['A+', 'A-', 'B+', 'B-', 'O+', 'O-', 'AB+', 'AB-'];
 
 class _FindDonarButtonState extends State<FindDonarButton> {
-  String currentBloodGroup = bloodGroup[0];
+  String currentBloodGroup = _bloodGroup[0];
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        SelectBloodType(context);
+        selectBloodType(context);
       },
       child: Container(
         width: 150.w,
@@ -51,234 +50,104 @@ class _FindDonarButtonState extends State<FindDonarButton> {
     );
   }
 
-  Future<dynamic> SelectBloodType(BuildContext context) {
+  Future<dynamic> selectBloodType(BuildContext context) {
     return showModalBottomSheet(
-        scrollControlDisabledMaxHeightRatio: BorderSide.strokeAlignOutside,
-        backgroundColor: Colors.white,
-        context: context,
-        builder: (BuildContext context) {
-          return StatefulBuilder(
-              builder: (context, setState) => SizedBox(
-                    width: double.infinity,
-                    height: 700.h,
-                    child: Stack(
-                      clipBehavior: Clip.none,
-                      alignment: Alignment.center,
-                      children: [
-                        Container(
-                          decoration: const BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(50),
-                              topRight: Radius.circular(50),
-                            ),
-                          ),
-                          width: double.infinity,
-                          height: 700.h,
-                          child: Column(
-                            children: [
-                              verticalSpace(25.h),
-                              Text('Sort', style: AppStyle.font20GrayBold),
-                              RadioListTile(
-                                title: Text('A+', style: AppStyle.f20Bold),
-                                controlAffinity:
-                                    ListTileControlAffinity.trailing,
-                                activeColor: AppColor.mainBlue,
-                                selected: currentBloodGroup == bloodGroup[0]
-                                    ? true
-                                    : false,
-                                value: bloodGroup[0],
-                                groupValue: currentBloodGroup,
-                                onChanged: (type) {
-                                  setState(() {
-                                    currentBloodGroup = type.toString();
-                                  });
-                                },
-                              ),
-                              const Divider(
-                                color: AppColor.gray,
-                                thickness: .2,
-                                height: 10,
-                              ),
-                              RadioListTile(
-                                controlAffinity:
-                                    ListTileControlAffinity.trailing,
-                                title: Text('A-', style: AppStyle.f20Bold),
-                                activeColor: AppColor.mainBlue,
-                                selected: currentBloodGroup == bloodGroup[1]
-                                    ? true
-                                    : false,
-                                value: bloodGroup[1],
-                                groupValue: currentBloodGroup,
-                                onChanged: (type) {
-                                  setState(() {
-                                    currentBloodGroup = type.toString();
-                                  });
-                                },
-                              ),
-                              const Divider(
-                                color: AppColor.gray,
-                                thickness: .2,
-                                height: 10,
-                              ),
-                              RadioListTile(
-                                title: Text('B+', style: AppStyle.f20Bold),
-                                controlAffinity:
-                                    ListTileControlAffinity.trailing,
-                                activeColor: AppColor.mainBlue,
-                                selected: currentBloodGroup == bloodGroup[2]
-                                    ? true
-                                    : false,
-                                value: bloodGroup[2],
-                                groupValue: currentBloodGroup,
-                                onChanged: (type) {
-                                  setState(() {
-                                    currentBloodGroup = type.toString();
-                                  });
-                                },
-                              ),
-                              const Divider(
-                                color: AppColor.gray,
-                                thickness: .2,
-                                height: 10,
-                              ),
-                              RadioListTile(
-                                title: Text('B-', style: AppStyle.f20Bold),
-                                controlAffinity:
-                                    ListTileControlAffinity.trailing,
-                                activeColor: AppColor.mainBlue,
-                                selected: currentBloodGroup == bloodGroup[3]
-                                    ? true
-                                    : false,
-                                value: bloodGroup[3],
-                                groupValue: currentBloodGroup,
-                                onChanged: (type) {
-                                  setState(() {
-                                    currentBloodGroup = type.toString();
-                                  });
-                                },
-                              ),
-                              const Divider(
-                                color: AppColor.gray,
-                                thickness: .2,
-                              ),
-                              RadioListTile(
-                                title: Text('O+', style: AppStyle.f20Bold),
-                                controlAffinity:
-                                    ListTileControlAffinity.trailing,
-                                activeColor: AppColor.mainBlue,
-                                selected: currentBloodGroup == bloodGroup[4]
-                                    ? true
-                                    : false,
-                                value: bloodGroup[4],
-                                groupValue: currentBloodGroup,
-                                onChanged: (type) {
-                                  setState(() {
-                                    currentBloodGroup = type.toString();
-                                  });
-                                },
-                              ),
-                              const Divider(
-                                color: AppColor.gray,
-                                thickness: .2,
-                                height: 10,
-                              ),
-                              RadioListTile(
-                                title: Text('O-', style: AppStyle.f20Bold),
-                                controlAffinity:
-                                    ListTileControlAffinity.trailing,
-                                activeColor: AppColor.mainBlue,
-                                selected: currentBloodGroup == bloodGroup[5]
-                                    ? true
-                                    : false,
-                                value: bloodGroup[5],
-                                groupValue: currentBloodGroup,
-                                onChanged: (type) {
-                                  setState(() {
-                                    currentBloodGroup = type.toString();
-                                  });
-                                },
-                              ),
-                              const Divider(
-                                color: AppColor.gray,
-                                thickness: .2,
-                                height: 10,
-                              ),
-                              RadioListTile(
-                                title: Text('AB+', style: AppStyle.f20Bold),
-                                controlAffinity:
-                                    ListTileControlAffinity.trailing,
-                                activeColor: AppColor.mainBlue,
-                                selected: currentBloodGroup == bloodGroup[6]
-                                    ? true
-                                    : false,
-                                value: bloodGroup[6],
-                                groupValue: currentBloodGroup,
-                                onChanged: (type) {
-                                  setState(() {
-                                    currentBloodGroup = type.toString();
-                                  });
-                                },
-                              ),
-                              const Divider(
-                                color: AppColor.gray,
-                                thickness: .2,
-                                height: 10,
-                              ),
-                              RadioListTile(
-                                title: Text('AB-', style: AppStyle.f20Bold),
-                                controlAffinity:
-                                    ListTileControlAffinity.trailing,
-                                activeColor: AppColor.mainBlue,
-                                selected: currentBloodGroup == bloodGroup[7]
-                                    ? true
-                                    : false,
-                                value: bloodGroup[7],
-                                groupValue: currentBloodGroup,
-                                onChanged: (type) {
-                                  setState(() {
-                                    currentBloodGroup = type.toString();
-                                  });
-                                },
-                              ),
-                              Container(
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                    width: 1,
-                                    color: AppColor.mainBlue,
-                                  ),
-                                  borderRadius: BorderRadius.circular(30),
-                                ),
-                                child: AppTextButton(
-                                  backgroundColor: AppColor.white,
-                                  buttonText: 'Submit',
-                                  textStyle: AppStyle.f22mainBlueBold,
-                                  onPressed: () {
-                                    context.pushNamed(
-                                        Routes.bloodBankSearchScreen);
-                                  },
-                                  buttonWidth: 220.w,
-                                  buttonHeight: 55.h,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Positioned(
-                          top: -40,
-                          child: CircleAvatar(
-                            radius: 30,
-                            backgroundColor: AppColor.mainBlue,
-                            child: SvgPicture.asset(
-                              AppAsset.downDialogIcon,
-                              height: 20,
-                              width: 20,
-                            ),
-                          ),
-                        ),
-                      ],
+      scrollControlDisabledMaxHeightRatio: BorderSide.strokeAlignOutside,
+      backgroundColor: Colors.white,
+      context: context,
+      builder: (BuildContext context) {
+        return StatefulBuilder(
+          builder: (context, setState) => SizedBox(
+            width: double.infinity,
+            height: 700.h,
+            child: Stack(
+              clipBehavior: Clip.none,
+              alignment: Alignment.center,
+              children: [
+                Container(
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(50),
+                      topRight: Radius.circular(50),
                     ),
-                  ));
-        });
+                  ),
+                  width: double.infinity,
+                  height: 700.h,
+                  child: Column(
+                    children: [
+                      verticalSpace(25.h),
+                      Text('Sort', style: AppStyle.font20GrayBold),
+                      Expanded(
+                        child: ListView.separated(
+                            separatorBuilder: (context, index) => const Divider(
+                                  color: AppColor.gray,
+                                  thickness: .2,
+                                  height: 10,
+                                ),
+                            itemCount: _bloodGroup.length,
+                            itemBuilder: (context, index) {
+                              return RadioListTile(
+                                title: Text(_bloodGroup[index],
+                                    style: AppStyle.f20Bold),
+                                controlAffinity:
+                                    ListTileControlAffinity.trailing,
+                                activeColor: AppColor.mainBlue,
+                                selected:
+                                    currentBloodGroup == _bloodGroup[index]
+                                        ? true
+                                        : false,
+                                value: _bloodGroup[index],
+                                groupValue: currentBloodGroup,
+                                onChanged: (type) {
+                                  setState(() {
+                                    currentBloodGroup = type.toString();
+                                  });
+                                },
+                              );
+                            }),
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            width: 1,
+                            color: AppColor.mainBlue,
+                          ),
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        child: AppTextButton(
+                          backgroundColor: AppColor.white,
+                          buttonText: 'Submit',
+                          textStyle: AppStyle.f22mainBlueBold,
+                          onPressed: () {
+                            context.pushNamed(
+                                Routes.bloodBankSearchScreen);
+                          },
+                          buttonWidth: 220.w,
+                          buttonHeight: 55.h,
+                        ),
+                      ),
+                      verticalSpace(8.h)
+                    ],
+                  ),
+                ),
+                Positioned(
+                  top: -40,
+                  child: CircleAvatar(
+                    radius: 30,
+                    backgroundColor: AppColor.mainBlue,
+                    child: SvgPicture.asset(
+                      AppAsset.downDialogIcon,
+                      height: 20,
+                      width: 20,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
   }
 }

@@ -1,90 +1,93 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:line_icons/line_icons.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
-import 'package:tabibk/features/blood_bank/ui/blood_bank_screen.dart';
-import 'package:tabibk/features/hospital_and_clinic_system/hospital/view/hospital_screen_view.dart';
-import 'package:tabibk/features/pharmacy/ui/pharmacy_screen.dart';
-import 'package:tabibk/features/profile_screens/profile/view/profile_view.dart';
+import 'package:tabibk/features/product/view/product_view.dart';
 
-class HomeScreen extends StatelessWidget {
-  HomeScreen({super.key});
+import '../../blood_bank/ui/blood_bank_screen.dart';
+import '../../hospital_and_clinic_system/hospital/view/hospital_screen_view.dart';
+import '../../pharmacy/ui/pharmacy_screen.dart';
+import '../../profile_screens/profile/view/profile_view.dart';
+
+class Home extends StatefulWidget {
+  const Home({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: PersistentTabView(
-        context,
-        controller: _controller,
-        screens: _buildScreens(),
-        items: _navBarsItems(),
-        confineInSafeArea: true,
-        handleAndroidBackButtonPress: true, // Default is true.
-        resizeToAvoidBottomInset:
-            true, // This needs to be true if you want to move up the screen when keyboard appears. Default is true.
-        stateManagement: true, // Default is true.
-        hideNavigationBarWhenKeyboardShows:
-            true, // Recommended to set 'resizeToAvoidBottomInset' as true while using this argument. Default is true.
-        decoration: NavBarDecoration(
-          borderRadius: BorderRadius.circular(10.0),
-          colorBehindNavBar: Colors.white,
-        ),
-        popAllScreensOnTapOfSelectedTab: true,
-        popActionScreens: PopActionScreensType.all,
-        itemAnimationProperties: const ItemAnimationProperties(
-          // Navigation Bar's items animation properties.
-          duration: Duration(milliseconds: 200),
-          curve: Curves.ease,
-        ),
-        screenTransitionAnimation: const ScreenTransitionAnimation(
-          // Screen transition animation on change of selected tab.
-          animateTabTransition: true,
-          curve: Curves.ease,
-          duration: Duration(milliseconds: 200),
-        ),
-        navBarStyle: NavBarStyle.style1,
-      ),
-    );
-  }
+  State<Home> createState() => _HomeState();
+}
 
-  final PersistentTabController _controller =
-      PersistentTabController(initialIndex: 0);
-
-  List<Widget> _buildScreens() {
+class _HomeState extends State<Home> {
+  int _currentIndex = 0;
+  List<Widget> _listOptions() {
     return [
       const PharmacyScreen(),
       const HospitalScreenView(),
       const BloodBankScreen(),
+      const ProductView(),
       const ProfileView(),
     ];
   }
 
-  List<PersistentBottomNavBarItem> _navBarsItems() {
-    return [
-      PersistentBottomNavBarItem(
-        icon: const Icon(CupertinoIcons.home),
-        title: ("pharamacy"),
-        activeColorPrimary: AppColor.mainBlue,
-        inactiveColorPrimary: AppColor.gray,
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      bottomNavigationBar: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Container(
+          decoration: const BoxDecoration(
+              color: AppColor.white,
+              borderRadius: BorderRadius.all(Radius.circular(15))),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+            child: GNav(
+                selectedIndex: _currentIndex,
+                onTabChange: (value) {
+                  setState(() {
+                    _currentIndex = value;
+                  });
+                },
+                rippleColor: AppColor.mainBlue,
+                hoverColor: AppColor.lightGray,
+                haptic: true,
+                tabBorderRadius: 15,
+                tabActiveBorder:
+                    Border.all(color: AppColor.mainBlue, width: .5),
+                // tabBorder: Border.all(color: AppColor.mainBlue, width: 1),
+                curve: Curves.ease, // tab animation curves
+                duration: const Duration(milliseconds: 600),
+                gap: 8,
+                color: AppColor.gray,
+                activeColor: AppColor.mainBlue,
+                iconSize: 24, // tab button icon size
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                tabs: const [
+                  GButton(
+                    icon: LineIcons.home,
+                    text: 'Pharamacy',
+                  ),
+                  GButton(
+                    icon: LineIcons.hospitalAlt,
+                    text: 'Hospital',
+                  ),
+                  GButton(
+                    icon: LineIcons.search,
+                    text: 'Blood Bank',
+                  ),
+                  GButton(
+                    icon: LineIcons.shoppingCart,
+                    text: 'Product',
+                  ),
+                  GButton(
+                    icon: LineIcons.user,
+                    text: 'Profile',
+                  ),
+                  
+                ]),
+          ),
+        ),
       ),
-      PersistentBottomNavBarItem(
-        icon: const Icon(CupertinoIcons.settings),
-        title: ("Hospital"),
-        activeColorPrimary: AppColor.mainBlue,
-        inactiveColorPrimary: AppColor.gray,
-      ),
-      PersistentBottomNavBarItem(
-        icon: const Icon(CupertinoIcons.home),
-        title: ("BloodBank"),
-        activeColorPrimary: AppColor.mainBlue,
-        inactiveColorPrimary: AppColor.gray,
-      ),
-      PersistentBottomNavBarItem(
-        icon: const Icon(CupertinoIcons.settings),
-        title: ("Profile"),
-        activeColorPrimary: AppColor.mainBlue,
-        inactiveColorPrimary: AppColor.gray,
-      ),
-    ];
+      body: _listOptions()[_currentIndex],
+    );
   }
 }

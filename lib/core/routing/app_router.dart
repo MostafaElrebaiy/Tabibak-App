@@ -74,7 +74,8 @@ class AppRouter {
         return CustomPageRoute(child: const LanguageProfileView());
       case Routes.homeScreen:
         return MaterialPageRoute(
-          builder: (_) => HomeScreen(),
+          // ignore: prefer_const_constructors
+          builder: (_) => Home(),
         );
       case Routes.signUpScreen:
         return CustomPageRoute(
@@ -96,10 +97,13 @@ class AppRouter {
           child: const ForgetPasswordScreen(),
         ));
       case Routes.updatePasswordScreen:
+      //////////////////////////type 'Null' is not a subtype of type 'String'????????
+      String arg;
+      arg = settings.arguments as String;
         return CustomPageRoute(
             child: BlocProvider(
           create: (context) => getIt<ResetPasswordCubit>(),
-          child: UpdatePasswordScreen(),
+          child: UpdatePasswordScreen(arg),
         ));
       case Routes.otpScreen:
         return CustomPageRoute(

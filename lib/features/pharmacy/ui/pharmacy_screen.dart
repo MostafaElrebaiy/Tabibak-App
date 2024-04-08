@@ -21,7 +21,7 @@ class PharmacyScreen extends StatelessWidget {
           actions: []),
       body: Padding(
         padding: EdgeInsets.symmetric(
-            horizontal: AppPadding.p18.w, vertical: AppPadding.p20.h),
+            horizontal: AppPadding.p4.w, vertical: AppPadding.p20.h),
         child: const PharmacyBody(),
       ),
     );

@@ -24,24 +24,7 @@ class _UpdatePasswordTextFieldState extends State<UpdatePasswordTextField> {
         key: context.read<ResetPasswordCubit>().formKey,
         child: Column(
           children: [
-            // AppTextFormField(
-            //     controller: context.read<ResetPasswordCubit>().codeController,
-            //     // focusNode: context.read<ResetPasswordCubit>().updatePassword,
-            //     onFieldSubmitted: (value) {
-            //       // FocusScope.of(context).requestFocus(
-            //       //     context.read<ResetPasswordCubit>().pas);
-            //     },
-            //     suffixIcon: const Icon(Icons.visibility),
-            //     isObscureText: true,
-            //     hintText: 'Enter New Password',
-            //     validator: (value) {
-            //       if (value == null || value.isEmpty) {
-            //         return 'Please enter a valid Password';
-            //       }
-            //     }),
-
-            Text(context.read<ResetPasswordCubit>().codeController.text =
-                arg.toString()),
+           
             AppTextFormField(
                 controller:
                     context.read<ResetPasswordCubit>().passwordController,
