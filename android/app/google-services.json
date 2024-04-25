@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1058109783904",
+    "project_id": "tabibk-d85c0",
+    "storage_bucket": "tabibk-d85c0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1058109783904:android:9114486c713f67fdb0e805",
+        "android_client_info": {
+          "package_name": "com.example.tabibk"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDa4d1CIGpOC_8PgmJmt1UHkD2F8V8x6nA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
