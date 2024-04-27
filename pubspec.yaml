@@ -16,7 +16,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   dio: ^5.4.0
   equatable: ^2.0.5
-  firebase_core: ^2.30.1
+  firebase_core: 2.27.0
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.4
@@ -40,7 +40,9 @@ dependencies:
   retrofit_generator: ^8.1.0
   shimmer: ^3.0.0
   timer_count_down: ^2.2.2
-
+dependency_overrides:
+  flutter_localizations:
+    sdk: flutter
 dev_dependencies:
   flutter_lints: ^3.0.1
   flutter_test:
