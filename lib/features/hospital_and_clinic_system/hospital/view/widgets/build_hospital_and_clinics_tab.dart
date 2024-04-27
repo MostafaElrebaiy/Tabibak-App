@@ -28,7 +28,7 @@ class _BuildHospitalAndClinicsTabState extends State<BuildHospitalAndClinicsTab>
 
   @override
   Widget build(BuildContext context) {
-    final List<Tab> _tabs =  [
+    final List<Tab> tabs =  [
       Tab(text: "hospitals".tr(context)),
       Tab(text: "clinics".tr(context)),
     ];
@@ -58,7 +58,7 @@ class _BuildHospitalAndClinicsTabState extends State<BuildHospitalAndClinicsTab>
                   color: AppColor.primaryBlue,
                 ),
                 dividerColor: Colors.white,
-                tabs: _tabs),
+                tabs: tabs),
           ),
         ),
         Expanded(

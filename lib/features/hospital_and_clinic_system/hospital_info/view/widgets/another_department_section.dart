@@ -17,7 +17,7 @@ class AnotherDepartmentSection extends StatelessWidget {
         ),
       ),
       child:  CustomExpansionTile(
-          title: "anotherDepartments".tr(context), isThereSVG: false, children: []),
+          title: "anotherDepartments".tr(context), isThereSVG: false, children: const []),
     );
   }
 }

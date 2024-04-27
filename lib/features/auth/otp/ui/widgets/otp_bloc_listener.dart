@@ -29,7 +29,7 @@ class OtpBlocListener extends StatelessWidget {
           );
         },
         checkCodeSuccess: (checkCodeResponse) {
-          context.pop();
+         return context.pop();
           // return showSuccessDialog(context);
         },
         checkCodeError: (error) {

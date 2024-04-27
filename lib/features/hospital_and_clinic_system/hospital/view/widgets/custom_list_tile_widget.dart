@@ -70,7 +70,7 @@ class CustomListTileWidget extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  "$distance",
+                  distance,
                   style: AppStyle.f22blackW700Mulish
                       .copyWith(color: AppColor.colorACB8C2),
                 ),

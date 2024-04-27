@@ -64,7 +64,7 @@ class EditProfileViewBody extends StatelessWidget {
                     title: AppLocalization.of(context)!.translate("email"),
                     isEnabled: false,
                     keyboardType: TextInputType.emailAddress,
-                    validator: (value) {},
+                    validator: (value) => null,
                   ),
                   verticalSpace(20),
                   CustomAppTextField(
@@ -75,7 +75,7 @@ class EditProfileViewBody extends StatelessWidget {
                     title: AppLocalization.of(context)!.translate("password"),
                     keyboardType: TextInputType.text,
                     isObscure: true,
-                    validator: (value) {},
+                    validator: (value) => null,
                   ),
                   verticalSpace(20),
                   CustomAppTextField(
