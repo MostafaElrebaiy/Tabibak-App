@@ -25,7 +25,7 @@ class HospitalInfoBody extends StatelessWidget {
                 left: 0,
                 right: 0,
                 top: 50.h,
-                child:  ImageNameAndDistanceSection(
+                child: ImageNameAndDistanceSection(
                   distance: "2.4K",
                   isDoctor: false,
                   pngImage: AppAsset.hospitalImage,
@@ -46,7 +46,7 @@ class HospitalInfoBody extends StatelessWidget {
                     verticalSpace(20),
                     const DoctorsSection(),
                     verticalSpace(20),
-                     CustomListTile(
+                    CustomListTile(
                         title: "location".tr(context),
                         image: AppAsset.location,
                         isSvgImage: true),
