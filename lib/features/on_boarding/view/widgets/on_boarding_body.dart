@@ -25,7 +25,7 @@ class _OnBoardingBodyState extends State<OnBoardingBody> {
 
   @override
   Widget build(BuildContext context) {
-     List<OnBoardingContent> onBoardingContent = [
+    List<OnBoardingContent> onBoardingContent = [
       OnBoardingContent(
           headLine: "bloodBank".tr(context),
           textBody: "lorem".tr(context),
@@ -62,7 +62,8 @@ class _OnBoardingBodyState extends State<OnBoardingBody> {
               verticalSpace(150),
               Padding(
                 padding: EdgeInsets.symmetric(
-                    horizontal: AppPadding.p16.w, vertical: AppPadding.p30.h),
+                  horizontal: AppPadding.p16.w,
+                ),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -104,6 +105,4 @@ class _OnBoardingBodyState extends State<OnBoardingBody> {
     _pageController.dispose();
     super.dispose();
   }
- 
-
 }

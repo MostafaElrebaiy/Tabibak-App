@@ -7,8 +7,11 @@ class OtpTimer extends StatelessWidget {
   Widget build(BuildContext context) {
     return TweenAnimationBuilder<Duration>(
         duration: const Duration(minutes: 3),
-        tween: Tween(begin: Duration(minutes: 3), end: Duration.zero),
+
+        tween: Tween(begin: const Duration(minutes: 3), end: Duration.zero),
         onEnd: () {
+        
+
         },
         builder: (BuildContext context, Duration value, Widget? child) {
           final minutes = value.inMinutes;

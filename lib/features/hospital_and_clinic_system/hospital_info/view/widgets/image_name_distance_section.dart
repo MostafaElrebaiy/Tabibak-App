@@ -53,7 +53,7 @@ class ImageNameAndDistanceSection extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "$distance",
+              distance,
               style: AppStyle.f22blackW700Mulish
                   .copyWith(color: AppColor.colorACB8C2),
             ),

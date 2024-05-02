@@ -24,7 +24,7 @@ class CategoriesScetion extends StatelessWidget {
                   decoration: BoxDecoration(
                       color: AppColor.colorF0F0F0,
                       borderRadius: BorderRadius.circular(8)),
-                  padding: EdgeInsets.all(AppPadding.p24),
+                  padding: const EdgeInsets.all(AppPadding.p24),
                   // child: SvgPicture.asset('assets/images/svg/Painkillers.svg'),
                   child: Image.asset(image),
                 ),

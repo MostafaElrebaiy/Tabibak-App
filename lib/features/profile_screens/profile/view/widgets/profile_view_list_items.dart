@@ -23,11 +23,12 @@ class ProfileViewListItems extends StatelessWidget {
           child: Column(
             children: [
               CustomListTile(
-                  title:  AppLocalization.of(context)!.translate("editProfile"),
+                  title: AppLocalization.of(context)!.translate("editProfile"),
                   image: AppAsset.profileIcon,
                   thereTrailing: true,
                   isSvgImage: true,
-                  onTap: () => context.pushNamed(Routes.editProfileView)),
+                  onTap: () =>
+                      context.pushReplacementNamed(Routes.editProfileView)),
               verticalSpace(25),
               CustomListTile(
                   title: AppLocalization.of(context)!.translate("language"),
@@ -37,7 +38,7 @@ class ProfileViewListItems extends StatelessWidget {
                   onTap: () => context.pushNamed(Routes.languageProfileView)),
               verticalSpace(25),
               CustomListTile(
-                  title:AppLocalization.of(context)!.translate( "contactUs"),
+                  title: AppLocalization.of(context)!.translate("contactUs"),
                   image: AppAsset.contactUsIcon,
                   thereTrailing: true,
                   isSvgImage: true,
