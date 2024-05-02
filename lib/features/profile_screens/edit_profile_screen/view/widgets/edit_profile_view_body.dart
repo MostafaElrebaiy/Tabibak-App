@@ -25,6 +25,7 @@ class EditProfileViewBody extends StatelessWidget {
             children: [
               TopBackgroundTwo(
                   thereTitle: true,
+                  thereIsBackButton: false,
                   title: "editProfile".tr(context)),
               Positioned(
                 left: 0,
@@ -111,7 +112,6 @@ class EditProfileViewBody extends StatelessWidget {
                                 arguments:
                                     context.read<EditProfileViewCubit>().image);
                           }
-                          context.pop();
                         }
                       }),
                   verticalSpace(20),

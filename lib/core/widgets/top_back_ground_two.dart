@@ -7,8 +7,13 @@ import 'custom_widget/image2_curve_top_bk.dart';
 import '../theme/app_colors.dart';
 
 class TopBackgroundTwo extends StatelessWidget {
-  const TopBackgroundTwo({super.key, this.thereTitle = false, this.title = ''});
+  const TopBackgroundTwo(
+      {super.key,
+      this.thereTitle = false,
+      this.title = '',
+      this.thereIsBackButton = true});
   final bool thereTitle;
+  final bool thereIsBackButton;
   final String title;
 
   @override
@@ -24,16 +29,20 @@ class TopBackgroundTwo extends StatelessWidget {
         top: 35,
         child: Row(
           children: [
-            IconButton(
-              icon: Icon(
-                Icons.arrow_back_rounded,
-                color: AppColor.white,
-                size: 26.w,
-              ),
-              onPressed: () {
-                context.pop();
-              },
-            ),
+            thereIsBackButton
+                ? IconButton(
+                    icon: Icon(
+                      Icons.arrow_back_rounded,
+                      color: AppColor.white,
+                      size: 26.w,
+                    ),
+                    onPressed: () {
+                      context.pop();
+                    },
+                  )
+                : SizedBox(
+                    width: 25.w,
+                  ),
             if (thereTitle)
               Row(
                 children: [

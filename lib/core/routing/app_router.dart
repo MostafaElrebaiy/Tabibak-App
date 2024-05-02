@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tabibk/core/routing/custom_page_route.dart';
@@ -61,7 +63,9 @@ class AppRouter {
       case Routes.hospitalInfoView:
         return CustomPageRoute(child: const HospitalInfoView());
       case Routes.profileView:
-        return CustomPageRoute(child: const ProfileView());
+        File? image = settings.arguments as File; //TODO: image is not Working
+debugPrint('image is $image');
+        return CustomPageRoute(child: ProfileView(image: image));
       case Routes.editProfileView:
         return CustomPageRoute(
             child: BlocProvider(
@@ -97,9 +101,9 @@ class AppRouter {
           child: const ForgetPasswordScreen(),
         ));
       case Routes.updatePasswordScreen:
-      //////////////////////////type 'Null' is not a subtype of type 'String'????????
-      String arg;
-      arg = settings.arguments as String;
+        //////////////////////////type 'Null' is not a subtype of type 'String'????????
+        String arg;
+        arg = settings.arguments as String;
         return CustomPageRoute(
             child: BlocProvider(
           create: (context) => getIt<ResetPasswordCubit>(),
@@ -119,9 +123,8 @@ class AppRouter {
         return CustomPageRoute(child: const PharmacyDetailsScreen());
       case Routes.bloodBank:
         return CustomPageRoute(child: const BloodBankScreen());
-        case Routes.bloodBankSearchScreen:
+      case Routes.bloodBankSearchScreen:
         return CustomPageRoute(child: const SearchResultOfBloodType());
-
 
       default:
         return MaterialPageRoute(

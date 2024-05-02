@@ -4,15 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:tabibk/features/profile_screens/profile/view/widgets/profile_view_body.dart';
 
 class ProfileView extends StatelessWidget {
-  const ProfileView({super.key});
-
+  const ProfileView({super.key, this.image});
+final File? image;
   @override
   Widget build(BuildContext context) {
-    File? image;   //TODO: image is not Working
-    if (ModalRoute.of(context)!.settings.arguments != null) {
-      image = ModalRoute.of(context)!.settings.arguments as File;
-      debugPrint('image is $image');
-    }
+    
 
     return Scaffold(
       body: ProfileViewBody(
