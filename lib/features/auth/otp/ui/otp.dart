@@ -6,6 +6,7 @@ import '../../../../core/theme/styles.dart';
 import '../logic/check_code_cubit.dart';
 import 'widgets/otp_bloc_listener.dart';
 import 'widgets/otp_text_field.dart';
+import 'widgets/otp_timer.dart';
 import 'widgets/resend.dart';
 import 'widgets/top_bk_otp_screen.dart';
 
@@ -38,6 +39,7 @@ class OtpScreen extends StatelessWidget {
                 const OtpTextField1(),
                 verticalSpace(25),
                 const Resend(),
+                const OtpTimer(), 
                 const OtpBlocListener(),
               ],
             ),

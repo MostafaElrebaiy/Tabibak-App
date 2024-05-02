@@ -7,9 +7,11 @@ class OtpTimer extends StatelessWidget {
   Widget build(BuildContext context) {
     return TweenAnimationBuilder<Duration>(
         duration: const Duration(minutes: 3),
+
         tween: Tween(begin: const Duration(minutes: 3), end: Duration.zero),
         onEnd: () {
-          debugPrint('Timer ended');
+        
+
         },
         builder: (BuildContext context, Duration value, Widget? child) {
           final minutes = value.inMinutes;
@@ -20,8 +22,8 @@ class OtpTimer extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: const TextStyle(
                       color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 30)));
+                      
+                      fontSize: 20)));
         });
   }
 }

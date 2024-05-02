@@ -28,10 +28,11 @@ class OtpBlocListener extends StatelessWidget {
             ),
           );
         },
-        checkCodeSuccess: (checkCodeResponse) {
-         return context.pop();
-          // return showSuccessDialog(context);
-        },
+
+        // checkCodeSuccess: (checkCodeResponse) {
+        //   context.pop();
+        //   // return showSuccessDialog(context);
+        // },
         checkCodeError: (error) {
           context.pop();
           return setupErrorState(context, error);
@@ -84,6 +85,7 @@ class OtpBlocListener extends StatelessWidget {
           TextButton(
             onPressed: () {
               context.pop();
+              context.pushReplacementNamed(Routes.otpScreen);
             },
             child: Text(
               'Got it',
