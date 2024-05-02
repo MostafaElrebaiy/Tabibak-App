@@ -12,22 +12,24 @@ class OtpTextField1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Form(
-        key: context.read<CheckCodeCubit>().formKey,
-        child: OtpTextField(
-          numberOfFields: 6,
-          borderColor: AppColor.mainBlue,
-          borderRadius: BorderRadius.circular(12),
-          focusedBorderColor: AppColor.mainBlue,
-          showFieldAsBox: true,
-          cursorColor: AppColor.mainBlue,
-          onSubmit: (String verificationCode) {
-            context.read<CheckCodeCubit>().codee.text = verificationCode;
-            verificationCode;
-            validateThenSendOtp(context);
-            context.pushNamed(Routes.updatePasswordScreen,
-                arguments: verificationCode);
-          },
-        ));
+      key: context.read<CheckCodeCubit>().formKey,
+      child: OtpTextField(
+        numberOfFields: 6,
+        borderColor: AppColor.mainBlue,
+        borderRadius: BorderRadius.circular(12),
+        focusedBorderColor: AppColor.mainBlue,
+        showFieldAsBox: true,
+        cursorColor: AppColor.mainBlue,
+        onSubmit: (String verificationCode) {
+          context.read<CheckCodeCubit>().codee.text = verificationCode;
+          verificationCode;
+          validateThenSendOtp(context);
+          context.pushNamed(Routes.updatePasswordScreen,
+              arguments: verificationCode);
+        },
+      ),
+    );
+    
   }
 
   void validateThenSendOtp(BuildContext context) {

@@ -13,8 +13,8 @@
             "name": "Tabibk productin",
             "request": "launch",
             "type": "dart",
-            "program": "lib/main_produuction.dart",
-            "args": ["--flavor", "production","--target","lib/main_produuction.dart"]
+            "program": "lib/main_production.dart",
+            "args": ["--flavor", "production","--target","lib/main_production.dart"]
         }
     ]
 }
