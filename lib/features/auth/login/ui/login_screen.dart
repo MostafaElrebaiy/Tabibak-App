@@ -6,7 +6,6 @@ import 'widgets/forget_password.dart';
 import 'widgets/login_bloc_listener.dart';
 import 'widgets/login_button.dart';
 import 'widgets/login_create_account.dart';
-import 'widgets/or_login_with.dart';
 import 'widgets/top_bk_login.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -29,8 +28,8 @@ class LoginScreen extends StatelessWidget {
                   verticalSpace(25.h),
                   const LoginButton(),
                   verticalSpace(30.h),
-                  const OrLoginWith(),
-                  verticalSpace(30.h),
+                  // const OrLoginWith(),
+                  // verticalSpace(30.h),
                   const LoginCreateAccount(),
                   const LoginBlocListener(),
                 ],

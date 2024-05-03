@@ -26,8 +26,16 @@ class LoginCubit extends Cubit<LoginState> {
         emit(LoginState.success(loginResponse));
       },
       failure: (error) {
-        emit(LoginState.error(error: error.apiErrorModel.data?[0] ?? 'please try again later'));
+        emit(LoginState.error(
+            error: error.apiErrorModel.data?[0] ?? 'please try again later'));
       },
     );
+  }
+
+  @override
+  Future<void> close() {
+    emailController.dispose();
+    passwordController.dispose();
+    return super.close();
   }
 }

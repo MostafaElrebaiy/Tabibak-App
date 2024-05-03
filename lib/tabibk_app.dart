@@ -4,7 +4,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
-import 'package:tabibk/core/theme/constant.dart';
+import 'package:tabibk/core/theme/app_constant.dart';
 
 import 'core/routing/app_router.dart';
 import 'core/routing/routes.dart';
@@ -26,7 +26,6 @@ class TabibkApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       child: MaterialApp(
-
         supportedLocales: const <Locale>[
           Locale('en'),
           Locale('ar'),
@@ -50,7 +49,7 @@ class TabibkApp extends StatelessWidget {
           primaryColor: AppColor.mainBlue,
           scaffoldBackgroundColor: AppColor.white,
           // fontFamily:  Localizations.maybeLocaleOf(context)?.languageCode== 'ar'? "Cairo":primaryFontFamily,
-          fontFamily: arabicFontFamily,
+          fontFamily: AppConstant.arabicFontFamily,
           appBarTheme: const AppBarTheme(
             backgroundColor: AppColor.appbar,
             elevation: 10,
@@ -58,7 +57,7 @@ class TabibkApp extends StatelessWidget {
           ),
         ),
         debugShowCheckedModeBanner: false,
-        initialRoute: Routes.onBoardingView,
+        initialRoute: Routes.homeScreen,
         onGenerateRoute: appRouter.generateRoute,
       ),
     );

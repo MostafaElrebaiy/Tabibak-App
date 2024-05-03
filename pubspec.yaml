@@ -55,6 +55,7 @@ flutter:
     - assets/images/svg/
     - assets/lang/ar.json
     - assets/lang/en.json
+    - assets/json/
 
   fonts:
     - family: Mulish

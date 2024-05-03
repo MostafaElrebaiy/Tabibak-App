@@ -13,7 +13,7 @@ class PharmacyScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildCustomAppBar(
-          backarrow: true,
+          backarrow: false,
           text1: 'Welcome, ',
           style1: AppStyle.font16WhiteSemiBold,
           text2: 'Mostafa',

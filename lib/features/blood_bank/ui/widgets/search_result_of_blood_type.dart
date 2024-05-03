@@ -15,21 +15,21 @@ class SearchResultOfBloodType extends StatelessWidget {
     return Scaffold(
       appBar: buildCustomAppBar(
         backarrow: true,
-       toolbarHeight: 70,
-          text1: "tabibak",
-          style1:AppStyle.f20WhiteW600,
+        toolbarHeight: 70,
+        text1: "Tabibak",
+        style1: AppStyle.f20WhiteW600,
       ),
       body: ListView.builder(
-      itemCount: 10,
-      itemBuilder: (_, __) => CustomListTileWidget(
-        distance:"2.5K",
-        image: AppAsset.hospitalImage,
-        title: "elAndlosia",
-        onTap: () {
-          context.pushNamed(Routes.hospitalInfoView);
-        },
+        itemCount: 10,
+        itemBuilder: (_, __) => CustomListTileWidget(
+          distance: "2.5K",
+          image: AppAsset.hospitalImage,
+          title: "elAndlosia",
+          onTap: () {
+            context.pushNamed(Routes.hospitalInfoView);
+          },
+        ),
       ),
-    ),
     );
   }
 }

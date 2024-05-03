@@ -17,9 +17,8 @@ class ProfileViewBody extends StatelessWidget {
       children: [
         Stack(
           children: [
-            TopBackgroundTwo(
-                thereTitle: true,
-                title: AppLocalization.of(context)!.translate("profile")),
+            const TopBackgroundTwo(
+                thereTitle: true, thereIsBackButton: false, title: ''),
             Positioned(
               left: 0,
               right: 0,

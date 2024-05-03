@@ -1,5 +1,6 @@
 const String _basePathPng = 'assets/images/png';
 const String _basePathSvg = 'assets/images/svg';
+const String _basePathJson = 'assets/json';
 
 class AppAsset {
   // ----------------- PNG Images ----------------- //
@@ -55,4 +56,11 @@ class AppAsset {
   static const String searchIcon = '$_basePathSvg/search.svg';  
   static const String downDialogIcon = '$_basePathSvg/down_dialg.svg';
   
+
+  // ----------------- Json ----------------- //
+
+  static const String errorJson = '$_basePathJson/error 1.json';
+  static const String successOne = '$_basePathJson/success_1.json';
+  static const String successTwo = '$_basePathJson/success_2.json';
+  static const String successThree = '$_basePathJson/success_3.json';
 }

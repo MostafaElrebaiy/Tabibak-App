@@ -19,7 +19,9 @@ class ForgetPasswordScreen extends StatelessWidget {
       body: SingleChildScrollView(
         reverse: true,
         child: Column(children: [
-          const TopBackgroundTwo(),
+          const TopBackgroundTwo(
+            thereIsBackButton: false,
+          ),
           Padding(
             padding: EdgeInsets.only(
                 top: 20.h, bottom: 20.h, left: 20.w, right: 30.w),

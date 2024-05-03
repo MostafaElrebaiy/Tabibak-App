@@ -7,7 +7,7 @@ import 'package:tabibk/core/helper/extensions.dart';
 import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/routing/routes.dart';
-import 'package:tabibk/core/widgets/main_button._widget.dart';
+import 'package:tabibk/core/widgets/custom_widget/app_text_button.dart';
 import 'package:tabibk/core/widgets/top_back_ground_two.dart';
 import 'package:tabibk/features/profile_screens/edit_profile_screen/logic/cubit/edit_profile_view_cubit.dart';
 import 'package:tabibk/features/profile_screens/edit_profile_screen/view/widgets/custom_app_text_field.dart';
@@ -25,7 +25,8 @@ class EditProfileViewBody extends StatelessWidget {
             children: [
               TopBackgroundTwo(
                   thereTitle: true,
-                  thereIsBackButton: false,
+                  returnToHome: true,
+                  thereIsBackButton: true,
                   title: "editProfile".tr(context)),
               Positioned(
                 left: 0,
@@ -98,8 +99,9 @@ class EditProfileViewBody extends StatelessWidget {
                     },
                   ),
                   verticalSpace(20),
-                  MainButtonWidget(
-                      text: AppLocalization.of(context)!.translate("save"),
+                  AppTextButton(
+                      buttonText:
+                          AppLocalization.of(context)!.translate("save"),
                       onPressed: () {
                         if (context
                             .read<EditProfileViewCubit>()
@@ -108,7 +110,7 @@ class EditProfileViewBody extends StatelessWidget {
                             .validate()) {
                           if (context.read<EditProfileViewCubit>().image !=
                               null) {
-                            context.pushReplacementNamed(Routes.profileView,
+                            context.pushReplacementNamed(Routes.homeScreen,
                                 arguments:
                                     context.read<EditProfileViewCubit>().image);
                           }

@@ -3,10 +3,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
 import 'package:tabibk/core/theme/styles.dart';
-import 'package:tabibk/core/widgets/main_button._widget.dart';
+import 'package:tabibk/core/widgets/custom_widget/app_text_button.dart';
 
 class PurchasePriceAndButtonSection extends StatelessWidget {
-  const PurchasePriceAndButtonSection({super.key, required this.price, required this.onPressed});
+  const PurchasePriceAndButtonSection(
+      {super.key, required this.price, required this.onPressed});
   final String price;
   final VoidCallback onPressed;
   @override
@@ -31,10 +32,10 @@ class PurchasePriceAndButtonSection extends StatelessWidget {
         SizedBox(
           height: 30.h,
         ),
-        MainButtonWidget(
+        AppTextButton(
           icon: Icons.shopping_bag_outlined,
           thereIcon: true,
-          text: "palceOrder".tr(context),
+          buttonText: "palceOrder".tr(context),
           onPressed: onPressed,
         )
       ],

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tabibk/core/helper/value_manager.dart';
+import 'package:tabibk/core/theme/styles.dart';
 
 import '../../theme/app_colors.dart';
 
@@ -12,8 +14,10 @@ class AppTextButton extends StatelessWidget {
   final double? buttonWidth;
   final double? buttonHeight;
   final String buttonText;
-  final TextStyle textStyle;
+  final IconData? icon;
+  final TextStyle? textStyle;
   final VoidCallback onPressed;
+  final bool thereIcon;
 
   const AppTextButton(
       {super.key,
@@ -24,8 +28,8 @@ class AppTextButton extends StatelessWidget {
       this.buttonWidth,
       this.buttonHeight,
       required this.buttonText,
-      required this.textStyle,
-      required this.onPressed});
+       this.textStyle,
+      required this.onPressed,  this.thereIcon =false, this.icon});
 
   @override
   Widget build(BuildContext context) {
@@ -53,10 +57,26 @@ class AppTextButton extends StatelessWidget {
         ),
         
       ),
-      child: Text(
-        buttonText,
-        style: textStyle,
-      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          thereIcon
+              ? Icon(
+                  icon,
+                  color: AppColor.white,
+                  weight: 0.1,
+                  grade: 0.1,
+                  fill: 0.1,
+                )
+              : const SizedBox(),
+          const SizedBox(width: AppSize.s10),
+         Text(
+            buttonText,
+            style: textStyle ?? AppStyle.font16WhiteSemiBold,
+          ),
+        ],
+      ), 
+      
     );
   }
 }
