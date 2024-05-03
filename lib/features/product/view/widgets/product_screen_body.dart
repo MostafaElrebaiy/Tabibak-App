@@ -4,7 +4,7 @@ import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/extensions.dart';
 import 'package:tabibk/core/routing/routes.dart';
 import 'package:tabibk/core/theme/styles.dart';
-import 'package:tabibk/core/widgets/main_button._widget.dart';
+import 'package:tabibk/core/widgets/custom_widget/app_text_button.dart';
 import 'package:tabibk/features/product/view/widgets/build_divider_widget.dart';
 import 'package:tabibk/features/product/view/widgets/build_product_widget.dart';
 import 'package:tabibk/features/product/view/widgets/discount_delivery_section.dart';
@@ -43,8 +43,8 @@ class ProductBody extends StatelessWidget {
         SizedBox(
           height: 30.h,
         ),
-        MainButtonWidget(
-          text: "checkOut".tr(context).toUpperCase(),
+        AppTextButton(
+          buttonText: "checkOut".tr(context).toUpperCase(),
           onPressed: () {
             context.pushNamed(Routes.checkOutView);
           },

@@ -12,7 +12,7 @@ class ProductView extends StatelessWidget {
     return Scaffold(
       appBar: buildCustomAppBar(
           text1: "myCart".tr(context),
-          backarrow: true,
+          backarrow: false,
           style1: AppStyle.f20WhiteW600),
       body: const Padding(
         padding: EdgeInsets.symmetric(horizontal: 14.0),

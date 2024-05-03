@@ -13,9 +13,9 @@ class LoginForgetPassword extends StatelessWidget {
       alignment: Alignment.centerLeft,
       child: GestureDetector(
         onTap: () {
-          context.pushNamed(Routes.forgetPasswordScreen);
+          context.pushReplacementNamed(Routes.forgetPasswordScreen);
         },
-        child: Text('    Forgot Password?',
+        child: Text('    Forgot Password ?',
             style: AppStyle.font12MainBlueSemiBold),
       ),
     );

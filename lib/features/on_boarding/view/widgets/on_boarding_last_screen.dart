@@ -19,10 +19,13 @@ class OnBoardingLastScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-        const OnBoardingSpecialShape(),
+            const OnBoardingSpecialShape(
+              isBackButton: false,
+            ),
             verticalSpace(AppSize.s37),
-             OnBoardingText(
-                headLine: "pharmacies".tr(context), textBody: "lorem".tr(context)),
+            OnBoardingText(
+                headLine: "pharmacies".tr(context),
+                textBody: "lorem".tr(context)),
             verticalSpace(AppSize.s30),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

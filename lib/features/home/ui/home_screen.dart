@@ -2,12 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
-import 'package:tabibk/features/product/view/product_view.dart';
+import 'package:tabibk/core/theme/app_constant.dart';
 
-import '../../blood_bank/ui/blood_bank_screen.dart';
-import '../../hospital_and_clinic_system/hospital/view/hospital_screen_view.dart';
-import '../../pharmacy/ui/pharmacy_screen.dart';
-import '../../profile_screens/profile/view/profile_view.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -18,15 +14,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int _currentIndex = 0;
-  List<Widget> _listOptions() {
-    return [
-      const PharmacyScreen(),
-      const HospitalScreenView(),
-      const BloodBankScreen(),
-      const ProductView(),
-      const ProfileView(),
-    ];
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -82,12 +70,11 @@ class _HomeState extends State<Home> {
                     icon: LineIcons.user,
                     text: 'Profile',
                   ),
-                  
                 ]),
           ),
         ),
       ),
-      body: _listOptions()[_currentIndex],
+      body: AppConstant.listOfScreens[_currentIndex],
     );
   }
 }

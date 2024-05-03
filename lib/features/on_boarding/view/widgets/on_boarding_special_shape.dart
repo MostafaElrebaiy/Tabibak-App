@@ -8,8 +8,8 @@ import 'package:tabibk/core/theme/app_colors.dart';
 import 'package:tabibk/features/on_boarding/view/widgets/on_boarding_logo.dart';
 
 class OnBoardingSpecialShape extends StatelessWidget {
-  const OnBoardingSpecialShape({super.key});
-
+  const OnBoardingSpecialShape({super.key,  this.isBackButton =true});
+final bool isBackButton;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -35,7 +35,7 @@ class OnBoardingSpecialShape extends StatelessWidget {
             child: OnBoardingLogo(),
           ),
         ),
-        Positioned(
+      isBackButton ? Positioned(
           left: Localizations.localeOf(context).languageCode == 'ar'
               ? null
               : AppSize.s20.w,
@@ -57,7 +57,7 @@ class OnBoardingSpecialShape extends StatelessWidget {
               ),
             ),
           ),
-        ),
+        ):const SizedBox.shrink()
       ],
     );
   }

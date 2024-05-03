@@ -16,10 +16,11 @@ class ForgetPasswordTextFormFeild extends StatelessWidget {
       child: Column(
         children: [
           AppTextFormField(
-              hintText: 'Email or Phone',
+              hintText: 'Email',
+              textInputType: TextInputType.emailAddress,
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return 'Please enter a valid Email or Phone';
+                  return 'Please enter a valid Email';
                 }
               },
               controller: context.read<ForgetCubit>().emailController),

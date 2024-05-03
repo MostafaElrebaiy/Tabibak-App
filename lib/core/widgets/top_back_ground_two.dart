@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/extensions.dart';
+import 'package:tabibk/core/routing/routes.dart';
 import 'package:tabibk/core/theme/styles.dart';
 
 import 'custom_widget/image2_curve_top_bk.dart';
@@ -11,8 +12,10 @@ class TopBackgroundTwo extends StatelessWidget {
       {super.key,
       this.thereTitle = false,
       this.title = '',
-      this.thereIsBackButton = true});
+      this.thereIsBackButton = true,
+      this.returnToHome = false});
   final bool thereTitle;
+  final bool returnToHome;
   final bool thereIsBackButton;
   final String title;
 
@@ -37,7 +40,9 @@ class TopBackgroundTwo extends StatelessWidget {
                       size: 26.w,
                     ),
                     onPressed: () {
-                      context.pop();
+                      returnToHome
+                          ? context.pushReplacementNamed(Routes.homeScreen)
+                          : context.pop();
                     },
                   )
                 : SizedBox(

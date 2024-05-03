@@ -12,7 +12,7 @@ class HospitalScreenView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildCustomAppBar(
-        backarrow: true,
+        backarrow: false,
 
         text1: "tabibak".tr(context),
         style1: AppStyle.f20WhiteW600,

@@ -7,9 +7,10 @@ import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
 import 'package:tabibk/core/theme/styles.dart';
-import 'package:tabibk/core/widgets/main_button._widget.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:tabibk/core/widgets/custom_widget/app_text_button.dart';
 import 'package:tabibk/features/profile_screens/edit_profile_screen/logic/cubit/edit_profile_view_cubit.dart';
+
 class ImagePickerBottomDialog extends StatelessWidget {
   const ImagePickerBottomDialog({super.key});
 
@@ -33,22 +34,26 @@ class ImagePickerBottomDialog extends StatelessWidget {
             Text(AppLocalization.of(context)!.translate("chooseImageFrom"),
                 style: AppStyle.f16BlackW700Mulish.copyWith(fontSize: 18)),
             verticalSpace(20),
-            MainButtonWidget(
-              text: AppLocalization.of(context)!.translate("camera"),
+            AppTextButton(
+              buttonText: AppLocalization.of(context)!.translate("camera"),
               onPressed: () {
                 context.pop();
-               context.read<EditProfileViewCubit>().pickImage(source: ImageSource.camera);
+                context
+                    .read<EditProfileViewCubit>()
+                    .pickImage(source: ImageSource.camera);
               },
               thereIcon: true,
               icon: Icons.camera_alt,
             ),
             verticalSpace(20),
-            MainButtonWidget(
-              text: AppLocalization.of(context)!.translate("gallery"),
+            AppTextButton(
+              buttonText: AppLocalization.of(context)!.translate("gallery"),
               thereIcon: true,
               onPressed: () {
                 context.pop();
-                context.read<EditProfileViewCubit>().pickImage(source: ImageSource.gallery);
+                context
+                    .read<EditProfileViewCubit>()
+                    .pickImage(source: ImageSource.gallery);
               },
               icon: Icons.image_outlined,
             ),
@@ -56,6 +61,5 @@ class ImagePickerBottomDialog extends StatelessWidget {
         ),
       ),
     );
-    
   }
 }

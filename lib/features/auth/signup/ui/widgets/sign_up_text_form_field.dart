@@ -32,7 +32,10 @@ class _SignUpTextFormFieldState extends State<SignUpTextFormField> {
             validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'Please enter a valid Name';
+              } else if (value.length < 3) {
+                return 'At Least 3 Characters';
               }
+              return null;
             },
             controller: context.read<SignupCubit>().nameController,
           ),
@@ -71,7 +74,10 @@ class _SignUpTextFormFieldState extends State<SignUpTextFormField> {
             validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'Please enter a valid password';
+              } else if (value.length < 8) {
+                return 'Password must be at least 8 characters';
               }
+              return null;
             },
             controller: context.read<SignupCubit>().passwordController,
           ),
@@ -96,7 +102,11 @@ class _SignUpTextFormFieldState extends State<SignUpTextFormField> {
             validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'Please enter a valid password';
+              } else if (value !=
+                  context.read<SignupCubit>().passwordController.text) {
+                return 'Password does not match';
               }
+              return null;
             },
             controller: context.read<SignupCubit>().passwordConfirmController,
           ),

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/helper/spacing.dart';
 import '../../../../core/widgets/custom_widget/already_have_an_account.dart';
-import 'widgets/or_sign_up_with.dart';
 import 'widgets/sigh_up_top_bk.dart';
 import 'widgets/sign_up_bloc_listener.dart';
 import 'widgets/sign_up_button.dart';
@@ -28,8 +27,8 @@ class SignUpScreen extends StatelessWidget {
                   verticalSpace(20.h),
                   const SignUpButton(),
                   verticalSpace(25.h),
-                  const OrSignUpWith(),
-                  verticalSpace(25.h),
+                  // const OrSignUpWith(),
+                  // verticalSpace(25.h),
                   const AlreadyHaveAnAccount(),
                   const SignupBlocListener(),
                 ],
