@@ -18,7 +18,7 @@ class BuildProductWidget extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: AppMargin.m8),
       // width: double.infinity,
-      height: AppSize.s145.h,
+      height: 160.h,
       decoration: BoxDecoration(
         color: AppColor.white,
         border: Border.all(
