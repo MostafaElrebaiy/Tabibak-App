@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
+import 'package:tabibk/core/helper/app_string.dart';
+import 'package:tabibk/core/theme/app_constant.dart';
 import 'package:tabibk/features/pharmacy/ui/widgets/titles_of_section.dart';
 import '../../../../core/helper/app_assets.dart';
 import '../../../../core/helper/spacing.dart';
@@ -12,13 +15,15 @@ class PharmacyBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
+    return SingleChildScrollView(
+      child: Padding(
+        padding: EdgeInsets.symmetric(
+            horizontal: 16.w, vertical: AppConstant.appVerticalPadding.h),
         child: Column(children: [
           const BuildSearchScetion(),
-          verticalSpace(15.h),
+          verticalSpace(15),
           TitlesOfSection(
-            title: 'Categories',
+            title: AppString.categories.tr(context),
             subTitle: '',
           ),
           SingleChildScrollView(
@@ -26,31 +31,31 @@ class PharmacyBody extends StatelessWidget {
             child: Row(children: [
               CategoriesScetion(
                 image: AppAsset.painkillersImage,
-                categoryName: 'Painkillers',
+                categoryName: AppString.painkillers.tr(context),
               ),
-              horizontalSpace(15.w),
+              horizontalSpace(15),
               CategoriesScetion(
                 image: AppAsset.stomochImage,
-                categoryName: 'Stomoch',
+                categoryName: AppString.diabetes.tr(context),
               ),
-              horizontalSpace(15.w),
+              horizontalSpace(15),
               CategoriesScetion(
                 image: AppAsset.diabetesImage,
-                categoryName: 'Diabetes',
+                categoryName: AppString.stomoch.tr(context),
               ),
-              horizontalSpace(15.w),
+              horizontalSpace(15),
               CategoriesScetion(
                 image: AppAsset.heartattackImage,
-                categoryName: 'heartattack',
+                categoryName: AppString.heartattack.tr(context),
               ),
             ]),
           ),
-          verticalSpace(20.h),
+          verticalSpace(20),
           TitlesOfSection(
-            title: 'Recommended',
-            subTitle: "You've never seen it before!",
+            title: AppString.recommended.tr(context),
+            subTitle: AppString.neverSeeThis.tr(context),
           ),
-          verticalSpace(10.h),
+          verticalSpace(10),
 
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
@@ -58,15 +63,15 @@ class PharmacyBody extends StatelessWidget {
               child: Row(
                 children: [
                   const RecommendedSection(),
-                  horizontalSpace(5.w),
+                  horizontalSpace(5),
                   const RecommendedSection(),
-                  horizontalSpace(5.w),
+                  horizontalSpace(5),
                   const RecommendedSection(),
-                  horizontalSpace(5.w),
+                  horizontalSpace(5),
                   const RecommendedSection(),
-                  horizontalSpace(5.w),
+                  horizontalSpace(5),
                   const RecommendedSection(),
-                  horizontalSpace(5.w),
+                  horizontalSpace(5),
                   const RecommendedSection(),
                 ],
               ),
@@ -74,27 +79,27 @@ class PharmacyBody extends StatelessWidget {
           ),
 
           //Best Deals
-          verticalSpace(20.h),
+          verticalSpace(20),
           TitlesOfSection(
-            title: 'Best Deals       ',
-            subTitle: "You've never seen it before!",
+            title: AppString.bestDeals.tr(context),
+            subTitle: AppString.neverSeeThis.tr(context),
           ),
-          verticalSpace(10.h),
+          verticalSpace(10),
 
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
               children: [
                 const RecommendedSection(),
-                horizontalSpace(5.w),
+                horizontalSpace(5),
                 const RecommendedSection(),
-                horizontalSpace(5.w),
+                horizontalSpace(5),
                 const RecommendedSection(),
-                horizontalSpace(5.w),
+                horizontalSpace(5),
                 const RecommendedSection(),
-                horizontalSpace(5.w),
+                horizontalSpace(5),
                 const RecommendedSection(),
-                horizontalSpace(5.w),
+                horizontalSpace(5),
                 const RecommendedSection(),
               ],
             ),

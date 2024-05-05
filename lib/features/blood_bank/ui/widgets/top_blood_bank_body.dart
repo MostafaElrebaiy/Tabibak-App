@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
+import 'package:tabibk/core/helper/app_string.dart';
 
 import '../../../../core/helper/app_assets.dart';
 import '../../../../core/helper/spacing.dart';
@@ -26,13 +28,14 @@ class TopSectionBloodBankBody extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            'GIVE THE GIFT 0F LIVE',
+            AppString.giveTheGift.toUpperCase().tr(context),
             style: AppStyle.font30whiteregular,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Donate', style: AppStyle.font30whiteSemiBold),
+              Text(AppString.donate.tr(context),
+                  style: AppStyle.font30whiteSemiBold),
               Container(
                 margin: const EdgeInsets.only(
                   left: 10,
@@ -44,7 +47,7 @@ class TopSectionBloodBankBody extends StatelessWidget {
                   borderRadius: BorderRadius.circular(6),
                 ),
                 child: Text(
-                  'Blood',
+                  AppString.blood.tr(context),
                   textAlign: TextAlign.center,
                   style: AppStyle.font30MainBLueSemiBold,
                 ),
@@ -60,11 +63,14 @@ class TopSectionBloodBankBody extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('150 ', style: AppStyle.font30whiteregular),
+                      Text('150 ',
+                          textAlign: TextAlign.center,
+                          style: AppStyle.font30whiteregular),
                       SvgPicture.asset(AppAsset.blodlIcon),
                     ],
                   ),
-                  Text('New blood request\n ',
+                  Text(AppString.bloodReqest.tr(context),
+                      textAlign: TextAlign.center,
                       style: AppStyle.font18whiteregular),
                 ],
               ),
@@ -90,8 +96,10 @@ class TopSectionBloodBankBody extends StatelessWidget {
                       SvgPicture.asset(AppAsset.peopleIcon),
                     ],
                   ),
-                  Text('People have taken\n           blood',
-                      maxLines: 2, style: AppStyle.font18whiteregular),
+                  Text(AppString.peopleHaveTake.tr(context),
+                      textAlign: TextAlign.center,
+                      maxLines: 2,
+                      style: AppStyle.font18whiteregular),
                 ],
               )
             ],

@@ -26,6 +26,7 @@ import 'package:tabibk/features/pharmacy/ui/pharmacy_screen.dart';
 import 'package:tabibk/features/product/view/product_view.dart';
 import 'package:tabibk/features/profile_screens/edit_profile_screen/logic/cubit/edit_profile_view_cubit.dart';
 import 'package:tabibk/features/profile_screens/edit_profile_screen/view/edit_profile_view.dart';
+import 'package:tabibk/features/profile_screens/language_profile_view/logic/cubit/locale_cubit.dart';
 import 'package:tabibk/features/profile_screens/language_profile_view/view/language_profile_view.dart';
 import 'package:tabibk/features/profile_screens/profile/view/profile_view.dart';
 import 'package:tabibk/features/splash/view/widgets/second_splash_screen.dart';
@@ -63,8 +64,8 @@ class AppRouter {
       case Routes.hospitalInfoView:
         return CustomPageRoute(child: const HospitalInfoView());
       case Routes.profileView:
-        File? image = settings.arguments as File; //TODO: image is not Working
-debugPrint('image is $image');
+        File? image = settings.arguments as File; 
+        debugPrint('image is $image');
         return CustomPageRoute(child: ProfileView(image: image));
       case Routes.editProfileView:
         return CustomPageRoute(
@@ -75,7 +76,11 @@ debugPrint('image is $image');
       case Routes.addShippingAddressScreen:
         return CustomPageRoute(child: const AddShippingAddressScreen());
       case Routes.languageProfileView:
-        return CustomPageRoute(child: const LanguageProfileView());
+        return CustomPageRoute(
+            child: BlocProvider(
+          create: (_) => LocaleCubit()..getSavedLanguage(),
+          child: const LanguageProfileView(),
+        ));
       case Routes.homeScreen:
         return MaterialPageRoute(
           // ignore: prefer_const_constructors

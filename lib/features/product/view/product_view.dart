@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/theme/styles.dart';
 import 'package:tabibk/core/widgets/build_custom_app_bar.dart';
@@ -14,9 +15,9 @@ class ProductView extends StatelessWidget {
           text1: "myCart".tr(context),
           backarrow: false,
           style1: AppStyle.f20WhiteW600),
-      body: const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 14.0),
-        child: ProductBody(),
+      body:  Padding(
+        padding: EdgeInsets.symmetric(horizontal: 14.0.w),
+        child: const ProductBody(),
       ),
     );
   }
