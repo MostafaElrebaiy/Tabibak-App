@@ -31,4 +31,10 @@ abstract class ApiService {
   @POST(ApiConstants.resetpassword)
   Future<ResetPasswordResponse> resetPassword(
       @Body() ResetPasswordRequestBody resetPasswordRequestBody);
+  // @GET('pharmacies?x=2222333&y=382455534&medicine_name=test medicine')
+  // Future(<String,dynamic>) searchPharmacy
+  //     @Header('token') String token,
+  //     @Query('lat') double lat,
+  //     @Query('lng') double lng,
+  //     @Query('medicineName') String medicineName);
 }

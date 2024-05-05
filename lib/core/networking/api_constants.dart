@@ -5,6 +5,7 @@ class ApiConstants {
   static const String forgetPassword = "password/send-mail";
   static const String checkcode = "password/check-code";
   static const String resetpassword = "password/reset";
+  static const String pharmacySearch = "pharmacies?";
 }
 
 class ApiErrors {
