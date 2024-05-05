@@ -8,6 +8,7 @@ import 'package:tabibk/core/theme/app_constant.dart';
 
 import 'core/routing/app_router.dart';
 import 'core/routing/routes.dart';
+Locale? lang;
 
 class TabibkApp extends StatelessWidget {
   final AppRouter appRouter;
@@ -26,6 +27,8 @@ class TabibkApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       child: MaterialApp(
+    
+    locale: lang??const Locale("en"),
         supportedLocales: const <Locale>[
           Locale('en'),
           Locale('ar'),

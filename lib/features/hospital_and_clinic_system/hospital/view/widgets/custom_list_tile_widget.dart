@@ -26,6 +26,7 @@ class CustomListTileWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 300),
+      curve: Curves.easeIn,
       margin: const EdgeInsets.only(bottom: AppPadding.p4),
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.all(Radius.circular(AppSize.s12)),
@@ -48,7 +49,7 @@ class CustomListTileWidget extends StatelessWidget {
         contentPadding: EdgeInsets.symmetric(
             vertical: AppPadding.p16.h, horizontal: AppPadding.p16.w),
         title: Padding(
-          padding: EdgeInsets.only(bottom: AppPadding.p20.h),
+          padding: EdgeInsets.only(bottom: AppPadding.p8.h),
           child: RichText(
             text: TextSpan(
               children: [

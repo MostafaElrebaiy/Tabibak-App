@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
+import 'package:tabibk/core/helper/app_string.dart';
 
-import '../../../core/helper/value_manager.dart';
 import '../../../core/theme/styles.dart';
 import '../../../core/widgets/build_custom_app_bar.dart';
 import 'widgets/pharmacy_body.dart';
@@ -14,16 +14,12 @@ class PharmacyScreen extends StatelessWidget {
     return Scaffold(
       appBar: buildCustomAppBar(
           backarrow: false,
-          text1: 'Welcome, ',
+          text1: AppString.welcome.tr(context),
           style1: AppStyle.font16WhiteSemiBold,
           text2: 'Mostafa',
           style2: AppStyle.f14MAinBlueW700,
           actions: []),
-      body: Padding(
-        padding: EdgeInsets.symmetric(
-            horizontal: AppPadding.p4.w, vertical: AppPadding.p20.h),
-        child: const PharmacyBody(),
-      ),
+      body: const PharmacyBody(),
     );
   }
 }

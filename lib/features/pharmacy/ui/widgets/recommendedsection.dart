@@ -33,7 +33,7 @@ class RecommendedSection extends StatelessWidget {
                   height: 150.h,
                   width: 160.w,
                 ),
-                verticalSpace(10.h),
+                verticalSpace(10),
                 Text(
                   'Mebo Scar Cream',
                   style: AppStyle.f10BlackW400,

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
+import 'package:tabibk/core/helper/app_string.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
 import 'package:tabibk/core/theme/app_constant.dart';
-
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -15,7 +17,6 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int _currentIndex = 0;
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +27,7 @@ class _HomeState extends State<Home> {
               color: AppColor.white,
               borderRadius: BorderRadius.all(Radius.circular(15))),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+            padding:  EdgeInsets.symmetric(horizontal: 15.w, vertical: 5.h),
             child: GNav(
                 selectedIndex: _currentIndex,
                 onTabChange: (value) {
@@ -49,26 +50,26 @@ class _HomeState extends State<Home> {
                 iconSize: 24, // tab button icon size
                 padding:
                     const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                tabs: const [
+                tabs: [
                   GButton(
                     icon: LineIcons.home,
-                    text: 'Pharamacy',
+                    text: AppString.pharamacy.tr(context),
                   ),
                   GButton(
                     icon: LineIcons.hospitalAlt,
-                    text: 'Hospital',
+                    text: AppString.hospital.tr(context),
                   ),
                   GButton(
                     icon: LineIcons.search,
-                    text: 'Blood Bank',
+                    text: AppString.bloodBank.tr(context),
                   ),
                   GButton(
                     icon: LineIcons.shoppingCart,
-                    text: 'Product',
+                    text: AppString.product.tr(context),
                   ),
                   GButton(
                     icon: LineIcons.user,
-                    text: 'Profile',
+                    text: AppString.profile.tr(context),
                   ),
                 ]),
           ),

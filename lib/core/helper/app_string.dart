@@ -1,4 +1,39 @@
-// class AppString {
+class AppString {
+  static const String welcome = "welcome";
+  static const String categories = "categories";
+  static const String bestDeals = "bestDeals";
+  static const String neverSeeThis = "You've never seen it before!";
+  static const String viewAll = "viewAll";
+  static const String recommended = "recommended";
+  static const String painkillers = "painkillers";
+  static const String stomoch = "stomoch";
+  static const String diabetes = "diabetes";
+  static const String heartattack = "heartattack";
+  // GIVE THE GIFT 0F LIVE
+  static const String giveTheGift = "giveTheGift";
+  static const String donate = "donate";
+  static const String blood = "blood";
+  // New blood request\n
+  static const String bloodReqest = "bloodReqest";
+  // People have taken\n           blood
+  static const String peopleHaveTake = "peopleHaveTake";
+  static const String findDonar = "findDonar";
+
+  static const String bloodBank = "bloodBank";
+
+  static const String pharamacy = "pharamacy";
+  static const String hospital = "hospital";
+  static const String product = "product";
+  static const String profile = "profile";
+
+  static const String sort = "sort";
+  static const String submit = "submit";
+
+  static const String egp = "egp";
+  static const String reviews = "reviews";
+  static const String productdetails = "productdetails";
+  static const String relatedProduct = "relatedProduct";
+
 //   static const String p = 'P';
 //   static const String bloodBank = 'Blood Bank';
 //   static const String lorem =
@@ -81,4 +116,4 @@
 //   static const String num1 = '01006257074';
 //   static const String location = '76, Kafr el-Dawar';
 //   static const String productDetails = 'ProductDetails';
-// }
+}

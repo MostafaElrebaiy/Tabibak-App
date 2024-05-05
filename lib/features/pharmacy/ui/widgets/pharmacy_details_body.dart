@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/app_assets.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
+import 'package:tabibk/core/helper/app_string.dart';
 import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/features/pharmacy/ui/widgets/recommendedsection.dart';
@@ -43,10 +45,10 @@ class PharmacyDetailsBody extends StatelessWidget {
                   horizontal: AppPadding.p12.w, vertical: AppPadding.p10.h),
               child: Column(
                 children: [
-                  const Row(
-                    children: [Text(" ⭐ 4.3(80 Review)")],
+                   Row(
+                    children: [Text(" ⭐ 4.3(80 ${AppString.reviews.tr(context)})")],
                   ),
-                  verticalSpace(10.h),
+                  verticalSpace(10),
                   Row(
                     children: [
                       Text(
@@ -55,12 +57,12 @@ class PharmacyDetailsBody extends StatelessWidget {
                       ),
                       const Spacer(),
                       Text(
-                        "424.25 EGP",
+                        "424.25 ${AppString.egp.tr(context)}",
                         style: AppStyle.font16MainBLueBold,
                       ),
                     ],
                   ),
-                  verticalSpace(10.h),
+                  verticalSpace(10),
                   Text(
                     "Mebo Scar CreamMebo Scar CreamMebo Scar Cream",
                     style: AppStyle.font12BlackRegular,
@@ -68,33 +70,33 @@ class PharmacyDetailsBody extends StatelessWidget {
                   ListTile(
                     style: ListTileStyle.list,
                     title: Text(
-                      "Product Information",
+                      AppString.productdetails.tr(context),
                       style: AppStyle.font16blackRegular,
                     ),
                     trailing: const Icon(Icons.add),
                     onTap: () {},
                   ),
-                  verticalSpace(10.h),
+                  verticalSpace(10),
                   TitlesOfSection(
-                    title: 'Related Product',
+                    title: AppString.relatedProduct.tr(context),
                     subTitle: '',
                   ),
-                  verticalSpace(10.h),
+                  verticalSpace(10),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: IntrinsicHeight(
                       child: Row(
                         children: [
                           const RecommendedSection(),
-                          horizontalSpace(5.w),
+                          horizontalSpace(5),
                           const RecommendedSection(),
-                          horizontalSpace(5.w),
+                          horizontalSpace(5),
                           const RecommendedSection(),
-                          horizontalSpace(5.w),
+                          horizontalSpace(5),
                           const RecommendedSection(),
-                          horizontalSpace(5.w),
+                          horizontalSpace(5),
                           const RecommendedSection(),
-                          horizontalSpace(5.w),
+                          horizontalSpace(5),
                           const RecommendedSection(),
                         ],
                       ),

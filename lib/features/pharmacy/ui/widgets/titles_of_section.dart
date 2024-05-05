@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
+import 'package:tabibk/core/helper/app_string.dart';
 import 'package:tabibk/core/helper/spacing.dart';
 
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/styles.dart';
 
-// ignore: must_be_immutable
 class TitlesOfSection extends StatelessWidget {
-  TitlesOfSection({required this.title, required this.subTitle, super.key});
-  String title;
-  String subTitle;
+  const TitlesOfSection(
+      {required this.title, required this.subTitle, super.key});
+  final String title;
+  final String subTitle;
 
   @override
   Widget build(BuildContext context) {
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Column(
@@ -28,18 +31,27 @@ class TitlesOfSection extends StatelessWidget {
             ),
           ],
         ),
-        Row(
-          children: [
-            Text(
-              "View All ",
-              style: AppStyle.font112DarkGrayRegular,
-            ),
-            const Icon(
-              Icons.arrow_forward_outlined,
-              color: AppColor.darkgray,
-              size: 20,
-            ),
-          ],
+        TextButton(
+          onPressed: () {},
+          style: TextButton.styleFrom(
+            elevation: 0,
+            padding: EdgeInsets.zero,
+            surfaceTintColor: AppColor.white,
+            foregroundColor: AppColor.primaryBlue,
+          ),
+          child: Row(
+            children: [
+              Text(
+                AppString.viewAll.tr(context),
+                style: AppStyle.font112DarkGrayRegular,
+              ),
+              const Icon(
+                Icons.arrow_forward_outlined,
+                color: AppColor.darkgray,
+                size: 20,
+              ),
+            ],
+          ),
         ),
       ],
     );

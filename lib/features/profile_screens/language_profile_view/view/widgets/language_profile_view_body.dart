@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/core/widgets/top_back_ground_two.dart';
+import 'package:tabibk/features/profile_screens/language_profile_view/logic/cubit/locale_cubit.dart';
 import 'package:tabibk/features/profile_screens/language_profile_view/view/widgets/language_list_tile.dart';
+import 'package:tabibk/tabibk_app.dart';
+
+
 class LanguageProfileViewBody extends StatelessWidget {
   const LanguageProfileViewBody({super.key});
 
@@ -11,19 +17,47 @@ class LanguageProfileViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-         TopBackgroundTwo(thereTitle: true, title:AppLocalization.of(context)!.translate("language")),
+        TopBackgroundTwo(
+            thereTitle: true,
+            title: AppLocalization.of(context)!.translate("language")),
         Padding(
             padding: EdgeInsets.symmetric(
               horizontal: 10.w,
             ),
-            child: Column(
-              children: [
-                LanguageListTile(
-                    isSelected: true, title: AppLocalization.of(context)!.translate("english"), onTap: () {}),
-                verticalSpace(15),
-                LanguageListTile(
-                    isSelected: false, title: AppLocalization.of(context)!.translate("arabic"), onTap: () {}),
-              ],
+            child: BlocBuilder<LocaleCubit, ChangeLocaleState>(
+              builder: (context, state) {
+                return Column(
+                  children: [
+                    LanguageListTile(
+                        isSelected:
+                              lang == const Locale("en") ? true : false,
+                        title:
+                            AppLocalization.of(context)!.translate("english"),
+                        onTap: () {
+                          if (lang == const Locale("en")) return;
+                          Phoenix.rebirth(context);
+
+                          context.read<LocaleCubit>().changedLanguage("en");
+                          lang = state.locale;
+                          Phoenix.rebirth(context);
+                        }),
+                    verticalSpace(15),
+                    LanguageListTile(
+                        isSelected:
+                           lang == const Locale("ar") ? true : false,
+                        title: AppLocalization.of(context)!.translate("arabic"),
+                        onTap: () {
+                          if (lang == const Locale("ar")) return;
+                          Phoenix.rebirth(context);
+
+                          context.read<LocaleCubit>().changedLanguage("ar");
+                          lang = state.locale;
+
+                          Phoenix.rebirth(context);
+                        }),
+                  ],
+                );
+              },
             ))
       ],
     );

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
+import 'package:tabibk/core/helper/app_string.dart';
 import 'package:tabibk/features/blood_bank/ui/widgets/build_select_blood_type.dart';
 import '../../../../core/helper/app_assets.dart';
 import '../../../../core/theme/app_colors.dart';
@@ -50,7 +52,8 @@ class _FindDonarButtonState extends State<FindDonarButton> {
               height: 50,
               width: 50,
             ),
-            Text('Find Donar', style: AppStyle.font16MainBLueBold),
+            Text(AppString.findDonar.tr(context),
+                style: AppStyle.font16MainBLueBold),
           ],
         ),
       ),

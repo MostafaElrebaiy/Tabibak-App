@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tabibk/core/helper/app_assets.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
+import 'package:tabibk/core/helper/app_string.dart';
 import 'package:tabibk/core/helper/extensions.dart';
 import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/core/routing/routes.dart';
@@ -39,7 +41,7 @@ Future<dynamic> selectBloodType(
                 child: Column(
                   children: [
                     verticalSpace(25.h),
-                    Text('Sort', style: AppStyle.font20GrayBold),
+                    Text(AppString.sort.tr(context), style: AppStyle.font20GrayBold),
                     Expanded(
                       child: ListView.separated(
                           separatorBuilder: (context, index) => const Divider(
@@ -77,7 +79,7 @@ Future<dynamic> selectBloodType(
                       ),
                       child: AppTextButton(
                         backgroundColor: AppColor.white,
-                        buttonText: 'Submit',
+                        buttonText:AppString.submit.tr(context),
                         textStyle: AppStyle.f22mainBlueBold,
                         onPressed: () {
                           context.pop();
