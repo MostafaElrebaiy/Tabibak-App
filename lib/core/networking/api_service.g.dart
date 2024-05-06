@@ -163,37 +163,36 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<void> searchPharmacy(
+  Future<SearchPharmacyResponse> searchPharmacy(
     String token,
     double lat,
     double lng,
-    String medicineName,
+    String medicinename,
   ) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{
-      r'lat': lat,
-      r'lng': lng,
-      r'medicineName': medicineName,
-    };
-    final _headers = <String, dynamic>{r'token': token};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'Authorization': token};
     _headers.removeWhere((k, v) => v == null);
     const Map<String, dynamic>? _data = null;
-    await _dio.fetch<void>(_setStreamType<void>(Options(
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<SearchPharmacyResponse>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-        .compose(
-          _dio.options,
-          'pharmacies?x=2222333&y=382455534&medicine_name=test medicine',
-          queryParameters: queryParameters,
-          data: _data,
-        )
-        .copyWith(
-            baseUrl: _combineBaseUrls(
-          _dio.options.baseUrl,
-          baseUrl,
-        ))));
+            .compose(
+              _dio.options,
+              'pharmacies?x=${lat}&y=${lng}&medicine_name={medicinename}',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = SearchPharmacyResponse.fromJson(_result.data!);
+    return value;
   }
 
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {

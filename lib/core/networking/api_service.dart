@@ -7,11 +7,11 @@ import 'package:tabibk/features/auth/signup/data/models/sign_up_request_body.dar
 import 'package:tabibk/features/auth/signup/data/models/sign_up_response.dart';
 import 'package:tabibk/features/auth/update_password/data/models/reset_password_request_body.dart';
 import 'package:tabibk/features/auth/update_password/data/models/reset_password_response.dart';
-
 import '../../features/auth/forget_password/data/models/forget_request_body.dart';
 import '../../features/auth/forget_password/data/models/forget_response.dart';
 import '../../features/auth/otp/data/models/check_code_request_body.dart';
 import '../../features/auth/otp/data/models/check_code_response.dart';
+import '../../features/pharmacy/data/model/search_pharmacy_response.dart';
 part 'api_service.g.dart';
 
 @RestApi(baseUrl: ApiConstants.apiBaseUrl)
@@ -31,10 +31,12 @@ abstract class ApiService {
   @POST(ApiConstants.resetpassword)
   Future<ResetPasswordResponse> resetPassword(
       @Body() ResetPasswordRequestBody resetPasswordRequestBody);
-  // @GET('pharmacies?x=2222333&y=382455534&medicine_name=test medicine')
-  // Future(<String,dynamic>) searchPharmacy
-  //     @Header('token') String token,
-  //     @Query('lat') double lat,
-  //     @Query('lng') double lng,
-  //     @Query('medicineName') String medicineName);
+
+  @GET('pharmacies?x={lat}&y={lng}&medicine_name={medicinename}')
+  Future<SearchPharmacyResponse> searchPharmacy(
+    @Header('Authorization') String token,
+    @Path('lat') double lat,
+    @Path('lng') double lng,
+    @Path('medicine_name') String medicinename
+  );
 }
