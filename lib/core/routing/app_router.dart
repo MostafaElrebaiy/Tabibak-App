@@ -64,7 +64,7 @@ class AppRouter {
       case Routes.hospitalInfoView:
         return CustomPageRoute(child: const HospitalInfoView());
       case Routes.profileView:
-        File? image = settings.arguments as File; 
+        File? image = settings.arguments as File;
         debugPrint('image is $image');
         return CustomPageRoute(child: ProfileView(image: image));
       case Routes.editProfileView:
@@ -123,7 +123,8 @@ class AppRouter {
       case Routes.successfulyUpdatePasswordScreen:
         return CustomPageRoute(child: const SuccessfulyUpdatePasswordScreen());
       case Routes.pharmacy:
-        return CustomPageRoute(child: const PharmacyScreen());
+        return CustomPageRoute(
+            child: const PharmacyScreen());
       case Routes.pharmacyDetailsScreen:
         return CustomPageRoute(child: const PharmacyDetailsScreen());
       case Routes.bloodBank:

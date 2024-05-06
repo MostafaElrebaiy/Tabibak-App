@@ -15,10 +15,13 @@ class AppTextFormField extends StatelessWidget {
   final bool? isObscureText;
   final TextInputType textInputType;
   final Widget? suffixIcon;
+  final Widget? prefixIcon;
   final TextEditingController? controller;
   final Function(String?) validator;
   final Function(String?)? onFieldSubmitted;
   final FocusNode? focusNode;
+  final VoidCallback? onTap;
+  final Function(String?)? onSaved;
 
   const AppTextFormField({
     super.key,
@@ -35,6 +38,8 @@ class AppTextFormField extends StatelessWidget {
     this.onFieldSubmitted,
     this.focusNode,
     this.textInputType = TextInputType.text,
+    this.prefixIcon,
+    this.onTap, this.onSaved,
   });
 
   @override
@@ -45,6 +50,9 @@ class AppTextFormField extends StatelessWidget {
       onFieldSubmitted: onFieldSubmitted,
       cursorColor: AppColor.mainBlue,
       controller: controller,
+      onTap: onTap,
+  onSaved: onSaved,
+  
       decoration: InputDecoration(
         isDense: true,
         fillColor: AppColor.white,
@@ -58,6 +66,7 @@ class AppTextFormField extends StatelessWidget {
         hintStyle: hintStyle ?? AppStyle.font14GrayRegular,
         hintText: hintText,
         suffixIcon: suffixIcon,
+        prefix: prefixIcon,
       ),
       obscureText: isObscureText ?? false,
       style: inputTextStyle ?? AppStyle.font14DarkBlueMedium,

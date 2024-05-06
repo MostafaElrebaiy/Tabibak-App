@@ -162,13 +162,12 @@ class _ApiService implements ApiService {
     return value;
   }
 
-<<<<<<< HEAD
   @override
   Future<SearchPharmacyResponse> searchPharmacy(
     String token,
     double lat,
+    String medicineName,
     double lng,
-    String medicinename,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -183,7 +182,7 @@ class _ApiService implements ApiService {
     )
             .compose(
               _dio.options,
-              'pharmacies?x=${lat}&y=${lng}&medicine_name={medicinename}',
+              'pharmacies?x=${lat}&y=${lng}&medicine_name=${medicineName}',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -196,8 +195,6 @@ class _ApiService implements ApiService {
     return value;
   }
 
-=======
->>>>>>> 9109ec2d6a38d6357d91280186db73496275d613
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {
     if (T != dynamic &&
         !(requestOptions.responseType == ResponseType.bytes ||

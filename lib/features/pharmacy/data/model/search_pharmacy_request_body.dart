@@ -8,8 +8,11 @@ class SearchPharmacyRequestBody {
   final double lng;
   final String medicineName;
 
-  SearchPharmacyRequestBody({required this.token, required this.lat, required this.lng, required this.medicineName});
+  SearchPharmacyRequestBody(
+      {required this.token,
+      required this.lat,
+      required this.lng,
+      required this.medicineName});
 
- 
   Map<String, dynamic> toJson() => _$SearchPharmacyRequestBodyToJson(this);
 }

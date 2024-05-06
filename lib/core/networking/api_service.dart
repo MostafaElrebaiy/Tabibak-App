@@ -32,11 +32,12 @@ abstract class ApiService {
   Future<ResetPasswordResponse> resetPassword(
       @Body() ResetPasswordRequestBody resetPasswordRequestBody);
 
-  @GET('pharmacies?x={lat}&y={lng}&medicine_name={medicinename}')
+  @GET(
+      '${ApiConstants.pharmacySearch}x={lat}&y={lng}&medicine_name={medicineName}')
   Future<SearchPharmacyResponse> searchPharmacy(
     @Header('Authorization') String token,
     @Path('lat') double lat,
+    @Path('medicineName') String medicineName,
     @Path('lng') double lng,
-    @Path('medicine_name') String medicinename
   );
 }
