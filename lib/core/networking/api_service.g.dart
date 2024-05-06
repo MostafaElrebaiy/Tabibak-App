@@ -162,6 +162,7 @@ class _ApiService implements ApiService {
     return value;
   }
 
+<<<<<<< HEAD
   @override
   Future<SearchPharmacyResponse> searchPharmacy(
     String token,
@@ -195,6 +196,8 @@ class _ApiService implements ApiService {
     return value;
   }
 
+=======
+>>>>>>> 9109ec2d6a38d6357d91280186db73496275d613
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {
     if (T != dynamic &&
         !(requestOptions.responseType == ResponseType.bytes ||

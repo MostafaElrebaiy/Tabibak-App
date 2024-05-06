@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/extensions.dart';
+import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/core/routing/routes.dart';
 import 'package:tabibk/core/theme/styles.dart';
 import 'package:tabibk/core/widgets/custom_widget/app_text_button.dart';
@@ -17,13 +17,13 @@ class ProductBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(
-            height: MediaQuery.of(context).size.height * 0.45,
-            child: ListView.builder(
-              physics: const BouncingScrollPhysics(),
-              itemCount: products.length,
-              itemBuilder: (context, index) => BuildProductWidget(index: index),
-            )),
+        Expanded(
+          child: ListView.builder(
+            physics: const BouncingScrollPhysics(),
+            itemCount: products.length,
+            itemBuilder: (context, index) => BuildProductWidget(index: index),
+          ),
+        ),
         const BuildDivider(),
         const DiscountAndDeliveryScetion(),
         const BuildDivider(),
@@ -40,9 +40,7 @@ class ProductBody extends StatelessWidget {
             )
           ],
         ),
-        SizedBox(
-          height: 30.h,
-        ),
+       verticalSpace(30),
         AppTextButton(
           buttonText: "checkOut".tr(context).toUpperCase(),
           onPressed: () {
