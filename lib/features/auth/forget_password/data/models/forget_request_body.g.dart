@@ -6,7 +6,6 @@ part of 'forget_request_body.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-// ignore: unused_element
 ForgetRequestBody _$ForgetRequestBodyFromJson(Map<String, dynamic> json) =>
     ForgetRequestBody(
       email: json['email'] as String,
