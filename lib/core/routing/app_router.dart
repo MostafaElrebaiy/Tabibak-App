@@ -21,6 +21,7 @@ import 'package:tabibk/features/hospital_and_clinic_system/hospital_info/view/ho
 import 'package:tabibk/features/home/ui/home_screen.dart';
 import 'package:tabibk/features/on_boarding/view/on_boarding_view.dart';
 import 'package:tabibk/features/on_boarding/view/widgets/on_boarding_last_screen.dart';
+import 'package:tabibk/features/pharmacy/logic/cubit/pharmacy_cubit.dart';
 import 'package:tabibk/features/pharmacy/ui/pharmacy_details_screen.dart';
 import 'package:tabibk/features/pharmacy/ui/pharmacy_screen.dart';
 import 'package:tabibk/features/product/view/product_view.dart';
@@ -124,7 +125,10 @@ class AppRouter {
         return CustomPageRoute(child: const SuccessfulyUpdatePasswordScreen());
       case Routes.pharmacy:
         return CustomPageRoute(
-            child: const PharmacyScreen());
+            child: BlocProvider(
+          create: (context) => PharmacyCubit(getIt()),
+          child: const PharmacyScreen(),
+        ));
       case Routes.pharmacyDetailsScreen:
         return CustomPageRoute(child: const PharmacyDetailsScreen());
       case Routes.bloodBank:
