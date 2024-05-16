@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tabibk/features/auth/login/data/models/login_request_body.dart';
 import 'package:tabibk/features/auth/login/data/repo/login_repo.dart';
 
+import '../../../../../core/networking/shared_preferences.dart';
 import 'login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {
@@ -22,7 +23,9 @@ class LoginCubit extends Cubit<LoginState> {
           email: emailController.text, password: passwordController.text),
     );
     response.when(
-      success: (loginResponse) {
+      success: (loginResponse)async {
+        await CacheHelper.insertToCache(
+            key: 'token', value: loginResponse.userData?.token ?? '');
         emit(LoginState.success(loginResponse));
       },
       failure: (error) {

@@ -34,6 +34,7 @@ import '../../features/auth/login/ui/login_screen.dart';
 import '../../features/auth/signup/ui/signup_screen.dart';
 import '../../features/auth/update_password/logic/reset_password_cubit.dart';
 import '../../features/blood_bank/ui/blood_bank_screen.dart';
+import '../../features/pharmacy/logic/cubit/pharmacy_cubit.dart';
 import '../di/dependancy_injection.dart';
 
 class AppRouter {
@@ -124,7 +125,10 @@ class AppRouter {
         return CustomPageRoute(child: const SuccessfulyUpdatePasswordScreen());
       case Routes.pharmacy:
         return CustomPageRoute(
-            child: const PharmacyScreen());
+            child: BlocProvider(
+          create: (context) => getIt<PharmacyCubit>(),
+          child: const PharmacyScreen(),
+        ));
       case Routes.pharmacyDetailsScreen:
         return CustomPageRoute(child: const PharmacyDetailsScreen());
       case Routes.bloodBank:

@@ -12,7 +12,9 @@ Locale? lang;
 
 class TabibkApp extends StatelessWidget {
   final AppRouter appRouter;
-  const TabibkApp({super.key, required this.appRouter});
+  final String? token;
+  const TabibkApp({super.key, required this.appRouter,this
+  .token});
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +62,7 @@ class TabibkApp extends StatelessWidget {
           ),
         ),
         debugShowCheckedModeBanner: false,
-        initialRoute: Routes.homeScreen,
+        initialRoute: token != null && token !="" ? Routes.homeScreen : Routes.secondSplashScreen,
         onGenerateRoute: appRouter.generateRoute,
       ),
     );
