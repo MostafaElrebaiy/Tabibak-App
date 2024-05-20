@@ -5,7 +5,7 @@
 import FlutterMacOS
 import Foundation
 
-import connectivity_plus
+import connectivity_macos
 import file_selector_macos
 import firebase_core
 import path_provider_foundation
