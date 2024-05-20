@@ -95,5 +95,8 @@
    "egp": "EGP",
    "reviews": "Reviews",
    "productdetails": "Product Details",
-   "relatedProduct": "Related Product"
+   "relatedProduct": "Related Product",
+   "noInternet": "Oops, No Internet Connection",
+   "noMedicineFound": "Sorry, there is no medicine with this name, try another one",
+   "searchMedicine" :"Search for medicine..."
 }

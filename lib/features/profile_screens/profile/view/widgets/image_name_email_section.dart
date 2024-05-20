@@ -41,7 +41,7 @@ class ImageNameAndEmailSection extends StatelessWidget {
             textAlign: TextAlign.center,
             overflow: TextOverflow.ellipsis,
             name,
-            style: AppStyle.f20W700BlackMulish,
+            style: AppStyle.f20BlackW700,
           ),
         ),
         Text(

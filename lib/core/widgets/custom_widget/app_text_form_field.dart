@@ -21,7 +21,9 @@ class AppTextFormField extends StatelessWidget {
   final Function(String?)? onFieldSubmitted;
   final FocusNode? focusNode;
   final VoidCallback? onTap;
+  final TextInputAction? textInputAction;
   final Function(String?)? onSaved;
+  final Function(String?)? onChanged;
 
   const AppTextFormField({
     super.key,
@@ -39,7 +41,10 @@ class AppTextFormField extends StatelessWidget {
     this.focusNode,
     this.textInputType = TextInputType.text,
     this.prefixIcon,
-    this.onTap, this.onSaved,
+    this.onTap,
+    this.onSaved,
+    this.onChanged,
+    this.textInputAction,
   });
 
   @override
@@ -51,8 +56,9 @@ class AppTextFormField extends StatelessWidget {
       cursorColor: AppColor.mainBlue,
       controller: controller,
       onTap: onTap,
-  onSaved: onSaved,
-  
+      onSaved: onSaved,
+      onChanged: onChanged,
+      textInputAction: textInputAction,
       decoration: InputDecoration(
         isDense: true,
         fillColor: AppColor.white,
@@ -68,6 +74,7 @@ class AppTextFormField extends StatelessWidget {
         suffixIcon: suffixIcon,
         prefix: prefixIcon,
       ),
+
       obscureText: isObscureText ?? false,
       style: inputTextStyle ?? AppStyle.font14DarkBlueMedium,
       validator: (value) {

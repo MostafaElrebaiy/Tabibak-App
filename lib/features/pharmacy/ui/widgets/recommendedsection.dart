@@ -9,8 +9,8 @@ import '../../../../core/helper/value_manager.dart';
 import '../../../../core/routing/routes.dart';
 import '../../../../core/theme/app_colors.dart';
 
-class RecommendedSection extends StatelessWidget {
-  const RecommendedSection({super.key});
+class RecommendedItem extends StatelessWidget {
+  const RecommendedItem({super.key});
 
   @override
   Widget build(BuildContext context) {
