@@ -33,6 +33,9 @@ class AppString {
   static const String reviews = "reviews";
   static const String productdetails = "productdetails";
   static const String relatedProduct = "relatedProduct";
+  static const String noInternet = "noInternet";
+  static const String noMedicineFound = "noMedicineFound";
+  static const String searchMedicine = "searchMedicine";
 
 //   static const String p = 'P';
 //   static const String bloodBank = 'Blood Bank';

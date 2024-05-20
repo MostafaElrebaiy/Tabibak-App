@@ -87,17 +87,17 @@ class PharmacyDetailsBody extends StatelessWidget {
                     child: IntrinsicHeight(
                       child: Row(
                         children: [
-                          const RecommendedSection(),
+                          const RecommendedItem(),
                           horizontalSpace(5),
-                          const RecommendedSection(),
+                          const RecommendedItem(),
                           horizontalSpace(5),
-                          const RecommendedSection(),
+                          const RecommendedItem(),
                           horizontalSpace(5),
-                          const RecommendedSection(),
+                          const RecommendedItem(),
                           horizontalSpace(5),
-                          const RecommendedSection(),
+                          const RecommendedItem(),
                           horizontalSpace(5),
-                          const RecommendedSection(),
+                          const RecommendedItem(),
                         ],
                       ),
                     ),

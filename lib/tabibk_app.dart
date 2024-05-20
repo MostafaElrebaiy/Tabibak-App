@@ -3,8 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/app_localization.dart';
-import 'package:tabibk/core/theme/app_colors.dart';
-import 'package:tabibk/core/theme/app_constant.dart';
+import 'package:tabibk/core/theming/app_theme.dart';
 
 import 'core/routing/app_router.dart';
 import 'core/routing/routes.dart';
@@ -50,17 +49,7 @@ class TabibkApp extends StatelessWidget {
           }
           return supportedLocales.first;
         },
-        theme: ThemeData(
-          primaryColor: AppColor.mainBlue,
-          scaffoldBackgroundColor: AppColor.white,
-          // fontFamily:  Localizations.maybeLocaleOf(context)?.languageCode== 'ar'? "Cairo":primaryFontFamily,
-          fontFamily: AppConstant.arabicFontFamily,
-          appBarTheme: const AppBarTheme(
-            backgroundColor: AppColor.appbar,
-            elevation: 10,
-            iconTheme: IconThemeData(color: AppColor.white),
-          ),
-        ),
+        theme: AppTheme.lightTheme,
         debugShowCheckedModeBanner: false,
         initialRoute: token != null && token !="" ? Routes.homeScreen : Routes.secondSplashScreen,
         onGenerateRoute: appRouter.generateRoute,

@@ -2,7 +2,7 @@ const String _basePathPng = 'assets/images/png';
 const String _basePathSvg = 'assets/images/svg';
 const String _basePathJson = 'assets/json';
 
-class AppAsset {
+abstract class AppAsset {
   // ----------------- PNG Images ----------------- //
   static const String onBoardingShape1 = '$_basePathPng/OnBoarding Shape 1.png';
   static const String onBoardingShape2 = '$_basePathPng/OnBoarding Shape 2.png';
@@ -63,4 +63,16 @@ class AppAsset {
   static const String successOne = '$_basePathJson/success_1.json';
   static const String successTwo = '$_basePathJson/success_2.json';
   static const String successThree = '$_basePathJson/success_3.json';
+  static const String searchingJson = '$_basePathJson/searching.json';
+  static const String noInternetJson1 = '$_basePathJson/no internet 1.json';
+  static const String noInternetJson2 = '$_basePathJson/no internet 2.json';
+  static const String noInternetJson3 = '$_basePathJson/no internet 3.json';
+  static const String loadingJson1 = '$_basePathJson/loading 1.json';
+  static const String loadingJson2 = '$_basePathJson/loading 2.json';
+  static const String loadingJson3 = '$_basePathJson/loading 3.json';
+  static const String loadingJson4 = '$_basePathJson/loading 4.json';
+  static const String loadingJson5 = '$_basePathJson/loading 5.json';
+  static const String loadingJson6 = '$_basePathJson/loading 6.json';
+  static const String loadingJson7 = '$_basePathJson/loading 7.json';
+  static const String loadingJson8 = '$_basePathJson/loading 8.json';
 }

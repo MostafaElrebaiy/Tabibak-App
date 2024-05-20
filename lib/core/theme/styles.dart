@@ -5,7 +5,7 @@ import 'package:tabibk/core/theme/app_colors.dart';
 
 import 'font_weight_helper.dart';
 
-class AppStyle {
+abstract class AppStyle {
   static TextStyle font10MainBlueRegular = TextStyle(
     // Already
     fontSize: 10.sp,
@@ -120,20 +120,17 @@ class AppStyle {
     color: AppColor.mainBlue,
   );
   static TextStyle font16GrayBold = TextStyle(
-    
     fontSize: 16.sp,
     fontWeight: FontWeightHelper.bold,
     color: AppColor.gray,
   );
   static TextStyle font20GrayBold = TextStyle(
-    
     fontSize: 20.sp,
     fontWeight: FontWeightHelper.bold,
     color: AppColor.gray,
   );
-  
-   static TextStyle font18whiteregular = TextStyle(
-    
+
+  static TextStyle font18whiteregular = TextStyle(
     fontSize: 18.sp,
     fontWeight: FontWeightHelper.regular,
     color: AppColor.white,
@@ -145,7 +142,7 @@ class AppStyle {
     color: AppColor.black,
   );
 
-  static TextStyle f20W700BlackMulish = TextStyle(
+  static TextStyle f20BlackW700 = TextStyle(
     fontSize: 20.sp,
     fontWeight: FontWeightHelper.bold,
     color: AppColor.black,

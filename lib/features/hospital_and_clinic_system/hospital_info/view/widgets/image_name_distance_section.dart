@@ -41,12 +41,12 @@ class ImageNameAndDistanceSection extends StatelessWidget {
                 ),
                 TextSpan(
                   text: name,
-                  style: AppStyle.f20W700BlackMulish,
+                  style: AppStyle.f20BlackW700,
                 )
               ]))
             : Text(
                 name,
-                style: AppStyle.f20W700BlackMulish,
+                style: AppStyle.f20BlackW700,
               ),
         verticalSpace(10),
         Row(

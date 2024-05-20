@@ -95,5 +95,8 @@
    "egp": "جنيه",
    "reviews": "التقييمات",
    "productdetails": "تفاصيل المنتج",
-   "relatedProduct": "منتجات ذات صلة"
+   "relatedProduct": "منتجات ذات صلة",
+   "noInternet": "لا يوجد اتصال بالإنترنت",
+   "noMedicineFound": "لا يوجد دواء بهذا الاسم",
+      "searchMedicine": "ٌإبحث عن الدواء"
 }

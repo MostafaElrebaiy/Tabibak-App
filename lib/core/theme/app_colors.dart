@@ -11,6 +11,7 @@ class AppColor {
   static const Color moreLightGray = Color(0xFFFDFDFF);
 static const Color darkgray = Color(0xFF656F77);//text
   static const splashColor = Color(0xFFE5F1FF);
+  static const red = Colors.red;
   static const black = Color(0xFF000000);
   static const buttonShadowColor = Color(0xFF0D8BFF);
   static const dotColor = Color(0xFF8F8F8F);
