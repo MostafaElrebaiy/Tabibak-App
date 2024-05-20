@@ -11,6 +11,7 @@ class HospitalScreenView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       appBar: buildCustomAppBar(
         backarrow: false,
 

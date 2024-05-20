@@ -15,64 +15,67 @@ import '../../../../core/helper/spacing.dart';
 import '../../../../core/widgets/build_search_scetion.dart';
 
 class PharmacyBody extends StatelessWidget {
-  const PharmacyBody({super.key});
+   const PharmacyBody({super.key});
+
   @override
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
     return BlocProvider(
       create: (context) => PharmacyCubit(getIt()),
       child: ListView(
-        keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-        children: [
-        Padding(
-          padding: EdgeInsets.symmetric(
-              horizontal: 16.w, vertical: AppConstant.appVerticalPadding.h),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              BlocBuilder<PharmacyCubit, PharmacyState>(
-                builder: (context, state) {
-                  PharmacyCubit pharmacyCubit = context.read<PharmacyCubit>();
+          keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+          children: [
+            Padding(
+              padding: EdgeInsets.symmetric(
+                  horizontal: 16.w, vertical: AppConstant.appVerticalPadding.h),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  BlocBuilder<PharmacyCubit, PharmacyState>(
+                    builder: (context, state) {
+                      PharmacyCubit pharmacyCubit =
+                          context.read<PharmacyCubit>();
 
-                  return BuildSearchScetion(
-                    searchController: pharmacyCubit.searchController,
-                    validator: (s) {},
-                    onChanged: (medicineName) {
-                      pharmacyCubit.searchForMedicien(
-                        lat: 2222333,
-                        lng: 3824734,
-                        medicineName: pharmacyCubit.searchController.text,
+                      return BuildSearchScetion(
+                        searchController: pharmacyCubit.searchController,
+                        validator: (s) {},
+                        onChanged: (medicineName) {
+                          pharmacyCubit.searchForMedicien(
+                           
+                            medicineName: pharmacyCubit.searchController.text,
+                          );
+                        },
+                        onFieldSubmitted: (medicineName) {
+                          pharmacyCubit.searchForMedicien(
+                           
+                            medicineName: pharmacyCubit.searchController.text,
+                          );
+                        },
+                        widget: SearchResult(
+                          searchController: pharmacyCubit.searchController,
+                          pharmacySearchResponse:
+                              pharmacyCubit.pharmacySearchResponse,
+                          state: state,
+                        ),
+                        iconTap: () => pharmacyCubit.clearTextFiled(),
+                        isSearching:
+                            pharmacyCubit.searchController.text.isNotEmpty,
                       );
                     },
-                    onFieldSubmitted: (medicineName) {
-                      pharmacyCubit.searchForMedicien(
-                        lat: 2222333,
-                        lng: 3824734,
-                        medicineName: pharmacyCubit.searchController.text,
-                      );
-                    },
-                    widget: SearchResult(
-                      searchController: pharmacyCubit.searchController,
-                      pharmacySearchResponse:
-                          pharmacyCubit.pharmacySearchResponse,
-                      state: state,
-                    ),
-                    iconTap: () => pharmacyCubit.clearTextFiled(),
-                    isSearching: pharmacyCubit.searchController.text.isNotEmpty,
-                  );
-                },
+                  ),
+                  verticalSpace(15),
+                  SizedBox(
+                      height: height * 0.25, child: const CategoriesSection()),
+                  SizedBox(
+                      height: height * 0.33, child: const RecommendedSection()),
+                  SizedBox(
+                      height: height * 0.33, child: const BestDealsSection()),
+                ],
               ),
-              verticalSpace(15),
-              SizedBox(height: height * 0.25, child: const CategoriesSection()),
-              SizedBox(
-                  height: height * 0.33, child: const RecommendedSection()),
-              SizedBox(height: height * 0.33, child: const BestDealsSection()),
-            ],
-          ),
-        )
+            )
 
-        // const PharmacyBlocListener()
-      ]),
+            // const PharmacyBlocListener()
+          ]),
     );
   }
 }
