@@ -8,26 +8,38 @@ import 'package:tabibk/features/pharmacy/data/model/search_pharmacy_response.dar
 import 'package:tabibk/features/pharmacy/data/repo/search_pharmacy_repo.dart';
 import 'package:tabibk/features/pharmacy/logic/cubit/pharmacy_state.dart';
 
+import '../../../../core/networking/location_service.dart';
+
 class PharmacyCubit extends Cubit<PharmacyState> {
   PharmacyCubit(this._pharmacyRepo) : super(const PharmacyState.initial());
   final SearchPharmacyRepo _pharmacyRepo;
   final TextEditingController searchController = TextEditingController();
-
+LocationService locationService = LocationService();
+  double? latitute ;
+  double? longitude ;
   SearchPharmacyResponse? pharmacySearchResponse;
+
   void clearTextFiled() {
     searchController.clear();
     emit(const PharmacyState.initial());
   }
+  
+  Future<void> searchForMedicien({ required medicineName}) async {
+       
+    if (latitute == null || longitude == null) {
+      final locationData = await locationService.getLocation();
+      latitute = locationData.latitude;
+      longitude = locationData.longitude;
+    }
+    
 
-  Future<void> searchForMedicien(
-      {required double lat, required double lng, required medicineName}) async {
     emit(const PharmacyState.loading());
 
     final response =
         await _pharmacyRepo.searchForMedicien(SearchPharmacyRequestBody(
       token: CacheHelper.getCacheData(key: AppConstant.token),
-      lat: lat,
-      lng: lng,
+      lat: latitute!,
+      lng: longitude!,
       medicineName: medicineName,
     ));
     if (searchController.text.isEmpty) {
