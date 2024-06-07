@@ -5,6 +5,7 @@ import 'package:tabibk/core/helper/app_assets.dart';
 import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/app_string.dart';
 import 'package:tabibk/core/helper/spacing.dart';
+import 'package:tabibk/core/networking/location_service.dart';
 import 'package:tabibk/core/theme/styles.dart';
 import 'package:tabibk/features/pharmacy/data/model/search_pharmacy_response.dart';
 import 'package:tabibk/features/pharmacy/logic/cubit/pharmacy_state.dart';
@@ -15,10 +16,13 @@ class SearchResult extends StatelessWidget {
       {super.key,
       required this.pharmacySearchResponse,
       required this.searchController,
-      required this.state});
+      required this.state,
+      required this.locationService});
   final SearchPharmacyResponse? pharmacySearchResponse;
   final TextEditingController searchController;
   final PharmacyState<dynamic> state;
+  final LocationService locationService;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -67,18 +71,31 @@ class SearchResult extends StatelessWidget {
                       itemCount:
                           pharmacySearchResponse?.data?.pharmacies?.length ?? 0,
                       separatorBuilder: (context, index) => verticalSpace(10),
-                      itemBuilder: (context, index) => CustomListTileForSearch(
-                            title: pharmacySearchResponse
-                                    ?.data?.pharmacies?[index].name ??
-                                " ",
-                            destance: pharmacySearchResponse
-                                    ?.data?.pharmacies?[index].distance
-                                    .toString() ??
-                                " ",
-                            details: pharmacySearchResponse
-                                    ?.data?.pharmacies?[index].details ??
-                                " ",
-                            thereDistance: true,
+                      itemBuilder: (context, index) => GestureDetector(
+                            onTap: () {
+                              locationService.goToMap(
+                                  pharmacySearchResponse?.data?.pharmacies?[index].location?.x != null
+                                    ? double.parse(pharmacySearchResponse?.data?.pharmacies?[index].location?.x ?? "")
+                                    : 0.0,
+                                  pharmacySearchResponse?.data?.pharmacies?[index].location?.y != null ?
+                                   double.parse(pharmacySearchResponse?.data?.pharmacies?[index].location?.y ?? "") : 0.0,
+                                    
+                                  );
+                            
+                            },
+                            child: CustomListTileForSearch(
+                              title: pharmacySearchResponse
+                                      ?.data?.pharmacies?[index].name ??
+                                  " ",
+                              destance: pharmacySearchResponse
+                                      ?.data?.pharmacies?[index].distance
+                                      .toString() ??
+                                  " ",
+                              details: pharmacySearchResponse
+                                      ?.data?.pharmacies?[index].details ??
+                                  " ",
+                              thereDistance: true,
+                            ),
                           )),
                 ],
               ),

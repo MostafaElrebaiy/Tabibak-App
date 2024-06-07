@@ -55,7 +55,7 @@ class PharmacyBody extends StatelessWidget {
                           searchController: pharmacyCubit.searchController,
                           pharmacySearchResponse:
                               pharmacyCubit.pharmacySearchResponse,
-                          state: state,
+                          state: state, locationService: pharmacyCubit.locationService,
                         ),
                         iconTap: () => pharmacyCubit.clearTextFiled(),
                         isSearching:

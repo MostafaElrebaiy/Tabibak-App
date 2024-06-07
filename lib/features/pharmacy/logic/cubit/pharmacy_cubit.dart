@@ -14,24 +14,31 @@ class PharmacyCubit extends Cubit<PharmacyState> {
   PharmacyCubit(this._pharmacyRepo) : super(const PharmacyState.initial());
   final SearchPharmacyRepo _pharmacyRepo;
   final TextEditingController searchController = TextEditingController();
-LocationService locationService = LocationService();
-  double? latitute ;
-  double? longitude ;
+  LocationService locationService = LocationService();
+  double? latitute;
+  double? longitude;
   SearchPharmacyResponse? pharmacySearchResponse;
 
   void clearTextFiled() {
     searchController.clear();
     emit(const PharmacyState.initial());
   }
-  
-  Future<void> searchForMedicien({ required medicineName}) async {
-       
+
+  void goToMap() async {
+    await locationService.goToMap(
+       latitute!,
+      longitude!,
+        );
+
+    
+  }
+
+  Future<void> searchForMedicien({required medicineName}) async {
     if (latitute == null || longitude == null) {
       final locationData = await locationService.getLocation();
       latitute = locationData.latitude;
       longitude = locationData.longitude;
     }
-    
 
     emit(const PharmacyState.loading());
 
@@ -48,6 +55,7 @@ LocationService locationService = LocationService();
     }
     response.when(success: (medicine) {
       pharmacySearchResponse = medicine;
+
       // ("object: medicine");
       emit(PharmacyState.success(medicine));
     }, failure: (error) {
