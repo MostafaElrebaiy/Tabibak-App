@@ -11,6 +11,7 @@ import '../../features/auth/forget_password/data/models/forget_request_body.dart
 import '../../features/auth/forget_password/data/models/forget_response.dart';
 import '../../features/auth/otp/data/models/check_code_request_body.dart';
 import '../../features/auth/otp/data/models/check_code_response.dart';
+import '../../features/pharmacy/data/model/pharmacy_recommended_response.dart';
 import '../../features/pharmacy/data/model/search_pharmacy_response.dart';
 part 'api_service.g.dart';
 
@@ -39,5 +40,9 @@ abstract class ApiService {
     @Path('lat') double lat,
     @Path('medicineName') String medicineName,
     @Path('lng') double lng,
+  );
+  @GET(ApiConstants.pharmacyRecommended)
+  Future<PharmacyRecommendedResponse> getRecommendedMedicine(
+    @Header('Authorization') String token,
   );
 }

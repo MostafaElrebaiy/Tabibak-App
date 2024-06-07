@@ -4,8 +4,7 @@ import 'package:tabibk/core/networking/api_service.dart';
 import 'package:tabibk/core/networking/dio_factory.dart';
 import 'package:tabibk/features/auth/login/logic/cubit/login_cubit.dart';
 import 'package:tabibk/features/pharmacy/data/repo/search_pharmacy_repo.dart';
-import 'package:tabibk/features/pharmacy/logic/cubit/pharmacy_cubit.dart';
-
+import 'package:tabibk/features/pharmacy/logic/pharmacy_search_cubit/pharmacy_cubit.dart';
 import '../../features/auth/forget_password/data/repo/forget_password_repo.dart';
 import '../../features/auth/forget_password/logic/forget_password_cubit.dart';
 import '../../features/auth/login/data/repo/login_repo.dart';
@@ -15,6 +14,7 @@ import '../../features/auth/signup/data/repo/sign_up_repo.dart';
 import '../../features/auth/signup/logic/sign_up_cubit.dart';
 import '../../features/auth/update_password/data/repo/reset_password_repo.dart';
 import '../../features/auth/update_password/logic/reset_password_cubit.dart';
+import '../../features/pharmacy/data/repo/pharmacy_recommended_repo.dart';
 
 final getIt = GetIt.instance;
 Future<void> setupGetIt() async {
@@ -38,5 +38,11 @@ Future<void> setupGetIt() async {
   getIt.registerFactory<ResetPasswordCubit>(() => ResetPasswordCubit(getIt()));
 //pharmacy Search
   getIt.registerLazySingleton<SearchPharmacyRepo>(() => SearchPharmacyRepo(getIt()));
-  getIt.registerLazySingleton<PharmacyCubit>(() => PharmacyCubit(getIt(),));
+   getIt.registerLazySingleton<PharmacyRecommendedRepo>(() => PharmacyRecommendedRepo(getIt()));
+  getIt.registerLazySingleton<PharmacyCubit>(() => PharmacyCubit(getIt<SearchPharmacyRepo>(),getIt<PharmacyRecommendedRepo>()));
+
+  //pharmacy Recommended
+//   getIt.registerLazySingleton<PharmacyRecommendedRepo>(() => PharmacyRecommendedRepo(getIt()));
+//  getIt.registerLazySingleton<PharmacyRecommendedCubit>(() => PharmacyRecommendedCubit(getIt()));
+  
 }

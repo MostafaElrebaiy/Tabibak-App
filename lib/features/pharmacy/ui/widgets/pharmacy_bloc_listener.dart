@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tabibk/core/helper/extensions.dart';
 import 'package:tabibk/core/utilities/show_failure_dialog.dart';
 import 'package:tabibk/core/utilities/show_loading_dialog.dart';
-import 'package:tabibk/features/pharmacy/logic/cubit/pharmacy_cubit.dart';
-import 'package:tabibk/features/pharmacy/logic/cubit/pharmacy_state.dart';
+import 'package:tabibk/features/pharmacy/logic/pharmacy_search_cubit/pharmacy_cubit.dart';
+import 'package:tabibk/features/pharmacy/logic/pharmacy_search_cubit/pharmacy_state.dart';
 
 class PharmacyBlocListener extends StatelessWidget {
   const PharmacyBlocListener({super.key});
