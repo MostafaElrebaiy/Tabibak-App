@@ -8,7 +8,7 @@ import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/core/networking/location_service.dart';
 import 'package:tabibk/core/theme/styles.dart';
 import 'package:tabibk/features/pharmacy/data/model/search_pharmacy_response.dart';
-import 'package:tabibk/features/pharmacy/logic/cubit/pharmacy_state.dart';
+import 'package:tabibk/features/pharmacy/logic/pharmacy_search_cubit/pharmacy_state.dart';
 import 'package:tabibk/features/pharmacy/ui/widgets/custom_list_tile_for_search.dart';
 
 class SearchResult extends StatelessWidget {
