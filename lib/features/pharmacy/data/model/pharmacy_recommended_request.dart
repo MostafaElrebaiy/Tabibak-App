@@ -5,10 +5,7 @@ part 'pharmacy_recommended_request.g.dart';
 class PharmacyRecommendedRequest {
   final String token;
 
-
-  PharmacyRecommendedRequest(
-      {required this.token,
-     });
+  PharmacyRecommendedRequest({required this.token});
 
   Map<String, dynamic> toJson() => _$PharmacyRecommendedRequestToJson(this);
 }

@@ -7,6 +7,7 @@ import 'package:tabibk/features/auth/signup/data/models/sign_up_request_body.dar
 import 'package:tabibk/features/auth/signup/data/models/sign_up_response.dart';
 import 'package:tabibk/features/auth/update_password/data/models/reset_password_request_body.dart';
 import 'package:tabibk/features/auth/update_password/data/models/reset_password_response.dart';
+import 'package:tabibk/features/pharmacy/data/model/pharmacy_best_deals_reponce.dart';
 import '../../features/auth/forget_password/data/models/forget_request_body.dart';
 import '../../features/auth/forget_password/data/models/forget_response.dart';
 import '../../features/auth/otp/data/models/check_code_request_body.dart';
@@ -43,6 +44,10 @@ abstract class ApiService {
   );
   @GET(ApiConstants.pharmacyRecommended)
   Future<PharmacyRecommendedResponse> getRecommendedMedicine(
+    @Header('Authorization') String token,
+  );
+  @GET(ApiConstants.pharmacyBestDeals)
+  Future<PharmacyBestDealsResponce> getBestDealsMedicine(
     @Header('Authorization') String token,
   );
 }
