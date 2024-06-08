@@ -196,6 +196,34 @@ class _ApiService implements ApiService {
   }
 
   @override
+  Future<PharmacyMedicineResponse> getBestDealsMedicine(String token) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'Authorization': token};
+    _headers.removeWhere((k, v) => v == null);
+    const Map<String, dynamic>? _data = null;
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<PharmacyMedicineResponse>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'products/best_deals',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = PharmacyMedicineResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
   Future<PharmacyMedicineResponse> getRecommendedMedicine(String token) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -220,34 +248,6 @@ class _ApiService implements ApiService {
               baseUrl,
             ))));
     final value = PharmacyMedicineResponse.fromJson(_result.data!);
-    return value;
-  }
-
-  @override
-  Future<PharmacyBestDealResponse> getBestDealsMedicine(String token) async {
-    final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{r'Authorization': token};
-    _headers.removeWhere((k, v) => v == null);
-    const Map<String, dynamic>? _data = null;
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<PharmacyBestDealResponse>(Options(
-      method: 'GET',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              'products/best_deals',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final value = PharmacyBestDealResponse.fromJson(_result.data!);
     return value;
   }
 
