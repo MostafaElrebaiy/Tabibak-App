@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/app_string.dart';
+import 'package:tabibk/features/pharmacy/logic/pharmacy_best_deal_medicine/pharmacy_best_deal_medicine_cubit.dart';
+import 'package:tabibk/features/pharmacy/logic/pharmacy_recommended_medicine/pharmacy_recommended_medicine_cubit.dart';
 
 import '../../../core/di/dependancy_injection.dart';
 import '../../../core/theme/styles.dart';
@@ -14,8 +16,18 @@ class PharmacyScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => PharmacyCubit(getIt(), getIt(), getIt()),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => PharmacyCubit(getIt()),
+        ),
+        BlocProvider(
+          create: (context) => PharmacyBestDealMedicineCubit(getIt()),
+        ),
+        BlocProvider(
+          create: (context) => PharmacyRecommendedMedicineCubit(getIt()),
+        ),
+      ],
       child: Scaffold(
         appBar: buildCustomAppBar(
             backarrow: false,

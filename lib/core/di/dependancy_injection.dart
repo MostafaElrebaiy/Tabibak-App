@@ -5,6 +5,8 @@ import 'package:tabibk/core/networking/dio_factory.dart';
 import 'package:tabibk/features/auth/login/logic/cubit/login_cubit.dart';
 import 'package:tabibk/features/pharmacy/data/repo/pharmacy_best_deals_repo.dart';
 import 'package:tabibk/features/pharmacy/data/repo/search_pharmacy_repo.dart';
+import 'package:tabibk/features/pharmacy/logic/pharmacy_best_deal_medicine/pharmacy_best_deal_medicine_cubit.dart';
+import 'package:tabibk/features/pharmacy/logic/pharmacy_recommended_medicine/pharmacy_recommended_medicine_cubit.dart';
 import 'package:tabibk/features/pharmacy/logic/pharmacy_search_cubit/pharmacy_cubit.dart';
 import '../../features/auth/forget_password/data/repo/forget_password_repo.dart';
 import '../../features/auth/forget_password/logic/forget_password_cubit.dart';
@@ -38,19 +40,23 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<ResetPasswordRepo>(
       () => ResetPasswordRepo(getIt()));
   getIt.registerFactory<ResetPasswordCubit>(() => ResetPasswordCubit(getIt()));
-//pharmacy Search
+
+// --------------------- Pharmacy Search --------------------- //
   getIt.registerLazySingleton<SearchPharmacyRepo>(
       () => SearchPharmacyRepo(getIt()));
   getIt.registerLazySingleton<PharmacyBestDealRepo>(
       () => PharmacyBestDealRepo(getIt()));
   getIt.registerLazySingleton<PharmacyRecommendedRepo>(
       () => PharmacyRecommendedRepo(getIt()));
-  getIt.registerLazySingleton<PharmacyCubit>(() => PharmacyCubit(
-      getIt<SearchPharmacyRepo>(),
-      getIt<PharmacyRecommendedRepo>(),
-      getIt<PharmacyBestDealRepo>()));
 
-  //pharmacy Recommended
-//   getIt.registerLazySingleton<PharmacyRecommendedRepo>(() => PharmacyRecommendedRepo(getIt()));
-//  getIt.registerLazySingleton<PharmacyRecommendedCubit>(() => PharmacyRecommendedCubit(getIt()));
+  // ---------------- I Change registerLazySingleton to registerFactory in 3 Cubit of  ---------------- //
+  // ----------------------------------  Pharmacy  ---------------------------------- //
+  getIt.registerFactory<PharmacyCubit>(
+      () => PharmacyCubit(getIt<SearchPharmacyRepo>()));
+
+  getIt.registerFactory<PharmacyRecommendedMedicineCubit>(
+      () => PharmacyRecommendedMedicineCubit(getIt<PharmacyRecommendedRepo>()));
+
+  getIt.registerFactory<PharmacyBestDealMedicineCubit>(
+      () => PharmacyBestDealMedicineCubit(getIt<PharmacyBestDealRepo>()));
 }

@@ -4,6 +4,8 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/theme/app_constant.dart';
+import 'package:tabibk/features/pharmacy/logic/pharmacy_best_deal_medicine/pharmacy_best_deal_medicine_cubit.dart';
+import 'package:tabibk/features/pharmacy/logic/pharmacy_recommended_medicine/pharmacy_recommended_medicine_cubit.dart';
 import 'package:tabibk/features/pharmacy/logic/pharmacy_search_cubit/pharmacy_cubit.dart';
 import 'package:tabibk/features/pharmacy/logic/pharmacy_search_cubit/pharmacy_state.dart';
 import 'package:tabibk/features/pharmacy/ui/widgets/best_deals_section.dart';
@@ -24,8 +26,8 @@ class _PharmacyBodyState extends State<PharmacyBody> {
 
   @override
   void initState() {
-    BlocProvider.of<PharmacyCubit>(context).getRecommendedMedicine();
-    BlocProvider.of<PharmacyCubit>(context).getBestDealsMedicine();
+    BlocProvider.of<PharmacyRecommendedMedicineCubit>(context).getRecommendedMedicine();
+    BlocProvider.of<PharmacyBestDealMedicineCubit>(context).getBestDealsMedicine();
     super.initState();
   }
   @override

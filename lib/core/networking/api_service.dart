@@ -7,12 +7,11 @@ import 'package:tabibk/features/auth/signup/data/models/sign_up_request_body.dar
 import 'package:tabibk/features/auth/signup/data/models/sign_up_response.dart';
 import 'package:tabibk/features/auth/update_password/data/models/reset_password_request_body.dart';
 import 'package:tabibk/features/auth/update_password/data/models/reset_password_response.dart';
-import 'package:tabibk/features/pharmacy/data/model/pharmacy_best_deals_response.dart';
+import 'package:tabibk/features/pharmacy/data/model/pharmacy_medicien_response.dart';
 import '../../features/auth/forget_password/data/models/forget_request_body.dart';
 import '../../features/auth/forget_password/data/models/forget_response.dart';
 import '../../features/auth/otp/data/models/check_code_request_body.dart';
 import '../../features/auth/otp/data/models/check_code_response.dart';
-import '../../features/pharmacy/data/model/pharmacy_recommended_response.dart';
 import '../../features/pharmacy/data/model/search_pharmacy_response.dart';
 part 'api_service.g.dart';
 
@@ -42,12 +41,13 @@ abstract class ApiService {
     @Path('medicineName') String medicineName,
     @Path('lng') double lng,
   );
+  
   @GET(ApiConstants.pharmacyRecommended)
-  Future<PharmacyRecommendedResponse> getRecommendedMedicine(
+  Future<PharmacyMedicineResponse> getRecommendedMedicine(
     @Header('Authorization') String token,
   );
   @GET(ApiConstants.pharmacyBestDeals)
-  Future<PharmacyBestDealsResponce> getBestDealsMedicine(
+  Future<PharmacyMedicineResponse> getBestDealsMedicine(
     @Header('Authorization') String token,
   );
 }

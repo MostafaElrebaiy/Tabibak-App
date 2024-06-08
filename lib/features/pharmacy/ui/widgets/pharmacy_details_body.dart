@@ -5,7 +5,6 @@ import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/app_string.dart';
 import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
-import 'package:tabibk/features/pharmacy/ui/widgets/recommendedsection.dart';
 import '../../../../core/theme/styles.dart';
 import 'titles_of_section.dart';
 
@@ -82,22 +81,22 @@ class PharmacyDetailsBody extends StatelessWidget {
                     subTitle: '',
                   ),
                   verticalSpace(10),
-                  SingleChildScrollView(
+                  const SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: IntrinsicHeight(
                       child: Row(
                         children: [
-                          const RecommendedItem(),
-                          horizontalSpace(5),
-                          const RecommendedItem(),
-                          horizontalSpace(5),
-                          const RecommendedItem(),
-                          horizontalSpace(5),
-                          const RecommendedItem(),
-                          horizontalSpace(5),
-                          const RecommendedItem(),
-                          horizontalSpace(5),
-                          const RecommendedItem(),
+                          // const RecommendedItem(),
+                          // horizontalSpace(5),
+                          // const RecommendedItem(),
+                          // horizontalSpace(5),
+                          // const RecommendedItem(),
+                          // horizontalSpace(5),
+                          // const RecommendedItem(),
+                          // horizontalSpace(5),
+                          // const RecommendedItem(),
+                          // horizontalSpace(5),
+                          // const RecommendedItem(),
                         ],
                       ),
                     ),
