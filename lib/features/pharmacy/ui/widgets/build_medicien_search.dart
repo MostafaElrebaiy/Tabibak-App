@@ -15,7 +15,7 @@ class MedicienSearch extends SearchDelegate {
   List<Widget>? buildActions(BuildContext context) {
     return [
       BlocProvider(
-          create: (context) => PharmacyCubit(getIt(),getIt()),
+          create: (context) => PharmacyCubit(getIt(),getIt(),getIt()),
           child: BlocBuilder<PharmacyCubit, PharmacyState>(
             builder: (context, state) {
               return IconButton(

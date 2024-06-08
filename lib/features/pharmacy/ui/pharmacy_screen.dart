@@ -15,7 +15,7 @@ class PharmacyScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => PharmacyCubit(getIt(),getIt()),
+      create: (context) => PharmacyCubit(getIt(), getIt(), getIt()),
       child: Scaffold(
         appBar: buildCustomAppBar(
             backarrow: false,

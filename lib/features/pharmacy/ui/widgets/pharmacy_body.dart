@@ -25,6 +25,7 @@ class _PharmacyBodyState extends State<PharmacyBody> {
   @override
   void initState() {
     BlocProvider.of<PharmacyCubit>(context).getRecommendedMedicine();
+    BlocProvider.of<PharmacyCubit>(context).getBestDealsMedicine();
     super.initState();
   }
   @override
