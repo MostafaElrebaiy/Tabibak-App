@@ -22,9 +22,6 @@ mixin _$PharmacyState<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String error) error,
-    required TResult Function() loadingRecommendedMedicine,
-    required TResult Function(T data) successRecommendedMedicine,
-    required TResult Function(String error) errorRecommendedMedicine,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -33,9 +30,6 @@ mixin _$PharmacyState<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String error)? error,
-    TResult? Function()? loadingRecommendedMedicine,
-    TResult? Function(T data)? successRecommendedMedicine,
-    TResult? Function(String error)? errorRecommendedMedicine,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,9 +38,6 @@ mixin _$PharmacyState<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String error)? error,
-    TResult Function()? loadingRecommendedMedicine,
-    TResult Function(T data)? successRecommendedMedicine,
-    TResult Function(String error)? errorRecommendedMedicine,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -56,12 +47,6 @@ mixin _$PharmacyState<T> {
     required TResult Function(PharmacyLoading<T> value) loading,
     required TResult Function(PharmacySuccess<T> value) success,
     required TResult Function(PharmacyError<T> value) error,
-    required TResult Function(PharmacyRecommendedLoading<T> value)
-        loadingRecommendedMedicine,
-    required TResult Function(PharmacyRecommendedSuccess<T> value)
-        successRecommendedMedicine,
-    required TResult Function(PharmacyRecommendedError<T> value)
-        errorRecommendedMedicine,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -70,12 +55,6 @@ mixin _$PharmacyState<T> {
     TResult? Function(PharmacyLoading<T> value)? loading,
     TResult? Function(PharmacySuccess<T> value)? success,
     TResult? Function(PharmacyError<T> value)? error,
-    TResult? Function(PharmacyRecommendedLoading<T> value)?
-        loadingRecommendedMedicine,
-    TResult? Function(PharmacyRecommendedSuccess<T> value)?
-        successRecommendedMedicine,
-    TResult? Function(PharmacyRecommendedError<T> value)?
-        errorRecommendedMedicine,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -84,12 +63,6 @@ mixin _$PharmacyState<T> {
     TResult Function(PharmacyLoading<T> value)? loading,
     TResult Function(PharmacySuccess<T> value)? success,
     TResult Function(PharmacyError<T> value)? error,
-    TResult Function(PharmacyRecommendedLoading<T> value)?
-        loadingRecommendedMedicine,
-    TResult Function(PharmacyRecommendedSuccess<T> value)?
-        successRecommendedMedicine,
-    TResult Function(PharmacyRecommendedError<T> value)?
-        errorRecommendedMedicine,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -155,9 +128,6 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String error) error,
-    required TResult Function() loadingRecommendedMedicine,
-    required TResult Function(T data) successRecommendedMedicine,
-    required TResult Function(String error) errorRecommendedMedicine,
   }) {
     return initial();
   }
@@ -169,9 +139,6 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String error)? error,
-    TResult? Function()? loadingRecommendedMedicine,
-    TResult? Function(T data)? successRecommendedMedicine,
-    TResult? Function(String error)? errorRecommendedMedicine,
   }) {
     return initial?.call();
   }
@@ -183,9 +150,6 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String error)? error,
-    TResult Function()? loadingRecommendedMedicine,
-    TResult Function(T data)? successRecommendedMedicine,
-    TResult Function(String error)? errorRecommendedMedicine,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -201,12 +165,6 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function(PharmacyLoading<T> value) loading,
     required TResult Function(PharmacySuccess<T> value) success,
     required TResult Function(PharmacyError<T> value) error,
-    required TResult Function(PharmacyRecommendedLoading<T> value)
-        loadingRecommendedMedicine,
-    required TResult Function(PharmacyRecommendedSuccess<T> value)
-        successRecommendedMedicine,
-    required TResult Function(PharmacyRecommendedError<T> value)
-        errorRecommendedMedicine,
   }) {
     return initial(this);
   }
@@ -218,12 +176,6 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(PharmacyLoading<T> value)? loading,
     TResult? Function(PharmacySuccess<T> value)? success,
     TResult? Function(PharmacyError<T> value)? error,
-    TResult? Function(PharmacyRecommendedLoading<T> value)?
-        loadingRecommendedMedicine,
-    TResult? Function(PharmacyRecommendedSuccess<T> value)?
-        successRecommendedMedicine,
-    TResult? Function(PharmacyRecommendedError<T> value)?
-        errorRecommendedMedicine,
   }) {
     return initial?.call(this);
   }
@@ -235,12 +187,6 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(PharmacyLoading<T> value)? loading,
     TResult Function(PharmacySuccess<T> value)? success,
     TResult Function(PharmacyError<T> value)? error,
-    TResult Function(PharmacyRecommendedLoading<T> value)?
-        loadingRecommendedMedicine,
-    TResult Function(PharmacyRecommendedSuccess<T> value)?
-        successRecommendedMedicine,
-    TResult Function(PharmacyRecommendedError<T> value)?
-        errorRecommendedMedicine,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -296,9 +242,6 @@ class _$PharmacyLoadingImpl<T> implements PharmacyLoading<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String error) error,
-    required TResult Function() loadingRecommendedMedicine,
-    required TResult Function(T data) successRecommendedMedicine,
-    required TResult Function(String error) errorRecommendedMedicine,
   }) {
     return loading();
   }
@@ -310,9 +253,6 @@ class _$PharmacyLoadingImpl<T> implements PharmacyLoading<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String error)? error,
-    TResult? Function()? loadingRecommendedMedicine,
-    TResult? Function(T data)? successRecommendedMedicine,
-    TResult? Function(String error)? errorRecommendedMedicine,
   }) {
     return loading?.call();
   }
@@ -324,9 +264,6 @@ class _$PharmacyLoadingImpl<T> implements PharmacyLoading<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String error)? error,
-    TResult Function()? loadingRecommendedMedicine,
-    TResult Function(T data)? successRecommendedMedicine,
-    TResult Function(String error)? errorRecommendedMedicine,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -342,12 +279,6 @@ class _$PharmacyLoadingImpl<T> implements PharmacyLoading<T> {
     required TResult Function(PharmacyLoading<T> value) loading,
     required TResult Function(PharmacySuccess<T> value) success,
     required TResult Function(PharmacyError<T> value) error,
-    required TResult Function(PharmacyRecommendedLoading<T> value)
-        loadingRecommendedMedicine,
-    required TResult Function(PharmacyRecommendedSuccess<T> value)
-        successRecommendedMedicine,
-    required TResult Function(PharmacyRecommendedError<T> value)
-        errorRecommendedMedicine,
   }) {
     return loading(this);
   }
@@ -359,12 +290,6 @@ class _$PharmacyLoadingImpl<T> implements PharmacyLoading<T> {
     TResult? Function(PharmacyLoading<T> value)? loading,
     TResult? Function(PharmacySuccess<T> value)? success,
     TResult? Function(PharmacyError<T> value)? error,
-    TResult? Function(PharmacyRecommendedLoading<T> value)?
-        loadingRecommendedMedicine,
-    TResult? Function(PharmacyRecommendedSuccess<T> value)?
-        successRecommendedMedicine,
-    TResult? Function(PharmacyRecommendedError<T> value)?
-        errorRecommendedMedicine,
   }) {
     return loading?.call(this);
   }
@@ -376,12 +301,6 @@ class _$PharmacyLoadingImpl<T> implements PharmacyLoading<T> {
     TResult Function(PharmacyLoading<T> value)? loading,
     TResult Function(PharmacySuccess<T> value)? success,
     TResult Function(PharmacyError<T> value)? error,
-    TResult Function(PharmacyRecommendedLoading<T> value)?
-        loadingRecommendedMedicine,
-    TResult Function(PharmacyRecommendedSuccess<T> value)?
-        successRecommendedMedicine,
-    TResult Function(PharmacyRecommendedError<T> value)?
-        errorRecommendedMedicine,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -465,9 +384,6 @@ class _$PharmacySuccessImpl<T> implements PharmacySuccess<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String error) error,
-    required TResult Function() loadingRecommendedMedicine,
-    required TResult Function(T data) successRecommendedMedicine,
-    required TResult Function(String error) errorRecommendedMedicine,
   }) {
     return success(data);
   }
@@ -479,9 +395,6 @@ class _$PharmacySuccessImpl<T> implements PharmacySuccess<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String error)? error,
-    TResult? Function()? loadingRecommendedMedicine,
-    TResult? Function(T data)? successRecommendedMedicine,
-    TResult? Function(String error)? errorRecommendedMedicine,
   }) {
     return success?.call(data);
   }
@@ -493,9 +406,6 @@ class _$PharmacySuccessImpl<T> implements PharmacySuccess<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String error)? error,
-    TResult Function()? loadingRecommendedMedicine,
-    TResult Function(T data)? successRecommendedMedicine,
-    TResult Function(String error)? errorRecommendedMedicine,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -511,12 +421,6 @@ class _$PharmacySuccessImpl<T> implements PharmacySuccess<T> {
     required TResult Function(PharmacyLoading<T> value) loading,
     required TResult Function(PharmacySuccess<T> value) success,
     required TResult Function(PharmacyError<T> value) error,
-    required TResult Function(PharmacyRecommendedLoading<T> value)
-        loadingRecommendedMedicine,
-    required TResult Function(PharmacyRecommendedSuccess<T> value)
-        successRecommendedMedicine,
-    required TResult Function(PharmacyRecommendedError<T> value)
-        errorRecommendedMedicine,
   }) {
     return success(this);
   }
@@ -528,12 +432,6 @@ class _$PharmacySuccessImpl<T> implements PharmacySuccess<T> {
     TResult? Function(PharmacyLoading<T> value)? loading,
     TResult? Function(PharmacySuccess<T> value)? success,
     TResult? Function(PharmacyError<T> value)? error,
-    TResult? Function(PharmacyRecommendedLoading<T> value)?
-        loadingRecommendedMedicine,
-    TResult? Function(PharmacyRecommendedSuccess<T> value)?
-        successRecommendedMedicine,
-    TResult? Function(PharmacyRecommendedError<T> value)?
-        errorRecommendedMedicine,
   }) {
     return success?.call(this);
   }
@@ -545,12 +443,6 @@ class _$PharmacySuccessImpl<T> implements PharmacySuccess<T> {
     TResult Function(PharmacyLoading<T> value)? loading,
     TResult Function(PharmacySuccess<T> value)? success,
     TResult Function(PharmacyError<T> value)? error,
-    TResult Function(PharmacyRecommendedLoading<T> value)?
-        loadingRecommendedMedicine,
-    TResult Function(PharmacyRecommendedSuccess<T> value)?
-        successRecommendedMedicine,
-    TResult Function(PharmacyRecommendedError<T> value)?
-        errorRecommendedMedicine,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -638,9 +530,6 @@ class _$PharmacyErrorImpl<T> implements PharmacyError<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String error) error,
-    required TResult Function() loadingRecommendedMedicine,
-    required TResult Function(T data) successRecommendedMedicine,
-    required TResult Function(String error) errorRecommendedMedicine,
   }) {
     return error(this.error);
   }
@@ -652,9 +541,6 @@ class _$PharmacyErrorImpl<T> implements PharmacyError<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String error)? error,
-    TResult? Function()? loadingRecommendedMedicine,
-    TResult? Function(T data)? successRecommendedMedicine,
-    TResult? Function(String error)? errorRecommendedMedicine,
   }) {
     return error?.call(this.error);
   }
@@ -666,9 +552,6 @@ class _$PharmacyErrorImpl<T> implements PharmacyError<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String error)? error,
-    TResult Function()? loadingRecommendedMedicine,
-    TResult Function(T data)? successRecommendedMedicine,
-    TResult Function(String error)? errorRecommendedMedicine,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -684,12 +567,6 @@ class _$PharmacyErrorImpl<T> implements PharmacyError<T> {
     required TResult Function(PharmacyLoading<T> value) loading,
     required TResult Function(PharmacySuccess<T> value) success,
     required TResult Function(PharmacyError<T> value) error,
-    required TResult Function(PharmacyRecommendedLoading<T> value)
-        loadingRecommendedMedicine,
-    required TResult Function(PharmacyRecommendedSuccess<T> value)
-        successRecommendedMedicine,
-    required TResult Function(PharmacyRecommendedError<T> value)
-        errorRecommendedMedicine,
   }) {
     return error(this);
   }
@@ -701,12 +578,6 @@ class _$PharmacyErrorImpl<T> implements PharmacyError<T> {
     TResult? Function(PharmacyLoading<T> value)? loading,
     TResult? Function(PharmacySuccess<T> value)? success,
     TResult? Function(PharmacyError<T> value)? error,
-    TResult? Function(PharmacyRecommendedLoading<T> value)?
-        loadingRecommendedMedicine,
-    TResult? Function(PharmacyRecommendedSuccess<T> value)?
-        successRecommendedMedicine,
-    TResult? Function(PharmacyRecommendedError<T> value)?
-        errorRecommendedMedicine,
   }) {
     return error?.call(this);
   }
@@ -718,12 +589,6 @@ class _$PharmacyErrorImpl<T> implements PharmacyError<T> {
     TResult Function(PharmacyLoading<T> value)? loading,
     TResult Function(PharmacySuccess<T> value)? success,
     TResult Function(PharmacyError<T> value)? error,
-    TResult Function(PharmacyRecommendedLoading<T> value)?
-        loadingRecommendedMedicine,
-    TResult Function(PharmacyRecommendedSuccess<T> value)?
-        successRecommendedMedicine,
-    TResult Function(PharmacyRecommendedError<T> value)?
-        errorRecommendedMedicine,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -741,509 +606,4 @@ abstract class PharmacyError<T> implements PharmacyState<T> {
   @JsonKey(ignore: true)
   _$$PharmacyErrorImplCopyWith<T, _$PharmacyErrorImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$PharmacyRecommendedLoadingImplCopyWith<T, $Res> {
-  factory _$$PharmacyRecommendedLoadingImplCopyWith(
-          _$PharmacyRecommendedLoadingImpl<T> value,
-          $Res Function(_$PharmacyRecommendedLoadingImpl<T>) then) =
-      __$$PharmacyRecommendedLoadingImplCopyWithImpl<T, $Res>;
-}
-
-/// @nodoc
-class __$$PharmacyRecommendedLoadingImplCopyWithImpl<T, $Res>
-    extends _$PharmacyStateCopyWithImpl<T, $Res,
-        _$PharmacyRecommendedLoadingImpl<T>>
-    implements _$$PharmacyRecommendedLoadingImplCopyWith<T, $Res> {
-  __$$PharmacyRecommendedLoadingImplCopyWithImpl(
-      _$PharmacyRecommendedLoadingImpl<T> _value,
-      $Res Function(_$PharmacyRecommendedLoadingImpl<T>) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$PharmacyRecommendedLoadingImpl<T>
-    implements PharmacyRecommendedLoading<T> {
-  const _$PharmacyRecommendedLoadingImpl();
-
-  @override
-  String toString() {
-    return 'PharmacyState<$T>.loadingRecommendedMedicine()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$PharmacyRecommendedLoadingImpl<T>);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(T data) success,
-    required TResult Function(String error) error,
-    required TResult Function() loadingRecommendedMedicine,
-    required TResult Function(T data) successRecommendedMedicine,
-    required TResult Function(String error) errorRecommendedMedicine,
-  }) {
-    return loadingRecommendedMedicine();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(T data)? success,
-    TResult? Function(String error)? error,
-    TResult? Function()? loadingRecommendedMedicine,
-    TResult? Function(T data)? successRecommendedMedicine,
-    TResult? Function(String error)? errorRecommendedMedicine,
-  }) {
-    return loadingRecommendedMedicine?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(T data)? success,
-    TResult Function(String error)? error,
-    TResult Function()? loadingRecommendedMedicine,
-    TResult Function(T data)? successRecommendedMedicine,
-    TResult Function(String error)? errorRecommendedMedicine,
-    required TResult orElse(),
-  }) {
-    if (loadingRecommendedMedicine != null) {
-      return loadingRecommendedMedicine();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial<T> value) initial,
-    required TResult Function(PharmacyLoading<T> value) loading,
-    required TResult Function(PharmacySuccess<T> value) success,
-    required TResult Function(PharmacyError<T> value) error,
-    required TResult Function(PharmacyRecommendedLoading<T> value)
-        loadingRecommendedMedicine,
-    required TResult Function(PharmacyRecommendedSuccess<T> value)
-        successRecommendedMedicine,
-    required TResult Function(PharmacyRecommendedError<T> value)
-        errorRecommendedMedicine,
-  }) {
-    return loadingRecommendedMedicine(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(PharmacyLoading<T> value)? loading,
-    TResult? Function(PharmacySuccess<T> value)? success,
-    TResult? Function(PharmacyError<T> value)? error,
-    TResult? Function(PharmacyRecommendedLoading<T> value)?
-        loadingRecommendedMedicine,
-    TResult? Function(PharmacyRecommendedSuccess<T> value)?
-        successRecommendedMedicine,
-    TResult? Function(PharmacyRecommendedError<T> value)?
-        errorRecommendedMedicine,
-  }) {
-    return loadingRecommendedMedicine?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial<T> value)? initial,
-    TResult Function(PharmacyLoading<T> value)? loading,
-    TResult Function(PharmacySuccess<T> value)? success,
-    TResult Function(PharmacyError<T> value)? error,
-    TResult Function(PharmacyRecommendedLoading<T> value)?
-        loadingRecommendedMedicine,
-    TResult Function(PharmacyRecommendedSuccess<T> value)?
-        successRecommendedMedicine,
-    TResult Function(PharmacyRecommendedError<T> value)?
-        errorRecommendedMedicine,
-    required TResult orElse(),
-  }) {
-    if (loadingRecommendedMedicine != null) {
-      return loadingRecommendedMedicine(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class PharmacyRecommendedLoading<T> implements PharmacyState<T> {
-  const factory PharmacyRecommendedLoading() =
-      _$PharmacyRecommendedLoadingImpl<T>;
-}
-
-/// @nodoc
-abstract class _$$PharmacyRecommendedSuccessImplCopyWith<T, $Res> {
-  factory _$$PharmacyRecommendedSuccessImplCopyWith(
-          _$PharmacyRecommendedSuccessImpl<T> value,
-          $Res Function(_$PharmacyRecommendedSuccessImpl<T>) then) =
-      __$$PharmacyRecommendedSuccessImplCopyWithImpl<T, $Res>;
-  @useResult
-  $Res call({T data});
-}
-
-/// @nodoc
-class __$$PharmacyRecommendedSuccessImplCopyWithImpl<T, $Res>
-    extends _$PharmacyStateCopyWithImpl<T, $Res,
-        _$PharmacyRecommendedSuccessImpl<T>>
-    implements _$$PharmacyRecommendedSuccessImplCopyWith<T, $Res> {
-  __$$PharmacyRecommendedSuccessImplCopyWithImpl(
-      _$PharmacyRecommendedSuccessImpl<T> _value,
-      $Res Function(_$PharmacyRecommendedSuccessImpl<T>) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? data = freezed,
-  }) {
-    return _then(_$PharmacyRecommendedSuccessImpl<T>(
-      freezed == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as T,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$PharmacyRecommendedSuccessImpl<T>
-    implements PharmacyRecommendedSuccess<T> {
-  const _$PharmacyRecommendedSuccessImpl(this.data);
-
-  @override
-  final T data;
-
-  @override
-  String toString() {
-    return 'PharmacyState<$T>.successRecommendedMedicine(data: $data)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$PharmacyRecommendedSuccessImpl<T> &&
-            const DeepCollectionEquality().equals(other.data, data));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$PharmacyRecommendedSuccessImplCopyWith<T,
-          _$PharmacyRecommendedSuccessImpl<T>>
-      get copyWith => __$$PharmacyRecommendedSuccessImplCopyWithImpl<T,
-          _$PharmacyRecommendedSuccessImpl<T>>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(T data) success,
-    required TResult Function(String error) error,
-    required TResult Function() loadingRecommendedMedicine,
-    required TResult Function(T data) successRecommendedMedicine,
-    required TResult Function(String error) errorRecommendedMedicine,
-  }) {
-    return successRecommendedMedicine(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(T data)? success,
-    TResult? Function(String error)? error,
-    TResult? Function()? loadingRecommendedMedicine,
-    TResult? Function(T data)? successRecommendedMedicine,
-    TResult? Function(String error)? errorRecommendedMedicine,
-  }) {
-    return successRecommendedMedicine?.call(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(T data)? success,
-    TResult Function(String error)? error,
-    TResult Function()? loadingRecommendedMedicine,
-    TResult Function(T data)? successRecommendedMedicine,
-    TResult Function(String error)? errorRecommendedMedicine,
-    required TResult orElse(),
-  }) {
-    if (successRecommendedMedicine != null) {
-      return successRecommendedMedicine(data);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial<T> value) initial,
-    required TResult Function(PharmacyLoading<T> value) loading,
-    required TResult Function(PharmacySuccess<T> value) success,
-    required TResult Function(PharmacyError<T> value) error,
-    required TResult Function(PharmacyRecommendedLoading<T> value)
-        loadingRecommendedMedicine,
-    required TResult Function(PharmacyRecommendedSuccess<T> value)
-        successRecommendedMedicine,
-    required TResult Function(PharmacyRecommendedError<T> value)
-        errorRecommendedMedicine,
-  }) {
-    return successRecommendedMedicine(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(PharmacyLoading<T> value)? loading,
-    TResult? Function(PharmacySuccess<T> value)? success,
-    TResult? Function(PharmacyError<T> value)? error,
-    TResult? Function(PharmacyRecommendedLoading<T> value)?
-        loadingRecommendedMedicine,
-    TResult? Function(PharmacyRecommendedSuccess<T> value)?
-        successRecommendedMedicine,
-    TResult? Function(PharmacyRecommendedError<T> value)?
-        errorRecommendedMedicine,
-  }) {
-    return successRecommendedMedicine?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial<T> value)? initial,
-    TResult Function(PharmacyLoading<T> value)? loading,
-    TResult Function(PharmacySuccess<T> value)? success,
-    TResult Function(PharmacyError<T> value)? error,
-    TResult Function(PharmacyRecommendedLoading<T> value)?
-        loadingRecommendedMedicine,
-    TResult Function(PharmacyRecommendedSuccess<T> value)?
-        successRecommendedMedicine,
-    TResult Function(PharmacyRecommendedError<T> value)?
-        errorRecommendedMedicine,
-    required TResult orElse(),
-  }) {
-    if (successRecommendedMedicine != null) {
-      return successRecommendedMedicine(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class PharmacyRecommendedSuccess<T> implements PharmacyState<T> {
-  const factory PharmacyRecommendedSuccess(final T data) =
-      _$PharmacyRecommendedSuccessImpl<T>;
-
-  T get data;
-  @JsonKey(ignore: true)
-  _$$PharmacyRecommendedSuccessImplCopyWith<T,
-          _$PharmacyRecommendedSuccessImpl<T>>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$PharmacyRecommendedErrorImplCopyWith<T, $Res> {
-  factory _$$PharmacyRecommendedErrorImplCopyWith(
-          _$PharmacyRecommendedErrorImpl<T> value,
-          $Res Function(_$PharmacyRecommendedErrorImpl<T>) then) =
-      __$$PharmacyRecommendedErrorImplCopyWithImpl<T, $Res>;
-  @useResult
-  $Res call({String error});
-}
-
-/// @nodoc
-class __$$PharmacyRecommendedErrorImplCopyWithImpl<T, $Res>
-    extends _$PharmacyStateCopyWithImpl<T, $Res,
-        _$PharmacyRecommendedErrorImpl<T>>
-    implements _$$PharmacyRecommendedErrorImplCopyWith<T, $Res> {
-  __$$PharmacyRecommendedErrorImplCopyWithImpl(
-      _$PharmacyRecommendedErrorImpl<T> _value,
-      $Res Function(_$PharmacyRecommendedErrorImpl<T>) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? error = null,
-  }) {
-    return _then(_$PharmacyRecommendedErrorImpl<T>(
-      error: null == error
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$PharmacyRecommendedErrorImpl<T> implements PharmacyRecommendedError<T> {
-  const _$PharmacyRecommendedErrorImpl({required this.error});
-
-  @override
-  final String error;
-
-  @override
-  String toString() {
-    return 'PharmacyState<$T>.errorRecommendedMedicine(error: $error)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$PharmacyRecommendedErrorImpl<T> &&
-            (identical(other.error, error) || other.error == error));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, error);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$PharmacyRecommendedErrorImplCopyWith<T, _$PharmacyRecommendedErrorImpl<T>>
-      get copyWith => __$$PharmacyRecommendedErrorImplCopyWithImpl<T,
-          _$PharmacyRecommendedErrorImpl<T>>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(T data) success,
-    required TResult Function(String error) error,
-    required TResult Function() loadingRecommendedMedicine,
-    required TResult Function(T data) successRecommendedMedicine,
-    required TResult Function(String error) errorRecommendedMedicine,
-  }) {
-    return errorRecommendedMedicine(this.error);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(T data)? success,
-    TResult? Function(String error)? error,
-    TResult? Function()? loadingRecommendedMedicine,
-    TResult? Function(T data)? successRecommendedMedicine,
-    TResult? Function(String error)? errorRecommendedMedicine,
-  }) {
-    return errorRecommendedMedicine?.call(this.error);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(T data)? success,
-    TResult Function(String error)? error,
-    TResult Function()? loadingRecommendedMedicine,
-    TResult Function(T data)? successRecommendedMedicine,
-    TResult Function(String error)? errorRecommendedMedicine,
-    required TResult orElse(),
-  }) {
-    if (errorRecommendedMedicine != null) {
-      return errorRecommendedMedicine(this.error);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial<T> value) initial,
-    required TResult Function(PharmacyLoading<T> value) loading,
-    required TResult Function(PharmacySuccess<T> value) success,
-    required TResult Function(PharmacyError<T> value) error,
-    required TResult Function(PharmacyRecommendedLoading<T> value)
-        loadingRecommendedMedicine,
-    required TResult Function(PharmacyRecommendedSuccess<T> value)
-        successRecommendedMedicine,
-    required TResult Function(PharmacyRecommendedError<T> value)
-        errorRecommendedMedicine,
-  }) {
-    return errorRecommendedMedicine(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(PharmacyLoading<T> value)? loading,
-    TResult? Function(PharmacySuccess<T> value)? success,
-    TResult? Function(PharmacyError<T> value)? error,
-    TResult? Function(PharmacyRecommendedLoading<T> value)?
-        loadingRecommendedMedicine,
-    TResult? Function(PharmacyRecommendedSuccess<T> value)?
-        successRecommendedMedicine,
-    TResult? Function(PharmacyRecommendedError<T> value)?
-        errorRecommendedMedicine,
-  }) {
-    return errorRecommendedMedicine?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial<T> value)? initial,
-    TResult Function(PharmacyLoading<T> value)? loading,
-    TResult Function(PharmacySuccess<T> value)? success,
-    TResult Function(PharmacyError<T> value)? error,
-    TResult Function(PharmacyRecommendedLoading<T> value)?
-        loadingRecommendedMedicine,
-    TResult Function(PharmacyRecommendedSuccess<T> value)?
-        successRecommendedMedicine,
-    TResult Function(PharmacyRecommendedError<T> value)?
-        errorRecommendedMedicine,
-    required TResult orElse(),
-  }) {
-    if (errorRecommendedMedicine != null) {
-      return errorRecommendedMedicine(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class PharmacyRecommendedError<T> implements PharmacyState<T> {
-  const factory PharmacyRecommendedError({required final String error}) =
-      _$PharmacyRecommendedErrorImpl<T>;
-
-  String get error;
-  @JsonKey(ignore: true)
-  _$$PharmacyRecommendedErrorImplCopyWith<T, _$PharmacyRecommendedErrorImpl<T>>
-      get copyWith => throw _privateConstructorUsedError;
 }

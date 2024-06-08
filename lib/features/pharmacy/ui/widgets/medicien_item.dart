@@ -4,13 +4,15 @@ import 'package:tabibk/core/helper/app_assets.dart';
 import 'package:tabibk/core/helper/extensions.dart';
 import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/core/theme/styles.dart';
+import 'package:tabibk/features/pharmacy/data/model/pharmacy_medicien_response.dart';
 
 import '../../../../core/helper/value_manager.dart';
 import '../../../../core/routing/routes.dart';
 import '../../../../core/theme/app_colors.dart';
 
-class RecommendedItem extends StatelessWidget {
-  const RecommendedItem({super.key});
+class MedicineItem extends StatelessWidget {
+  const MedicineItem({super.key, required this.medicine});
+  final Data medicine;
 
   @override
   Widget build(BuildContext context) {
@@ -29,21 +31,21 @@ class RecommendedItem extends StatelessWidget {
             child: Column(
               children: [
                 Image.asset(
-                  AppAsset.comatrixImage,
+                medicine.image??  AppAsset.comatrixImage,
                   height: 150.h,
                   width: 160.w,
                 ),
                 verticalSpace(10),
                 Text(
-                  'Mebo Scar Cream',
+                  medicine.name ?? "",
                   style: AppStyle.f10BlackW400,
                 ),
                 Text(
-                  '364.75 EGP',
+                  medicine.price.toString(),
                   style: AppStyle.f9BlackW700,
                 ),
                 Text(
-                  '429.00 EGP',
+                  (medicine.price! + 50).toString(),
                   style: AppStyle.f7BlackW600,
                 ),
               ],

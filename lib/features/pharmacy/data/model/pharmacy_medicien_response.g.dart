@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'pharmacy_recommended_response.dart';
+part of 'pharmacy_medicien_response.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-PharmacyRecommendedResponse _$PharmacyRecommendedResponseFromJson(
+PharmacyMedicineResponse _$PharmacyMedicineResponseFromJson(
         Map<String, dynamic> json) =>
-    PharmacyRecommendedResponse(
+    PharmacyMedicineResponse(
       message: json['message'] as String?,
       data: (json['data'] as List<dynamic>?)
           ?.map((e) => Data.fromJson(e as Map<String, dynamic>))
@@ -16,8 +16,8 @@ PharmacyRecommendedResponse _$PharmacyRecommendedResponseFromJson(
       code: (json['code'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$PharmacyRecommendedResponseToJson(
-        PharmacyRecommendedResponse instance) =>
+Map<String, dynamic> _$PharmacyMedicineResponseToJson(
+        PharmacyMedicineResponse instance) =>
     <String, dynamic>{
       'message': instance.message,
       'data': instance.data,

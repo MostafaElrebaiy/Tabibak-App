@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'pharmacy_recommended_request.dart';
+part of 'pharmacy_medicine_request.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-PharmacyRecommendedRequest _$PharmacyRecommendedRequestFromJson(
+PharmacyMedicineRequest _$PharmacyMedicineRequestFromJson(
         Map<String, dynamic> json) =>
-    PharmacyRecommendedRequest(
+    PharmacyMedicineRequest(
       token: json['token'] as String,
     );
 
-Map<String, dynamic> _$PharmacyRecommendedRequestToJson(
-        PharmacyRecommendedRequest instance) =>
+Map<String, dynamic> _$PharmacyMedicineRequestToJson(
+        PharmacyMedicineRequest instance) =>
     <String, dynamic>{
       'token': instance.token,
     };

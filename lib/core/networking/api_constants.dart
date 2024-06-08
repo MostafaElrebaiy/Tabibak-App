@@ -7,7 +7,7 @@ class ApiConstants {
   static const String resetpassword = "password/reset";
   static const String pharmacySearch = "pharmacies?";
   static const String pharmacyRecommended = "products/recommendation";
-  static const String pharmacybestDeals = "products/best_deals";
+  static const String pharmacyBestDeals = "products/best_deals";
 
 
 }

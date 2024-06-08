@@ -1,16 +1,16 @@
 import 'package:json_annotation/json_annotation.dart';
-part 'pharmacy_recommended_response.g.dart';
+part 'pharmacy_medicien_response.g.dart';
 
 @JsonSerializable()
-class PharmacyRecommendedResponse {
+class PharmacyMedicineResponse {
   String? message;
   List<Data>? data;
   int? code;
 
-  PharmacyRecommendedResponse({this.message, this.data, this.code});
+  PharmacyMedicineResponse({this.message, this.data, this.code});
 
-  factory PharmacyRecommendedResponse.fromJson(Map<String, dynamic> json) =>
-      _$PharmacyRecommendedResponseFromJson(json);
+  factory PharmacyMedicineResponse.fromJson(Map<String, dynamic> json) =>
+      _$PharmacyMedicineResponseFromJson(json);
 }
 
 @JsonSerializable()

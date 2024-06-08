@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/app_string.dart';
 import 'package:tabibk/core/helper/spacing.dart';
-import 'package:tabibk/features/pharmacy/ui/widgets/recommendedsection.dart';
+
+import 'package:tabibk/features/pharmacy/data/model/pharmacy_medicien_response.dart';
+import 'package:tabibk/features/pharmacy/logic/pharmacy_recommended_medicine/pharmacy_recommended_medicine_cubit.dart';
+import 'package:tabibk/features/pharmacy/logic/pharmacy_recommended_medicine/pharmacy_recommended_medicine_state.dart';
+import 'package:tabibk/features/pharmacy/ui/widgets/medicien_item.dart';
 import 'package:tabibk/features/pharmacy/ui/widgets/titles_of_section.dart';
 
 class RecommendedSection extends StatelessWidget {
@@ -17,13 +21,28 @@ class RecommendedSection extends StatelessWidget {
           title: AppString.recommended.tr(context),
           subTitle: AppString.neverSeeThis.tr(context),
         ),
-        Expanded(
-          child: ListView.separated(
-              scrollDirection: Axis.horizontal,
-              shrinkWrap: true,
-              itemBuilder: (context, index) => const RecommendedItem(),
-              separatorBuilder: (context, index) => horizontalSpace(5),
-              itemCount: 5),
+        BlocBuilder<PharmacyRecommendedMedicineCubit,
+            PharmacyRecommendedMedicineState>(
+          builder: (context, state) {
+            return state.when(
+              loading: () => const CircularProgressIndicator(),
+              success: (data) {
+                PharmacyMedicineResponse medicine =
+                    data as PharmacyMedicineResponse;
+                return Expanded(
+                  child: ListView.separated(
+                      scrollDirection: Axis.horizontal,
+                      shrinkWrap: true,
+                      itemBuilder: (context, index) => MedicineItem(
+                            medicine: medicine.data![index],
+                          ),
+                      separatorBuilder: (context, index) => horizontalSpace(5),
+                      itemCount: medicine.data!.length),
+                );
+              },
+              error: (error) => const Text("Error In Recommended Medicine"),
+            );
+          },
         ),
       ],
     );
