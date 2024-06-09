@@ -16,7 +16,6 @@ class PharmacyBestDealMedicineCubit extends Cubit<PharmacyBestDealMedicineState>
       token: CacheHelper.getCacheData(key: AppConstant.token),
     ));
     response.when(success: (medicine) {
-      print(medicine);
       emit(PharmacyBestDealMedicineState.success(medicine));
     }, failure: (error) {
       emit(PharmacyBestDealMedicineState.error(

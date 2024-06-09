@@ -5,7 +5,6 @@ import 'package:tabibk/features/pharmacy/data/model/pharmacy_medicine/pharmacy_m
 import 'package:tabibk/features/pharmacy/data/repo/pharmacy_recommended_repo.dart';
 import 'package:tabibk/features/pharmacy/logic/pharmacy_recommended_medicine/pharmacy_recommended_medicine_state.dart';
 
-
 class PharmacyRecommendedMedicineCubit
     extends Cubit<PharmacyRecommendedMedicineState> {
   PharmacyRecommendedMedicineCubit(this._pharmacyRecommendedRepo)
@@ -18,8 +17,6 @@ class PharmacyRecommendedMedicineCubit
       token: CacheHelper.getCacheData(key: AppConstant.token),
     ));
     response.when(success: (medicine) {
-      print(medicine);
-
       emit(PharmacyRecommendedMedicineState.success(medicine));
     }, failure: (error) {
       emit(PharmacyRecommendedMedicineState.error(

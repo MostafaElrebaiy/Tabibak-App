@@ -18,7 +18,6 @@ void main() async {
   Bloc.observer = SimpleBlocObserver();
   await CacheHelper.cacheInitializations();
   String token = CacheHelper.getCacheData(key: 'token');
-  print(token);
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   runApp(Phoenix(
