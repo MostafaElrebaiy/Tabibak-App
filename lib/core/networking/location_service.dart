@@ -23,20 +23,20 @@ class LocationService {
         return;
       }
     }
-    
-  
   }
-  getLocation() async {
 
+  getLocation() async {
     LocationData locationData;
     Location location = Location();
-    locationData = await location.getLocation();
-    return locationData;
+      locationData = await location.getLocation();
+      // location.onLocationChanged.listen((LocationData currentLocation) {
+      //   locationData = currentLocation;
+      // });
+      return locationData;
+    
   }
 
-
-
- Future<void> goToMap( double lat, double lng) async {
+  Future<void> goToMap(double lat, double lng) async {
     String url = '';
     if (Platform.isAndroid) {
       url = 'https://www.google.com/maps/search/?api=1&query=$lat,$lng';
@@ -45,11 +45,6 @@ class LocationService {
       } else {
         throw 'Could not launch $url';
       }
-    } 
+    }
+  }
 }
-}
-
-
-
-
-
