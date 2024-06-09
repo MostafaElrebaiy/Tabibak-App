@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tabibk/core/networking/shared_preferences.dart';
 import 'package:tabibk/core/theme/app_constant.dart';
-import 'package:tabibk/features/pharmacy/data/model/pharmacy_medicine_request.dart';
+import 'package:tabibk/features/pharmacy/data/model/pharmacy_medicine/pharmacy_medicine_request.dart';
 import 'package:tabibk/features/pharmacy/data/repo/pharmacy_best_deals_repo.dart';
 import 'package:tabibk/features/pharmacy/logic/pharmacy_best_deal_medicine/pharmacy_best_deal_medicine_state.dart';
 

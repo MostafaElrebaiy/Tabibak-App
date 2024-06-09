@@ -8,6 +8,7 @@ import 'package:tabibk/features/pharmacy/logic/pharmacy_recommended_medicine/pha
 import '../../../core/di/dependancy_injection.dart';
 import '../../../core/theme/styles.dart';
 import '../../../core/widgets/build_custom_app_bar.dart';
+import '../logic/medicine_search_cubit/pharmacy_search_cubit/medicine_cubit.dart';
 import '../logic/pharmacy_search_cubit/pharmacy_cubit.dart';
 import 'widgets/pharmacy_body.dart';
 
@@ -18,6 +19,8 @@ class PharmacyScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
+        BlocProvider(
+          create: (context) => MedicineCubit(getIt())),
         BlocProvider(
           create: (context) => PharmacyCubit(getIt()),
         ),

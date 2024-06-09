@@ -4,7 +4,7 @@ import 'package:tabibk/core/helper/app_assets.dart';
 import 'package:tabibk/core/helper/extensions.dart';
 import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/core/theme/styles.dart';
-import 'package:tabibk/features/pharmacy/data/model/pharmacy_medicien_response.dart';
+import 'package:tabibk/features/pharmacy/data/model/pharmacy_medicine/pharmacy_medicien_response.dart';
 
 import '../../../../core/helper/value_manager.dart';
 import '../../../../core/routing/routes.dart';

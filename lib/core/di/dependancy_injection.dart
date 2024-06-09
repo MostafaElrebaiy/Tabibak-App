@@ -18,6 +18,8 @@ import '../../features/auth/signup/logic/sign_up_cubit.dart';
 import '../../features/auth/update_password/data/repo/reset_password_repo.dart';
 import '../../features/auth/update_password/logic/reset_password_cubit.dart';
 import '../../features/pharmacy/data/repo/pharmacy_recommended_repo.dart';
+import '../../features/pharmacy/data/repo/search_medicine_repo.dart';
+import '../../features/pharmacy/logic/medicine_search_cubit/pharmacy_search_cubit/medicine_cubit.dart';
 
 final getIt = GetIt.instance;
 Future<void> setupGetIt() async {
@@ -42,6 +44,8 @@ Future<void> setupGetIt() async {
   getIt.registerFactory<ResetPasswordCubit>(() => ResetPasswordCubit(getIt()));
 
 // --------------------- Pharmacy Search --------------------- //
+  getIt.registerLazySingleton<SearchMedicineRepo>(
+      () => SearchMedicineRepo(getIt()));
   getIt.registerLazySingleton<SearchPharmacyRepo>(
       () => SearchPharmacyRepo(getIt()));
   getIt.registerLazySingleton<PharmacyBestDealRepo>(
@@ -51,6 +55,9 @@ Future<void> setupGetIt() async {
 
   // ---------------- I Change registerLazySingleton to registerFactory in 3 Cubit of  ---------------- //
   // ----------------------------------  Pharmacy  ---------------------------------- //
+  getIt.registerFactory<MedicineCubit>(
+      () => MedicineCubit(getIt<SearchMedicineRepo>()));
+
   getIt.registerFactory<PharmacyCubit>(
       () => PharmacyCubit(getIt<SearchPharmacyRepo>()));
 

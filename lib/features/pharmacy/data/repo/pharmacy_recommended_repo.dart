@@ -1,9 +1,9 @@
 
-import 'package:tabibk/features/pharmacy/data/model/pharmacy_medicien_response.dart';
+import 'package:tabibk/features/pharmacy/data/model/pharmacy_medicine/pharmacy_medicien_response.dart';
 import '../../../../core/networking/api_error_handler.dart';
 import '../../../../core/networking/api_result.dart';
 import '../../../../core/networking/api_service.dart';
-import '../model/pharmacy_medicine_request.dart';
+import '../model/pharmacy_medicine/pharmacy_medicine_request.dart';
 class PharmacyRecommendedRepo {
   final ApiService _apiService;
   PharmacyRecommendedRepo(this._apiService);

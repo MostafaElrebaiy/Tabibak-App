@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/di/dependancy_injection.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
 import 'package:tabibk/core/theme/styles.dart';
-import 'package:tabibk/features/pharmacy/data/model/search_pharmacy_response.dart';
+import 'package:tabibk/features/pharmacy/data/model/search_pharmacy/search_pharmacy_response.dart';
 import 'package:tabibk/features/pharmacy/logic/pharmacy_search_cubit/pharmacy_cubit.dart';
 import 'package:tabibk/features/pharmacy/logic/pharmacy_search_cubit/pharmacy_state.dart';
 
