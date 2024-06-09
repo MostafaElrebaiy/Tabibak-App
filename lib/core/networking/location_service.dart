@@ -28,15 +28,12 @@ class LocationService {
   getLocation() async {
     LocationData locationData;
     Location location = Location();
-    try {
       locationData = await location.getLocation();
-      location.onLocationChanged.listen((LocationData currentLocation) {
-        locationData = currentLocation;
-      });
+      // location.onLocationChanged.listen((LocationData currentLocation) {
+      //   locationData = currentLocation;
+      // });
       return locationData;
-    } catch (e) {
-      print("The error in Location_Service is: $e");
-    }
+    
   }
 
   Future<void> goToMap(double lat, double lng) async {

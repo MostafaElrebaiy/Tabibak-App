@@ -21,8 +21,10 @@ import 'package:tabibk/features/hospital_and_clinic_system/hospital_info/view/ho
 import 'package:tabibk/features/home/ui/home_screen.dart';
 import 'package:tabibk/features/on_boarding/view/on_boarding_view.dart';
 import 'package:tabibk/features/on_boarding/view/widgets/on_boarding_last_screen.dart';
+import 'package:tabibk/features/pharmacy/logic/pharmacy_search_cubit/pharmacy_cubit.dart';
 import 'package:tabibk/features/pharmacy/ui/pharmacy_details_screen.dart';
 import 'package:tabibk/features/pharmacy/ui/pharmacy_screen.dart';
+import 'package:tabibk/features/pharmacy/ui/phrmacy_search_result.dart';
 import 'package:tabibk/features/product/view/product_view.dart';
 import 'package:tabibk/features/profile_screens/edit_profile_screen/logic/cubit/edit_profile_view_cubit.dart';
 import 'package:tabibk/features/profile_screens/edit_profile_screen/view/edit_profile_view.dart';
@@ -123,15 +125,23 @@ class AppRouter {
       case Routes.successfulyUpdatePasswordScreen:
         return CustomPageRoute(child: const SuccessfulyUpdatePasswordScreen());
       case Routes.pharmacy:
-        return CustomPageRoute(
-            child: const PharmacyScreen());
+        return CustomPageRoute(child: const PharmacyScreen());
       case Routes.pharmacyDetailsScreen:
         return CustomPageRoute(child: const PharmacyDetailsScreen());
       case Routes.bloodBank:
         return CustomPageRoute(child: const BloodBankScreen());
       case Routes.bloodBankSearchScreen:
         return CustomPageRoute(child: const SearchResultOfBloodType());
-
+      case Routes.pharmacySearchResult:
+        String medicineName;
+        medicineName = settings.arguments as String;
+        return CustomPageRoute(
+            child: BlocProvider(
+          create: (context) => PharmacyCubit(getIt())
+            ..searchForMedicien(medicineName: medicineName),
+          child: const PharmacySearchResult(
+          ),
+        ));
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

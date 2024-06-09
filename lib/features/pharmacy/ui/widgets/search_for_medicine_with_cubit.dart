@@ -5,6 +5,8 @@ import 'package:lottie/lottie.dart';
 import 'package:tabibk/core/helper/app_assets.dart';
 import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/app_string.dart';
+import 'package:tabibk/core/helper/extensions.dart';
+import 'package:tabibk/core/routing/routes.dart';
 import 'package:tabibk/core/theme/styles.dart';
 import 'package:tabibk/features/pharmacy/data/model/search_medicine/search_medicine_response.dart';
 import 'package:tabibk/features/pharmacy/logic/medicine_search_cubit/pharmacy_search_cubit/medicine_cubit.dart';
@@ -51,6 +53,19 @@ class SearchForMedicineWithCubit extends StatelessWidget {
             success: (medicineResponse) {
               SearchMedicineResponse medicine =
                   medicineResponse as SearchMedicineResponse;
+              if (medicine.data?.isEmpty ?? true) {
+                return Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    verticalSpace(20),
+                    Text(
+                      textAlign: TextAlign.center,
+                      AppString.noMedicineFound.tr(context),
+                      style: AppStyle.font16blackRegular,
+                    ),
+                  ],
+                );
+              }
               return SizedBox(
                 height: MediaQuery.of(context).size.height * 0.4,
                 child: SingleChildScrollView(
@@ -60,9 +75,8 @@ class SearchForMedicineWithCubit extends StatelessWidget {
                       itemCount: medicine.data?.length ?? 0,
                       itemBuilder: (context, index) => GestureDetector(
                             onTap: () {
-                              // medicineCubit.navigateToMedicineDetails(
-                              //   medicine.data?[index].id ?? 0,
-                              // );
+                              context.pushNamed(Routes.pharmacySearchResult,
+                                  arguments: medicine.data?[index].name);
                             },
                             child: Column(
                               children: [

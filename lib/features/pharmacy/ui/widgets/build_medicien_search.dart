@@ -20,16 +20,16 @@ class MedicienSearch extends SearchDelegate {
             builder: (context, state) {
               return IconButton(
                 onPressed: () {
-                  context
-                      .read<PharmacyCubit>()
-                      .searchForMedicien(medicineName: query);
+                  // context
+                  //     .read<PharmacyCubit>()
+                  //     .searchForMedicien(medicineName: query);
                   // context.read<PharmacyCubit>().searchForMedicien(
                   //       lat: 2222333,
                   //       lng: 3824734,
                   //       medicineName: query,
                   //     );
-                  pharmacySearchResponse =
-                      context.read<PharmacyCubit>().pharmacySearchResponse;
+                  // pharmacySearchResponse =
+                  //     context.read<PharmacyCubit>().pharmacySearchResponse;
                 },
                 icon: const Icon(Icons.search),
               );
