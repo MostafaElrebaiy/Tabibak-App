@@ -80,8 +80,8 @@ class SearchForMedicineWithCubit extends StatelessWidget {
                                   arguments: ArgResultPharmacy(
                                     medicineName: medicine.data?[index].name ??
                                         " ",
-                                    lat: context.read<MedicineCubit>().lat.toString(),
-                                    lng: context.read<MedicineCubit>().lng.toString(),
+                                    lat: context.read<MedicineCubit>().lat ?? 0.0,
+                                    lng: context.read<MedicineCubit>().lng ?? 0.0,
                                   ));
                             },
                             child: Column(

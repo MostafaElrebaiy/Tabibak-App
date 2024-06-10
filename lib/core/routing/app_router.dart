@@ -136,8 +136,6 @@ class AppRouter {
       case Routes.pharmacySearchResult:
         ArgResultPharmacy arg;
         arg = settings.arguments as ArgResultPharmacy;
-        
-
         return CustomPageRoute(
             child: BlocProvider(
           create: (context) =>

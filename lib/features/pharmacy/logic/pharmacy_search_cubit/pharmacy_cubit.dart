@@ -1,4 +1,3 @@
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tabibk/core/networking/shared_preferences.dart';
 import 'package:tabibk/core/theme/app_constant.dart';
@@ -13,15 +12,9 @@ class PharmacyCubit extends Cubit<PharmacyState> {
   ) : super(const PharmacyState.initial());
   final SearchPharmacyRepo _pharmacyRepo;
 
-  final TextEditingController searchController = TextEditingController();
   LocationService locationService = LocationService();
   double? latitute;
   double? longitude;
-
-  void clearTextFiled() {
-    searchController.clear();
-    emit(const PharmacyState.initial());
-  }
 
   void goToMap() async {
     await locationService.goToMap(
@@ -30,13 +23,12 @@ class PharmacyCubit extends Cubit<PharmacyState> {
     );
   }
 
-  Future<void> searchForMedicien({required medicineName,required lat,required lng}) async {
-      // final locationData = await locationService.getLocation();
-      // latitute = locationData.latitude;
-      // longitude = locationData.longitude;
-  
+  Future<void> searchForMedicien(
+      {required medicineName, required lat, required lng}) async {
+    // final locationData = await locationService.getLocation();
+    // lat = locationData.latitude;
+    // lng = locationData.longitude;
 
-    emit(const PharmacyState.loading());
 
     final response =
         await _pharmacyRepo.searchForMedicien(SearchPharmacyRequestBody(
@@ -45,13 +37,9 @@ class PharmacyCubit extends Cubit<PharmacyState> {
       lng: lng!,
       medicineName: medicineName,
     ));
-    if (searchController.text.isEmpty) {
-      emit(const PharmacyState.initial());
-      return;
-    }
+
     response.when(success: (medicine) {
       emit(PharmacyState.success(medicine));
-      
     }, failure: (error) {
       emit(PharmacyState.error(error: error.apiErrorModel.message ?? ''));
     });
