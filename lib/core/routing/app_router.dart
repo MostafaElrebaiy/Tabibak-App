@@ -21,6 +21,7 @@ import 'package:tabibk/features/hospital_and_clinic_system/hospital_info/view/ho
 import 'package:tabibk/features/home/ui/home_screen.dart';
 import 'package:tabibk/features/on_boarding/view/on_boarding_view.dart';
 import 'package:tabibk/features/on_boarding/view/widgets/on_boarding_last_screen.dart';
+import 'package:tabibk/features/pharmacy/data/model/arg_pharmacy/search_result_model.dart';
 import 'package:tabibk/features/pharmacy/logic/pharmacy_search_cubit/pharmacy_cubit.dart';
 import 'package:tabibk/features/pharmacy/ui/pharmacy_details_screen.dart';
 import 'package:tabibk/features/pharmacy/ui/pharmacy_screen.dart';
@@ -133,14 +134,13 @@ class AppRouter {
       case Routes.bloodBankSearchScreen:
         return CustomPageRoute(child: const SearchResultOfBloodType());
       case Routes.pharmacySearchResult:
-        String medicineName;
-        medicineName = settings.arguments as String;
+        ArgResultPharmacy arg;
+        arg = settings.arguments as ArgResultPharmacy;
         return CustomPageRoute(
             child: BlocProvider(
-          create: (context) => PharmacyCubit(getIt())
-            ..searchForMedicien(medicineName: medicineName),
-          child: const PharmacySearchResult(
-          ),
+          create: (context) =>
+              PharmacyCubit(getIt())..searchForMedicien(medicineName: arg.medicineName, lat: arg.lat, lng: arg.lng),
+          child: const PharmacySearchResult(),
         ));
       default:
         return MaterialPageRoute(
