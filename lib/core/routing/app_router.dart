@@ -12,6 +12,7 @@ import 'package:tabibk/features/auth/otp/ui/otp.dart';
 import 'package:tabibk/features/auth/signup/logic/sign_up_cubit.dart';
 import 'package:tabibk/features/auth/update_password/ui/successfully_update_pass.dart';
 import 'package:tabibk/features/auth/update_password/ui/update_password.dart';
+import 'package:tabibk/features/blood_bank/logic/cubit/blood_bank_cubit.dart';
 import 'package:tabibk/features/blood_bank/ui/widgets/search_result_of_blood_type.dart';
 import 'package:tabibk/features/check_out/view/check_out_view.dart';
 import 'package:tabibk/features/check_out/view/widgets/add_shipping_screen.dart';
@@ -130,7 +131,8 @@ class AppRouter {
       case Routes.pharmacyDetailsScreen:
         return CustomPageRoute(child: const PharmacyDetailsScreen());
       case Routes.bloodBank:
-        return CustomPageRoute(child: const BloodBankScreen());
+        return CustomPageRoute(
+            child: const BloodBankScreen());
       case Routes.bloodBankSearchScreen:
         return CustomPageRoute(child: const SearchResultOfBloodType());
       case Routes.pharmacySearchResult:
@@ -138,8 +140,9 @@ class AppRouter {
         arg = settings.arguments as ArgResultPharmacy;
         return CustomPageRoute(
             child: BlocProvider(
-          create: (context) =>
-              PharmacyCubit(getIt())..searchForMedicien(medicineName: arg.medicineName, lat: arg.lat, lng: arg.lng),
+          create: (context) => PharmacyCubit(getIt())
+            ..searchForMedicien(
+                medicineName: arg.medicineName, lat: arg.lat, lng: arg.lng),
           child: const PharmacySearchResult(),
         ));
       default:
