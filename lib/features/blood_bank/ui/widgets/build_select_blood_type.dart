@@ -6,7 +6,6 @@ import 'package:tabibk/core/di/dependancy_injection.dart';
 import 'package:tabibk/core/helper/app_assets.dart';
 import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/app_string.dart';
-import 'package:tabibk/core/helper/extensions.dart';
 import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
 import 'package:tabibk/core/theme/styles.dart';
@@ -24,7 +23,7 @@ Future<dynamic> selectBloodType(
     context: context,
     builder: (BuildContext context) {
       return BlocProvider(
-create: (context) => BloodBankCubit(getIt()),
+        create: (context) => BloodBankCubit(getIt()),
         child: BlocBuilder<BloodBankCubit, BloodBankState>(
           builder: (context, state) {
             return StatefulBuilder(
@@ -126,6 +125,7 @@ create: (context) => BloodBankCubit(getIt()),
                         ),
                       ),
                     ),
+
                   ],
                 ),
               ),
