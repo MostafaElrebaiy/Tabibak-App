@@ -30,20 +30,19 @@ class PharmacyCubit extends Cubit<PharmacyState> {
     );
   }
 
-  Future<void> searchForMedicien({required medicineName}) async {
-    if (latitute == null || longitude == null) {
-      final locationData = await locationService.getLocation();
-      latitute = locationData.latitude;
-      longitude = locationData.longitude;
-    }
+  Future<void> searchForMedicien({required medicineName,required lat,required lng}) async {
+      // final locationData = await locationService.getLocation();
+      // latitute = locationData.latitude;
+      // longitude = locationData.longitude;
+  
 
     emit(const PharmacyState.loading());
 
     final response =
         await _pharmacyRepo.searchForMedicien(SearchPharmacyRequestBody(
       token: CacheHelper.getCacheData(key: AppConstant.token),
-      lat: latitute!,
-      lng: longitude!,
+      lat: lat!,
+      lng: lng!,
       medicineName: medicineName,
     ));
     if (searchController.text.isEmpty) {

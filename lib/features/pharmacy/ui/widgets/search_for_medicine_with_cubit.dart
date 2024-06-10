@@ -8,6 +8,7 @@ import 'package:tabibk/core/helper/app_string.dart';
 import 'package:tabibk/core/helper/extensions.dart';
 import 'package:tabibk/core/routing/routes.dart';
 import 'package:tabibk/core/theme/styles.dart';
+import 'package:tabibk/features/pharmacy/data/model/arg_pharmacy/search_result_model.dart';
 import 'package:tabibk/features/pharmacy/data/model/search_medicine/search_medicine_response.dart';
 import 'package:tabibk/features/pharmacy/logic/medicine_search_cubit/pharmacy_search_cubit/medicine_cubit.dart';
 import 'package:tabibk/features/pharmacy/logic/medicine_search_cubit/pharmacy_search_cubit/medicine_state.dart';
@@ -76,7 +77,12 @@ class SearchForMedicineWithCubit extends StatelessWidget {
                       itemBuilder: (context, index) => GestureDetector(
                             onTap: () {
                               context.pushNamed(Routes.pharmacySearchResult,
-                                  arguments: medicine.data?[index].name);
+                                  arguments: ArgResultPharmacy(
+                                    medicineName: medicine.data?[index].name ??
+                                        " ",
+                                    lat: context.read<MedicineCubit>().lat.toString(),
+                                    lng: context.read<MedicineCubit>().lng.toString(),
+                                  ));
                             },
                             child: Column(
                               children: [

@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tabibk/core/networking/location_service.dart';
 import 'package:tabibk/features/pharmacy/data/model/search_medicine/search_medicine_request.dart';
 import 'package:tabibk/features/pharmacy/data/repo/search_medicine_repo.dart';
 import 'package:tabibk/features/pharmacy/logic/medicine_search_cubit/pharmacy_search_cubit/medicine_state.dart';
@@ -15,6 +16,10 @@ class MedicineCubit extends Cubit<MedicineState> {
   final SearchMedicineRepo _medicineRepo;
   SearchMedicineResponse? pharmacySearchResponse;
   final TextEditingController searchController = TextEditingController();
+  final LocationService locationService = LocationService();
+
+   double? lat;
+   double? lng;
 
   void clearTextFiled() {
     searchController.clear();
@@ -22,6 +27,11 @@ class MedicineCubit extends Cubit<MedicineState> {
   }
 
   Future<void> searchForMedicien({required medicineName}) async {
+    if (lat == null || lng == null) {
+      final locationData = await locationService.getLocation();
+      lat = locationData.latitude;
+      lng = locationData.longitude;
+    }
     emit(const MedicineState.loading());
     final response = await _medicineRepo.searchForMedicien(
         SearchMedicineRequest(
