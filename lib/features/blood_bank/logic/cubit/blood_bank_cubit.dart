@@ -42,7 +42,6 @@ class BloodBankCubit extends Cubit<BloodBankState> {
       bloodType: bloodType,
     ));
     response.when(success: (bloodType) {
-      print('bloodType: $bloodType');
       emit(BloodBankState.success(bloodType));
     }, failure: (error) {
       emit(BloodBankState.error(error: error.apiErrorModel.message ?? ''));

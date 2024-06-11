@@ -141,7 +141,6 @@ Future<dynamic> selectBloodType(
                   arguments: bloodBankResponse);
             },
             error: (error) {
-              context.pop();
               showFailureDialog(context, error);
               
             },
