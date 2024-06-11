@@ -1,4 +1,3 @@
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tabibk/core/di/dependancy_injection.dart';
 import 'package:tabibk/core/networking/shared_preferences.dart';
@@ -9,26 +8,24 @@ import 'package:tabibk/features/blood_bank/data/repo/blood_bank_repo.dart';
 import '../../../../core/networking/location_service.dart';
 import 'blood_bank_state.dart';
 
-
-
 class BloodBankCubit extends Cubit<BloodBankState> {
-  BloodBankCubit(BloodBankRepo bloodBankRepo) : super(const BloodBankState.initial());
- final BloodBankRepo _bloodBankRepo = BloodBankRepo(getIt());
+  BloodBankCubit(BloodBankRepo bloodBankRepo)
+      : super(const BloodBankState.initial());
+  final BloodBankRepo _bloodBankRepo = BloodBankRepo(getIt());
   final LocationService locationService = LocationService();
-   double? lat;
-   double? lng;
-   String? bloodType;
+  double? lat;
+  double? lng;
+  String? bloodType;
 
-   void getLocation()async{
+  void getLocation() async {
     if (lat == null || lng == null) {
       final locationData = await locationService.getLocation();
       lat = locationData.latitude;
       lng = locationData.longitude;
     }
-   }
-  
+  }
 
-  Future <void> searchForBloodType({required String bloodType}) async {
+  Future<void> searchForBloodType({required String bloodType}) async {
     if (lat == null || lng == null) {
       final locationData = await locationService.getLocation();
       lat = locationData.latitude;
@@ -42,10 +39,10 @@ class BloodBankCubit extends Cubit<BloodBankState> {
       bloodType: bloodType,
     ));
     response.when(success: (bloodType) {
+    
       emit(BloodBankState.success(bloodType));
     }, failure: (error) {
       emit(BloodBankState.error(error: error.apiErrorModel.message ?? ''));
     });
   }
-
 }

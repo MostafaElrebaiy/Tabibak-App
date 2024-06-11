@@ -137,12 +137,14 @@ Future<dynamic> selectBloodType(
             loading: () => showLoadingDialog(context),
             success: (bloodBankResponse) {
               context.pop();
-              context.pushNamed(Routes.bloodBankSearchScreen,
-                  arguments: bloodBankResponse);
+              print(
+                  'The Lenght of blood---------------${bloodBankResponse.data?.bloodCenters?.length ?? 0}');
+              // context.pushNamed(Routes.bloodBankSearchScreen,
+              //     arguments: bloodBankResponse);
             },
             error: (error) {
+              context.pop();
               showFailureDialog(context, error);
-              
             },
           );
         }),
