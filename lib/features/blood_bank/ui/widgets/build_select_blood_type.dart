@@ -12,6 +12,7 @@ import 'package:tabibk/core/routing/routes.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
 import 'package:tabibk/core/theme/styles.dart';
 import 'package:tabibk/core/utilities/show_failure_dialog.dart';
+import 'package:tabibk/core/utilities/show_loading_dialog.dart';
 import 'package:tabibk/core/widgets/custom_widget/app_text_button.dart';
 import 'package:tabibk/features/blood_bank/logic/cubit/blood_bank_cubit.dart';
 import 'package:tabibk/features/blood_bank/logic/cubit/blood_bank_state.dart';
@@ -133,7 +134,7 @@ Future<dynamic> selectBloodType(
         }, listener: (context, state) {
           state.when(
             initial: () => const SizedBox.shrink(),
-            loading: () => const Center(child: CircularProgressIndicator()),
+            loading: () => showLoadingDialog(context),
             success: (bloodBankResponse) {
               context.pop();
               context.pushNamed(Routes.bloodBankSearchScreen,
@@ -142,6 +143,7 @@ Future<dynamic> selectBloodType(
             error: (error) {
               context.pop();
               showFailureDialog(context, error);
+              
             },
           );
         }),
