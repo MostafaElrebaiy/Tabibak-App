@@ -22,4 +22,6 @@ class PharmacyBestDealMedicineCubit extends Cubit<PharmacyBestDealMedicineState>
           error: error.apiErrorModel.message ?? ''));
     });
   }
+
+
 }

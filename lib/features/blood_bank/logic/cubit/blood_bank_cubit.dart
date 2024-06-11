@@ -15,7 +15,13 @@ class BloodBankCubit extends Cubit<BloodBankState> {
   final LocationService locationService = LocationService();
   double? lat;
   double? lng;
-  String? bloodType;
+  // String? bloodType;
+  void goToMap({ String? lat,  String? lng}) async {
+    await locationService.goToMap(
+      (lat  == null || lat.isEmpty) ? 31.2001 :double.parse(lat ),
+      (lng == null|| lng.isEmpty) ? 29.9187 :double.parse(lng ),
+    );
+  }
 
   void getLocation() async {
     if (lat == null || lng == null) {
@@ -39,7 +45,6 @@ class BloodBankCubit extends Cubit<BloodBankState> {
       bloodType: bloodType,
     ));
     response.when(success: (bloodType) {
-    
       emit(BloodBankState.success(bloodType));
     }, failure: (error) {
       emit(BloodBankState.error(error: error.apiErrorModel.message ?? ''));

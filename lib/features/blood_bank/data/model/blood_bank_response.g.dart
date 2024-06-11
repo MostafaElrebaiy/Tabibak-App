@@ -23,17 +23,17 @@ Map<String, dynamic> _$BloodBankResponseToJson(BloodBankResponse instance) =>
     };
 
 Data _$DataFromJson(Map<String, dynamic> json) => Data(
-      bloodTypes: json['bloodTypes'] == null
+      bloodTypes: json['blood_types'] == null
           ? null
-          : BloodTypes.fromJson(json['bloodTypes'] as Map<String, dynamic>),
-      bloodCenters: (json['bloodCenters'] as List<dynamic>?)
+          : BloodTypes.fromJson(json['blood_types'] as Map<String, dynamic>),
+      bloodCenters: (json['blood_centers'] as List<dynamic>?)
           ?.map((e) => BloodCenters.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
 Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
-      'bloodTypes': instance.bloodTypes,
-      'bloodCenters': instance.bloodCenters,
+      'blood_types': instance.bloodTypes,
+      'blood_centers': instance.bloodCenters,
     };
 
 BloodTypes _$BloodTypesFromJson(Map<String, dynamic> json) => BloodTypes(

@@ -71,7 +71,7 @@ Future<void> setupGetIt() async {
 
   // --------------------- Blood Bank --------------------- //
   getIt.registerLazySingleton<BloodBankRepo>(() => BloodBankRepo(getIt()));
-  getIt.registerLazySingleton<BloodBankCubit>(
+  getIt.registerFactory<BloodBankCubit>(
       () => BloodBankCubit(getIt<BloodBankRepo>()));
 
 }
