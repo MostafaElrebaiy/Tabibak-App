@@ -3,6 +3,8 @@ import 'package:get_it/get_it.dart';
 import 'package:tabibk/core/networking/api_service.dart';
 import 'package:tabibk/core/networking/dio_factory.dart';
 import 'package:tabibk/features/auth/login/logic/cubit/login_cubit.dart';
+import 'package:tabibk/features/blood_bank/data/repo/blood_bank_repo.dart';
+import 'package:tabibk/features/blood_bank/logic/cubit/blood_bank_cubit.dart';
 import 'package:tabibk/features/pharmacy/data/repo/pharmacy_best_deals_repo.dart';
 import 'package:tabibk/features/pharmacy/data/repo/search_pharmacy_repo.dart';
 import 'package:tabibk/features/pharmacy/logic/pharmacy_best_deal_medicine/pharmacy_best_deal_medicine_cubit.dart';
@@ -66,4 +68,10 @@ Future<void> setupGetIt() async {
 
   getIt.registerFactory<PharmacyBestDealMedicineCubit>(
       () => PharmacyBestDealMedicineCubit(getIt<PharmacyBestDealRepo>()));
+
+  // --------------------- Blood Bank --------------------- //
+  getIt.registerLazySingleton<BloodBankRepo>(() => BloodBankRepo(getIt()));
+  getIt.registerLazySingleton<BloodBankCubit>(
+      () => BloodBankCubit(getIt<BloodBankRepo>()));
+
 }

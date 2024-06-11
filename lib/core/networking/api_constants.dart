@@ -5,12 +5,12 @@ class ApiConstants {
   static const String forgetPassword = "password/send-mail";
   static const String checkcode = "password/check-code";
   static const String resetpassword = "password/reset";
-  static const String pharmacySearch = "pharmacies?x={lat}&y={lng}&medicine_name={medicineName}";
+  static const String pharmacySearch =
+      "pharmacies?x={lat}&y={lng}&medicine_name={medicineName}";
   static const String searchMedicine = "products?name={medicineName}";
   static const String pharmacyRecommended = "products/recommendation";
   static const String pharmacyBestDeals = "products/best_deals";
-
-
+  static const String bloodBank = "blood_bank?x={lat}&y={lng}&type={bloodType}";
 }
 
 class ApiErrors {

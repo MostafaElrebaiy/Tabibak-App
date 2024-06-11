@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/app_string.dart';
+import 'package:tabibk/features/blood_bank/logic/cubit/blood_bank_cubit.dart';
 import 'package:tabibk/features/blood_bank/ui/widgets/build_select_blood_type.dart';
 import '../../../../core/helper/app_assets.dart';
 import '../../../../core/theme/app_colors.dart';
@@ -24,6 +26,8 @@ class _FindDonarButtonState extends State<FindDonarButton> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        BlocProvider.of<BloodBankCubit>(context).getLocation();
+    
         selectBloodType(
           context: context,
           bloodGroup: _bloodGroup,

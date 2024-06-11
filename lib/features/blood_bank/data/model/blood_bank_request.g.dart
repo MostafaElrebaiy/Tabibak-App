@@ -2,26 +2,24 @@
 
 // ignore_for_file: unused_element
 
-part of 'search_pharmacy_request_body.dart';
+part of 'blood_bank_request.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-SearchPharmacyRequestBody _$SearchPharmacyRequestBodyFromJson(
-        Map<String, dynamic> json) =>
-    SearchPharmacyRequestBody(
+BloodBankRequest _$BloodBankRequestFromJson(Map<String, dynamic> json) =>
+    BloodBankRequest(
       token: json['token'] as String,
       lat: (json['lat'] as num).toDouble(),
       lng: (json['lng'] as num).toDouble(),
-      medicineName: json['medicineName'] as String,
+      bloodType: json['bloodType'] as String,
     );
 
-Map<String, dynamic> _$SearchPharmacyRequestBodyToJson(
-        SearchPharmacyRequestBody instance) =>
+Map<String, dynamic> _$BloodBankRequestToJson(BloodBankRequest instance) =>
     <String, dynamic>{
       'token': instance.token,
       'lat': instance.lat,
       'lng': instance.lng,
-      'medicineName': instance.medicineName,
+      'bloodType': instance.bloodType,
     };

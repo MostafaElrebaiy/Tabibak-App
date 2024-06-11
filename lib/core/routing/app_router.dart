@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tabibk/core/routing/custom_page_route.dart';
@@ -130,7 +129,8 @@ class AppRouter {
       case Routes.pharmacyDetailsScreen:
         return CustomPageRoute(child: const PharmacyDetailsScreen());
       case Routes.bloodBank:
-        return CustomPageRoute(child: const BloodBankScreen());
+        return CustomPageRoute(
+            child: const BloodBankScreen());
       case Routes.bloodBankSearchScreen:
         return CustomPageRoute(child: const SearchResultOfBloodType());
       case Routes.pharmacySearchResult:
@@ -138,8 +138,9 @@ class AppRouter {
         arg = settings.arguments as ArgResultPharmacy;
         return CustomPageRoute(
             child: BlocProvider(
-          create: (context) =>
-              PharmacyCubit(getIt())..searchForMedicien(medicineName: arg.medicineName, lat: arg.lat, lng: arg.lng),
+          create: (context) => PharmacyCubit(getIt())
+            ..searchForMedicien(
+                medicineName: arg.medicineName, lat: arg.lat, lng: arg.lng),
           child: const PharmacySearchResult(),
         ));
       default:

@@ -2,15 +2,14 @@
 
 // ignore_for_file: unused_element
 
-part of 'search_pharmacy_response.dart';
+part of 'blood_bank_response.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-SearchPharmacyResponse _$SearchPharmacyResponseFromJson(
-        Map<String, dynamic> json) =>
-    SearchPharmacyResponse(
+BloodBankResponse _$BloodBankResponseFromJson(Map<String, dynamic> json) =>
+    BloodBankResponse(
       message: json['message'] as String?,
       data: json['data'] == null
           ? null
@@ -18,8 +17,7 @@ SearchPharmacyResponse _$SearchPharmacyResponseFromJson(
       code: (json['code'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$SearchPharmacyResponseToJson(
-        SearchPharmacyResponse instance) =>
+Map<String, dynamic> _$BloodBankResponseToJson(BloodBankResponse instance) =>
     <String, dynamic>{
       'message': instance.message,
       'data': instance.data,
@@ -27,46 +25,47 @@ Map<String, dynamic> _$SearchPharmacyResponseToJson(
     };
 
 Data _$DataFromJson(Map<String, dynamic> json) => Data(
-      medicine: json['medicine'] == null
+      bloodTypes: json['bloodTypes'] == null
           ? null
-          : Medicine.fromJson(json['medicine'] as Map<String, dynamic>),
-      pharmacies: (json['pharmacies'] as List<dynamic>?)
-          ?.map((e) => Pharmacies.fromJson(e as Map<String, dynamic>))
+          : BloodTypes.fromJson(json['bloodTypes'] as Map<String, dynamic>),
+      bloodCenters: (json['bloodCenters'] as List<dynamic>?)
+          ?.map((e) => BloodCenters.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
 Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
-      'medicine': instance.medicine,
-      'pharmacies': instance.pharmacies,
+      'bloodTypes': instance.bloodTypes,
+      'bloodCenters': instance.bloodCenters,
     };
 
-Medicine _$MedicineFromJson(Map<String, dynamic> json) => Medicine(
+BloodTypes _$BloodTypesFromJson(Map<String, dynamic> json) => BloodTypes(
       id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
-      details: json['details'] as String?,
+      count: (json['count'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$MedicineToJson(Medicine instance) => <String, dynamic>{
+Map<String, dynamic> _$BloodTypesToJson(BloodTypes instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'details': instance.details,
+      'count': instance.count,
     };
 
-Pharmacies _$PharmaciesFromJson(Map<String, dynamic> json) => Pharmacies(
+BloodCenters _$BloodCentersFromJson(Map<String, dynamic> json) => BloodCenters(
       id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
-      details: json['details'] as String?,
+      address: json['address'] as String?,
       distance: (json['distance'] as num?)?.toDouble(),
       location: json['location'] == null
           ? null
           : Location.fromJson(json['location'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$PharmaciesToJson(Pharmacies instance) =>
+Map<String, dynamic> _$BloodCentersToJson(BloodCenters instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'details': instance.details,
+      'address': instance.address,
       'distance': instance.distance,
       'location': instance.location,
     };
