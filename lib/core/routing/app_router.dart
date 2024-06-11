@@ -11,6 +11,7 @@ import 'package:tabibk/features/auth/otp/ui/otp.dart';
 import 'package:tabibk/features/auth/signup/logic/sign_up_cubit.dart';
 import 'package:tabibk/features/auth/update_password/ui/successfully_update_pass.dart';
 import 'package:tabibk/features/auth/update_password/ui/update_password.dart';
+import 'package:tabibk/features/blood_bank/data/model/blood_bank_response.dart';
 import 'package:tabibk/features/blood_bank/ui/widgets/search_result_of_blood_type.dart';
 import 'package:tabibk/features/check_out/view/check_out_view.dart';
 import 'package:tabibk/features/check_out/view/widgets/add_shipping_screen.dart';
@@ -129,10 +130,13 @@ class AppRouter {
       case Routes.pharmacyDetailsScreen:
         return CustomPageRoute(child: const PharmacyDetailsScreen());
       case Routes.bloodBank:
-        return CustomPageRoute(
-            child: const BloodBankScreen());
+        return CustomPageRoute(child: const BloodBankScreen());
       case Routes.bloodBankSearchScreen:
-        return CustomPageRoute(child: const SearchResultOfBloodType());
+        final BloodBankResponse bloodBankResponse;
+        bloodBankResponse = settings.arguments as BloodBankResponse;
+        return CustomPageRoute(
+            child:
+                SearchResultOfBloodType(bloodBankResponse: bloodBankResponse));
       case Routes.pharmacySearchResult:
         ArgResultPharmacy arg;
         arg = settings.arguments as ArgResultPharmacy;

@@ -63,8 +63,7 @@ Future<dynamic> selectBloodType(
                                   ),
                               itemCount: bloodGroup.length,
                               itemBuilder: (context, index) {
-                                context.read<BloodBankCubit>().bloodType =
-                                    bloodGroup[index];
+                            
                                 return RadioListTile(
                                   title: Text(bloodGroup[index],
                                       style: AppStyle.f20Bold),
@@ -98,14 +97,9 @@ Future<dynamic> selectBloodType(
                             buttonText: AppString.submit.tr(context),
                             textStyle: AppStyle.f22mainBlueBold,
                             onPressed: () {
-                              // context.pop();
-                              if (context.read<BloodBankCubit>().bloodType ==
-                                  null) {
-                                return;
-                              }
+                           
                               context.read<BloodBankCubit>().searchForBloodType(
                                   bloodType: currentBloodGroup);
-                              // context.pushNamed(Routes.bloodBankSearchScreen);
                             },
                             buttonWidth: 220.w,
                             buttonHeight: 55.h,
@@ -141,8 +135,8 @@ Future<dynamic> selectBloodType(
                   arguments: bloodBankResponse);
             },
             error: (error) {
+              context.pop();
               showFailureDialog(context, error);
-              
             },
           );
         }),

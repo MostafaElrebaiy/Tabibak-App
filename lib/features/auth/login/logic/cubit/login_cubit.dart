@@ -23,14 +23,16 @@ class LoginCubit extends Cubit<LoginState> {
           email: emailController.text, password: passwordController.text),
     );
     response.when(
-      success: (loginResponse)async {
+      success: (loginResponse) async {
         await CacheHelper.insertToCache(
             key: 'token', value: loginResponse.userData?.token ?? '');
         emit(LoginState.success(loginResponse));
       },
       failure: (error) {
         emit(LoginState.error(
-            error: error.apiErrorModel.data?[0] ?? 'please try again later'));
+            error: error.apiErrorModel.data!.isEmpty
+                ? error.apiErrorModel.message ?? "Please try again later"
+                : (error.apiErrorModel.data?[0] ?? 'Please try again later')));
       },
     );
   }

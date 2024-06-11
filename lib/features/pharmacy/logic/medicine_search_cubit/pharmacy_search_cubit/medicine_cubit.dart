@@ -49,4 +49,9 @@ class MedicineCubit extends Cubit<MedicineState> {
       emit(MedicineState.error(error: error.apiErrorModel.message ?? ''));
     });
   }
+@override
+  Future<void> close() {
+    searchController.dispose();
+    return super.close();
+  }
 }

@@ -23,4 +23,9 @@ class PharmacyRecommendedMedicineCubit
           error: error.apiErrorModel.message ?? ''));
     });
   }
+    @override
+  Future<void> close() {
+    
+    return super.close();
+  }
 }

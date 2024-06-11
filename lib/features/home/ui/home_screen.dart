@@ -72,10 +72,10 @@ class _HomeState extends State<Home> {
                           icon: LineIcons.search,
                           text: AppString.bloodBank.tr(context),
                         ),
-                        GButton(
-                          icon: LineIcons.shoppingCart,
-                          text: AppString.product.tr(context),
-                        ),
+                        // GButton(
+                        //   icon: LineIcons.shoppingCart,
+                        //   text: AppString.product.tr(context),
+                        // ),
                         GButton(
                           icon: LineIcons.user,
                           text: AppString.profile.tr(context),

@@ -16,12 +16,7 @@ class PharmacyCubit extends Cubit<PharmacyState> {
   double? latitute;
   double? longitude;
 
-  void goToMap() async {
-    await locationService.goToMap(
-      latitute!,
-      longitude!,
-    );
-  }
+
 
   Future<void> searchForMedicien(
       {required medicineName, required lat, required lng}) async {

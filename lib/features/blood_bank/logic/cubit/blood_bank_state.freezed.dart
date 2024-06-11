@@ -44,25 +44,25 @@ mixin _$BloodBankState<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_BloodBankInitial<T> value) initial,
-    required TResult Function(_BloodBankLoading<T> value) loading,
-    required TResult Function(_BloodBankSuccess<T> value) success,
-    required TResult Function(_BloodBankError<T> value) error,
+    required TResult Function(BloodBankLoading<T> value) loading,
+    required TResult Function(BloodBankSuccess<T> value) success,
+    required TResult Function(BloodBankError<T> value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_BloodBankInitial<T> value)? initial,
-    TResult? Function(_BloodBankLoading<T> value)? loading,
-    TResult? Function(_BloodBankSuccess<T> value)? success,
-    TResult? Function(_BloodBankError<T> value)? error,
+    TResult? Function(BloodBankLoading<T> value)? loading,
+    TResult? Function(BloodBankSuccess<T> value)? success,
+    TResult? Function(BloodBankError<T> value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_BloodBankInitial<T> value)? initial,
-    TResult Function(_BloodBankLoading<T> value)? loading,
-    TResult Function(_BloodBankSuccess<T> value)? success,
-    TResult Function(_BloodBankError<T> value)? error,
+    TResult Function(BloodBankLoading<T> value)? loading,
+    TResult Function(BloodBankSuccess<T> value)? success,
+    TResult Function(BloodBankError<T> value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -163,9 +163,9 @@ class _$BloodBankInitialImpl<T> implements _BloodBankInitial<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_BloodBankInitial<T> value) initial,
-    required TResult Function(_BloodBankLoading<T> value) loading,
-    required TResult Function(_BloodBankSuccess<T> value) success,
-    required TResult Function(_BloodBankError<T> value) error,
+    required TResult Function(BloodBankLoading<T> value) loading,
+    required TResult Function(BloodBankSuccess<T> value) success,
+    required TResult Function(BloodBankError<T> value) error,
   }) {
     return initial(this);
   }
@@ -174,9 +174,9 @@ class _$BloodBankInitialImpl<T> implements _BloodBankInitial<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_BloodBankInitial<T> value)? initial,
-    TResult? Function(_BloodBankLoading<T> value)? loading,
-    TResult? Function(_BloodBankSuccess<T> value)? success,
-    TResult? Function(_BloodBankError<T> value)? error,
+    TResult? Function(BloodBankLoading<T> value)? loading,
+    TResult? Function(BloodBankSuccess<T> value)? success,
+    TResult? Function(BloodBankError<T> value)? error,
   }) {
     return initial?.call(this);
   }
@@ -185,9 +185,9 @@ class _$BloodBankInitialImpl<T> implements _BloodBankInitial<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_BloodBankInitial<T> value)? initial,
-    TResult Function(_BloodBankLoading<T> value)? loading,
-    TResult Function(_BloodBankSuccess<T> value)? success,
-    TResult Function(_BloodBankError<T> value)? error,
+    TResult Function(BloodBankLoading<T> value)? loading,
+    TResult Function(BloodBankSuccess<T> value)? success,
+    TResult Function(BloodBankError<T> value)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -219,7 +219,7 @@ class __$$BloodBankLoadingImplCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$BloodBankLoadingImpl<T> implements _BloodBankLoading<T> {
+class _$BloodBankLoadingImpl<T> implements BloodBankLoading<T> {
   const _$BloodBankLoadingImpl();
 
   @override
@@ -278,9 +278,9 @@ class _$BloodBankLoadingImpl<T> implements _BloodBankLoading<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_BloodBankInitial<T> value) initial,
-    required TResult Function(_BloodBankLoading<T> value) loading,
-    required TResult Function(_BloodBankSuccess<T> value) success,
-    required TResult Function(_BloodBankError<T> value) error,
+    required TResult Function(BloodBankLoading<T> value) loading,
+    required TResult Function(BloodBankSuccess<T> value) success,
+    required TResult Function(BloodBankError<T> value) error,
   }) {
     return loading(this);
   }
@@ -289,9 +289,9 @@ class _$BloodBankLoadingImpl<T> implements _BloodBankLoading<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_BloodBankInitial<T> value)? initial,
-    TResult? Function(_BloodBankLoading<T> value)? loading,
-    TResult? Function(_BloodBankSuccess<T> value)? success,
-    TResult? Function(_BloodBankError<T> value)? error,
+    TResult? Function(BloodBankLoading<T> value)? loading,
+    TResult? Function(BloodBankSuccess<T> value)? success,
+    TResult? Function(BloodBankError<T> value)? error,
   }) {
     return loading?.call(this);
   }
@@ -300,9 +300,9 @@ class _$BloodBankLoadingImpl<T> implements _BloodBankLoading<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_BloodBankInitial<T> value)? initial,
-    TResult Function(_BloodBankLoading<T> value)? loading,
-    TResult Function(_BloodBankSuccess<T> value)? success,
-    TResult Function(_BloodBankError<T> value)? error,
+    TResult Function(BloodBankLoading<T> value)? loading,
+    TResult Function(BloodBankSuccess<T> value)? success,
+    TResult Function(BloodBankError<T> value)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -312,8 +312,8 @@ class _$BloodBankLoadingImpl<T> implements _BloodBankLoading<T> {
   }
 }
 
-abstract class _BloodBankLoading<T> implements BloodBankState<T> {
-  const factory _BloodBankLoading() = _$BloodBankLoadingImpl<T>;
+abstract class BloodBankLoading<T> implements BloodBankState<T> {
+  const factory BloodBankLoading() = _$BloodBankLoadingImpl<T>;
 }
 
 /// @nodoc
@@ -349,7 +349,7 @@ class __$$BloodBankSuccessImplCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$BloodBankSuccessImpl<T> implements _BloodBankSuccess<T> {
+class _$BloodBankSuccessImpl<T> implements BloodBankSuccess<T> {
   const _$BloodBankSuccessImpl(this.data);
 
   @override
@@ -420,9 +420,9 @@ class _$BloodBankSuccessImpl<T> implements _BloodBankSuccess<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_BloodBankInitial<T> value) initial,
-    required TResult Function(_BloodBankLoading<T> value) loading,
-    required TResult Function(_BloodBankSuccess<T> value) success,
-    required TResult Function(_BloodBankError<T> value) error,
+    required TResult Function(BloodBankLoading<T> value) loading,
+    required TResult Function(BloodBankSuccess<T> value) success,
+    required TResult Function(BloodBankError<T> value) error,
   }) {
     return success(this);
   }
@@ -431,9 +431,9 @@ class _$BloodBankSuccessImpl<T> implements _BloodBankSuccess<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_BloodBankInitial<T> value)? initial,
-    TResult? Function(_BloodBankLoading<T> value)? loading,
-    TResult? Function(_BloodBankSuccess<T> value)? success,
-    TResult? Function(_BloodBankError<T> value)? error,
+    TResult? Function(BloodBankLoading<T> value)? loading,
+    TResult? Function(BloodBankSuccess<T> value)? success,
+    TResult? Function(BloodBankError<T> value)? error,
   }) {
     return success?.call(this);
   }
@@ -442,9 +442,9 @@ class _$BloodBankSuccessImpl<T> implements _BloodBankSuccess<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_BloodBankInitial<T> value)? initial,
-    TResult Function(_BloodBankLoading<T> value)? loading,
-    TResult Function(_BloodBankSuccess<T> value)? success,
-    TResult Function(_BloodBankError<T> value)? error,
+    TResult Function(BloodBankLoading<T> value)? loading,
+    TResult Function(BloodBankSuccess<T> value)? success,
+    TResult Function(BloodBankError<T> value)? error,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -454,8 +454,8 @@ class _$BloodBankSuccessImpl<T> implements _BloodBankSuccess<T> {
   }
 }
 
-abstract class _BloodBankSuccess<T> implements BloodBankState<T> {
-  const factory _BloodBankSuccess(final T data) = _$BloodBankSuccessImpl<T>;
+abstract class BloodBankSuccess<T> implements BloodBankState<T> {
+  const factory BloodBankSuccess(final T data) = _$BloodBankSuccessImpl<T>;
 
   T get data;
   @JsonKey(ignore: true)
@@ -496,7 +496,7 @@ class __$$BloodBankErrorImplCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$BloodBankErrorImpl<T> implements _BloodBankError<T> {
+class _$BloodBankErrorImpl<T> implements BloodBankError<T> {
   const _$BloodBankErrorImpl({required this.error});
 
   @override
@@ -566,9 +566,9 @@ class _$BloodBankErrorImpl<T> implements _BloodBankError<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_BloodBankInitial<T> value) initial,
-    required TResult Function(_BloodBankLoading<T> value) loading,
-    required TResult Function(_BloodBankSuccess<T> value) success,
-    required TResult Function(_BloodBankError<T> value) error,
+    required TResult Function(BloodBankLoading<T> value) loading,
+    required TResult Function(BloodBankSuccess<T> value) success,
+    required TResult Function(BloodBankError<T> value) error,
   }) {
     return error(this);
   }
@@ -577,9 +577,9 @@ class _$BloodBankErrorImpl<T> implements _BloodBankError<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_BloodBankInitial<T> value)? initial,
-    TResult? Function(_BloodBankLoading<T> value)? loading,
-    TResult? Function(_BloodBankSuccess<T> value)? success,
-    TResult? Function(_BloodBankError<T> value)? error,
+    TResult? Function(BloodBankLoading<T> value)? loading,
+    TResult? Function(BloodBankSuccess<T> value)? success,
+    TResult? Function(BloodBankError<T> value)? error,
   }) {
     return error?.call(this);
   }
@@ -588,9 +588,9 @@ class _$BloodBankErrorImpl<T> implements _BloodBankError<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_BloodBankInitial<T> value)? initial,
-    TResult Function(_BloodBankLoading<T> value)? loading,
-    TResult Function(_BloodBankSuccess<T> value)? success,
-    TResult Function(_BloodBankError<T> value)? error,
+    TResult Function(BloodBankLoading<T> value)? loading,
+    TResult Function(BloodBankSuccess<T> value)? success,
+    TResult Function(BloodBankError<T> value)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -600,8 +600,8 @@ class _$BloodBankErrorImpl<T> implements _BloodBankError<T> {
   }
 }
 
-abstract class _BloodBankError<T> implements BloodBankState<T> {
-  const factory _BloodBankError({required final String error}) =
+abstract class BloodBankError<T> implements BloodBankState<T> {
+  const factory BloodBankError({required final String error}) =
       _$BloodBankErrorImpl<T>;
 
   String get error;

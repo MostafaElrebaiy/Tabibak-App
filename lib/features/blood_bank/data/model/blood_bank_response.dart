@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'blood_bank_response.g.dart';
+
 @JsonSerializable()
 class BloodBankResponse {
   String? message;
@@ -7,17 +8,21 @@ class BloodBankResponse {
   int? code;
 
   BloodBankResponse({this.message, this.data, this.code});
-  factory BloodBankResponse.fromJson(Map<String, dynamic> json) =>_$BloodBankResponseFromJson(json);
+
+  factory BloodBankResponse.fromJson(Map<String, dynamic> json) =>
+      _$BloodBankResponseFromJson(json);
 }
+
 
 @JsonSerializable()
 class Data {
+  @JsonKey(name: 'blood_types')
   BloodTypes? bloodTypes;
+  @JsonKey(name: 'blood_centers')
   List<BloodCenters>? bloodCenters;
 
   Data({this.bloodTypes, this.bloodCenters});
-  factory Data.fromJson(Map<String, dynamic> json) =>_$DataFromJson(json);
-
+  factory Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);
 }
 
 @JsonSerializable()
@@ -27,7 +32,8 @@ class BloodTypes {
   int? count;
 
   BloodTypes({this.id, this.name, this.count});
-  factory BloodTypes.fromJson(Map<String, dynamic> json) =>_$BloodTypesFromJson(json);
+  factory BloodTypes.fromJson(Map<String, dynamic> json) =>
+      _$BloodTypesFromJson(json);
 }
 
 @JsonSerializable()
@@ -40,9 +46,9 @@ class BloodCenters {
 
   BloodCenters(
       {this.id, this.name, this.address, this.distance, this.location});
-  factory BloodCenters.fromJson(Map<String, dynamic> json) =>_$BloodCentersFromJson(json);
 
-
+  factory BloodCenters.fromJson(Map<String, dynamic> json) =>
+      _$BloodCentersFromJson(json);
 }
 
 @JsonSerializable()
@@ -51,6 +57,7 @@ class Location {
   String? y;
 
   Location({this.x, this.y});
-  factory Location.fromJson(Map<String, dynamic> json) =>_$LocationFromJson(json);
 
+  factory Location.fromJson(Map<String, dynamic> json) =>
+      _$LocationFromJson(json);
 }
