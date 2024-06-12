@@ -30,6 +30,7 @@ class SearchResultOfBloodType extends StatelessWidget {
           itemBuilder: (context, index) => BlocProvider(
             create: (context) => BloodBankCubit(getIt()),
             child: BlocBuilder<BloodBankCubit, BloodBankState>(
+              
               builder: (context, state) {
                 return CustomListTileWidget(
                   distance: bloodBankResponse

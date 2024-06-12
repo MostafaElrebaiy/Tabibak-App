@@ -5,6 +5,12 @@ import 'package:tabibk/core/networking/dio_factory.dart';
 import 'package:tabibk/features/auth/login/logic/cubit/login_cubit.dart';
 import 'package:tabibk/features/blood_bank/data/repo/blood_bank_repo.dart';
 import 'package:tabibk/features/blood_bank/logic/cubit/blood_bank_cubit.dart';
+import 'package:tabibk/features/hospital_and_clinic_system/hospital/data/repo/clinic_repo/clinic_repo.dart';
+import 'package:tabibk/features/hospital_and_clinic_system/hospital/data/repo/department_repo/department_repo.dart';
+import 'package:tabibk/features/hospital_and_clinic_system/hospital/data/repo/hospital_repo/hospital_repo.dart';
+import 'package:tabibk/features/hospital_and_clinic_system/hospital/logic/clinic/clinic_cubit.dart';
+import 'package:tabibk/features/hospital_and_clinic_system/hospital/logic/department/department_cubit.dart';
+import 'package:tabibk/features/hospital_and_clinic_system/hospital/logic/hospital/hospital_cubit.dart';
 import 'package:tabibk/features/pharmacy/data/repo/pharmacy_best_deals_repo.dart';
 import 'package:tabibk/features/pharmacy/data/repo/search_pharmacy_repo.dart';
 import 'package:tabibk/features/pharmacy/logic/pharmacy_best_deal_medicine/pharmacy_best_deal_medicine_cubit.dart';
@@ -73,5 +79,19 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<BloodBankRepo>(() => BloodBankRepo(getIt()));
   getIt.registerFactory<BloodBankCubit>(
       () => BloodBankCubit(getIt<BloodBankRepo>()));
+
+  // --------------------- Department --------------------- //
+  getIt.registerLazySingleton<DepartmentRepo>(() => DepartmentRepo(getIt()));
+  getIt.registerFactory<DepartmentCubit>(
+      () => DepartmentCubit(getIt<DepartmentRepo>()));
+
+  // --------------------- Hospital --------------------- //
+  getIt.registerLazySingleton<HospitalRepo>(() => HospitalRepo(getIt()));
+  getIt.registerLazySingleton<HospitalCubit>(() => HospitalCubit(getIt()));
+
+
+  // --------------------- Clinic --------------------- //
+  getIt.registerLazySingleton<ClinicRepo>(() => ClinicRepo(getIt()));
+  getIt.registerLazySingleton<ClinicCubit>(() => ClinicCubit(getIt()));
 
 }

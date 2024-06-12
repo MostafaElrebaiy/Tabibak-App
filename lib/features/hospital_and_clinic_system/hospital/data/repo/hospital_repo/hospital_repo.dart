@@ -8,10 +8,10 @@ class HospitalRepo {
    final ApiService _apiService;
   HospitalRepo(this._apiService);
 
-  Future<ApiResult<HospitalResponse>> searchForHospitals(
+  Future<ApiResult<HospitalResponse>> getHospitals(
     HospitalRequest hospitalRequest) async {
     try {
-      final response = await _apiService.searchForHospitals(
+      final response = await _apiService.getHospitals(
           "Bearer ${hospitalRequest.token}",
           hospitalRequest.lat,
           hospitalRequest.departmentName,

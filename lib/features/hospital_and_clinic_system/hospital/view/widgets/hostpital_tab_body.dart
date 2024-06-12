@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/app_assets.dart';
-import 'package:tabibk/core/helper/app_localization.dart';
-
-import 'package:tabibk/core/helper/extensions.dart';
-import 'package:tabibk/core/routing/routes.dart';
 import 'package:tabibk/core/theme/app_constant.dart';
+import 'package:tabibk/features/hospital_and_clinic_system/hospital/data/model/hospital_model/hospital_response.dart';
+import 'package:tabibk/features/hospital_and_clinic_system/hospital/logic/hospital/hospital_cubit.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/view/widgets/custom_list_tile_widget.dart';
 
 class HostpitalTabBody extends StatelessWidget {
@@ -17,16 +16,45 @@ class HostpitalTabBody extends StatelessWidget {
       padding: EdgeInsets.symmetric(
           horizontal: AppConstant.appHorizontalPadding.w,
           vertical: AppConstant.appVerticalPadding.h),
-      child: ListView.builder(
-        itemCount: 5,
-        itemBuilder: (_, __) => CustomListTileWidget(
-          distance: "2.5K",
-          image: AppAsset.hospitalImage,
-          title: "elAndlosia".tr(context),
-          onTap: () {
-            context.pushNamed(Routes.hospitalInfoView);
-          },
-        ),
+      child: BlocBuilder<HospitalCubit, HospitalState>(
+        builder: (context, state) {
+          return state.when(
+              initial: () => const SizedBox.shrink(),
+              loading: () {
+                context.read<HospitalCubit>().getHospital(
+                    departmentName:
+                        context.read<HospitalCubit>().departmentName ?? "",
+                    lat: context.read<HospitalCubit>().lat,
+                    lng: context.read<HospitalCubit>().lng);
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              },
+              success: (hosptials) {
+                HospitalResponse hosptial = hosptials as HospitalResponse;
+                return ListView.builder(
+                  itemCount: hosptial.data?.hospitals?.length ?? 0,
+                  itemBuilder: (context, index) => CustomListTileWidget(
+                    distance:
+                        hosptial.data?.hospitals?[index].distance.toString() ??
+                            "",
+                    image: AppAsset.hospitalImage,
+                    title: hosptial.data?.hospitals?[index].name ?? "",
+                    onTap: () {
+                      context.read<HospitalCubit>().goToMap(
+                            lat: hosptial.data?.hospitals?[index].location?.x
+                                as String,
+                            lng: hosptial.data?.hospitals?[index].location?.y
+                                as String,
+                          );
+                    },
+                  ),
+                );
+              },
+              error: (error) => Center(
+                    child: Text(error),
+                  ));
+        },
       ),
     );
   }

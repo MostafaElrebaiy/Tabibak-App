@@ -9,7 +9,7 @@ class DepartmentRepo {
 
   DepartmentRepo(this._apiService);
 
-  Future<ApiResult<DepartmentResponse>> searchForDepartments(
+  Future<ApiResult<DepartmentResponse>> getDepartments(
       DepartmentRequest departmentRequest) async {
     try {
       final response = await _apiService.getDepartments(

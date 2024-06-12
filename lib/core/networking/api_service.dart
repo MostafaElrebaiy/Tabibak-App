@@ -72,7 +72,7 @@ abstract class ApiService {
     @Path('lng') double lng,
   );
 @GET(ApiConstants.hospitals)
-  Future<HospitalResponse> searchForHospitals(
+  Future<HospitalResponse> getHospitals(
     @Header('Authorization') String token,
     @Path('lat') double lat,
     @Path('departmentName') String departmentName,
@@ -85,7 +85,7 @@ abstract class ApiService {
   );
   
   @GET(ApiConstants.clinics)
-  Future<ClinicResponse> searchForClinics(
+  Future<ClinicResponse> getClinics(
     @Header('Authorization') String token,
     @Path('lat') double lat,
     @Path('departmentName') String departmentName,
