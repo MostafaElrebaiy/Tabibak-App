@@ -93,7 +93,7 @@ class MedicienSearch extends SearchDelegate {
         fillColor: AppColor.white,
         filled: true,
         contentPadding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 15.h),
-        focusedBorder: outlineInputBorder(AppColor.mainBlue),
+        focusedBorder: outlineInputBorder(AppColor.primaryBlue),
         enabledBorder: outlineInputBorder(AppColor.lightGray),
         errorBorder: outlineInputBorder(),
         focusedErrorBorder: outlineInputBorder(),

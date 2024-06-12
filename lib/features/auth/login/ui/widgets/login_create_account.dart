@@ -22,7 +22,7 @@ class LoginCreateAccount extends StatelessWidget {
           },
           child: Text(
             ' Create Account',
-            style: AppStyle.font12MainBlueSemiBold,
+            style: AppStyle.font12primaryBlueSemiBold,
           ),
         ),
       ],

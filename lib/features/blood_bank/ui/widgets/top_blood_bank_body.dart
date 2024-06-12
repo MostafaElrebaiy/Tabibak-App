@@ -18,7 +18,7 @@ class TopSectionBloodBankBody extends StatelessWidget {
       height: 350.h,
       width: double.infinity,
       decoration: const BoxDecoration(
-        color: AppColor.mainBlue,
+        color: AppColor.primaryBlue,
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(50),
           bottomRight: Radius.circular(50),
@@ -49,7 +49,7 @@ class TopSectionBloodBankBody extends StatelessWidget {
                 child: Text(
                   AppString.blood.tr(context),
                   textAlign: TextAlign.center,
-                  style: AppStyle.font30MainBLueSemiBold,
+                  style: AppStyle.font30primaryBlueSemiBold,
                 ),
               )
             ],

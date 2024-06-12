@@ -21,7 +21,7 @@ class Resend extends StatelessWidget {
           },
           child: Text(
             ' Resend',
-            style: AppStyle.font12MainBlueSemiBold,
+            style: AppStyle.font12primaryBlueSemiBold,
           ),
         ),
       ],

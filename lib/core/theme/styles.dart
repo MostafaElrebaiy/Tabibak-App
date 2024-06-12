@@ -6,11 +6,11 @@ import 'package:tabibk/core/theme/app_colors.dart';
 import 'font_weight_helper.dart';
 
 abstract class AppStyle {
-  static TextStyle font10MainBlueRegular = TextStyle(
+  static TextStyle font10primaryBlueRegular = TextStyle(
     // Already
     fontSize: 10.sp,
     fontWeight: FontWeightHelper.regular,
-    color: AppColor.mainBlue,
+    color: AppColor.primaryBlue,
   );
   static TextStyle font112DarkGrayRegular = TextStyle(
     fontSize: 12.sp,
@@ -18,12 +18,12 @@ abstract class AppStyle {
     color: AppColor.darkgray,
   );
 
-  static TextStyle font12MainBlueSemiBold = TextStyle(
+  static TextStyle font12primaryBlueSemiBold = TextStyle(
     // Already
 
     fontSize: 12.sp,
     fontWeight: FontWeightHelper.semiBold,
-    color: AppColor.mainBlue,
+    color: AppColor.primaryBlue,
   );
   static TextStyle font12GrayRegular = TextStyle(
     //Or
@@ -69,11 +69,11 @@ abstract class AppStyle {
     fontWeight: FontWeightHelper.bold,
     color: AppColor.black,
   );
-  static TextStyle f14MAinBlueW700 = TextStyle(
+  static TextStyle f14primaryBlueW700 = TextStyle(
     //hintText
     fontSize: 14.sp,
     fontWeight: FontWeightHelper.bold,
-    color: AppColor.mainBlue,
+    color: AppColor.primaryBlue,
   );
 
   static TextStyle font14BlackSemiBold = TextStyle(
@@ -113,11 +113,11 @@ abstract class AppStyle {
     fontWeight: FontWeightHelper.regular,
     color: AppColor.black,
   );
-  static TextStyle font16MainBLueBold = TextStyle(
+  static TextStyle font16primaryBlueBold = TextStyle(
     //OnBoarding
     fontSize: 16.sp,
     fontWeight: FontWeightHelper.regular,
-    color: AppColor.mainBlue,
+    color: AppColor.primaryBlue,
   );
   static TextStyle font16GrayBold = TextStyle(
     fontSize: 16.sp,
@@ -153,25 +153,25 @@ abstract class AppStyle {
     fontWeight: FontWeightHelper.bold,
     color: AppColor.black,
   );
-  static TextStyle f22mainBlueBold = TextStyle(
+  static TextStyle f22primaryBlueBold = TextStyle(
     fontSize: 22.sp,
     fontWeight: FontWeightHelper.bold,
-    color: AppColor.mainBlue,
+    color: AppColor.primaryBlue,
   );
   static TextStyle font24WhiteBold = TextStyle(
     fontSize: 24.sp,
     fontWeight: FontWeightHelper.bold,
     color: AppColor.white,
   );
-  static TextStyle font40MainBlueMedium = TextStyle(
+  static TextStyle font40primaryBlueMedium = TextStyle(
     fontSize: 40.sp,
     fontWeight: FontWeightHelper.medium,
-    color: AppColor.mainBlue,
+    color: AppColor.primaryBlue,
   );
   static TextStyle font13BlueSemiBold = TextStyle(
     fontSize: 13.sp,
     fontWeight: FontWeightHelper.semiBold,
-    color: AppColor.mainBlue,
+    color: AppColor.primaryBlue,
   );
 
   static TextStyle font13DarkBlueRegular = TextStyle(
@@ -207,7 +207,7 @@ abstract class AppStyle {
   static TextStyle font13BlueRegular = TextStyle(
     fontSize: 13.sp,
     fontWeight: FontWeightHelper.regular,
-    color: AppColor.mainBlue,
+    color: AppColor.primaryBlue,
   );
   static TextStyle f20WhiteW600 = TextStyle(
     fontSize: 20.sp,
@@ -261,7 +261,7 @@ abstract class AppStyle {
   static TextStyle font24BlueBold = TextStyle(
     fontSize: 24.sp,
     fontWeight: FontWeightHelper.bold,
-    color: AppColor.mainBlue,
+    color: AppColor.primaryBlue,
   );
 
   static TextStyle font24BlackBold = TextStyle(
@@ -273,7 +273,7 @@ abstract class AppStyle {
   static TextStyle font32BlueBold = TextStyle(
     fontSize: 32.sp,
     fontWeight: FontWeightHelper.bold,
-    color: AppColor.mainBlue,
+    color: AppColor.primaryBlue,
   );
   static TextStyle font30whiteregular = TextStyle(
     fontSize: 30.sp,
@@ -285,8 +285,8 @@ abstract class AppStyle {
     fontWeight: FontWeightHelper.semiBold,
     color: AppColor.white,
   );
-  static TextStyle font30MainBLueSemiBold = TextStyle(
+  static TextStyle font30primaryBlueSemiBold = TextStyle(
       fontSize: 30.sp,
       fontWeight: FontWeightHelper.semiBold,
-      color: AppColor.mainBlue);
+      color: AppColor.primaryBlue);
 }

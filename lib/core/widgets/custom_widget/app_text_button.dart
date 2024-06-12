@@ -28,23 +28,23 @@ class AppTextButton extends StatelessWidget {
       this.buttonWidth,
       this.buttonHeight,
       required this.buttonText,
-       this.textStyle,
-      required this.onPressed,  this.thereIcon =false, this.icon});
+      this.textStyle,
+      required this.onPressed,
+      this.thereIcon = false,
+      this.icon});
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      
       onPressed: onPressed,
       style: ButtonStyle(
-        
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(borderRadius ?? 32),
           ),
         ),
         backgroundColor: MaterialStatePropertyAll(
-          backgroundColor ?? AppColor.mainBlue,
+          backgroundColor ?? AppColor.primaryBlue,
         ),
         padding: MaterialStateProperty.all<EdgeInsets>(
           EdgeInsets.symmetric(
@@ -55,7 +55,6 @@ class AppTextButton extends StatelessWidget {
         fixedSize: MaterialStateProperty.all(
           Size(buttonWidth?.w ?? double.maxFinite, buttonHeight ?? 50.h),
         ),
-        
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -70,13 +69,12 @@ class AppTextButton extends StatelessWidget {
                 )
               : const SizedBox(),
           const SizedBox(width: AppSize.s10),
-         Text(
+          Text(
             buttonText,
             style: textStyle ?? AppStyle.font16WhiteSemiBold,
           ),
         ],
-      ), 
-      
+      ),
     );
   }
 }

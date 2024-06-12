@@ -25,7 +25,7 @@ class TopBackgroundLoginScreen extends StatelessWidget {
               alignment: Alignment.center,
               child: Text(
                 'P',
-                style: AppStyle.font40MainBlueMedium,
+                style: AppStyle.font40primaryBlueMedium,
               ),
             ),
           ),

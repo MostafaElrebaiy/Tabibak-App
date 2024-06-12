@@ -63,13 +63,12 @@ Future<dynamic> selectBloodType(
                                   ),
                               itemCount: bloodGroup.length,
                               itemBuilder: (context, index) {
-                            
                                 return RadioListTile(
                                   title: Text(bloodGroup[index],
                                       style: AppStyle.f20Bold),
                                   controlAffinity:
                                       ListTileControlAffinity.trailing,
-                                  activeColor: AppColor.mainBlue,
+                                  activeColor: AppColor.primaryBlue,
                                   selected:
                                       currentBloodGroup == bloodGroup[index]
                                           ? true
@@ -88,16 +87,15 @@ Future<dynamic> selectBloodType(
                           decoration: BoxDecoration(
                             border: Border.all(
                               width: 1,
-                              color: AppColor.mainBlue,
+                              color: AppColor.primaryBlue,
                             ),
                             borderRadius: BorderRadius.circular(30),
                           ),
                           child: AppTextButton(
                             backgroundColor: AppColor.white,
                             buttonText: AppString.submit.tr(context),
-                            textStyle: AppStyle.f22mainBlueBold,
+                            textStyle: AppStyle.f22primaryBlueBold,
                             onPressed: () {
-                           
                               context.read<BloodBankCubit>().searchForBloodType(
                                   bloodType: currentBloodGroup);
                             },
@@ -113,7 +111,7 @@ Future<dynamic> selectBloodType(
                     top: -40,
                     child: CircleAvatar(
                       radius: 30,
-                      backgroundColor: AppColor.mainBlue,
+                      backgroundColor: AppColor.primaryBlue,
                       child: SvgPicture.asset(
                         AppAsset.downDialogIcon,
                         height: 20,

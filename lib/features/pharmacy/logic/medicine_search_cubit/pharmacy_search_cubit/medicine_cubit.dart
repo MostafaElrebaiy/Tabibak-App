@@ -27,12 +27,13 @@ class MedicineCubit extends Cubit<MedicineState> {
   }
 
   Future<void> searchForMedicien({required medicineName}) async {
+    emit(const MedicineState.loading());
+
     if (lat == null || lng == null) {
       final locationData = await locationService.getLocation();
       lat = locationData.latitude;
       lng = locationData.longitude;
     }
-    emit(const MedicineState.loading());
     final response = await _medicineRepo.searchForMedicien(
         SearchMedicineRequest(
             token: CacheHelper.getCacheData(key: AppConstant.token),
@@ -42,16 +43,22 @@ class MedicineCubit extends Cubit<MedicineState> {
       emit(const MedicineState.initial());
       return;
     }
+    
     response.when(success: (medicine) {
       pharmacySearchResponse = medicine;
-      emit(MedicineState.success(medicine));
+      if (!isClosed) {
+        emit(MedicineState.success(medicine));
+      }
     }, failure: (error) {
-      emit(MedicineState.error(error: error.apiErrorModel.message ?? ''));
+      if (!isClosed) {
+        emit(MedicineState.error(error: error.apiErrorModel.message ?? ''));
+      }
     });
   }
 @override
   Future<void> close() {
     searchController.dispose();
+
     return super.close();
   }
 }

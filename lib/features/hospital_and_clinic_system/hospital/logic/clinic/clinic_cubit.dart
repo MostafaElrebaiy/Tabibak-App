@@ -46,11 +46,16 @@ class ClinicCubit extends Cubit<ClinicState> {
         lat: lat!,
         lng: lng!,
         departmentName: departmentName));
-
+if (isClosed) return; // Prevent state emission if Cubit is closed
+    
     response.when(success: (clinic) {
-      emit(ClinicState.success(clinic));
+      if (!isClosed) {
+        emit(ClinicState.success(clinic));
+      }
     }, failure: (error) {
-      emit(ClinicState.error(error: error.apiErrorModel.message ?? ''));
+      if (!isClosed) {
+        emit(ClinicState.error(error: error.apiErrorModel.message ?? ''));
+      }
     });
   }
 }

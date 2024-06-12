@@ -6,7 +6,6 @@ import 'package:tabibk/features/hospital_and_clinic_system/hospital/data/model/d
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/data/repo/department_repo/department_repo.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/logic/department/department_state.dart';
 
-
 class DepartmentCubit extends Cubit<DepartmentState> {
   DepartmentCubit(this._departmentRepo)
       : super(const DepartmentState.initial());
@@ -16,7 +15,7 @@ class DepartmentCubit extends Cubit<DepartmentState> {
   double? lat, lng;
   Future<void> getDepartment() async {
     emit(const DepartmentState.loading());
-     if (lat == null || lng == null) {
+    if (lat == null || lng == null) {
       final locationData = await locationService.getLocation();
       lat = locationData.latitude;
       lng = locationData.longitude;
@@ -24,11 +23,16 @@ class DepartmentCubit extends Cubit<DepartmentState> {
     final response = await _departmentRepo.getDepartments(DepartmentRequest(
       token: CacheHelper.getCacheData(key: AppConstant.token),
     ));
+    if (isClosed) return; // Prevent state emission if Cubit is closed
 
     response.when(success: (department) {
-      emit(DepartmentState.success(department));
+      if (!isClosed) {
+        emit(DepartmentState.success(department));
+      }
     }, failure: (error) {
-      emit(DepartmentState.error(error: error.apiErrorModel.message ?? ''));
+      if (!isClosed) {
+        emit(DepartmentState.error(error: error.apiErrorModel.message ?? ''));
+      }
     });
   }
 }

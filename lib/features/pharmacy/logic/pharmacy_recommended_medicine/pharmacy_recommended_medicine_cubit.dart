@@ -9,23 +9,25 @@ class PharmacyRecommendedMedicineCubit
     extends Cubit<PharmacyRecommendedMedicineState> {
   PharmacyRecommendedMedicineCubit(this._pharmacyRecommendedRepo)
       : super(const PharmacyRecommendedMedicineState.loading());
+
   final PharmacyRecommendedRepo _pharmacyRecommendedRepo;
 
   Future<void> getRecommendedMedicine() async {
-    final response = await _pharmacyRecommendedRepo
-        .getRecommendedMedicine(PharmacyMedicineRequest(
-      token: CacheHelper.getCacheData(key: AppConstant.token),
-    ));
+    final response = await _pharmacyRecommendedRepo.getRecommendedMedicine(
+      PharmacyMedicineRequest(
+        token: CacheHelper.getCacheData(key: AppConstant.token),
+      ),
+    );
+
+    if (isClosed) return; // Prevent state emission if Cubit is closed
+
     response.when(success: (medicine) {
-      emit(PharmacyRecommendedMedicineState.success(medicine));
+      if (!isClosed) emit(PharmacyRecommendedMedicineState.success(medicine));
     }, failure: (error) {
-      emit(PharmacyRecommendedMedicineState.error(
-          error: error.apiErrorModel.message ?? ''));
+      if (!isClosed) {
+        emit(PharmacyRecommendedMedicineState.error(
+            error: error.apiErrorModel.message ?? ''));
+      }
     });
-  }
-    @override
-  Future<void> close() {
-    
-    return super.close();
   }
 }

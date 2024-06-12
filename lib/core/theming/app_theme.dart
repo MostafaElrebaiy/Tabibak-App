@@ -4,7 +4,7 @@ import 'package:tabibk/core/theme/app_constant.dart';
 
 class AppTheme {
   static ThemeData lightTheme = ThemeData(
-    primaryColor: AppColor.mainBlue,
+    primaryColor: AppColor.primaryBlue,
     scaffoldBackgroundColor: AppColor.white,
     // fontFamily:  Localizations.maybeLocaleOf(context)?.languageCode== 'ar'? "Cairo":primaryFontFamily,
     fontFamily: AppConstant.arabicFontFamily,

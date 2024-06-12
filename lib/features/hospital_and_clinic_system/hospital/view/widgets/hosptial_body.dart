@@ -65,7 +65,7 @@ class HonspitalBody extends StatelessWidget {
                           const Icon(
                             Icons.stroller_rounded,
                             size: 35,
-                            color: AppColor.mainBlue,
+                            color: AppColor.primaryBlue,
                           ),
                           Text(
                             "Test Department",

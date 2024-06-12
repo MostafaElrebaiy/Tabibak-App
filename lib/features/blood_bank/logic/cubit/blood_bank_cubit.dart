@@ -16,10 +16,10 @@ class BloodBankCubit extends Cubit<BloodBankState> {
   double? lat;
   double? lng;
   // String? bloodType;
-  void goToMap({ String? lat,  String? lng}) async {
+  void goToMap({String? lat, String? lng}) async {
     await locationService.goToMap(
-      (lat  == null || lat.isEmpty) ? 31.2001 :double.parse(lat ),
-      (lng == null|| lng.isEmpty) ? 29.9187 :double.parse(lng ),
+      (lat == null || lat.isEmpty) ? 31.2001 : double.parse(lat),
+      (lng == null || lng.isEmpty) ? 29.9187 : double.parse(lng),
     );
   }
 
@@ -32,22 +32,28 @@ class BloodBankCubit extends Cubit<BloodBankState> {
   }
 
   Future<void> searchForBloodType({required String bloodType}) async {
+    emit(const BloodBankState.loading());
     if (lat == null || lng == null) {
       final locationData = await locationService.getLocation();
       lat = locationData.latitude;
       lng = locationData.longitude;
     }
-    emit(const BloodBankState.loading());
     final response = await _bloodBankRepo.searchForBloodType(BloodBankRequest(
       token: CacheHelper.getCacheData(key: AppConstant.token),
       lat: lat!,
       lng: lng!,
       bloodType: bloodType,
     ));
+    if (isClosed) return; // Prevent state emission if Cubit is closed
+
     response.when(success: (bloodType) {
-      emit(BloodBankState.success(bloodType));
+      if (!isClosed) {
+        emit(BloodBankState.success(bloodType));
+      }
     }, failure: (error) {
-      emit(BloodBankState.error(error: error.apiErrorModel.message ?? ''));
+      if (!isClosed) {
+        emit(BloodBankState.error(error: error.apiErrorModel.message ?? ''));
+      }
     });
   }
 }

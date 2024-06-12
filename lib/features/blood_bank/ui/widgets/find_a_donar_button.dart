@@ -27,7 +27,7 @@ class _FindDonarButtonState extends State<FindDonarButton> {
     return GestureDetector(
       onTap: () {
         BlocProvider.of<BloodBankCubit>(context).getLocation();
-    
+
         selectBloodType(
           context: context,
           bloodGroup: _bloodGroup,
@@ -44,7 +44,7 @@ class _FindDonarButtonState extends State<FindDonarButton> {
         width: 150.w,
         height: 150.h,
         decoration: BoxDecoration(
-          border: Border.all(width: 1, color: AppColor.mainBlue),
+          border: Border.all(width: 1, color: AppColor.primaryBlue),
           color: AppColor.white,
           borderRadius: BorderRadius.circular(70),
         ),
@@ -57,7 +57,7 @@ class _FindDonarButtonState extends State<FindDonarButton> {
               width: 50,
             ),
             Text(AppString.findDonar.tr(context),
-                style: AppStyle.font16MainBLueBold),
+                style: AppStyle.font16primaryBlueBold),
           ],
         ),
       ),
