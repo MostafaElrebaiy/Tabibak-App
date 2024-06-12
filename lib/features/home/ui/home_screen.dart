@@ -1,7 +1,7 @@
 import 'package:connectivity/connectivity.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:lottie/lottie.dart';
 import 'package:tabibk/core/helper/app_assets.dart';
@@ -27,62 +27,27 @@ class _HomeState extends State<Home> {
     return StreamBuilder<ConnectivityResult>(
         stream: Connectivity().onConnectivityChanged,
         builder: (context, snapshot) {
+        
           return Scaffold(
-            bottomNavigationBar: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Container(
-                decoration: const BoxDecoration(
-                    color: AppColor.white,
-                    borderRadius: BorderRadius.all(Radius.circular(15))),
-                child: Padding(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 15.w, vertical: 5.h),
-                  child: GNav(
-                      selectedIndex: _currentIndex,
-                      onTabChange: (value) {
-                        setState(() {
-                          _currentIndex = value;
-                        });
-                      },
-                      rippleColor: AppColor.mainBlue,
-                      hoverColor: AppColor.lightGray,
-                      haptic: true,
-                      tabBorderRadius: 15,
-                      tabActiveBorder:
-                          Border.all(color: AppColor.mainBlue, width: .5),
-                      // tabBorder: Border.all(color: AppColor.mainBlue, width: 1),
-                      curve: Curves.ease, // tab animation curves
-                      duration: const Duration(milliseconds: 600),
-                      gap: 8,
-                      color: AppColor.gray,
-                      activeColor: AppColor.mainBlue,
-                      iconSize: 24, // tab button icon size
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 5),
-                      tabs: [
-                        GButton(
-                          icon: LineIcons.home,
-                          text: AppString.pharamacy.tr(context),
-                        ),
-                        GButton(
-                          icon: LineIcons.hospitalAlt,
-                          text: AppString.hospital.tr(context),
-                        ),
-                        GButton(
-                          icon: LineIcons.search,
-                          text: AppString.bloodBank.tr(context),
-                        ),
-                        // GButton(
-                        //   icon: LineIcons.shoppingCart,
-                        //   text: AppString.product.tr(context),
-                        // ),
-                        GButton(
-                          icon: LineIcons.user,
-                          text: AppString.profile.tr(context),
-                        ),
-                      ]),
-                ),
-              ),
+            bottomNavigationBar: CurvedNavigationBar(
+              index: _currentIndex,
+              backgroundColor: AppColor.white,
+              color: AppColor.appbar,
+              buttonBackgroundColor: AppColor.appbar,
+              animationDuration:  const Duration(milliseconds: AppConstant.animationDuration),
+              animationCurve: Curves.easeInOutCubic,
+              height: 50.h,
+              items: const [
+                Icon(LineIcons.home, size: 30, color: AppColor.white),
+                Icon(LineIcons.hospitalAlt, size: 30, color: AppColor.white),
+                Icon(LineIcons.user, size: 30, color: AppColor.white),
+                Icon(LineIcons.phoneSquare, size: 30, color: AppColor.white)
+              ],
+              onTap: (index) {
+                setState(() {
+                  _currentIndex = index;
+                });
+              },
             ),
             body: snapshot.data == ConnectivityResult.none
                 ? Center(
@@ -101,6 +66,7 @@ class _HomeState extends State<Home> {
                   )
                 : AppConstant.listOfScreens[_currentIndex],
           );
+        
         });
   }
 }

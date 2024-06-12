@@ -9,6 +9,7 @@ class AppConstant {
   static const String englishFontFamily = 'Mulish';
   static const double appHorizontalPadding = 24;
   static const double appVerticalPadding = 20;
+  static const int animationDuration = 250;
   static const String token = 'token';
   static const List<Widget> listOfScreens = [
     PharmacyScreen(),
