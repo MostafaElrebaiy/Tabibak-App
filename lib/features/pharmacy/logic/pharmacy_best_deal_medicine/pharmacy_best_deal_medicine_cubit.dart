@@ -5,23 +5,27 @@ import 'package:tabibk/features/pharmacy/data/model/pharmacy_medicine/pharmacy_m
 import 'package:tabibk/features/pharmacy/data/repo/pharmacy_best_deals_repo.dart';
 import 'package:tabibk/features/pharmacy/logic/pharmacy_best_deal_medicine/pharmacy_best_deal_medicine_state.dart';
 
-
 class PharmacyBestDealMedicineCubit extends Cubit<PharmacyBestDealMedicineState> {
   PharmacyBestDealMedicineCubit(this._pharmacyBestDealRepo) : super(const PharmacyBestDealMedicineState.loading());
+
   final PharmacyBestDealRepo _pharmacyBestDealRepo;
 
   Future<void> getBestDealsMedicine() async {
-    final response = await _pharmacyBestDealRepo
-        .getBestDealsMedicine(PharmacyMedicineRequest(
-      token: CacheHelper.getCacheData(key: AppConstant.token),
-    ));
+    final response = await _pharmacyBestDealRepo.getBestDealsMedicine(
+      PharmacyMedicineRequest(
+        token: CacheHelper.getCacheData(key: AppConstant.token),
+      ),
+    );
+
+    if (isClosed) return; // Prevent state emission if Cubit is closed
+
     response.when(success: (medicine) {
-      emit(PharmacyBestDealMedicineState.success(medicine));
+      if (!isClosed) emit(PharmacyBestDealMedicineState.success(medicine));
     }, failure: (error) {
-      emit(PharmacyBestDealMedicineState.error(
-          error: error.apiErrorModel.message ?? ''));
+      if (!isClosed) {
+        emit(PharmacyBestDealMedicineState.error(
+        error: error.apiErrorModel.message ?? ''));
+      }
     });
   }
-
-
 }
