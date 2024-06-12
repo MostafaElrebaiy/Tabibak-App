@@ -19,8 +19,7 @@ class PharmacyScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(
-          create: (context) => MedicineCubit(getIt())),
+        BlocProvider(create: (context) => MedicineCubit(getIt())),
         BlocProvider(
           create: (context) => PharmacyCubit(getIt()),
         ),
@@ -37,7 +36,7 @@ class PharmacyScreen extends StatelessWidget {
             text1: AppString.welcome.tr(context),
             style1: AppStyle.font16WhiteSemiBold,
             text2: 'Mostafa',
-            style2: AppStyle.f14MAinBlueW700,
+            style2: AppStyle.f14primaryBlueW700,
             actions: []),
         body: const PharmacyBody(),
       ),

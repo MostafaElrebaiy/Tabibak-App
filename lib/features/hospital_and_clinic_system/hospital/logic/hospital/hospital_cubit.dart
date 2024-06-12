@@ -25,12 +25,11 @@ class HospitalCubit extends Cubit<HospitalState> {
 
   void emitLoadingState(
       {required String departmentName, double? lat, double? lng}) {
-        this.lat = lat;
-        this.lng = lng;
-        this.departmentName = departmentName;
-    
-    emit(const HospitalState.loading());
+    this.lat = lat;
+    this.lng = lng;
+    this.departmentName = departmentName;
 
+    emit(const HospitalState.loading());
   }
 
   Future<void> getHospital(
@@ -46,11 +45,16 @@ class HospitalCubit extends Cubit<HospitalState> {
         lat: lat!,
         lng: lng!,
         departmentName: departmentName));
+    if (isClosed) return; // Prevent state emission if Cubit is closed
 
     response.when(success: (hospital) {
-      emit(HospitalState.success(hospital));
+      if (!isClosed) {
+        emit(HospitalState.success(hospital));
+      }
     }, failure: (error) {
-      emit(HospitalState.error(error: error.apiErrorModel.message ?? ''));
+      if (!isClosed) {
+        emit(HospitalState.error(error: error.apiErrorModel.message ?? ''));
+      }
     });
   }
 }

@@ -90,7 +90,7 @@ class CustomListTileForSearch extends StatelessWidget {
           color: AppColor.white,
           borderRadius: BorderRadius.all(Radius.circular(AppSize.s12)),
           border:
-              Border(bottom: BorderSide(color: AppColor.mainBlue, width: 2)),
+              Border(bottom: BorderSide(color: AppColor.primaryBlue, width: 2)),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -44,8 +44,10 @@ class PharmacyDetailsBody extends StatelessWidget {
                   horizontal: AppPadding.p12.w, vertical: AppPadding.p10.h),
               child: Column(
                 children: [
-                   Row(
-                    children: [Text(" ⭐ 4.3(80 ${AppString.reviews.tr(context)})")],
+                  Row(
+                    children: [
+                      Text(" ⭐ 4.3(80 ${AppString.reviews.tr(context)})")
+                    ],
                   ),
                   verticalSpace(10),
                   Row(
@@ -57,7 +59,7 @@ class PharmacyDetailsBody extends StatelessWidget {
                       const Spacer(),
                       Text(
                         "424.25 ${AppString.egp.tr(context)}",
-                        style: AppStyle.font16MainBLueBold,
+                        style: AppStyle.font16primaryBlueBold,
                       ),
                     ],
                   ),

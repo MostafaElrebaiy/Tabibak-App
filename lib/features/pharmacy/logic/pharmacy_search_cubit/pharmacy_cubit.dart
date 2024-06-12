@@ -16,14 +16,11 @@ class PharmacyCubit extends Cubit<PharmacyState> {
   double? latitute;
   double? longitude;
 
-
-
   Future<void> searchForMedicien(
       {required medicineName, required lat, required lng}) async {
     // final locationData = await locationService.getLocation();
     // lat = locationData.latitude;
     // lng = locationData.longitude;
-
 
     final response =
         await _pharmacyRepo.searchForMedicien(SearchPharmacyRequestBody(
@@ -32,11 +29,16 @@ class PharmacyCubit extends Cubit<PharmacyState> {
       lng: lng!,
       medicineName: medicineName,
     ));
+    if (isClosed) return; // Prevent state emission if Cubit is closed
 
     response.when(success: (medicine) {
-      emit(PharmacyState.success(medicine));
+      if (!isClosed) {
+        emit(PharmacyState.success(medicine));
+      }
     }, failure: (error) {
-      emit(PharmacyState.error(error: error.apiErrorModel.message ?? ''));
+      if (!isClosed) {
+        emit(PharmacyState.error(error: error.apiErrorModel.message ?? ''));
+      }
     });
   }
 }

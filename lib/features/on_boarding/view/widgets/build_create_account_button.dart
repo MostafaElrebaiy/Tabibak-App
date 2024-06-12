@@ -34,8 +34,8 @@ Widget buildCreateAccountButton(
         child: Text(
           text,
           textAlign: TextAlign.center,
-          style:
-              AppStyle.font16MainBLueBold.copyWith(color: AppColor.primaryBlue),
+          style: AppStyle.font16primaryBlueBold
+              .copyWith(color: AppColor.primaryBlue),
         ),
       ),
     ),

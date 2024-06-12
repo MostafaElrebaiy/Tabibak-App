@@ -6,7 +6,7 @@ Future<dynamic> showLoadingDialog(BuildContext context) {
     context: context,
     builder: (context) => const Center(
       child: CircularProgressIndicator(
-        color: AppColor.mainBlue,
+        color: AppColor.primaryBlue,
       ),
     ),
   );

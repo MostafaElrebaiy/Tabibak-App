@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tabibk/core/helper/app_localization.dart';
-import 'package:tabibk/core/helper/app_string.dart';
 import 'package:tabibk/core/helper/spacing.dart';
-
-import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/styles.dart';
 
 class TitlesOfSection extends StatelessWidget {
@@ -31,28 +27,28 @@ class TitlesOfSection extends StatelessWidget {
             ),
           ],
         ),
-        TextButton(
-          onPressed: () {},
-          style: TextButton.styleFrom(
-            elevation: 0,
-            padding: EdgeInsets.zero,
-            surfaceTintColor: AppColor.white,
-            foregroundColor: AppColor.primaryBlue,
-          ),
-          child: Row(
-            children: [
-              Text(
-                AppString.viewAll.tr(context),
-                style: AppStyle.font112DarkGrayRegular,
-              ),
-              const Icon(
-                Icons.arrow_forward_outlined,
-                color: AppColor.darkgray,
-                size: 20,
-              ),
-            ],
-          ),
-        ),
+        // TextButton(
+        //   onPressed: () {},
+        //   style: TextButton.styleFrom(
+        //     elevation: 0,
+        //     padding: EdgeInsets.zero,
+        //     surfaceTintColor: AppColor.white,
+        //     foregroundColor: AppColor.primaryBlue,
+        //   ),
+        //   child: Row(
+        //     children: [
+        //       Text(
+        //         AppString.viewAll.tr(context),
+        //         style: AppStyle.font112DarkGrayRegular,
+        //       ),
+        //       const Icon(
+        //         Icons.arrow_forward_outlined,
+        //         color: AppColor.darkgray,
+        //         size: 20,
+        //       ),
+        //     ],
+        //   ),
+        // ),
       ],
     );
   }

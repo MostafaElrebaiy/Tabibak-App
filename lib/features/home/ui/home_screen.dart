@@ -27,21 +27,21 @@ class _HomeState extends State<Home> {
     return StreamBuilder<ConnectivityResult>(
         stream: Connectivity().onConnectivityChanged,
         builder: (context, snapshot) {
-        
           return Scaffold(
             bottomNavigationBar: CurvedNavigationBar(
               index: _currentIndex,
               backgroundColor: AppColor.white,
-              color: AppColor.appbar,
-              buttonBackgroundColor: AppColor.appbar,
-              animationDuration:  const Duration(milliseconds: AppConstant.animationDuration),
+              color: AppColor.primaryBlue,
+              buttonBackgroundColor: AppColor.primaryBlue,
+              animationDuration:
+                  const Duration(milliseconds: AppConstant.animationDuration),
               animationCurve: Curves.easeInOutCubic,
               height: 50.h,
               items: const [
-                Icon(LineIcons.home, size: 30, color: AppColor.white),
+                Icon(LineIcons.capsules, size: 30, color: AppColor.white),
                 Icon(LineIcons.hospitalAlt, size: 30, color: AppColor.white),
+                Icon(LineIcons.heart, size: 30, color: AppColor.white),
                 Icon(LineIcons.user, size: 30, color: AppColor.white),
-                Icon(LineIcons.phoneSquare, size: 30, color: AppColor.white)
               ],
               onTap: (index) {
                 setState(() {
@@ -66,7 +66,6 @@ class _HomeState extends State<Home> {
                   )
                 : AppConstant.listOfScreens[_currentIndex],
           );
-        
         });
   }
 }

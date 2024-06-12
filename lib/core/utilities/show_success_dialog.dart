@@ -26,7 +26,7 @@ Future showSuccessDialog(
           TextButton(
             child: Text(
               textOfButton,
-              style: AppStyle.font16MainBLueBold,
+              style: AppStyle.font16primaryBlueBold,
             ),
             onPressed: () {
               context.pushReplacementNamed(routeName);

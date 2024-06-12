@@ -22,7 +22,7 @@ class AlreadyHaveAnAccount extends StatelessWidget {
           },
           child: Text(
             ' Login',
-            style: AppStyle.font12MainBlueSemiBold,
+            style: AppStyle.font12primaryBlueSemiBold,
           ),
         ),
       ],

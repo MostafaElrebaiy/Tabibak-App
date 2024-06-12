@@ -28,7 +28,7 @@ Future<dynamic> showFailureDialog(BuildContext context, String error,
           },
           child: Text(
             'Got it',
-            style: AppStyle.font16MainBLueBold,
+            style: AppStyle.font16primaryBlueBold,
           ),
         ),
       ],

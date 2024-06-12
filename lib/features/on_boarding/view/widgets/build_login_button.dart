@@ -21,7 +21,7 @@ Widget buildLoginButton(
       child: Text(
         text,
         textAlign: TextAlign.center,
-        style: AppStyle.font16MainBLueBold.copyWith(color: AppColor.white),
+        style: AppStyle.font16primaryBlueBold.copyWith(color: AppColor.white),
       ),
     ),
   );

@@ -53,7 +53,7 @@ class AppTextFormField extends StatelessWidget {
       focusNode: focusNode,
       keyboardType: textInputType,
       onFieldSubmitted: onFieldSubmitted,
-      cursorColor: AppColor.mainBlue,
+      cursorColor: AppColor.primaryBlue,
       controller: controller,
       onTap: onTap,
       onSaved: onSaved,
@@ -65,7 +65,8 @@ class AppTextFormField extends StatelessWidget {
         filled: true,
         contentPadding: contentPadding ??
             EdgeInsets.symmetric(horizontal: 20.w, vertical: 15.h),
-        focusedBorder: focusedBorder ?? outlineInputBorder(AppColor.mainBlue),
+        focusedBorder:
+            focusedBorder ?? outlineInputBorder(AppColor.primaryBlue),
         enabledBorder: enabledBorder ?? outlineInputBorder(AppColor.lightGray),
         errorBorder: outlineInputBorder(),
         focusedErrorBorder: outlineInputBorder(),
@@ -74,7 +75,6 @@ class AppTextFormField extends StatelessWidget {
         suffixIcon: suffixIcon,
         prefix: prefixIcon,
       ),
-
       obscureText: isObscureText ?? false,
       style: inputTextStyle ?? AppStyle.font14DarkBlueMedium,
       validator: (value) {

@@ -16,7 +16,7 @@ class LoginForgetPassword extends StatelessWidget {
           context.pushReplacementNamed(Routes.forgetPasswordScreen);
         },
         child: Text('    Forgot Password ?',
-            style: AppStyle.font12MainBlueSemiBold),
+            style: AppStyle.font12primaryBlueSemiBold),
       ),
     );
   }
