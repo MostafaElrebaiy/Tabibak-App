@@ -11,6 +11,9 @@ class ApiConstants {
   static const String pharmacyRecommended = "products/recommendation";
   static const String pharmacyBestDeals = "products/best_deals";
   static const String bloodBank = "blood_bank?x={lat}&y={lng}&type={bloodType}";
+  static const String hospitals = "hospitals?x={lat}&y={lng}&department_name={departmentName}";
+  static const String clinics =   "clinics?x={lat}&y={lng}&department_name={departmentName}";
+  static const String departments = "departments";
 }
 
 class ApiErrors {

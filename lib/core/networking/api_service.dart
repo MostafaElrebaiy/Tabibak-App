@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:tabibk/core/networking/api_constants.dart';
@@ -8,6 +10,9 @@ import 'package:tabibk/features/auth/signup/data/models/sign_up_response.dart';
 import 'package:tabibk/features/auth/update_password/data/models/reset_password_request_body.dart';
 import 'package:tabibk/features/auth/update_password/data/models/reset_password_response.dart';
 import 'package:tabibk/features/blood_bank/data/model/blood_bank_response.dart';
+import 'package:tabibk/features/hospital_and_clinic_system/hospital/data/model/clinic_model/clinic_response.dart';
+import 'package:tabibk/features/hospital_and_clinic_system/hospital/data/model/department_model/department_response.dart';
+import 'package:tabibk/features/hospital_and_clinic_system/hospital/data/model/hospital_model/hospital_response.dart';
 import 'package:tabibk/features/pharmacy/data/model/pharmacy_medicine/pharmacy_medicien_response.dart';
 import '../../features/auth/forget_password/data/models/forget_request_body.dart';
 import '../../features/auth/forget_password/data/models/forget_response.dart';
@@ -66,5 +71,24 @@ abstract class ApiService {
     @Path('bloodType') String bloodType,
     @Path('lng') double lng,
   );
+@GET(ApiConstants.hospitals)
+  Future<HospitalResponse> searchForHospitals(
+    @Header('Authorization') String token,
+    @Path('lat') double lat,
+    @Path('departmentName') String departmentName,
+    @Path('lng') double lng,
+  );
 
+  @GET(ApiConstants.departments)
+  Future<DepartmentResponse> getDepartments(
+    @Header('Authorization') String token,
+  );
+  
+  @GET(ApiConstants.clinics)
+  Future<ClinicResponse> searchForClinics(
+    @Header('Authorization') String token,
+    @Path('lat') double lat,
+    @Path('departmentName') String departmentName,
+    @Path('lng') double lng,
+  );
 }
