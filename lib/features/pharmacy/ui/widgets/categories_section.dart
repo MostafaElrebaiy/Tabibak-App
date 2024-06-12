@@ -11,8 +11,8 @@ class CategoriesSection extends StatelessWidget {
   const CategoriesSection({super.key});
   final List<Map<String, String>> categories = const [
     {"image": AppAsset.painkillersImage, "title": AppString.painkillers},
-    {"image": AppAsset.stomochImage, "title": AppString.diabetes},
-    {"image": AppAsset.diabetesImage, "title": AppString.stomoch},
+    {"image": AppAsset.stomochImage, "title": AppString.stomoch},
+    {"image": AppAsset.diabetesImage, "title": AppString.diabetes},
     {"image": AppAsset.heartattackImage, "title": AppString.heartattack},
   ];
   @override
