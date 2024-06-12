@@ -8,10 +8,10 @@ class ClinicRepo {
   final ApiService _apiService;
   ClinicRepo(this._apiService);
 
-  Future<ApiResult<ClinicResponse>> searchForClinics(
+  Future<ApiResult<ClinicResponse>> getClinics(
       ClinicRequest clinicRequest) async {
     try {
-      final response = await _apiService.searchForClinics(
+      final response = await _apiService.getClinics(
           "Bearer ${clinicRequest.token}",
           clinicRequest.lat,
           clinicRequest.departmentName,

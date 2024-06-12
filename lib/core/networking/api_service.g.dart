@@ -316,7 +316,7 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<HospitalResponse> searchForHospitals(
+  Future<HospitalResponse> getHospitals(
     String token,
     double lat,
     String departmentName,
@@ -377,7 +377,7 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<ClinicResponse> searchForClinics(
+  Future<ClinicResponse> getClinics(
     String token,
     double lat,
     String departmentName,
