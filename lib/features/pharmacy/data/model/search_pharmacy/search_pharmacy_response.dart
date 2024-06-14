@@ -20,8 +20,7 @@ class Data {
 
   Data({this.medicine, this.pharmacies});
 
-  factory Data.fromJson(Map<String, dynamic> json) =>
-      _$DataFromJson(json);
+  factory Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);
 }
 
 @JsonSerializable()
@@ -40,10 +39,18 @@ class Pharmacies {
   int? id;
   String? name;
   String? details;
+  String? image;
+
   double? distance;
   Location? location;
 
-  Pharmacies({this.id, this.name, this.details, this.distance, this.location});
+  Pharmacies(
+      {this.id,
+      this.name,
+      this.image,
+      this.details,
+      this.distance,
+      this.location});
   factory Pharmacies.fromJson(Map<String, dynamic> json) =>
       _$PharmaciesFromJson(json);
 }

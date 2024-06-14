@@ -53,6 +53,7 @@ Map<String, dynamic> _$MedicineToJson(Medicine instance) => <String, dynamic>{
 Pharmacies _$PharmaciesFromJson(Map<String, dynamic> json) => Pharmacies(
       id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
+      image: json['image'] as String?,
       details: json['details'] as String?,
       distance: (json['distance'] as num?)?.toDouble(),
       location: json['location'] == null
@@ -65,6 +66,7 @@ Map<String, dynamic> _$PharmaciesToJson(Pharmacies instance) =>
       'id': instance.id,
       'name': instance.name,
       'details': instance.details,
+      'image': instance.image,
       'distance': instance.distance,
       'location': instance.location,
     };

@@ -29,6 +29,7 @@ Data _$DataFromJson(Map<String, dynamic> json) => Data(
       placeType: json['place_type'] as String?,
       createdAt: json['created_at'] as String?,
       updatedAt: json['updated_at'] as String?,
+      image: json['image'] as String?,
     );
 
 Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
@@ -38,4 +39,5 @@ Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
       'place_type': instance.placeType,
       'created_at': instance.createdAt,
       'updated_at': instance.updatedAt,
+      'image': instance.image,
     };
