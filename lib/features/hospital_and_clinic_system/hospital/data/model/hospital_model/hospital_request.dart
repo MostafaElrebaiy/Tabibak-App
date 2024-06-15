@@ -6,14 +6,12 @@ class HospitalRequest {
   final String token;
   final double lat;
   final double lng;
-  final String departmentName;
-
+  final int departmentId;
   HospitalRequest(
       {required this.token,
       required this.lat,
       required this.lng,
-      required this.departmentName});
+      required this.departmentId});
 
   Map<String, dynamic> toJson() => _$HospitalRequestToJson(this);
 }
-

@@ -14,8 +14,9 @@ class HospitalRepo {
       final response = await _apiService.getHospitals(
           "Bearer ${hospitalRequest.token}",
           hospitalRequest.lat,
-          hospitalRequest.departmentName,
-          hospitalRequest.lng);
+          hospitalRequest.departmentId,
+          hospitalRequest.lng,
+          );
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ErrorHandler.handle(error));

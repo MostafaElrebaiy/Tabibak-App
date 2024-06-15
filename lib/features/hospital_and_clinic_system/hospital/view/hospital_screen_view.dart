@@ -35,7 +35,7 @@ class HospitalScreenView extends StatelessWidget {
           //   onTap: () {}),
           //   ]
         ),
-        body: const HonspitalBody(),
+        body: const HospitalBody(),
       ),
     );
   }

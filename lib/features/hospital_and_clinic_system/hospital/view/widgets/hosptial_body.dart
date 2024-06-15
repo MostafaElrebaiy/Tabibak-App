@@ -15,8 +15,8 @@ import 'package:tabibk/features/hospital_and_clinic_system/hospital/logic/depart
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/logic/hospital/hospital_cubit.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/view/widgets/build_hospital_and_clinics_tab.dart';
 
-class HonspitalBody extends StatelessWidget {
-  const HonspitalBody({super.key});
+class HospitalBody extends StatelessWidget {
+  const HospitalBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,12 +32,12 @@ class HonspitalBody extends StatelessWidget {
                 int index = context.read<DepartmentCubit>().currentIndex ?? 0;
 
                 BlocProvider.of<HospitalCubit>(context).emitLoadingState(
-                  departmentName: dep.data?[index].name ?? '',
+                  departmentId: dep.data?[index].id ?? 0,
                   lat: context.read<DepartmentCubit>().lat,
                   lng: context.read<DepartmentCubit>().lng,
                 );
                 BlocProvider.of<ClinicCubit>(context).emitLoadingState(
-                  departmentName: dep.data?[index].name ?? '',
+                  departmentId: dep.data?[index].id ?? 0,
                   lat: context.read<DepartmentCubit>().lat,
                   lng: context.read<DepartmentCubit>().lng,
                 );

@@ -22,8 +22,8 @@ class HostpitalTabBody extends StatelessWidget {
               initial: () => const SizedBox.shrink(),
               loading: () {
                 context.read<HospitalCubit>().getHospital(
-                    departmentName:
-                        context.read<HospitalCubit>().departmentName ?? "",
+                    departmentId:
+                        context.read<HospitalCubit>().departmentId ?? 0,
                     lat: context.read<HospitalCubit>().lat,
                     lng: context.read<HospitalCubit>().lng);
                 return const Center(

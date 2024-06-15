@@ -13,14 +13,13 @@ class ClinicCubit extends Cubit<ClinicState> {
   ClinicCubit(this._clinicRepo) : super(const ClinicState.initial());
   final LocationService locationService = LocationService();
   final ClinicRepo _clinicRepo;
-  String? departmentName;
+  int? departmentId;
   double? lat, lng;
 
-  void emitLoadingState(
-      {required String departmentName, double? lat, double? lng}) {
+  void emitLoadingState({required int departmentId, double? lat, double? lng}) {
     this.lat = lat;
     this.lng = lng;
-    this.departmentName = departmentName;
+    this.departmentId = departmentId;
 
     emit(const ClinicState.loading());
   }
@@ -33,7 +32,7 @@ class ClinicCubit extends Cubit<ClinicState> {
   }
 
   Future<void> getClinics(
-      {required String departmentName, double? lat, double? lng}) async {
+      {required int departmentId, double? lat, double? lng}) async {
     // emit(const ClinicState.loading());
     if (lat == null || lng == null) {
       final locationData = await locationService.getLocation();
@@ -45,9 +44,9 @@ class ClinicCubit extends Cubit<ClinicState> {
         token: CacheHelper.getCacheData(key: AppConstant.token),
         lat: lat!,
         lng: lng!,
-        departmentName: departmentName));
-if (isClosed) return; // Prevent state emission if Cubit is closed
-    
+        departmentId: departmentId));
+    if (isClosed) return; // Prevent state emission if Cubit is closed
+
     response.when(success: (clinic) {
       if (!isClosed) {
         emit(ClinicState.success(clinic));

@@ -14,8 +14,9 @@ class ClinicRepo {
       final response = await _apiService.getClinics(
           "Bearer ${clinicRequest.token}",
           clinicRequest.lat,
-          clinicRequest.departmentName,
-          clinicRequest.lng);
+          clinicRequest.departmentId,
+          clinicRequest.lng,
+          );
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ErrorHandler.handle(error));

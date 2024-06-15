@@ -35,7 +35,6 @@ class DepartmentCubit extends Cubit<DepartmentState> {
     response.when(success: (department) {
       if (!isClosed) {
         currentIndex = currentIndex ?? 0;
-        print(currentIndex);
         emit(DepartmentState.success(department));
       }
     }, failure: (error) {
