@@ -1,12 +1,14 @@
 import 'package:json_annotation/json_annotation.dart';
 part 'user_details_response.g.dart';
 @JsonSerializable()
-class UserDetailsRespons {
+class UserDetailsResponse {
   String? message;
   Data? data;
   int? code;
 
-  UserDetailsRespons({this.message, this.data, this.code});
+  UserDetailsResponse({this.message, this.data, this.code});
+  factory UserDetailsResponse.fromJson(Map<String, dynamic> json) => _$UserDetailsResponseFromJson(json);
+
 }
 
 @JsonSerializable()

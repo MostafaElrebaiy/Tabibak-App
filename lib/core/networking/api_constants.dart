@@ -14,6 +14,8 @@ class ApiConstants {
   static const String hospitals = "hospitals?x={lat}&y={lng}&{id}";
   static const String clinics =   "clinics?x={lat}&y={lng}&{id}";
   static const String departments = "departments";
+  static const String userDetail = "user";
+  static const String updateProfile = "profile";
 }
 
 class ApiErrors {
