@@ -40,7 +40,7 @@ class PharmacySearchResult extends StatelessWidget {
                 itemCount: pharmacy.data?.pharmacies?.length ?? 0,
                 itemBuilder: (_, index) => CustomListTileWidget(
                   distance: pharmacy.data?.pharmacies?[index].distance.toString() ?? "0.0",
-                  image: AppAsset.hospitalImage,
+                  imageWidget:Image.asset(AppAsset.hospitalImage),
                   title:pharmacy.data?.pharmacies?[index].name ?? "",
                   onTap: () {
                     context.pushNamed(Routes.hospitalInfoView);

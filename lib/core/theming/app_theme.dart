@@ -4,6 +4,11 @@ import 'package:tabibk/core/theme/app_constant.dart';
 
 class AppTheme {
   static ThemeData lightTheme = ThemeData(
+    progressIndicatorTheme: const ProgressIndicatorThemeData(
+        color: AppColor.primaryBlue,
+        linearTrackColor: AppColor.primaryBlue,
+        circularTrackColor: AppColor.lighterGray,
+    ),
     primaryColor: AppColor.primaryBlue,
     scaffoldBackgroundColor: AppColor.white,
     // fontFamily:  Localizations.maybeLocaleOf(context)?.languageCode== 'ar'? "Cairo":primaryFontFamily,

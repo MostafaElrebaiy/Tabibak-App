@@ -17,23 +17,16 @@ class HospitalScreenView extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => DepartmentCubit(getIt())),
+        BlocProvider(
+            create: (context) => DepartmentCubit(getIt())..getDepartment()),
         BlocProvider(create: (context) => HospitalCubit(getIt())),
         BlocProvider(create: (context) => ClinicCubit(getIt())),
-
       ],
       child: Scaffold(
         appBar: buildCustomAppBar(
           backarrow: false,
-
           text1: "tabibak".tr(context),
           style1: AppStyle.f20WhiteW600,
-          // actions: [BuildHospitalAppBarAction(
-          //   icon: const Icon(Icons.notifications_none_rounded),
-          //    right: AppSize.s3.w,
-          //   bottom: AppSize.s10.h,
-          //   onTap: () {}),
-          //   ]
         ),
         body: const HospitalBody(),
       ),

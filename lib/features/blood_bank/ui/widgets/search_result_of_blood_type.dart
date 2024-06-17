@@ -30,22 +30,22 @@ class SearchResultOfBloodType extends StatelessWidget {
           itemBuilder: (context, index) => BlocProvider(
             create: (context) => BloodBankCubit(getIt()),
             child: BlocBuilder<BloodBankCubit, BloodBankState>(
-              
               builder: (context, state) {
                 return CustomListTileWidget(
                   distance: bloodBankResponse
                           .data?.bloodCenters?[index].distance
                           .toString() ??
                       '',
-                  image: AppAsset.hospitalImage,
+                  imageWidget: Image.asset(AppAsset.hospitalImage),
                   title: bloodBankResponse.data?.bloodCenters?[index].name
                           .toString() ??
                       '',
                   onTap: () {
                     BlocProvider.of<BloodBankCubit>(context).goToMap(
-                        lat: bloodBankResponse.data?.bloodCenters?[index].location?.x as String  
-                           ,
-                        lng: bloodBankResponse.data?.bloodCenters?[index].location?.y as String );
+                        lat: bloodBankResponse
+                            .data?.bloodCenters?[index].location?.x as String,
+                        lng: bloodBankResponse
+                            .data?.bloodCenters?[index].location?.y as String);
                   },
                 );
               },

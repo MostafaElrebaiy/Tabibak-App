@@ -33,7 +33,7 @@ class ClinicCubit extends Cubit<ClinicState> {
 
   Future<void> getClinics(
       {required int departmentId, double? lat, double? lng}) async {
-    // emit(const ClinicState.loading());
+    emit(const ClinicState.loading());
     if (lat == null || lng == null) {
       final locationData = await locationService.getLocation();
       lat = locationData.latitude;

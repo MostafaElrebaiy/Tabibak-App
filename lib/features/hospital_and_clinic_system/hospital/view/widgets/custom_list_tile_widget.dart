@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:tabibk/core/helper/app_assets.dart';
-import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
@@ -11,21 +8,19 @@ import 'package:tabibk/core/theme/styles.dart';
 class CustomListTileWidget extends StatelessWidget {
   const CustomListTileWidget(
       {super.key,
-      required this.image,
+      required this.imageWidget,
       required this.title,
       required this.distance,
-      this.isHospital = true,
       required this.onTap});
-  final String image;
+  final Widget imageWidget;
   final String title;
   final String distance;
-  final bool isHospital;
   final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
-      duration: const Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 250),
       curve: Curves.easeIn,
       margin: const EdgeInsets.only(bottom: AppPadding.p4),
       decoration: BoxDecoration(
@@ -42,7 +37,7 @@ class CustomListTileWidget extends StatelessWidget {
         splashColor: AppColor.primaryBlue.withOpacity(0.1),
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(AppSize.s12))),
-        leading: Image.asset(image),
+        leading: imageWidget,
         dense: false,
         enableFeedback: true,
         horizontalTitleGap: 20,
@@ -53,9 +48,9 @@ class CustomListTileWidget extends StatelessWidget {
           child: RichText(
             text: TextSpan(
               children: [
-                TextSpan(
-                    text: isHospital ? "hp".tr(context) : "dr".tr(context),
-                    style: AppStyle.f22blackW700Mulish),
+                // TextSpan(
+                //     text: isHospital ? "hp".tr(context) : "dr".tr(context),
+                //     style: AppStyle.f22blackW700Mulish),
                 TextSpan(
                     text: title,
                     style: AppStyle.f22blackW700Mulish
@@ -71,7 +66,7 @@ class CustomListTileWidget extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  distance.length > 7 ? distance.substring(0, 7) : distance,
+                  distance.length > 5 ? distance.substring(0, 6) : distance,
                   style: AppStyle.f22blackW700Mulish
                       .copyWith(color: AppColor.colorACB8C2),
                 ),
@@ -83,10 +78,10 @@ class CustomListTileWidget extends StatelessWidget {
                 ),
               ],
             ),
-            SvgPicture.asset(
-              AppAsset.phoneIcon,
-              width: AppSize.s26.w,
-            )
+            // SvgPicture.asset(
+            //   AppAsset.phoneIcon,
+            //   width: AppSize.s26.w,
+            // )
           ],
         ),
       ),
