@@ -21,8 +21,8 @@ class ClinicTabBody extends StatelessWidget {
               initial: () => const SizedBox.shrink(),
               loading: () {
                 context.read<ClinicCubit>().getClinics(
-                    departmentName:
-                        context.read<ClinicCubit>().departmentName ?? "",
+                    departmentId:
+                        context.read<ClinicCubit>().departmentId ?? 0,
                     lat: context.read<ClinicCubit>().lat,
                     lng: context.read<ClinicCubit>().lng);
                 return const Center(

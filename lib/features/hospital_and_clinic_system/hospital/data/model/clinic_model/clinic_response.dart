@@ -32,18 +32,18 @@ class Department {
       _$DepartmentFromJson(json);
 }
 
-
-
 @JsonSerializable()
 class Clinics {
   int? id;
   String? name;
   String? details;
+  String? image;
   double? distance;
   Location? location;
 
-  Clinics({this.id, this.name, this.details, this.distance, this.location});
-  factory Clinics.fromJson(Map<String, dynamic> json) => _$ClinicsFromJson(json);
+  Clinics({this.id, this.name,this.image, this.details, this.distance, this.location});
+  factory Clinics.fromJson(Map<String, dynamic> json) =>
+      _$ClinicsFromJson(json);
 }
 
 @JsonSerializable()

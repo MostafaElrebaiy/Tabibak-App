@@ -1,21 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'department_response.dart';
+part of 'user_details_response.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-DepartmentResponse _$DepartmentResponseFromJson(Map<String, dynamic> json) =>
-    DepartmentResponse(
+UserDetailsRespons _$UserDetailsResponsFromJson(Map<String, dynamic> json) =>
+    UserDetailsRespons(
       message: json['message'] as String?,
-      data: (json['data'] as List<dynamic>?)
-          ?.map((e) => Data.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      data: json['data'] == null
+          ? null
+          : Data.fromJson(json['data'] as Map<String, dynamic>),
       code: (json['code'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$DepartmentResponseToJson(DepartmentResponse instance) =>
+Map<String, dynamic> _$UserDetailsResponsToJson(UserDetailsRespons instance) =>
     <String, dynamic>{
       'message': instance.message,
       'data': instance.data,
@@ -25,19 +25,17 @@ Map<String, dynamic> _$DepartmentResponseToJson(DepartmentResponse instance) =>
 Data _$DataFromJson(Map<String, dynamic> json) => Data(
       id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
-      details: json['details'] as String?,
-      placeType: json['place_type'] as String?,
-      createdAt: json['created_at'] as String?,
-      updatedAt: json['updated_at'] as String?,
+      email: json['email'] as String?,
       image: json['image'] as String?,
+      createdAt: json['createdAt'] as String?,
+      updatedAt: json['updatedAt'] as String?,
     );
 
 Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'details': instance.details,
-      'place_type': instance.placeType,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
+      'email': instance.email,
       'image': instance.image,
+      'createdAt': instance.createdAt,
+      'updatedAt': instance.updatedAt,
     };

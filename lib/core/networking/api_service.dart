@@ -40,16 +40,14 @@ abstract class ApiService {
   Future<ResetPasswordResponse> resetPassword(
       @Body() ResetPasswordRequestBody resetPasswordRequestBody);
 
-  @GET(
-      ApiConstants.pharmacySearch)
+  @GET(ApiConstants.pharmacySearch)
   Future<SearchPharmacyResponse> searchPharmacy(
     @Header('Authorization') String token,
     @Path('lat') double lat,
     @Path('medicineName') String medicineName,
     @Path('lng') double lng,
   );
-    @GET(
-      ApiConstants.searchMedicine)
+  @GET(ApiConstants.searchMedicine)
   Future<SearchMedicineResponse> searchMedicine(
     @Header('Authorization') String token,
     @Path('medicineName') String medicineName,
@@ -71,11 +69,11 @@ abstract class ApiService {
     @Path('bloodType') String bloodType,
     @Path('lng') double lng,
   );
-@GET(ApiConstants.hospitals)
+  @GET(ApiConstants.hospitals)
   Future<HospitalResponse> getHospitals(
     @Header('Authorization') String token,
     @Path('lat') double lat,
-    @Path('departmentName') String departmentName,
+    @Query('department_id') int departmentId,
     @Path('lng') double lng,
   );
 
@@ -83,12 +81,12 @@ abstract class ApiService {
   Future<DepartmentResponse> getDepartments(
     @Header('Authorization') String token,
   );
-  
+
   @GET(ApiConstants.clinics)
   Future<ClinicResponse> getClinics(
     @Header('Authorization') String token,
     @Path('lat') double lat,
-    @Path('departmentName') String departmentName,
+    @Query('department_id') int departmentId,
     @Path('lng') double lng,
   );
 }

@@ -13,7 +13,7 @@ class HospitalCubit extends Cubit<HospitalState> {
   final LocationService locationService = LocationService();
   final HospitalRepo _hospitalRepo;
 
-  String? departmentName;
+  int? departmentId;
   double? lat, lng;
 
   void goToMap({String? lat, String? lng}) async {
@@ -23,17 +23,16 @@ class HospitalCubit extends Cubit<HospitalState> {
     );
   }
 
-  void emitLoadingState(
-      {required String departmentName, double? lat, double? lng}) {
+  void emitLoadingState({required int departmentId, double? lat, double? lng}) {
     this.lat = lat;
     this.lng = lng;
-    this.departmentName = departmentName;
+    this.departmentId = departmentId;
 
     emit(const HospitalState.loading());
   }
 
   Future<void> getHospital(
-      {required String departmentName, double? lat, double? lng}) async {
+      {required int departmentId, double? lat, double? lng}) async {
     // emit(const HospitalState.loading());
     if (lat == null || lng == null) {
       final locationData = await locationService.getLocation();
@@ -44,7 +43,7 @@ class HospitalCubit extends Cubit<HospitalState> {
         token: CacheHelper.getCacheData(key: AppConstant.token),
         lat: lat!,
         lng: lng!,
-        departmentName: departmentName));
+        departmentId: departmentId));
     if (isClosed) return; // Prevent state emission if Cubit is closed
 
     response.when(success: (hospital) {

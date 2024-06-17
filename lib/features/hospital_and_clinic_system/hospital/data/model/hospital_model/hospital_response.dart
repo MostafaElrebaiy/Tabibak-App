@@ -27,7 +27,7 @@ class Department {
   String? name;
   String? details;
 
-  Department({this.id, this.name, this.details});
+  Department({this.id, this.name ,this.details});
   factory Department.fromJson(Map<String, dynamic> json) =>
       _$DepartmentFromJson(json);
 }
@@ -37,10 +37,11 @@ class Hospitals {
   int? id;
   String? name;
   String? details;
+  String? image;
   double? distance;
   Location? location;
 
-  Hospitals({this.id, this.name, this.details, this.distance, this.location});
+  Hospitals({this.id, this.name, this.details,this.image, this.distance, this.location});
   factory Hospitals.fromJson(Map<String, dynamic> json) =>
       _$HospitalsFromJson(json);
 }

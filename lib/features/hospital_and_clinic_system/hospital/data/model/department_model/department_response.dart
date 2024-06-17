@@ -26,6 +26,7 @@ class Data {
   String? createdAt;
   @JsonKey(name: 'updated_at')
   String? updatedAt;
+  String? image;
 
   Data(
       {this.id,
@@ -33,7 +34,8 @@ class Data {
       this.details,
       this.placeType,
       this.createdAt,
-      this.updatedAt});
+      this.updatedAt,
+      this.image});
   factory Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);
   
 

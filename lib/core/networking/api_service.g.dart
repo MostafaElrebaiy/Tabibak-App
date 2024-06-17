@@ -319,11 +319,11 @@ class _ApiService implements ApiService {
   Future<HospitalResponse> getHospitals(
     String token,
     double lat,
-    String departmentName,
+    int departmentId,
     double lng,
   ) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'department_id': departmentId};
     final _headers = <String, dynamic>{r'Authorization': token};
     _headers.removeWhere((k, v) => v == null);
     const Map<String, dynamic>? _data = null;
@@ -335,7 +335,7 @@ class _ApiService implements ApiService {
     )
             .compose(
               _dio.options,
-              'hospitals?x=${lat}&y=${lng}&department_name=${departmentName}',
+              'hospitals?x=${lat}&y=${lng}&{id}',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -380,11 +380,11 @@ class _ApiService implements ApiService {
   Future<ClinicResponse> getClinics(
     String token,
     double lat,
-    String departmentName,
+    int departmentId,
     double lng,
   ) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'department_id': departmentId};
     final _headers = <String, dynamic>{r'Authorization': token};
     _headers.removeWhere((k, v) => v == null);
     const Map<String, dynamic>? _data = null;
@@ -396,7 +396,7 @@ class _ApiService implements ApiService {
     )
             .compose(
               _dio.options,
-              'clinics?x=${lat}&y=${lng}&department_name=${departmentName}',
+              'clinics?x=${lat}&y=${lng}&{id}',
               queryParameters: queryParameters,
               data: _data,
             )

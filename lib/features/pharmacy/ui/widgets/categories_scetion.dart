@@ -16,24 +16,16 @@ class CategoriesScetion extends StatelessWidget {
     return Column(
       children: [
         verticalSpace(16.h),
-        Row(
-          children: [
-            Column(
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                      color: AppColor.colorF0F0F0,
-                      borderRadius: BorderRadius.circular(8)),
-                  padding: const EdgeInsets.all(AppPadding.p24),
-                  // child: SvgPicture.asset('assets/images/svg/Painkillers.svg'),
-                  child: Image.asset(image),
-                ),
-                verticalSpace(10.h),
-                Text(categoryName)
-              ],
-            )
-          ],
-        )
+        Container(
+          decoration: BoxDecoration(
+              color: AppColor.colorF0F0F0,
+              borderRadius: BorderRadius.circular(8)),
+          padding: const EdgeInsets.all(AppPadding.p24),
+          // child: SvgPicture.asset('assets/images/svg/Painkillers.svg'),
+          child: Image.asset(image),
+        ),
+        verticalSpace(10.h),
+        Text(categoryName)
       ],
     );
   }

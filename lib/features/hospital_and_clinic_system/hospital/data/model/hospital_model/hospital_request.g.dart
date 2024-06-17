@@ -11,7 +11,7 @@ HospitalRequest _$HospitalRequestFromJson(Map<String, dynamic> json) =>
       token: json['token'] as String,
       lat: (json['lat'] as num).toDouble(),
       lng: (json['lng'] as num).toDouble(),
-      departmentName: json['departmentName'] as String,
+      departmentId: (json['departmentId'] as num).toInt(),
     );
 
 Map<String, dynamic> _$HospitalRequestToJson(HospitalRequest instance) =>
@@ -19,5 +19,5 @@ Map<String, dynamic> _$HospitalRequestToJson(HospitalRequest instance) =>
       'token': instance.token,
       'lat': instance.lat,
       'lng': instance.lng,
-      'departmentName': instance.departmentName,
+      'departmentId': instance.departmentId,
     };
