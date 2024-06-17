@@ -33,7 +33,8 @@ class HospitalCubit extends Cubit<HospitalState> {
 
   Future<void> getHospital(
       {required int departmentId, double? lat, double? lng}) async {
-    // emit(const HospitalState.loading());
+    emit(const HospitalState.loading());
+
     if (lat == null || lng == null) {
       final locationData = await locationService.getLocation();
       lat = locationData.latitude;

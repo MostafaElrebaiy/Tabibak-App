@@ -29,7 +29,7 @@ class ApiErrors {
   static const String internalServerError = "Internal Server Error";
   static const String unknownError = "Unknown Error";
   static const String timeoutError = "Timeout Error";
-  static const String defaultError = "No Internet Connection";
+  static const String defaultError = "Please try again later";
   static const String cacheError = "Cache Error";
   static const String noInternetError = "No Internet Error";
   static const String loadingMessage = "Loading Message";

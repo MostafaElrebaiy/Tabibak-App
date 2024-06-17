@@ -152,6 +152,7 @@ abstract class AppStyle {
     fontSize: 22.sp,
     fontWeight: FontWeightHelper.bold,
     color: AppColor.black,
+    overflow: TextOverflow.ellipsis,
   );
   static TextStyle f22primaryBlueBold = TextStyle(
     fontSize: 22.sp,
