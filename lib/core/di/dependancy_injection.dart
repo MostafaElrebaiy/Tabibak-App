@@ -18,7 +18,7 @@ import 'package:tabibk/features/pharmacy/logic/pharmacy_recommended_medicine/pha
 import 'package:tabibk/features/pharmacy/logic/pharmacy_search_cubit/pharmacy_cubit.dart';
 import 'package:tabibk/features/profile_screens/profile/data/update_profile/data/repo/update_profile_repo.dart';
 import 'package:tabibk/features/profile_screens/profile/data/user_details/data/repo/user_details_repo.dart';
-import 'package:tabibk/features/profile_screens/profile/logic/update_profile/update_profile_cubit.dart';
+import 'package:tabibk/features/profile_screens/edit_profile_screen/logic/update_profile/update_profile_cubit.dart';
 import 'package:tabibk/features/profile_screens/profile/logic/user_details/user_details_cubit.dart';
 import '../../features/auth/forget_password/data/repo/forget_password_repo.dart';
 import '../../features/auth/forget_password/logic/forget_password_cubit.dart';

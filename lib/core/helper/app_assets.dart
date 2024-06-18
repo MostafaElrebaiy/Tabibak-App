@@ -20,6 +20,8 @@ abstract class AppAsset {
   static const String heartattackImage = '$_basePathPng/Heartattack.png';
   static const String diabetesImage = '$_basePathPng/Diabetes.png';
   static const String comatrixImage = '$_basePathPng/comatrex.png';
+  static const String staticImageProfile =
+      '$_basePathPng/static_image_profile.jpg';
 
   // ----------------- SVG Images ----------------- //
   static const String splash = '$_basePathSvg/logo_splash.svg';
@@ -53,9 +55,8 @@ abstract class AppAsset {
   static const String profileNavIcon = '$_basePathSvg/profile_icon.svg';
   static const String peopleIcon = '$_basePathSvg/people.svg';
   static const String dividerIcon = '$_basePathSvg/divider.svg';
-  static const String searchIcon = '$_basePathSvg/search.svg';  
+  static const String searchIcon = '$_basePathSvg/search.svg';
   static const String downDialogIcon = '$_basePathSvg/down_dialg.svg';
-  
 
   // ----------------- Json ----------------- //
 

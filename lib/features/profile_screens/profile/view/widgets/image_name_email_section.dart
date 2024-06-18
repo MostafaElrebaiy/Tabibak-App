@@ -24,18 +24,11 @@ class ImageNameAndEmailSection extends StatelessWidget {
       children: [
         CircleAvatar(
           backgroundColor: AppColor.primaryBlue,
-          
-          
-            
-          onBackgroundImageError: (exception, stackTrace) =>
-              const AssetImage(AppAsset.doctorImage),
-              child: pngImage == null ?  Image.asset(AppAsset.doctorImage) :
-               Image.file(File(pngImage ?? ''), fit: BoxFit.cover),
-          
-          // backgroundImage: FileImage(
-          //   File(pngImage ?? ''),
-          //   ),
           radius: 50.w,
+          backgroundImage: const AssetImage(AppAsset.staticImageProfile),
+          child: pngImage == null
+              ? null
+              : Image.file(File(pngImage!.toString()), fit: BoxFit.cover),
         ),
         verticalSpace(10),
         SizedBox(

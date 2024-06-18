@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:tabibk/core/networking/api_error_handler.dart';
 import 'package:tabibk/core/networking/shared_preferences.dart';
 import 'package:tabibk/core/theme/app_constant.dart';
@@ -18,15 +21,19 @@ class UpdateProfileCubit extends Cubit<UpdateProfileState> {
   final UpdateProfileRepo updateProfileRepo;
   final TextEditingController nameController = TextEditingController();
   final TextEditingController imageController = TextEditingController();
-  final TextEditingController phoneController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController passwordConfirmController =
       TextEditingController();
   final formKey = GlobalKey<FormState>();
+  File? image;
+  Future<void> pickImage({required ImageSource source}) async {
+    final returnedImage = await ImagePicker().pickImage(source: source);
+    if (returnedImage == null) return;
+    image = File(returnedImage.path);
+    emit(const UpdateProfileState.initial());
+  }
 
   FocusNode name = FocusNode();
-  FocusNode phone = FocusNode();
-  FocusNode email = FocusNode();
   FocusNode password = FocusNode();
   FocusNode confirmPassword = FocusNode();
 

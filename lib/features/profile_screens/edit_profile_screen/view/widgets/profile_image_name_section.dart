@@ -9,8 +9,7 @@ import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
 import 'package:tabibk/core/theme/styles.dart';
 import 'package:tabibk/core/widgets/custom_widget/app_text_button.dart';
-import 'package:tabibk/features/profile_screens/edit_profile_screen/logic/cubit/edit_profile_view_cubit.dart';
-import 'package:tabibk/features/profile_screens/edit_profile_screen/logic/cubit/edit_profile_view_state.dart';
+import 'package:tabibk/features/profile_screens/edit_profile_screen/logic/update_profile/update_profile_cubit.dart';
 import 'package:tabibk/features/profile_screens/profile/view/widgets/image_name_email_section.dart';
 
 class ProfileImageNameSection extends StatelessWidget {
@@ -21,7 +20,7 @@ class ProfileImageNameSection extends StatelessWidget {
     return Stack(
       alignment: Alignment.center,
       children: [
-        BlocBuilder<EditProfileViewCubit, EditProfileViewState>(
+        BlocBuilder<UpdateProfileCubit, UpdateProfileState>(
           builder: (context, state) {
             return const ImageNameAndEmailSection(
                 email: "",
@@ -66,7 +65,7 @@ class ProfileImageNameSection extends StatelessWidget {
                             onPressed: () {
                               context.pop();
                               context
-                                  .read<EditProfileViewCubit>()
+                                  .read<UpdateProfileCubit>()
                                   .pickImage(source: ImageSource.camera);
                             },
                             thereIcon: true,
@@ -80,7 +79,7 @@ class ProfileImageNameSection extends StatelessWidget {
                             onPressed: () {
                               context.pop();
                               context
-                                  .read<EditProfileViewCubit>()
+                                  .read<UpdateProfileCubit>()
                                   .pickImage(source: ImageSource.gallery);
                             },
                             icon: Icons.image_outlined,
