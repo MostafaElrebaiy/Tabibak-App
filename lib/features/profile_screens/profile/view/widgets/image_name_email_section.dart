@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/app_assets.dart';
@@ -7,18 +6,15 @@ import 'package:tabibk/core/theme/app_colors.dart';
 import 'package:tabibk/core/theme/styles.dart';
 
 class ImageNameAndEmailSection extends StatelessWidget {
-  const ImageNameAndEmailSection(
-      {super.key,
-      this.pngImage,
-      required this.email,
-      required this.name,
-      required this.isFileImage,
-      this.fileImage});
+  const ImageNameAndEmailSection({
+    super.key,
+    this.pngImage,
+    required this.email,
+    required this.name,
+  });
   final String name;
   final String? pngImage;
   final String email;
-  final bool isFileImage;
-  final File? fileImage;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -28,10 +24,7 @@ class ImageNameAndEmailSection extends StatelessWidget {
           backgroundColor: AppColor.primaryBlue,
           onBackgroundImageError: (exception, stackTrace) =>
               const AssetImage(AppAsset.doctorImage),
-          backgroundImage: isFileImage
-              ? FileImage(fileImage ?? File(''))
-                  as ImageProvider //TODO: check this
-              : AssetImage(pngImage ?? ''),
+          backgroundImage: NetworkImage(pngImage ?? ''),
           radius: 50.w,
         ),
         verticalSpace(10),

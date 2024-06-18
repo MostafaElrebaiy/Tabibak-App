@@ -23,13 +23,10 @@ class ProfileImageNameSection extends StatelessWidget {
       children: [
         BlocBuilder<EditProfileViewCubit, EditProfileViewState>(
           builder: (context, state) {
-            return ImageNameAndEmailSection(
+            return const ImageNameAndEmailSection(
                 email: "",
                 name: '',
-                isFileImage: true,
-                fileImage: state.maybeWhen(
-                    pickedImage: (image) => image,
-                    orElse: () => null) //TODO: check this
+            
                 );
           },
         ),

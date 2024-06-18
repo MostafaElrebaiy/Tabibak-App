@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/app_string.dart';
+import 'package:tabibk/core/utilities/to_capitalize.dart';
 import 'package:tabibk/features/pharmacy/logic/pharmacy_best_deal_medicine/pharmacy_best_deal_medicine_cubit.dart';
 import 'package:tabibk/features/pharmacy/logic/pharmacy_recommended_medicine/pharmacy_recommended_medicine_cubit.dart';
+import 'package:tabibk/features/profile_screens/profile/logic/user_details/user_details_cubit.dart';
+import 'package:tabibk/features/profile_screens/profile/logic/user_details/user_details_state.dart';
 
 import '../../../core/di/dependancy_injection.dart';
 import '../../../core/theme/styles.dart';
@@ -29,17 +33,35 @@ class PharmacyScreen extends StatelessWidget {
         BlocProvider(
           create: (context) => PharmacyRecommendedMedicineCubit(getIt()),
         ),
+        BlocProvider(
+          create: (context) => UserDetailsCubit(getIt())..getUserDetails(),
+        ),
       ],
       child: Scaffold(
-        appBar: buildCustomAppBar(
-            backarrow: false,
-            text1: AppString.welcome.tr(context),
-            style1: AppStyle.font16WhiteSemiBold,
-            text2: 'Mostafa',
-            style2: AppStyle.f14primaryBlueW700,
-            actions: []),
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(kToolbarHeight),
+          child: BlocBuilder<UserDetailsCubit, UserDetailsState>(
+            builder: (context, state) {
+              return buildCustomAppBar(
+                  backarrow: false,
+                  text1: AppString.welcome.tr(context),
+                  style1: AppStyle.font16WhiteSemiBold,
+                  text2: state.when(
+                      initial: () => "",
+                      loading: () => "...",
+                      success: (userDetails) =>
+                          toCapitalize(userDetails.data?.name ?? 'Back'),
+                      error: (error) => "Back"),
+                  style2: AppStyle.f14primaryBlueW700.copyWith(
+                    fontSize: 16.sp,
+                  ),
+                  actions: []);
+            },
+          ),
+        ),
         body: const PharmacyBody(),
       ),
     );
   }
 }
+

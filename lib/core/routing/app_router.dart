@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tabibk/core/routing/custom_page_route.dart';
@@ -67,9 +66,7 @@ class AppRouter {
       case Routes.hospitalInfoView:
         return CustomPageRoute(child: const HospitalInfoView());
       case Routes.profileView:
-        File? image = settings.arguments as File;
-        debugPrint('image is $image');
-        return CustomPageRoute(child: ProfileView(image: image));
+        return CustomPageRoute(child: const ProfileView());
       case Routes.editProfileView:
         return CustomPageRoute(
             child: BlocProvider(
