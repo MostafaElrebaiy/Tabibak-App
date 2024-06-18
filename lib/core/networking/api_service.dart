@@ -8,9 +8,9 @@ import 'package:tabibk/features/auth/signup/data/models/sign_up_request_body.dar
 import 'package:tabibk/features/auth/signup/data/models/sign_up_response.dart';
 import 'package:tabibk/features/auth/update_password/data/models/reset_password_request_body.dart';
 import 'package:tabibk/features/auth/update_password/data/models/reset_password_response.dart';
-import 'package:tabibk/features/auth/update_profile/data/model/update_profile_request.dart';
-import 'package:tabibk/features/auth/update_profile/data/model/update_profile_response.dart';
-import 'package:tabibk/features/auth/user_details/data/model/user_details_response.dart';
+import 'package:tabibk/features/profile_screens/profile/data/update_profile/data/model/update_profile_request.dart';
+import 'package:tabibk/features/profile_screens/profile/data/update_profile/data/model/update_profile_response.dart';
+import 'package:tabibk/features/profile_screens/profile/data/user_details/data/model/user_details_response.dart';
 import 'package:tabibk/features/blood_bank/data/model/blood_bank_response.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/data/model/clinic_model/clinic_response.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/data/model/department_model/department_response.dart';
