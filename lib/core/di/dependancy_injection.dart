@@ -16,6 +16,10 @@ import 'package:tabibk/features/pharmacy/data/repo/search_pharmacy_repo.dart';
 import 'package:tabibk/features/pharmacy/logic/pharmacy_best_deal_medicine/pharmacy_best_deal_medicine_cubit.dart';
 import 'package:tabibk/features/pharmacy/logic/pharmacy_recommended_medicine/pharmacy_recommended_medicine_cubit.dart';
 import 'package:tabibk/features/pharmacy/logic/pharmacy_search_cubit/pharmacy_cubit.dart';
+import 'package:tabibk/features/profile_screens/profile/data/update_profile/data/repo/update_profile_repo.dart';
+import 'package:tabibk/features/profile_screens/profile/data/user_details/data/repo/user_details_repo.dart';
+import 'package:tabibk/features/profile_screens/profile/logic/update_profile/update_profile_cubit.dart';
+import 'package:tabibk/features/profile_screens/profile/logic/user_details/user_details_cubit.dart';
 import '../../features/auth/forget_password/data/repo/forget_password_repo.dart';
 import '../../features/auth/forget_password/logic/forget_password_cubit.dart';
 import '../../features/auth/login/data/repo/login_repo.dart';
@@ -89,9 +93,18 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<HospitalRepo>(() => HospitalRepo(getIt()));
   getIt.registerLazySingleton<HospitalCubit>(() => HospitalCubit(getIt()));
 
-
   // --------------------- Clinic --------------------- //
   getIt.registerLazySingleton<ClinicRepo>(() => ClinicRepo(getIt()));
   getIt.registerLazySingleton<ClinicCubit>(() => ClinicCubit(getIt()));
 
+  // --------------------- UserDetails --------------------- //
+  getIt.registerLazySingleton<UserDetailsRepo>(() => UserDetailsRepo(getIt()));
+  getIt
+      .registerLazySingleton<UserDetailsCubit>(() => UserDetailsCubit(getIt()));
+
+  // --------------------- Update Profile --------------------- //
+  getIt.registerLazySingleton<UpdateProfileRepo>(
+      () => UpdateProfileRepo(getIt()));
+  getIt.registerLazySingleton<UpdateProfileCubit>(
+      () => UpdateProfileCubit(getIt()));
 }

@@ -98,7 +98,7 @@ abstract class ApiService {
 
   
 
-  @POST(ApiConstants.userDetail)
+  @POST(ApiConstants.updateProfile)
   Future<UpdateProfileResponse> updateProfile(
       @Body() UpdateProfileRequest updateProfileRequest);
 }

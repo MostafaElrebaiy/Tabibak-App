@@ -12,7 +12,8 @@ part 'update_profile_state.dart';
 part 'update_profile_cubit.freezed.dart';
 
 class UpdateProfileCubit extends Cubit<UpdateProfileState> {
-  UpdateProfileCubit(this.updateProfileRepo) : super(const UpdateProfileState.initial());
+  UpdateProfileCubit(this.updateProfileRepo)
+      : super(const UpdateProfileState.initial());
 
   final UpdateProfileRepo updateProfileRepo;
   final TextEditingController nameController = TextEditingController();
@@ -31,22 +32,19 @@ class UpdateProfileCubit extends Cubit<UpdateProfileState> {
 
   void updateUserProfile() async {
     emit(const UpdateProfileState.loading());
-    final response = await updateProfileRepo.updateProfile(
-      UpdateProfileRequest(
-        token: CacheHelper.getCacheData(key: AppConstant.token),
+    final response = await updateProfileRepo.updateProfile(UpdateProfileRequest(
+      token: CacheHelper.getCacheData(key: AppConstant.token),
       image: imageController.text,
       password: passwordController.text,
       passwordConfirmation: passwordConfirmController.text,
       name: nameController.text,
-      
     ));
     response.when(
       success: (signUpResponse) {
         emit(UpdateProfileState.success(signUpResponse));
       },
       failure: (error) {
-        emit(
-            UpdateProfileState.error(error));
+        emit(UpdateProfileState.error(error));
       },
     );
   }

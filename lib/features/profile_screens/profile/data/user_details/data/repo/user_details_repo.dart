@@ -9,9 +9,10 @@ class UserDetailsRepo {
   final ApiService _apiService;
   UserDetailsRepo(this._apiService);
   Future<ApiResult<UserDetailsResponse>> getUserDetails(
-      UserDetailsRequest userDetailsRequest  ) async {
+      UserDetailsRequest userDetailsRequest) async {
     try {
-      final response = await _apiService.getUserDetails(userDetailsRequest.token);
+      final response =
+          await _apiService.getUserDetails("Bearer ${userDetailsRequest.token}");
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ErrorHandler.handle(error));

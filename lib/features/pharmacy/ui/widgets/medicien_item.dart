@@ -1,8 +1,8 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/app_assets.dart';
 import 'package:tabibk/core/helper/extensions.dart';
-import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/core/theme/styles.dart';
 import 'package:tabibk/features/pharmacy/data/model/pharmacy_medicine/pharmacy_medicien_response.dart';
 
@@ -13,7 +13,6 @@ import '../../../../core/theme/app_colors.dart';
 class MedicineItem extends StatelessWidget {
   const MedicineItem({super.key, required this.medicine});
   final Data medicine;
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -31,22 +30,23 @@ class MedicineItem extends StatelessWidget {
             child: Column(
               children: [
                 Image.asset(
-                medicine.image??  AppAsset.comatrixImage,
+                  medicine.image ?? AppAsset.comatrixImage,
                   height: 150.h,
                   width: 160.w,
                 ),
-                verticalSpace(10),
                 Text(
                   medicine.name ?? "",
-                  style: AppStyle.f10BlackW400,
+                  style: AppStyle.f16BlackW700Mulish
+                      .copyWith(fontWeight: FontWeight.w400),
                 ),
+                Text(medicine.price.toString(),
+                    style: AppStyle.f16BlackW700Mulish
+                        .copyWith(color: AppColor.primaryBlue)),
                 Text(
-                  medicine.price.toString(),
-                  style: AppStyle.f9BlackW700,
-                ),
-                Text(
-                  (medicine.price! + 50).toString(),
-                  style: AppStyle.f7BlackW600,
+                  (medicine.price! + Random().nextInt(20)).toString(),
+                  style: AppStyle.f14BlackW700.copyWith(
+                      decoration: TextDecoration.lineThrough,
+                      color: AppColor.red),
                 ),
               ],
             ),
