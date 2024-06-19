@@ -5,8 +5,8 @@ import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/app_string.dart';
 import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
-import '../../../../core/theme/styles.dart';
-import 'titles_of_section.dart';
+import '../../../../../../core/theme/styles.dart';
+import '../../titles_of_section.dart';
 
 class PharmacyDetailsBody extends StatelessWidget {
   const PharmacyDetailsBody({super.key});

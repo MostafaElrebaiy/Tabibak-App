@@ -24,13 +24,13 @@ abstract class AppAsset {
       '$_basePathPng/static_image_profile.jpg';
 
   // ----------------- SVG Images ----------------- //
-  static const String splash = '$_basePathSvg/logo_splash.svg';
+  static const String splash = '$_basePathSvg/tabibk.svg';
   static const String buttonArrowRight = '$_basePathSvg/button_arrow_right.svg';
   static const String onBoardingSubShape =
       '$_basePathSvg/OnBoarding Sub shape.svg';
   static const String pharmacyWith = '$_basePathSvg/PharmacyWith outline.svg';
   static const String pharmacy = '$_basePathSvg/Pharmacy.svg';
-  static const String onBoardingLogo = '$_basePathSvg/onBoarding_logo.svg';
+  static const String onBoardingLogo = '$_basePathSvg/tabibk.svg';
   static const String bagImg = '$_basePathSvg/bags.svg';
   static const String happyRate = '$_basePathSvg/happy_rate_Icon.svg';
   static const String normalRate = '$_basePathSvg/normal_rate_Icon.svg';

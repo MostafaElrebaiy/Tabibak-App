@@ -22,7 +22,7 @@ import 'package:tabibk/features/on_boarding/view/on_boarding_view.dart';
 import 'package:tabibk/features/on_boarding/view/widgets/on_boarding_last_screen.dart';
 import 'package:tabibk/features/pharmacy/data/model/arg_pharmacy/search_result_model.dart';
 import 'package:tabibk/features/pharmacy/logic/pharmacy_search_cubit/pharmacy_cubit.dart';
-import 'package:tabibk/features/pharmacy/ui/pharmacy_details_screen.dart';
+import 'package:tabibk/features/pharmacy/ui/widgets/pharmacy_details_screen/pharmacy_details_screen.dart';
 import 'package:tabibk/features/pharmacy/ui/pharmacy_screen.dart';
 import 'package:tabibk/features/pharmacy/ui/phrmacy_search_result.dart';
 import 'package:tabibk/features/product/view/product_view.dart';
@@ -40,7 +40,7 @@ import '../../features/blood_bank/ui/blood_bank_screen.dart';
 import '../di/dependancy_injection.dart';
 
 class AppRouter {
-  Route generateRoute(RouteSettings settings) {
+  Route? generateRoute(RouteSettings settings) {
     //this arguments to be passed in any screen like this
     // final argument = settings.arguments;
     switch (settings.name) {
@@ -153,13 +153,7 @@ class AppRouter {
           child: const PharmacySearchResult(),
         ));
       default:
-        return MaterialPageRoute(
-          builder: (_) => Scaffold(
-            body: Center(
-              child: Text('No route defined for ${settings.name}'),
-            ),
-          ),
-        );
+        return null;
     }
   }
 }
