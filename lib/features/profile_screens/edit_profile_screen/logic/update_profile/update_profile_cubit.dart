@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:tabibk/core/networking/api_error_handler.dart';
 import 'package:tabibk/core/networking/shared_preferences.dart';
 import 'package:tabibk/core/theme/app_constant.dart';
 import 'package:tabibk/features/profile_screens/profile/data/update_profile/data/model/update_profile_request.dart';
@@ -20,11 +19,13 @@ class UpdateProfileCubit extends Cubit<UpdateProfileState> {
 
   final UpdateProfileRepo updateProfileRepo;
   final TextEditingController nameController = TextEditingController();
-  final TextEditingController imageController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  final TextEditingController passwordConfirmController =
-      TextEditingController();
+  final TextEditingController passwordConfirmController = TextEditingController();
   final formKey = GlobalKey<FormState>();
+  FocusNode name = FocusNode();
+  FocusNode password = FocusNode();
+  FocusNode confirmPassword = FocusNode();
+  
   File? image;
   Future<void> pickImage({required ImageSource source}) async {
     final returnedImage = await ImagePicker().pickImage(source: source);
@@ -33,15 +34,12 @@ class UpdateProfileCubit extends Cubit<UpdateProfileState> {
     emit(const UpdateProfileState.initial());
   }
 
-  FocusNode name = FocusNode();
-  FocusNode password = FocusNode();
-  FocusNode confirmPassword = FocusNode();
+  
 
   void updateUserProfile() async {
     emit(const UpdateProfileState.loading());
     final response = await updateProfileRepo.updateProfile(UpdateProfileRequest(
       token: CacheHelper.getCacheData(key: AppConstant.token),
-      image: imageController.text,
       password: passwordController.text,
       passwordConfirmation: passwordConfirmController.text,
       name: nameController.text,
@@ -51,7 +49,8 @@ class UpdateProfileCubit extends Cubit<UpdateProfileState> {
         emit(UpdateProfileState.success(signUpResponse));
       },
       failure: (error) {
-        emit(UpdateProfileState.error(error));
+        emit(UpdateProfileState.error(
+            error: error.apiErrorModel.message ?? "Please try again later"));
       },
     );
   }

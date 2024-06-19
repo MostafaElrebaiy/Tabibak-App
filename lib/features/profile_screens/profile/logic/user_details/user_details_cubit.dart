@@ -16,8 +16,10 @@ class UserDetailsCubit extends Cubit<UserDetailsState> {
         token: CacheHelper.getCacheData(key: AppConstant.token)));
     if (isClosed) return;
     response.when(
-      success: (userDetailsResponse) {
+      success: (userDetailsResponse)async {
         if (!isClosed) {
+          await CacheHelper.insertToCache(
+              key: 'image', value: userDetailsResponse.data?.image ?? '');
           emit(UserDetailsState.success(userDetailsResponse));
         }
       },

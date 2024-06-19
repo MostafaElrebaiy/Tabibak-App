@@ -2,14 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:tabibk/core/di/dependancy_injection.dart';
 import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/extensions.dart';
 import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
+import 'package:tabibk/core/networking/shared_preferences.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
+import 'package:tabibk/core/theme/app_constant.dart';
 import 'package:tabibk/core/theme/styles.dart';
+import 'package:tabibk/core/utilities/to_capitalize.dart';
 import 'package:tabibk/core/widgets/custom_widget/app_text_button.dart';
 import 'package:tabibk/features/profile_screens/edit_profile_screen/logic/update_profile/update_profile_cubit.dart';
+import 'package:tabibk/features/profile_screens/profile/logic/user_details/user_details_cubit.dart';
+import 'package:tabibk/features/profile_screens/profile/logic/user_details/user_details_state.dart';
 import 'package:tabibk/features/profile_screens/profile/view/widgets/image_name_email_section.dart';
 
 class ProfileImageNameSection extends StatelessWidget {
@@ -20,14 +26,31 @@ class ProfileImageNameSection extends StatelessWidget {
     return Stack(
       alignment: Alignment.center,
       children: [
-        BlocBuilder<UpdateProfileCubit, UpdateProfileState>(
-          builder: (context, state) {
-            return const ImageNameAndEmailSection(
-                email: "",
-                name: '',
-            
-                );
-          },
+        MultiBlocProvider(
+          providers: [
+            BlocProvider<UpdateProfileCubit>(
+              create: (context) => UpdateProfileCubit(getIt.get()),
+            ),
+            BlocProvider<UserDetailsCubit>(
+              create: (context) => UserDetailsCubit(getIt.get())..getUserDetails(),
+            ),
+          ],
+          
+          child: BlocBuilder<UserDetailsCubit, UserDetailsState>(
+            builder: (context, state) {
+              return state.when(
+                      initial: () => const ImageNameAndEmailSection(
+                          email: "", name: "", pngImage: ""),
+                      loading: () => const ImageNameAndEmailSection(
+                          email: "...", name: "...", pngImage: ""),
+                      success: (userDetails) => ImageNameAndEmailSection(
+                          email: userDetails.data?.email ?? "",
+                          name: toCapitalize(userDetails.data?.name ?? ""),
+                          pngImage: CacheHelper.getCacheData(key: AppConstant.image)),
+                      error: (error) => const ImageNameAndEmailSection(
+                          email: "...", name: "...", pngImage: ""),);
+            },
+          ),
         ),
         Positioned(
           top: 100.h,

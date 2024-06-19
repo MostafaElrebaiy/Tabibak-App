@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/app_assets.dart';
@@ -17,20 +15,24 @@ class ImageNameAndEmailSection extends StatelessWidget {
   final String name;
   final String? pngImage;
   final String email;
+
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
         CircleAvatar(
-          backgroundColor: AppColor.primaryBlue,
+          backgroundImage: pngImage == null || pngImage!.isEmpty 
+                        ? const AssetImage(AppAsset.doctorImage) as ImageProvider<Object> 
+                        : NetworkImage(pngImage!),
+          onBackgroundImageError: (exception, stackTrace) =>
+              const AssetImage(AppAsset.doctorImage),
           radius: 50.w,
-          backgroundImage: const AssetImage(AppAsset.staticImageProfile),
-          child: pngImage == null
-              ? null
-              : Image.file(File(pngImage!.toString()), fit: BoxFit.cover),
+          child: pngImage == null || pngImage!.isEmpty 
+              ? Image.asset(AppAsset.doctorImage)
+              : null,
         ),
-        verticalSpace(10),
+        verticalSpace(25),
         SizedBox(
           width: 220.w,
           child: Text(

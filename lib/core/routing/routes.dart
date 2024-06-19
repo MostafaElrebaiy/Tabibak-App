@@ -17,7 +17,7 @@ class Routes {
   static const String hospitalView = "/hospitalView";
   static const String clinicInfoView = "/clinicInfoView";
   static const String hospitalInfoView = "/hospitalInfoView";
-  static const String profileView = "/profileView";
+  static const String profileView = "/";
   static const String editProfileView = "/editProfileView";
   static const String languageProfileView = "/languageProfileView";
   static const String pharmacy = "/pharmacy";

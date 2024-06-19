@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/di/dependancy_injection.dart';
+import 'package:tabibk/core/networking/shared_preferences.dart';
+import 'package:tabibk/core/theme/app_constant.dart';
 import 'package:tabibk/core/utilities/to_capitalize.dart';
 import 'package:tabibk/core/widgets/top_back_ground_two.dart';
 import 'package:tabibk/features/profile_screens/profile/logic/user_details/user_details_cubit.dart';
@@ -37,7 +39,7 @@ class ProfileViewBody extends StatelessWidget {
                       success: (userDetails) => ImageNameAndEmailSection(
                           email: userDetails.data?.email ?? "",
                           name: toCapitalize(userDetails.data?.name ?? ""),
-                          pngImage: userDetails.data?.image ?? ""),
+                          pngImage: CacheHelper.getCacheData(key: AppConstant.image) ),
                       error: (error) => const ImageNameAndEmailSection(
                           email: "...", name: "...", pngImage: ""),
                     );

@@ -453,7 +453,7 @@ class _ApiService implements ApiService {
     )
             .compose(
               _dio.options,
-              'user',
+              'profile',
               queryParameters: queryParameters,
               data: _data,
             )
