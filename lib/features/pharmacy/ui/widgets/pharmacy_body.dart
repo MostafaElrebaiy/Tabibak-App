@@ -35,8 +35,8 @@ class _PharmacyBodyState extends State<PharmacyBody> {
     return ListView(
         keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
         children: [
-          Padding(
-            padding: EdgeInsets.symmetric(
+          Container(
+            margin: EdgeInsets.symmetric(
                 horizontal: 16.w, vertical: AppConstant.appVerticalPadding.h),
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -46,9 +46,9 @@ class _PharmacyBodyState extends State<PharmacyBody> {
                 SizedBox(
                     height: height * 0.25, child: const CategoriesSection()),
                 SizedBox(
-                    height: height * 0.33, child: const RecommendedSection()),
+                    height: height * 0.26, child: const RecommendedSection()),
                 SizedBox(
-                    height: height * 0.33, child: const BestDealsSection()),
+                    height: height * 0.26, child: const BestDealsSection()),
               ],
             ),
           )

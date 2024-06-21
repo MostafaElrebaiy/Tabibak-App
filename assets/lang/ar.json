@@ -98,5 +98,7 @@
    "relatedProduct": "منتجات ذات صلة",
    "noInternet": "لا يوجد اتصال بالإنترنت",
    "noMedicineFound": "لا يوجد دواء بهذا الاسم",
-      "searchMedicine": "ٌإبحث عن الدواء"
+   "searchMedicine": "ٌإبحث عن الدواء",
+   "passwordConfirm": "تأكيد كلمة المرور",
+   "enterPasswordAgain": "أدخل كلمة المرور مرة أخرى"
 }

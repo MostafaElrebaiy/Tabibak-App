@@ -29,7 +29,7 @@ class ProfileViewListItems extends StatelessWidget {
                   thereTrailing: true,
                   isSvgImage: true,
                   onTap: () =>
-                      context.pushReplacementNamed(Routes.editProfileView)),
+                      context.pushNamed(Routes.editProfileView)),
               verticalSpace(25),
               CustomListTile(
                   title: AppLocalization.of(context)!.translate("language"),

@@ -9,19 +9,17 @@ part of 'update_profile_request.dart';
 UpdateProfileRequest _$UpdateProfileRequestFromJson(
         Map<String, dynamic> json) =>
     UpdateProfileRequest(
-      token: json['token'] as String,
       name: json['name'] as String?,
       password: json['password'] as String?,
-      passwordConfirmation: json['passwordConfirmation'] as String?,
+      passwordConfirmation: json['password_confirmation'] as String?,
       image: json['image'] as String?,
     );
 
 Map<String, dynamic> _$UpdateProfileRequestToJson(
         UpdateProfileRequest instance) =>
     <String, dynamic>{
-      'token': instance.token,
       'name': instance.name,
       'password': instance.password,
-      'passwordConfirmation': instance.passwordConfirmation,
+      'password_confirmation': instance.passwordConfirmation,
       'image': instance.image,
     };

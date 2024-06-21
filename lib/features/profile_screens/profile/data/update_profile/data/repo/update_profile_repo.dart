@@ -9,9 +9,12 @@ class UpdateProfileRepo {
   UpdateProfileRepo(this._apiServices);
 
   Future<ApiResult<UpdateProfileResponse>> updateProfile(
-      UpdateProfileRequest updateProfileRequest) async {
+    String token,
+    UpdateProfileRequest updateProfileRequest,
+  ) async {
     try {
-      final response = await _apiServices.updateProfile(updateProfileRequest);
+      final response = await _apiServices.updateProfile(
+          "Bearer $token", updateProfileRequest);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ErrorHandler.handle(error));

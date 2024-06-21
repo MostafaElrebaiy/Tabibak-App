@@ -1,4 +1,3 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/app_assets.dart';
@@ -30,18 +29,24 @@ class MedicineItem extends StatelessWidget {
           },
           child: Column(
             children: [
-              Image.network(
-                medicine.image ?? AppAsset.doctorImage,
-                height: 100.h,
-                width: 100.w,
-                errorBuilder: (context, error, stackTrace) {
-                  return Image.asset(
-                    AppAsset.comatrixImage,
-                    height: 100.h,
-                    width: 100.w,
-                  );
-                },
-              ),
+              medicine.image == null
+                  ? Image.asset(
+                      AppAsset.comatrixImage,
+                      height: 100.h,
+                      width: 100.w,
+                    )
+                  : Image.network(
+                      medicine.image!,
+                      height: 100.h,
+                      width: 100.w,
+                      errorBuilder: (context, error, stackTrace) {
+                        return Image.asset(
+                          AppAsset.comatrixImage,
+                          height: 100.h,
+                          width: 100.w,
+                        );
+                      },
+                    ),
               Text(
                 medicine.name ?? "",
                 style: AppStyle.f16BlackW700Mulish.copyWith(
@@ -54,13 +59,13 @@ class MedicineItem extends StatelessWidget {
                   color: AppColor.primaryBlue,
                 ),
               ),
-              Text(
-                (medicine.price! + Random().nextInt(20)).toString(),
-                style: AppStyle.f14BlackW700.copyWith(
-                  decoration: TextDecoration.lineThrough,
-                  color: AppColor.red,
-                ),
-              ),
+              // Text(
+              //   (medicine.price! + Random().nextInt(20)).toString(),
+              //   style: AppStyle.f14BlackW700.copyWith(
+              //     decoration: TextDecoration.lineThrough,
+              //     color: AppColor.red,
+              //   ),
+              // ),
             ],
           ),
         ),

@@ -133,7 +133,7 @@ class AppRouter {
       case Routes.pharmacy:
         return CustomPageRoute(child: const PharmacyScreen());
       case Routes.pharmacyDetailsScreen:
-        return CustomPageRoute(child: const PharmacyDetailsScreen());
+        return CustomPageRoute(child:  const PharmacyDetailsScreen());
       case Routes.bloodBank:
         return CustomPageRoute(child: const BloodBankScreen());
       case Routes.bloodBankSearchScreen:

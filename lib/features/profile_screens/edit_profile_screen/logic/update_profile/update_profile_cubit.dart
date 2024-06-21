@@ -20,12 +20,10 @@ class UpdateProfileCubit extends Cubit<UpdateProfileState> {
   final UpdateProfileRepo updateProfileRepo;
   final TextEditingController nameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  final TextEditingController passwordConfirmController = TextEditingController();
+  final TextEditingController passwordConfirmController =
+      TextEditingController();
   final formKey = GlobalKey<FormState>();
-  FocusNode name = FocusNode();
-  FocusNode password = FocusNode();
-  FocusNode confirmPassword = FocusNode();
-  
+
   File? image;
   Future<void> pickImage({required ImageSource source}) async {
     final returnedImage = await ImagePicker().pickImage(source: source);
@@ -34,16 +32,19 @@ class UpdateProfileCubit extends Cubit<UpdateProfileState> {
     emit(const UpdateProfileState.initial());
   }
 
-  
-
-  void updateUserProfile() async {
+  Future<void> updateUserProfile() async {
     emit(const UpdateProfileState.loading());
-    final response = await updateProfileRepo.updateProfile(UpdateProfileRequest(
-      token: CacheHelper.getCacheData(key: AppConstant.token),
-      password: passwordController.text,
-      passwordConfirmation: passwordConfirmController.text,
-      name: nameController.text,
-    ));
+    final response = await updateProfileRepo.updateProfile(
+      CacheHelper.getCacheData(key: AppConstant.token),
+      UpdateProfileRequest(
+        password:
+            passwordController.text.isEmpty ? null : passwordController.text,
+        passwordConfirmation: passwordConfirmController.text.isEmpty
+            ? null
+            : passwordConfirmController.text,
+        name: nameController.text.isEmpty ? null : nameController.text,
+      ),
+    );
     response.when(
       success: (signUpResponse) {
         emit(UpdateProfileState.success(signUpResponse));
@@ -53,5 +54,36 @@ class UpdateProfileCubit extends Cubit<UpdateProfileState> {
             error: error.apiErrorModel.message ?? "Please try again later"));
       },
     );
+  }
+
+  void validateToUpdate(BuildContext context) {
+    if (nameController.text.isEmpty &&
+        passwordController.text.isEmpty &&
+        passwordConfirmController.text.isEmpty) {
+      emit(const UpdateProfileState.error(
+          error: "Please fill at least one field"));
+      return;
+    } else if (passwordController.text.isEmpty &&
+        passwordConfirmController.text.isNotEmpty) {
+      emit(const UpdateProfileState.error(
+          error: "Please fill the password field"));
+      return;
+    } else if (passwordController.text.isNotEmpty &&
+        passwordConfirmController.text.isEmpty) {
+      emit(const UpdateProfileState.error(
+          error: "Please fill the confirm password field"));
+      return;
+    } else if (passwordController.text != passwordConfirmController.text) {
+      emit(const UpdateProfileState.error(
+          error: "Password and confirm password must be the same"));
+      return;
+    } else if (passwordController.text.isNotEmpty &&
+        passwordController.text.length < 8) {
+      emit(const UpdateProfileState.error(
+          error: "Password must be at least 8 characters long"));
+      return;
+    } else {
+      updateUserProfile();
+    }
   }
 }

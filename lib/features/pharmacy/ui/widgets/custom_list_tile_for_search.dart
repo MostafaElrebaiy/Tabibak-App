@@ -24,7 +24,7 @@ class CustomListTileForSearch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 10,
+      elevation: 0,
       borderOnForeground: false,
       color: AppColor.white,
       margin: EdgeInsets.zero, // We Change The Margin To Zero
@@ -65,7 +65,8 @@ class CustomListTileForSearch extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(width: 10.w), // Add some spacing between the text and image
+            SizedBox(
+                width: 10.w), // Add some spacing between the text and image
             ClipRRect(
               borderRadius: BorderRadius.circular(6),
               child: Image.network(

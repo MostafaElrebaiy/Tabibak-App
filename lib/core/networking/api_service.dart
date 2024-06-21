@@ -96,9 +96,15 @@ abstract class ApiService {
     @Header('Authorization') String token,
   );
 
-  
-
   @POST(ApiConstants.updateProfile)
   Future<UpdateProfileResponse> updateProfile(
+      @Header('Authorization') String token,
       @Body() UpdateProfileRequest updateProfileRequest);
 }
+
+//   @multipart
+//   Future<String> uploadFile(
+//       @Part() File file,
+//       @Part(name: "name") String name,
+//       @Part(name: "description") String description,
+//       {@SendProgress() ProgressCallback? onSendProgress});

@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/spacing.dart';
-import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/widgets/custom_widget/app_text_button.dart';
 import 'package:tabibk/core/widgets/top_back_ground_two.dart';
 import 'package:tabibk/features/profile_screens/edit_profile_screen/logic/update_profile/update_profile_cubit.dart';
@@ -34,24 +33,31 @@ class EditProfileViewBody extends StatelessWidget {
               )
             ],
           ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: AppPadding.p10.w),
-            child: const EditProfileTextFormField(),
+          Container(
+            margin: EdgeInsetsDirectional.symmetric(horizontal: 20.w),
+            child: Column(
+              children: [
+                const EditProfileTextFormField(),
+                verticalSpace(20),
+                AppTextButton(
+                    buttonText: AppLocalization.of(context)!.translate("save"),
+                    onPressed: () {
+                      context
+                          .read<UpdateProfileCubit>()
+                          .validateToUpdate(context);
+                    }),
+              ],
+            ),
           ),
-          verticalSpace(20),
-          AppTextButton(
-              buttonText: AppLocalization.of(context)!.translate("save"),
-              onPressed: () {
-                validateToUpdate(context);
-              }),
           const EditProfileBlocListener(),
         ],
       ),
     );
   }
-  void validateToUpdate(BuildContext context) {
-    if (context.read<UpdateProfileCubit>().formKey.currentState!.validate()) {
-      context.read<UpdateProfileCubit>().updateUserProfile();
-    }
-  }
+
+  // void validateToUpdate(BuildContext context) {
+  //   if (context.read<UpdateProfileCubit>().formKey.currentState!.validate()) {
+  //     context.read<UpdateProfileCubit>().updateUserProfile();
+  //   }
+  // }
 }

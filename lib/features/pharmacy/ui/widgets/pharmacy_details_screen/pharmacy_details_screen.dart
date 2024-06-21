@@ -6,7 +6,6 @@ import 'widgets/pharmacy_details_body.dart';
 
 class PharmacyDetailsScreen extends StatelessWidget {
   const PharmacyDetailsScreen({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
