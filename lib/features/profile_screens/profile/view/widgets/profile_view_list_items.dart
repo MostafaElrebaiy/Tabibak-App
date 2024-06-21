@@ -5,6 +5,7 @@ import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/extensions.dart';
 import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
+import 'package:tabibk/core/networking/shared_preferences.dart';
 import 'package:tabibk/core/routing/routes.dart';
 import 'package:tabibk/core/widgets/cutom_list_tile.dart';
 
@@ -28,7 +29,7 @@ class ProfileViewListItems extends StatelessWidget {
                   thereTrailing: true,
                   isSvgImage: true,
                   onTap: () =>
-                      context.pushReplacementNamed(Routes.editProfileView)),
+                      context.pushNamed(Routes.editProfileView)),
               verticalSpace(25),
               CustomListTile(
                   title: AppLocalization.of(context)!.translate("language"),
@@ -49,7 +50,10 @@ class ProfileViewListItems extends StatelessWidget {
                   image: AppAsset.logoutIcon,
                   thereTrailing: true,
                   isSvgImage: true,
-                  onTap: () {}),
+                  onTap: () {
+                    CacheHelper.removeCacheData(key: "token");
+                    context.pushReplacementNamed(Routes.loginScreen);
+                  }),
             ],
           ),
         ),

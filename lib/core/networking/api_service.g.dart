@@ -439,10 +439,13 @@ class _ApiService implements ApiService {
 
   @override
   Future<UpdateProfileResponse> updateProfile(
-      UpdateProfileRequest updateProfileRequest) async {
+    String token,
+    UpdateProfileRequest updateProfileRequest,
+  ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'Authorization': token};
+    _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     _data.addAll(updateProfileRequest.toJson());
     final _result = await _dio.fetch<Map<String, dynamic>>(
@@ -453,7 +456,7 @@ class _ApiService implements ApiService {
     )
             .compose(
               _dio.options,
-              'user',
+              'profile',
               queryParameters: queryParameters,
               data: _data,
             )

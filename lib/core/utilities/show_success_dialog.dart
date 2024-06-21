@@ -10,13 +10,14 @@ Future showSuccessDialog(
     required String title,
     required String routeName,
     required String message,
+    bool isBack = false,
     String textOfButton = "Continue"}) {
   return showDialog(
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
         backgroundColor: AppColor.white,
-        icon: Lottie.asset(AppAsset.successThree, height: 100),
+        icon: Lottie.asset(AppAsset.successTwo, height: 100),
         content: Text(
           message,
           textAlign: TextAlign.center,
@@ -29,7 +30,7 @@ Future showSuccessDialog(
               style: AppStyle.font16primaryBlueBold,
             ),
             onPressed: () {
-              context.pushReplacementNamed(routeName);
+              isBack ? context.pop() : context.pushReplacementNamed(routeName);
             },
           ),
         ],

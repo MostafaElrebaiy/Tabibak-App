@@ -11,9 +11,8 @@ UpdateProfileRequest _$UpdateProfileRequestFromJson(
     UpdateProfileRequest(
       name: json['name'] as String?,
       password: json['password'] as String?,
-      passwordConfirmation: json['passwordConfirmation'] as String?,
+      passwordConfirmation: json['password_confirmation'] as String?,
       image: json['image'] as String?,
-      token: json['token'] as String,
     );
 
 Map<String, dynamic> _$UpdateProfileRequestToJson(
@@ -21,7 +20,6 @@ Map<String, dynamic> _$UpdateProfileRequestToJson(
     <String, dynamic>{
       'name': instance.name,
       'password': instance.password,
-      'passwordConfirmation': instance.passwordConfirmation,
+      'password_confirmation': instance.passwordConfirmation,
       'image': instance.image,
-      'token': instance.token,
     };

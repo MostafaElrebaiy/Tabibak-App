@@ -5,16 +5,16 @@ part 'update_profile_request.g.dart';
 class UpdateProfileRequest {
   final String? name;
   final String? password;
+  @JsonKey(name: 'password_confirmation')
   final String? passwordConfirmation;
   final String? image;
-  final String token;
 
-  UpdateProfileRequest(
-      {this.name,
-      this.password,
-      this.passwordConfirmation,
-      this.image,
-      required this.token});
+  UpdateProfileRequest({
+    this.name,
+    this.password,
+    this.passwordConfirmation,
+    this.image,
+  });
 
   Map<String, dynamic> toJson() => _$UpdateProfileRequestToJson(this);
 }

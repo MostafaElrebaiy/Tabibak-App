@@ -25,7 +25,7 @@ class CustomListTile extends StatelessWidget {
           vertical: AppPadding.p10.h, horizontal: AppPadding.p10.w),
       decoration: BoxDecoration(
         color: AppColor.white,
-        borderRadius: const BorderRadius.all(Radius.circular(AppSize.s12)),
+        borderRadius: BorderRadius.all(Radius.circular(32.r)),
         border: Border.all(
           color: AppColor.gray.withOpacity(0.4),
         ),

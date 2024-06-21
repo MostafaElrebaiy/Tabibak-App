@@ -22,7 +22,7 @@ mixin _$UpdateProfileState {
     required TResult Function() loading,
     required TResult Function(UpdateProfileResponse updateProfileResponse)
         success,
-    required TResult Function(ErrorHandler errorHandler) error,
+    required TResult Function(String error) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,7 +30,7 @@ mixin _$UpdateProfileState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(UpdateProfileResponse updateProfileResponse)? success,
-    TResult? Function(ErrorHandler errorHandler)? error,
+    TResult? Function(String error)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,7 +38,7 @@ mixin _$UpdateProfileState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(UpdateProfileResponse updateProfileResponse)? success,
-    TResult Function(ErrorHandler errorHandler)? error,
+    TResult Function(String error)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -129,7 +129,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() loading,
     required TResult Function(UpdateProfileResponse updateProfileResponse)
         success,
-    required TResult Function(ErrorHandler errorHandler) error,
+    required TResult Function(String error) error,
   }) {
     return initial();
   }
@@ -140,7 +140,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(UpdateProfileResponse updateProfileResponse)? success,
-    TResult? Function(ErrorHandler errorHandler)? error,
+    TResult? Function(String error)? error,
   }) {
     return initial?.call();
   }
@@ -151,7 +151,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(UpdateProfileResponse updateProfileResponse)? success,
-    TResult Function(ErrorHandler errorHandler)? error,
+    TResult Function(String error)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -248,7 +248,7 @@ class _$UpdateProfileStateLoadingImpl implements UpdateProfileStateLoading {
     required TResult Function() loading,
     required TResult Function(UpdateProfileResponse updateProfileResponse)
         success,
-    required TResult Function(ErrorHandler errorHandler) error,
+    required TResult Function(String error) error,
   }) {
     return loading();
   }
@@ -259,7 +259,7 @@ class _$UpdateProfileStateLoadingImpl implements UpdateProfileStateLoading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(UpdateProfileResponse updateProfileResponse)? success,
-    TResult? Function(ErrorHandler errorHandler)? error,
+    TResult? Function(String error)? error,
   }) {
     return loading?.call();
   }
@@ -270,7 +270,7 @@ class _$UpdateProfileStateLoadingImpl implements UpdateProfileStateLoading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(UpdateProfileResponse updateProfileResponse)? success,
-    TResult Function(ErrorHandler errorHandler)? error,
+    TResult Function(String error)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -394,7 +394,7 @@ class _$UpdateProfileStateSuccessImpl implements UpdateProfileStateSuccess {
     required TResult Function() loading,
     required TResult Function(UpdateProfileResponse updateProfileResponse)
         success,
-    required TResult Function(ErrorHandler errorHandler) error,
+    required TResult Function(String error) error,
   }) {
     return success(updateProfileResponse);
   }
@@ -405,7 +405,7 @@ class _$UpdateProfileStateSuccessImpl implements UpdateProfileStateSuccess {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(UpdateProfileResponse updateProfileResponse)? success,
-    TResult? Function(ErrorHandler errorHandler)? error,
+    TResult? Function(String error)? error,
   }) {
     return success?.call(updateProfileResponse);
   }
@@ -416,7 +416,7 @@ class _$UpdateProfileStateSuccessImpl implements UpdateProfileStateSuccess {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(UpdateProfileResponse updateProfileResponse)? success,
-    TResult Function(ErrorHandler errorHandler)? error,
+    TResult Function(String error)? error,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -481,7 +481,7 @@ abstract class _$$UpdateProfileStateErrorImplCopyWith<$Res> {
           $Res Function(_$UpdateProfileStateErrorImpl) then) =
       __$$UpdateProfileStateErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({ErrorHandler errorHandler});
+  $Res call({String error});
 }
 
 /// @nodoc
@@ -497,13 +497,13 @@ class __$$UpdateProfileStateErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorHandler = null,
+    Object? error = null,
   }) {
     return _then(_$UpdateProfileStateErrorImpl(
-      null == errorHandler
-          ? _value.errorHandler
-          : errorHandler // ignore: cast_nullable_to_non_nullable
-              as ErrorHandler,
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -511,14 +511,14 @@ class __$$UpdateProfileStateErrorImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$UpdateProfileStateErrorImpl implements UpdateProfileStateError {
-  const _$UpdateProfileStateErrorImpl(this.errorHandler);
+  const _$UpdateProfileStateErrorImpl({required this.error});
 
   @override
-  final ErrorHandler errorHandler;
+  final String error;
 
   @override
   String toString() {
-    return 'UpdateProfileState.error(errorHandler: $errorHandler)';
+    return 'UpdateProfileState.error(error: $error)';
   }
 
   @override
@@ -526,12 +526,11 @@ class _$UpdateProfileStateErrorImpl implements UpdateProfileStateError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdateProfileStateErrorImpl &&
-            (identical(other.errorHandler, errorHandler) ||
-                other.errorHandler == errorHandler));
+            (identical(other.error, error) || other.error == error));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, errorHandler);
+  int get hashCode => Object.hash(runtimeType, error);
 
   @JsonKey(ignore: true)
   @override
@@ -547,9 +546,9 @@ class _$UpdateProfileStateErrorImpl implements UpdateProfileStateError {
     required TResult Function() loading,
     required TResult Function(UpdateProfileResponse updateProfileResponse)
         success,
-    required TResult Function(ErrorHandler errorHandler) error,
+    required TResult Function(String error) error,
   }) {
-    return error(errorHandler);
+    return error(this.error);
   }
 
   @override
@@ -558,9 +557,9 @@ class _$UpdateProfileStateErrorImpl implements UpdateProfileStateError {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(UpdateProfileResponse updateProfileResponse)? success,
-    TResult? Function(ErrorHandler errorHandler)? error,
+    TResult? Function(String error)? error,
   }) {
-    return error?.call(errorHandler);
+    return error?.call(this.error);
   }
 
   @override
@@ -569,11 +568,11 @@ class _$UpdateProfileStateErrorImpl implements UpdateProfileStateError {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(UpdateProfileResponse updateProfileResponse)? success,
-    TResult Function(ErrorHandler errorHandler)? error,
+    TResult Function(String error)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error(errorHandler);
+      return error(this.error);
     }
     return orElse();
   }
@@ -617,10 +616,10 @@ class _$UpdateProfileStateErrorImpl implements UpdateProfileStateError {
 }
 
 abstract class UpdateProfileStateError implements UpdateProfileState {
-  const factory UpdateProfileStateError(final ErrorHandler errorHandler) =
+  const factory UpdateProfileStateError({required final String error}) =
       _$UpdateProfileStateErrorImpl;
 
-  ErrorHandler get errorHandler;
+  String get error;
   @JsonKey(ignore: true)
   _$$UpdateProfileStateErrorImplCopyWith<_$UpdateProfileStateErrorImpl>
       get copyWith => throw _privateConstructorUsedError;

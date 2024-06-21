@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/spacing.dart';
-import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
 import 'package:tabibk/core/theme/styles.dart';
 
@@ -31,16 +31,19 @@ class CustomAppTextField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
-        Text(
-          title,
-          style:
-              AppStyle.f16BlackW700Mulish.copyWith(fontWeight: FontWeight.w600),
+        Container(
+          margin: EdgeInsets.only(left: 20.w),
+          child: Text(
+            title,
+            style: AppStyle.f16BlackW700Mulish
+                .copyWith(fontWeight: FontWeight.w600),
+          ),
         ),
         verticalSpace(5),
         TextFormField(
           cursorColor: AppColor.primaryBlue,
           initialValue: initialValue,
-          textInputAction: textInputAction ?? TextInputAction.next,
+          textInputAction: textInputAction ?? TextInputAction.done,
           controller: controller,
           keyboardType: keyboardType,
           obscureText: isObscure ?? false,
@@ -49,6 +52,8 @@ class CustomAppTextField extends StatelessWidget {
           decoration: InputDecoration(
             hintStyle: AppStyle.font14GrayRegular,
             isDense: false,
+            contentPadding:
+                EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
             hintText: hintText,
             border: outLineBorder(),
             focusedBorder: outLineBorder(),
@@ -68,6 +73,6 @@ class CustomAppTextField extends StatelessWidget {
           color: color ?? AppColor.black.withOpacity(0.3),
           width: 2,
         ),
-        borderRadius: const BorderRadius.all(Radius.circular(AppSize.s8)));
+        borderRadius: BorderRadius.all(Radius.circular(32.r)));
   }
 }

@@ -19,7 +19,7 @@ class _SecondSplashScreenState extends State<SecondSplashScreen> {
   }
 
   void _navigateToOnBoardingScreen() async {
-    await Future.delayed(const Duration(milliseconds: 700),
+    await Future.delayed(const Duration(milliseconds: 1100),
         () => context.pushReplacementNamed(Routes.onBoardingView));
   }
 
@@ -31,22 +31,23 @@ class _SecondSplashScreenState extends State<SecondSplashScreen> {
       width: double.infinity,
       height: double.infinity,
       color: AppColor.primaryBlue,
-      child: Center(
-        child: TweenAnimationBuilder<Offset>(
-            tween: Tween(begin: const Offset(100, 0), end: _offset),
-            duration: const Duration(milliseconds: 700),
-            curve: Curves.easeInOut,
-            builder: (_, offset, child) =>
-                Transform.translate(offset: offset, child: child),
+      child: TweenAnimationBuilder<Offset>(
+          tween: Tween(begin: const Offset(100, 0), end: _offset),
+          duration: const Duration(milliseconds: 900),
+          curve: Curves.easeInOut,
+          builder: (_, offset, child) =>
+              Transform.translate(offset: offset, child: child),
+          child: Center(
             child: Text(
               'Tabibak',
               style: TextStyle(
                 color: AppColor.white,
-                fontSize: 40.sp,
+                fontSize: 48.sp,
+                decoration: TextDecoration.none,
                 fontWeight: FontWeight.bold,
               ),
-            )),
-      ),
+            ),
+          )),
     );
   }
 }

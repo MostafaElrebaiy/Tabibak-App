@@ -11,6 +11,7 @@ class AppConstant {
   static const double appVerticalPadding = 20;
   static const int animationDuration = 250;
   static const String token = 'token';
+  static const String image = 'image';
   static const List<Widget> listOfScreens = [
     PharmacyScreen(),
     HospitalScreenView(),

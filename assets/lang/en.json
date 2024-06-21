@@ -1,5 +1,5 @@
 {
-   "bloodBank": "Blood Bank",
+   "bloodBank": "Pharmacy and Blood Bank",
    "pharmacies": "Pharmacies",
    "login": "Login",
    "save": "Save",
@@ -98,5 +98,7 @@
    "relatedProduct": "Related Product",
    "noInternet": "Oops, No Internet Connection",
    "noMedicineFound": "Sorry, there is no medicine with this name, try another one",
-   "searchMedicine" :"Search for medicine..."
+   "searchMedicine" :"Search for medicine...",
+   "passwordConfirm" :"Password Confirmaion",
+   "enterPasswordAgain" :"Enter your password again"
 }

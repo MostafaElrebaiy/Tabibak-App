@@ -40,7 +40,7 @@ class RecommendedSection extends StatelessWidget {
                       itemCount: medicine.data!.length),
                 );
               },
-              error: (error) => const Text("Error In Recommended Medicine"),
+              error: (error) =>  Text(error),
             );
           },
         ),

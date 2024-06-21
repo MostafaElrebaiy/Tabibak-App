@@ -1,4 +1,3 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/app_assets.dart';
@@ -16,41 +15,61 @@ class MedicineItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 220.h,
-        width: 120.w,
-        decoration: BoxDecoration(
-            color: AppColor.moreLightGray,
-            borderRadius: BorderRadius.circular(8)),
-        padding: const EdgeInsets.all(AppPadding.p4),
-        child: Center(
-          child: GestureDetector(
-            onTap: () {
-              context.pushNamed(Routes.pharmacyDetailsScreen);
-            },
-            child: Column(
-              children: [
-                Image.asset(
-                  medicine.image ?? AppAsset.comatrixImage,
-                  height: 150.h,
-                  width: 160.w,
+      height: 220.h,
+      width: 120.w,
+      decoration: BoxDecoration(
+        color: AppColor.moreLightGray,
+        borderRadius: BorderRadius.circular(8),
+      ),
+      padding: const EdgeInsets.all(AppPadding.p4),
+      child: Center(
+        child: GestureDetector(
+          onTap: () {
+            context.pushNamed(Routes.pharmacyDetailsScreen);
+          },
+          child: Column(
+            children: [
+              medicine.image == null
+                  ? Image.asset(
+                      AppAsset.comatrixImage,
+                      height: 100.h,
+                      width: 100.w,
+                    )
+                  : Image.network(
+                      medicine.image!,
+                      height: 100.h,
+                      width: 100.w,
+                      errorBuilder: (context, error, stackTrace) {
+                        return Image.asset(
+                          AppAsset.comatrixImage,
+                          height: 100.h,
+                          width: 100.w,
+                        );
+                      },
+                    ),
+              Text(
+                medicine.name ?? "",
+                style: AppStyle.f16BlackW700Mulish.copyWith(
+                  fontWeight: FontWeight.w400,
                 ),
-                Text(
-                  medicine.name ?? "",
-                  style: AppStyle.f16BlackW700Mulish
-                      .copyWith(fontWeight: FontWeight.w400),
+              ),
+              Text(
+                medicine.price.toString(),
+                style: AppStyle.f16BlackW700Mulish.copyWith(
+                  color: AppColor.primaryBlue,
                 ),
-                Text(medicine.price.toString(),
-                    style: AppStyle.f16BlackW700Mulish
-                        .copyWith(color: AppColor.primaryBlue)),
-                Text(
-                  (medicine.price! + Random().nextInt(20)).toString(),
-                  style: AppStyle.f14BlackW700.copyWith(
-                      decoration: TextDecoration.lineThrough,
-                      color: AppColor.red),
-                ),
-              ],
-            ),
+              ),
+              // Text(
+              //   (medicine.price! + Random().nextInt(20)).toString(),
+              //   style: AppStyle.f14BlackW700.copyWith(
+              //     decoration: TextDecoration.lineThrough,
+              //     color: AppColor.red,
+              //   ),
+              // ),
+            ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }

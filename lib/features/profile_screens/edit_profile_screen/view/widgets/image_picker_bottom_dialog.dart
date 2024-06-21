@@ -9,7 +9,7 @@ import 'package:tabibk/core/theme/app_colors.dart';
 import 'package:tabibk/core/theme/styles.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tabibk/core/widgets/custom_widget/app_text_button.dart';
-import 'package:tabibk/features/profile_screens/edit_profile_screen/logic/cubit/edit_profile_view_cubit.dart';
+import 'package:tabibk/features/profile_screens/edit_profile_screen/logic/update_profile/update_profile_cubit.dart';
 
 class ImagePickerBottomDialog extends StatelessWidget {
   const ImagePickerBottomDialog({super.key});
@@ -39,7 +39,7 @@ class ImagePickerBottomDialog extends StatelessWidget {
               onPressed: () {
                 context.pop();
                 context
-                    .read<EditProfileViewCubit>()
+                    .read<UpdateProfileCubit>()
                     .pickImage(source: ImageSource.camera);
               },
               thereIcon: true,
@@ -52,7 +52,7 @@ class ImagePickerBottomDialog extends StatelessWidget {
               onPressed: () {
                 context.pop();
                 context
-                    .read<EditProfileViewCubit>()
+                    .read<UpdateProfileCubit>()
                     .pickImage(source: ImageSource.gallery);
               },
               icon: Icons.image_outlined,

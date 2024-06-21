@@ -93,8 +93,7 @@ class SearchForMedicineWithCubit extends StatelessWidget {
                                   price:
                                       medicine.data?[index].price.toString() ??
                                           " ",
-                                  image: medicine.data?[index].image ??
-                                      AppAsset.comatrixImage,
+                                  image: medicine.data?[index].image ?? " ",
                                 ),
                               ],
                             ),
