@@ -7,11 +7,13 @@ import 'package:tabibk/features/ai/logic/cubit/ai_model_state.dart';
 class ImageCubit extends Cubit<ImageState> {
   final ImageRepository imageRepository;
   final ImagePicker imagePicker;
-
-  ImageCubit(this.imageRepository) : imagePicker = ImagePicker(), super(ImageInitial());
+  File? image;
+  ImageCubit(this.imageRepository)
+      : imagePicker = ImagePicker(),
+        super(ImageInitial());
 
   Future<void> uploadImage(String imagePath) async {
-      emit(ImageLoading());
+    emit(ImageLoading());
     try {
       final result = await imageRepository.uploadImage(imagePath);
       emit(ImageLoaded(result));
@@ -24,11 +26,9 @@ class ImageCubit extends Cubit<ImageState> {
     final pickedGalleryFile = await imagePicker.pickImage(source: source);
 
     if (pickedGalleryFile != null) {
+      image = File(pickedGalleryFile.path);
       emit(ImagePicked(File(pickedGalleryFile.path)));
       await uploadImage(pickedGalleryFile.path);
     }
   }
-
-  
-
 }

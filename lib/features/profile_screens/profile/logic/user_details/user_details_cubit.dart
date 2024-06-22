@@ -23,7 +23,9 @@ class UserDetailsCubit extends Cubit<UserDetailsState> {
               key: 'image', value: userDetailsResponse.data?.image ?? '');
           this.userDetailsResponse = userDetailsResponse;
 
-          emit(UserDetailsState.success(userDetailsResponse));
+          if (!isClosed) {
+            emit(UserDetailsState.success(userDetailsResponse));
+          }
         }
       },
       failure: (errorHandler) {
