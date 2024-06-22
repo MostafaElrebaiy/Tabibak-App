@@ -4,8 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/simple_bloc_observer.dart';
-import 'package:tabibk/features/ai_model/logic/cubit/ai_model_cubit.dart';
-
 import 'core/di/dependancy_injection.dart';
 import 'core/networking/shared_preferences.dart';
 import 'core/routing/app_router.dart';
@@ -22,12 +20,9 @@ void main() async {
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   runApp(Phoenix(
-    child: BlocProvider(
-      create: (context) => ImageCubit(getIt()),
-      child: TabibkApp(
-        token: token,
-        appRouter: AppRouter(),
-      ),
+    child: TabibkApp(
+      token: token,
+      appRouter: AppRouter(),
     ),
   ));
 }

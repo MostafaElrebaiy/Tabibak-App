@@ -1,6 +1,6 @@
 
 
-import 'package:tabibk/features/ai_model/service/http_service.dart';
+import 'package:tabibk/features/ai/service/http_service.dart';
 
 class ImageRepository {
   final HttpService httpService;
