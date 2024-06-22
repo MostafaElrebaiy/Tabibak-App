@@ -18,23 +18,19 @@ class DepartmentResponse {
 @JsonSerializable()
 class Data {
   int? id;
-  String? name;
   String? details;
-  @JsonKey(name: 'place_type')
-  String? placeType;
-  @JsonKey(name: 'created_at')
-  String? createdAt;
-  @JsonKey(name: 'updated_at')
-  String? updatedAt;
+  @JsonKey(name: 'name_en')
+  String? nameen;
+  @JsonKey(name: 'name_ar')
+  String? namear;
   String? image;
 
   Data(
       {this.id,
-      this.name,
       this.details,
-      this.placeType,
-      this.createdAt,
-      this.updatedAt,
+      this.nameen,
+      this.namear,
+    
       this.image});
   factory Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);
   

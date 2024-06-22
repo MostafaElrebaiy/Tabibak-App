@@ -2,6 +2,9 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:tabibk/core/networking/api_service.dart';
 import 'package:tabibk/core/networking/dio_factory.dart';
+import 'package:tabibk/features/ai_model/data/repo/ai_model_repo.dart';
+import 'package:tabibk/features/ai_model/logic/cubit/ai_model_cubit.dart';
+import 'package:tabibk/features/ai_model/service/http_service.dart';
 import 'package:tabibk/features/auth/login/logic/cubit/login_cubit.dart';
 import 'package:tabibk/features/blood_bank/data/repo/blood_bank_repo.dart';
 import 'package:tabibk/features/blood_bank/logic/cubit/blood_bank_cubit.dart';
@@ -107,4 +110,9 @@ Future<void> setupGetIt() async {
       () => UpdateProfileRepo(getIt()));
   getIt.registerLazySingleton<UpdateProfileCubit>(
       () => UpdateProfileCubit(getIt()));
+  //---------------------- uploadImage ----------------------//
+  getIt.registerFactory<HttpService>(() => HttpService());
+  getIt.registerFactory<ImageRepository>(() => ImageRepository(getIt()));
+  getIt.registerFactory<ImageCubit>(() => ImageCubit(getIt()));
+
 }

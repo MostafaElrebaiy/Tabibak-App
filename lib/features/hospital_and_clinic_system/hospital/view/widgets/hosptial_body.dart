@@ -103,7 +103,7 @@ class HospitalBody extends StatelessWidget {
                               verticalSpace(10),
                               Flexible(
                                 child: Text(
-                                  department.data?[index].name ?? '',
+                                  department.data?[index].nameen ?? '',
                                   softWrap: true,
                                   style: AppStyle.f14BlackW700
                                       .copyWith(fontWeight: FontWeight.w500),

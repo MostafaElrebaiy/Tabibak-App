@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tabibk/core/routing/custom_page_route.dart';
 import 'package:tabibk/core/routing/routes.dart';
+import 'package:tabibk/features/ai_model/logic/cubit/ai_model_cubit.dart';
+import 'package:tabibk/features/ai_model/ui/upload%20_image_screen.dart';
 import 'package:tabibk/features/auth/forget_password/logic/forget_password_cubit.dart';
 import 'package:tabibk/features/auth/forget_password/ui/forget_password_screen.dart';
 import 'package:tabibk/features/auth/login/logic/cubit/login_cubit.dart';
@@ -133,7 +135,7 @@ class AppRouter {
       case Routes.pharmacy:
         return CustomPageRoute(child: const PharmacyScreen());
       case Routes.pharmacyDetailsScreen:
-        return CustomPageRoute(child:  const PharmacyDetailsScreen());
+        return CustomPageRoute(child: const PharmacyDetailsScreen());
       case Routes.bloodBank:
         return CustomPageRoute(child: const BloodBankScreen());
       case Routes.bloodBankSearchScreen:
@@ -152,6 +154,14 @@ class AppRouter {
                 medicineName: arg.medicineName, lat: arg.lat, lng: arg.lng),
           child: const PharmacySearchResult(),
         ));
+
+      case Routes.uploadImage:
+        return CustomPageRoute(
+            child: BlocProvider(
+          create: (context) => ImageCubit(getIt()),
+          child: const ImageUploadScreen(),
+        ));
+
       default:
         return null;
     }

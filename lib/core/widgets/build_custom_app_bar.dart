@@ -10,6 +10,7 @@ PreferredSizeWidget buildCustomAppBar({
   required bool backarrow,
 }) {
   return AppBar(
+    
     automaticallyImplyLeading: backarrow,
     toolbarHeight: toolbarHeight,
     title: RichText(

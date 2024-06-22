@@ -24,6 +24,7 @@ class Routes {
   static const String pharmacyDetailsScreen = "/pharmacyDetails";
   static const String bloodBank = "/bloodBank";
   static const String bloodBankSearchScreen = "/bloodBankSearchScreen";
+  static const String uploadImage = "/uploadImage";
 
 
   static const String pharmacySearchResult = "/pharmacySearchResult";
