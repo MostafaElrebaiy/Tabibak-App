@@ -12,7 +12,7 @@ UpdateProfileRequest _$UpdateProfileRequestFromJson(
       name: json['name'] as String?,
       password: json['password'] as String?,
       passwordConfirmation: json['password_confirmation'] as String?,
-      image: json['image'] as String?,
+      image: const FileConverter().fromJson(json['image'] as String?),
     );
 
 Map<String, dynamic> _$UpdateProfileRequestToJson(
@@ -21,5 +21,5 @@ Map<String, dynamic> _$UpdateProfileRequestToJson(
       'name': instance.name,
       'password': instance.password,
       'password_confirmation': instance.passwordConfirmation,
-      'image': instance.image,
+      'image': const FileConverter().toJson(instance.image),
     };

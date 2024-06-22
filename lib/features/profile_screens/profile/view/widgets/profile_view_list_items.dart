@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/app_assets.dart';
 import 'package:tabibk/core/helper/app_localization.dart';
@@ -8,6 +9,7 @@ import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/networking/shared_preferences.dart';
 import 'package:tabibk/core/routing/routes.dart';
 import 'package:tabibk/core/widgets/cutom_list_tile.dart';
+import 'package:tabibk/features/profile_screens/profile/logic/user_details/user_details_cubit.dart';
 
 class ProfileViewListItems extends StatelessWidget {
   const ProfileViewListItems({super.key});
@@ -24,12 +26,20 @@ class ProfileViewListItems extends StatelessWidget {
           child: Column(
             children: [
               CustomListTile(
-                  title: AppLocalization.of(context)!.translate("editProfile"),
-                  image: AppAsset.profileIcon,
-                  thereTrailing: true,
-                  isSvgImage: true,
-                  onTap: () =>
-                      context.pushNamed(Routes.editProfileView)),
+                title: AppLocalization.of(context)!.translate("editProfile"),
+                image: AppAsset.profileIcon,
+                thereTrailing: true,
+                isSvgImage: true,
+                onTap: () async {
+                  final bool result = await context.pushNamed(
+                      Routes.editProfileView,
+                      arguments: BlocProvider.of<UserDetailsCubit>(context)
+                          .userDetailsResponse);
+                  if (result) {
+                    BlocProvider.of<UserDetailsCubit>(context).getUserDetails();
+                  }
+                },
+              ),
               verticalSpace(25),
               CustomListTile(
                   title: AppLocalization.of(context)!.translate("language"),

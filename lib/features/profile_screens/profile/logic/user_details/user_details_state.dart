@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:tabibk/core/networking/api_error_handler.dart';
-import 'package:tabibk/features/profile_screens/profile/data/user_details/data/model/user_details_response.dart';
+import 'package:tabibk/features/profile_screens/profile/data/model/user_details_response.dart';
 part 'user_details_state.freezed.dart';
 
 

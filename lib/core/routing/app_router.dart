@@ -32,7 +32,7 @@ import 'package:tabibk/features/profile_screens/edit_profile_screen/logic/update
 import 'package:tabibk/features/profile_screens/edit_profile_screen/view/edit_profile_view.dart';
 import 'package:tabibk/features/profile_screens/language_profile_view/logic/cubit/locale_cubit.dart';
 import 'package:tabibk/features/profile_screens/language_profile_view/view/language_profile_view.dart';
-import 'package:tabibk/features/profile_screens/profile/logic/user_details/user_details_cubit.dart';
+import 'package:tabibk/features/profile_screens/profile/data/model/user_details_response.dart';
 import 'package:tabibk/features/profile_screens/profile/view/profile_view.dart';
 import 'package:tabibk/features/splash/view/widgets/second_splash_screen.dart';
 import '../../features/auth/login/ui/login_screen.dart';
@@ -71,18 +71,15 @@ class AppRouter {
       case Routes.profileView:
         return CustomPageRoute(child: const ProfileView());
       case Routes.editProfileView:
+        UserDetailsResponse? userDetailsResponse;
+        userDetailsResponse = settings.arguments as UserDetailsResponse?;
         return CustomPageRoute(
-            child: MultiBlocProvider(
-          providers: [
-            BlocProvider(
-              create: (context) => UpdateProfileCubit(getIt()),
-            ),
-            BlocProvider(
-              create: (context) => UserDetailsCubit(getIt()),
-            )
-          ],
-          child: const EditProfileView(),
-        ));
+          child: BlocProvider(
+            create: (context) => UpdateProfileCubit(getIt())
+              ..userDetailsResponse = userDetailsResponse,
+            child: const EditProfileView(),
+          ),
+        );
       case Routes.addShippingAddressScreen:
         return CustomPageRoute(child: const AddShippingAddressScreen());
       case Routes.languageProfileView:

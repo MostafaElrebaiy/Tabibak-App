@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:tabibk/core/networking/api_constants.dart';
@@ -8,9 +9,8 @@ import 'package:tabibk/features/auth/signup/data/models/sign_up_request_body.dar
 import 'package:tabibk/features/auth/signup/data/models/sign_up_response.dart';
 import 'package:tabibk/features/auth/update_password/data/models/reset_password_request_body.dart';
 import 'package:tabibk/features/auth/update_password/data/models/reset_password_response.dart';
-import 'package:tabibk/features/profile_screens/profile/data/update_profile/data/model/update_profile_request.dart';
-import 'package:tabibk/features/profile_screens/profile/data/update_profile/data/model/update_profile_response.dart';
-import 'package:tabibk/features/profile_screens/profile/data/user_details/data/model/user_details_response.dart';
+import 'package:tabibk/features/profile_screens/edit_profile_screen/data/model/update_profile_response.dart';
+import 'package:tabibk/features/profile_screens/profile/data/model/user_details_response.dart';
 import 'package:tabibk/features/blood_bank/data/model/blood_bank_response.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/data/model/clinic_model/clinic_response.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/data/model/department_model/department_response.dart';
@@ -97,14 +97,12 @@ abstract class ApiService {
   );
 
   @POST(ApiConstants.updateProfile)
+  @MultiPart()
   Future<UpdateProfileResponse> updateProfile(
-      @Header('Authorization') String token,
-      @Body() UpdateProfileRequest updateProfileRequest);
+    @Header('Authorization') String token,
+    @Part(name: "name") String? name,
+    @Part(name: "image") File image,
+    @Part(name: "password") String? password,
+    @Part(name: "password_confirmation") String? passwordConfirmation,
+  );
 }
-
-//   @multipart
-//   Future<String> uploadFile(
-//       @Part() File file,
-//       @Part(name: "name") String name,
-//       @Part(name: "description") String description,
-//       {@SendProgress() ProgressCallback? onSendProgress});

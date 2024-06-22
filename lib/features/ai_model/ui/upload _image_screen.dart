@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:tabibk/core/di/dependancy_injection.dart';
 import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/core/widgets/custom_widget/app_text_button.dart';
-import 'package:tabibk/features/ai_model/data/repo/ai_model_repo.dart';
 import 'package:tabibk/features/ai_model/logic/cubit/ai_model_cubit.dart';
 import 'package:tabibk/features/ai_model/logic/cubit/ai_model_state.dart';
 
 
 class ImageUploadScreen extends StatefulWidget {
-  const ImageUploadScreen({Key? key}) : super(key: key);
+  const ImageUploadScreen({super.key});
 
   @override
   _ImageUploadScreenState createState() => _ImageUploadScreenState();
