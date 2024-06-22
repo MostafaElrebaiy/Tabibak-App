@@ -2,6 +2,9 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:tabibk/core/networking/api_service.dart';
 import 'package:tabibk/core/networking/dio_factory.dart';
+import 'package:tabibk/features/ai/data/repo/ai_model_repo.dart';
+import 'package:tabibk/features/ai/logic/cubit/ai_model_cubit.dart';
+import 'package:tabibk/features/ai/service/http_service.dart';
 import 'package:tabibk/features/auth/login/logic/cubit/login_cubit.dart';
 import 'package:tabibk/features/blood_bank/data/repo/blood_bank_repo.dart';
 import 'package:tabibk/features/blood_bank/logic/cubit/blood_bank_cubit.dart';
@@ -16,8 +19,8 @@ import 'package:tabibk/features/pharmacy/data/repo/search_pharmacy_repo.dart';
 import 'package:tabibk/features/pharmacy/logic/pharmacy_best_deal_medicine/pharmacy_best_deal_medicine_cubit.dart';
 import 'package:tabibk/features/pharmacy/logic/pharmacy_recommended_medicine/pharmacy_recommended_medicine_cubit.dart';
 import 'package:tabibk/features/pharmacy/logic/pharmacy_search_cubit/pharmacy_cubit.dart';
-import 'package:tabibk/features/profile_screens/profile/data/update_profile/data/repo/update_profile_repo.dart';
-import 'package:tabibk/features/profile_screens/profile/data/user_details/data/repo/user_details_repo.dart';
+import 'package:tabibk/features/profile_screens/edit_profile_screen/data/repo/update_profile_repo.dart';
+import 'package:tabibk/features/profile_screens/profile/data/repo/user_details_repo.dart';
 import 'package:tabibk/features/profile_screens/edit_profile_screen/logic/update_profile/update_profile_cubit.dart';
 import 'package:tabibk/features/profile_screens/profile/logic/user_details/user_details_cubit.dart';
 import '../../features/auth/forget_password/data/repo/forget_password_repo.dart';
@@ -107,4 +110,9 @@ Future<void> setupGetIt() async {
       () => UpdateProfileRepo(getIt()));
   getIt.registerLazySingleton<UpdateProfileCubit>(
       () => UpdateProfileCubit(getIt()));
+  //---------------------- uploadImage ----------------------//
+  getIt.registerFactory<HttpService>(() => HttpService());
+  getIt.registerFactory<ImageRepository>(() => ImageRepository(getIt()));
+  getIt.registerFactory<ImageCubit>(() => ImageCubit(getIt()));
+
 }

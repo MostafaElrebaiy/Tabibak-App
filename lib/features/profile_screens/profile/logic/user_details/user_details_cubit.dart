@@ -1,9 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tabibk/core/networking/shared_preferences.dart';
 import 'package:tabibk/core/theme/app_constant.dart';
-import 'package:tabibk/features/profile_screens/profile/data/user_details/data/model/user_details_request.dart';
-import 'package:tabibk/features/profile_screens/profile/data/user_details/data/model/user_details_response.dart';
-import 'package:tabibk/features/profile_screens/profile/data/user_details/data/repo/user_details_repo.dart';
+import 'package:tabibk/features/profile_screens/profile/data/model/user_details_request.dart';
+import 'package:tabibk/features/profile_screens/profile/data/model/user_details_response.dart';
+import 'package:tabibk/features/profile_screens/profile/data/repo/user_details_repo.dart';
 import 'package:tabibk/features/profile_screens/profile/logic/user_details/user_details_state.dart';
 
 class UserDetailsCubit extends Cubit<UserDetailsState> {
@@ -23,7 +23,9 @@ class UserDetailsCubit extends Cubit<UserDetailsState> {
               key: 'image', value: userDetailsResponse.data?.image ?? '');
           this.userDetailsResponse = userDetailsResponse;
 
-          emit(UserDetailsState.success(userDetailsResponse));
+          if (!isClosed) {
+            emit(UserDetailsState.success(userDetailsResponse));
+          }
         }
       },
       failure: (errorHandler) {

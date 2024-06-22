@@ -55,9 +55,4 @@ class EditProfileViewBody extends StatelessWidget {
     );
   }
 
-  // void validateToUpdate(BuildContext context) {
-  //   if (context.read<UpdateProfileCubit>().formKey.currentState!.validate()) {
-  //     context.read<UpdateProfileCubit>().updateUserProfile();
-  //   }
-  // }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tabibk/features/ai/ui/ai_view.dart';
 import 'package:tabibk/features/blood_bank/ui/blood_bank_screen.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/view/hospital_screen_view.dart';
 import 'package:tabibk/features/pharmacy/ui/pharmacy_screen.dart';
@@ -16,6 +17,7 @@ class AppConstant {
     PharmacyScreen(),
     HospitalScreenView(),
     BloodBankScreen(),
+    ImageUploadScreen(),
     // ProductView(),
     ProfileView(),
   ];

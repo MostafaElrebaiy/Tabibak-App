@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/simple_bloc_observer.dart';
-
 import 'core/di/dependancy_injection.dart';
 import 'core/networking/shared_preferences.dart';
 import 'core/routing/app_router.dart';
@@ -23,7 +22,6 @@ void main() async {
   runApp(Phoenix(
     child: TabibkApp(
       token: token,
-
       appRouter: AppRouter(),
     ),
   ));

@@ -41,6 +41,7 @@ class _HomeState extends State<Home> {
                 Icon(LineIcons.capsules, size: 30, color: AppColor.white),
                 Icon(LineIcons.hospitalAlt, size: 30, color: AppColor.white),
                 Icon(LineIcons.heart, size: 30, color: AppColor.white),
+                Icon(LineIcons.stickyNoteAlt, size: 30, color: AppColor.white),
                 Icon(LineIcons.user, size: 30, color: AppColor.white),
               ],
               onTap: (index) {

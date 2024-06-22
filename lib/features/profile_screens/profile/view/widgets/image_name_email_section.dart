@@ -8,30 +8,37 @@ import 'package:tabibk/core/theme/styles.dart';
 class ImageNameAndEmailSection extends StatelessWidget {
   const ImageNameAndEmailSection({
     super.key,
-    this.pngImage,
+    this.image,
     required this.email,
     required this.name,
   });
   final String name;
-  final String? pngImage;
+  final dynamic image;
   final String email;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        CircleAvatar(
-          backgroundImage: pngImage == null || pngImage!.isEmpty 
-                        ? const AssetImage(AppAsset.doctorImage) as ImageProvider<Object> 
-                        : NetworkImage(pngImage!),
-          onBackgroundImageError: (exception, stackTrace) =>
-              const AssetImage(AppAsset.doctorImage),
-          radius: 50.w,
-          child: pngImage == null || pngImage!.isEmpty 
-              ? Image.asset(AppAsset.doctorImage)
-              : null,
-        ),
+        (image is String)
+            ? CircleAvatar(
+                backgroundColor: AppColor.white,
+                backgroundImage: image == null || image!.isEmpty
+                    ? const AssetImage(AppAsset.staticImageProfile)
+                        as ImageProvider
+                    : NetworkImage(image!),
+                radius: 50.w,
+              )
+            : CircleAvatar(
+                backgroundColor: AppColor.white,
+                backgroundImage: image == null || image.path.isEmpty
+                    ? const AssetImage(AppAsset.staticImageProfile)
+                        as ImageProvider
+                    : FileImage(image!),
+                radius: 50.w,
+              ),
         verticalSpace(25),
         SizedBox(
           width: 220.w,

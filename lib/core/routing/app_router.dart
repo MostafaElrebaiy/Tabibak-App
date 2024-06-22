@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tabibk/core/routing/custom_page_route.dart';
 import 'package:tabibk/core/routing/routes.dart';
+import 'package:tabibk/features/ai/logic/cubit/ai_model_cubit.dart';
+import 'package:tabibk/features/ai/ui/ai_view.dart';
 import 'package:tabibk/features/auth/forget_password/logic/forget_password_cubit.dart';
 import 'package:tabibk/features/auth/forget_password/ui/forget_password_screen.dart';
 import 'package:tabibk/features/auth/login/logic/cubit/login_cubit.dart';
@@ -30,7 +32,7 @@ import 'package:tabibk/features/profile_screens/edit_profile_screen/logic/update
 import 'package:tabibk/features/profile_screens/edit_profile_screen/view/edit_profile_view.dart';
 import 'package:tabibk/features/profile_screens/language_profile_view/logic/cubit/locale_cubit.dart';
 import 'package:tabibk/features/profile_screens/language_profile_view/view/language_profile_view.dart';
-import 'package:tabibk/features/profile_screens/profile/logic/user_details/user_details_cubit.dart';
+import 'package:tabibk/features/profile_screens/profile/data/model/user_details_response.dart';
 import 'package:tabibk/features/profile_screens/profile/view/profile_view.dart';
 import 'package:tabibk/features/splash/view/widgets/second_splash_screen.dart';
 import '../../features/auth/login/ui/login_screen.dart';
@@ -69,18 +71,15 @@ class AppRouter {
       case Routes.profileView:
         return CustomPageRoute(child: const ProfileView());
       case Routes.editProfileView:
+        UserDetailsResponse? userDetailsResponse;
+        userDetailsResponse = settings.arguments as UserDetailsResponse?;
         return CustomPageRoute(
-            child: MultiBlocProvider(
-          providers: [
-            BlocProvider(
-              create: (context) => UpdateProfileCubit(getIt()),
-            ),
-            BlocProvider(
-              create: (context) => UserDetailsCubit(getIt()),
-            )
-          ],
-          child: const EditProfileView(),
-        ));
+          child: BlocProvider(
+            create: (context) => UpdateProfileCubit(getIt())
+              ..userDetailsResponse = userDetailsResponse,
+            child: const EditProfileView(),
+          ),
+        );
       case Routes.addShippingAddressScreen:
         return CustomPageRoute(child: const AddShippingAddressScreen());
       case Routes.languageProfileView:
@@ -133,7 +132,7 @@ class AppRouter {
       case Routes.pharmacy:
         return CustomPageRoute(child: const PharmacyScreen());
       case Routes.pharmacyDetailsScreen:
-        return CustomPageRoute(child:  const PharmacyDetailsScreen());
+        return CustomPageRoute(child: const PharmacyDetailsScreen());
       case Routes.bloodBank:
         return CustomPageRoute(child: const BloodBankScreen());
       case Routes.bloodBankSearchScreen:
@@ -152,6 +151,14 @@ class AppRouter {
                 medicineName: arg.medicineName, lat: arg.lat, lng: arg.lng),
           child: const PharmacySearchResult(),
         ));
+
+      case Routes.uploadImage:
+        return CustomPageRoute(
+            child: BlocProvider(
+          create: (context) => ImageCubit(getIt()),
+          child: const ImageUploadScreen(),
+        ));
+
       default:
         return null;
     }

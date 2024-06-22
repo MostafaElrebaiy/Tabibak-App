@@ -440,19 +440,48 @@ class _ApiService implements ApiService {
   @override
   Future<UpdateProfileResponse> updateProfile(
     String token,
-    UpdateProfileRequest updateProfileRequest,
+    String? name,
+    File image,
+    String? password,
+    String? passwordConfirmation,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
+    queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{r'Authorization': token};
     _headers.removeWhere((k, v) => v == null);
-    final _data = <String, dynamic>{};
-    _data.addAll(updateProfileRequest.toJson());
+    final _data = FormData();
+    if (name != null) {
+      _data.fields.add(MapEntry(
+        'name',
+        name,
+      ));
+    }
+    _data.files.add(MapEntry(
+      'image',
+      MultipartFile.fromFileSync(
+        image.path,
+        filename: image.path.split(Platform.pathSeparator).last,
+      ),
+    ));
+    if (password != null) {
+      _data.fields.add(MapEntry(
+        'password',
+        password,
+      ));
+    }
+    if (passwordConfirmation != null) {
+      _data.fields.add(MapEntry(
+        'password_confirmation',
+        passwordConfirmation,
+      ));
+    }
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<UpdateProfileResponse>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
+      contentType: 'multipart/form-data',
     )
             .compose(
               _dio.options,

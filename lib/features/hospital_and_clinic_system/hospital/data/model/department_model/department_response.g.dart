@@ -24,20 +24,16 @@ Map<String, dynamic> _$DepartmentResponseToJson(DepartmentResponse instance) =>
 
 Data _$DataFromJson(Map<String, dynamic> json) => Data(
       id: (json['id'] as num?)?.toInt(),
-      name: json['name'] as String?,
       details: json['details'] as String?,
-      placeType: json['place_type'] as String?,
-      createdAt: json['created_at'] as String?,
-      updatedAt: json['updated_at'] as String?,
+      nameen: json['name_en'] as String?,
+      namear: json['name_ar'] as String?,
       image: json['image'] as String?,
     );
 
 Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
       'id': instance.id,
-      'name': instance.name,
       'details': instance.details,
-      'place_type': instance.placeType,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
+      'name_en': instance.nameen,
+      'name_ar': instance.namear,
       'image': instance.image,
     };

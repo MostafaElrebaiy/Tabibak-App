@@ -22,7 +22,6 @@ class EditProfileBlocListener extends StatelessWidget {
             loading: () => showLoadingDialog(context),
             success: (updateProfileResponse) async {
               context.pop();
-
               await showSuccessDialog(
                   context: context,
                   textOfButton: "Got it",
@@ -30,9 +29,7 @@ class EditProfileBlocListener extends StatelessWidget {
                   routeName: Routes.profileView,
                   title: 'Success',
                   message: 'successfully updated');
-           
-
-              return    context.pop();
+              return Navigator.pop(context, true);
             },
             error: (error) {
               context.pop();

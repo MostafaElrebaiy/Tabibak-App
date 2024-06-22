@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:tabibk/features/profile_screens/edit_profile_screen/data/model/file_converter.dart';
 part 'update_profile_request.g.dart';
 
 @JsonSerializable()
@@ -7,7 +10,9 @@ class UpdateProfileRequest {
   final String? password;
   @JsonKey(name: 'password_confirmation')
   final String? passwordConfirmation;
-  final String? image;
+  @FileConverter()
+  @JsonKey(name: 'image')
+  final File? image;
 
   UpdateProfileRequest({
     this.name,

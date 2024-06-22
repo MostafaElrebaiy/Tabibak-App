@@ -6,9 +6,10 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tabibk/core/networking/shared_preferences.dart';
 import 'package:tabibk/core/theme/app_constant.dart';
-import 'package:tabibk/features/profile_screens/profile/data/update_profile/data/model/update_profile_request.dart';
-import 'package:tabibk/features/profile_screens/profile/data/update_profile/data/model/update_profile_response.dart';
-import 'package:tabibk/features/profile_screens/profile/data/update_profile/data/repo/update_profile_repo.dart';
+import 'package:tabibk/features/profile_screens/edit_profile_screen/data/model/update_profile_request.dart';
+import 'package:tabibk/features/profile_screens/edit_profile_screen/data/model/update_profile_response.dart';
+import 'package:tabibk/features/profile_screens/edit_profile_screen/data/repo/update_profile_repo.dart';
+import 'package:tabibk/features/profile_screens/profile/data/model/user_details_response.dart';
 
 part 'update_profile_state.dart';
 part 'update_profile_cubit.freezed.dart';
@@ -23,6 +24,7 @@ class UpdateProfileCubit extends Cubit<UpdateProfileState> {
   final TextEditingController passwordConfirmController =
       TextEditingController();
   final formKey = GlobalKey<FormState>();
+  UserDetailsResponse? userDetailsResponse;
 
   File? image;
   Future<void> pickImage({required ImageSource source}) async {
@@ -37,12 +39,13 @@ class UpdateProfileCubit extends Cubit<UpdateProfileState> {
     final response = await updateProfileRepo.updateProfile(
       CacheHelper.getCacheData(key: AppConstant.token),
       UpdateProfileRequest(
+        name: nameController.text.isEmpty ? null : nameController.text,
+        image: image,
         password:
             passwordController.text.isEmpty ? null : passwordController.text,
         passwordConfirmation: passwordConfirmController.text.isEmpty
             ? null
             : passwordConfirmController.text,
-        name: nameController.text.isEmpty ? null : nameController.text,
       ),
     );
     response.when(
@@ -59,7 +62,8 @@ class UpdateProfileCubit extends Cubit<UpdateProfileState> {
   void validateToUpdate(BuildContext context) {
     if (nameController.text.isEmpty &&
         passwordController.text.isEmpty &&
-        passwordConfirmController.text.isEmpty) {
+        passwordConfirmController.text.isEmpty &&
+        image == null) {
       emit(const UpdateProfileState.error(
           error: "Please fill at least one field"));
       return;
@@ -81,6 +85,9 @@ class UpdateProfileCubit extends Cubit<UpdateProfileState> {
         passwordController.text.length < 8) {
       emit(const UpdateProfileState.error(
           error: "Password must be at least 8 characters long"));
+      return;
+    } else if (image == null) {
+      emit(const UpdateProfileState.error(error: "Image is required"));
       return;
     } else {
       updateUserProfile();

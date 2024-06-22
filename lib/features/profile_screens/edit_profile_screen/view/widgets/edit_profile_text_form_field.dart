@@ -3,14 +3,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/features/profile_screens/edit_profile_screen/logic/update_profile/update_profile_cubit.dart';
-import 'package:tabibk/features/profile_screens/profile/logic/user_details/user_details_cubit.dart';
 import 'custom_app_text_field.dart';
 
 class EditProfileTextFormField extends StatelessWidget {
   const EditProfileTextFormField({super.key});
   @override
   Widget build(BuildContext context) {
-    final userData = context.read<UserDetailsCubit>().userDetailsResponse?.data;
+    final userData = context.read<UpdateProfileCubit>().userDetailsResponse?.data;
 
     return Form(
       key: context.read<UpdateProfileCubit>().formKey,
