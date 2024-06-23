@@ -27,12 +27,12 @@ class _OnBoardingBodyState extends State<OnBoardingBody> {
   Widget build(BuildContext context) {
     List<OnBoardingContent> onBoardingContent = [
       OnBoardingContent(
-          headLine: "bloodBank".tr(context),
-          textBody: "lorem".tr(context),
+          headLine: "pharmacyAndBloodbankHeadLine".tr(context),
+          textBody: "pharmacyAndBloodBank".tr(context),
           shape: AppAsset.onBoardingShape1),
       OnBoardingContent(
           headLine: "hospitalsAndClinics".tr(context),
-          textBody: "lorem".tr(context),
+          textBody: "hospitalsAndClinicsDetails".tr(context),
           shape: AppAsset.onBoardingShape2),
     ];
     return PageView.builder(

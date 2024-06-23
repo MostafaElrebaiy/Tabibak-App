@@ -4,11 +4,17 @@ import 'package:tabibk/core/theme/app_constant.dart';
 
 class AppTheme {
   static ThemeData lightTheme = ThemeData(
-    progressIndicatorTheme: const ProgressIndicatorThemeData(
-        color: AppColor.primaryBlue,
-        linearTrackColor: AppColor.primaryBlue,
-        circularTrackColor: AppColor.lighterGray,
+    textSelectionTheme: const TextSelectionThemeData(
+      cursorColor: AppColor.primaryBlue,
+      selectionColor: AppColor.primaryBlue,
+      selectionHandleColor: AppColor.primaryBlue,
     ),
+    progressIndicatorTheme: const ProgressIndicatorThemeData(
+      color: AppColor.primaryBlue,
+      linearTrackColor: AppColor.primaryBlue,
+      circularTrackColor: AppColor.lighterGray,
+    ),
+
     primaryColor: AppColor.primaryBlue,
     scaffoldBackgroundColor: AppColor.white,
     // fontFamily:  Localizations.maybeLocaleOf(context)?.languageCode== 'ar'? "Cairo":primaryFontFamily,

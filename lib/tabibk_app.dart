@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/app_localization.dart';
+import 'package:tabibk/core/networking/shared_preferences.dart';
+import 'package:tabibk/core/theme/app_constant.dart';
 import 'package:tabibk/core/theming/app_theme.dart';
 
 import 'core/routing/app_router.dart';
@@ -29,7 +31,9 @@ class TabibkApp extends StatelessWidget {
       splitScreenMode: true,
       child: MaterialApp(
     
-    locale: lang??const Locale("en"),
+    locale: CacheHelper.getCacheData(key: AppConstant.lang) == "ar"
+            ? const Locale("ar")
+            : const Locale("en"),
         supportedLocales: const <Locale>[
           Locale('en'),
           Locale('ar'),

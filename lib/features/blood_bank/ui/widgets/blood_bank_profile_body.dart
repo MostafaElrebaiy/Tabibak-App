@@ -8,15 +8,14 @@ import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/widgets/cutom_list_tile.dart';
 import 'package:tabibk/core/widgets/top_back_ground_two.dart';
-import 'package:tabibk/features/hospital_and_clinic_system/hospital/data/model/hospital_model/hospital_and_clinic_response.dart';
-import 'package:tabibk/features/hospital_and_clinic_system/hospital/logic/hospital/hospital_cubit.dart';
+import 'package:tabibk/features/blood_bank/data/model/blood_bank_response.dart';
+import 'package:tabibk/features/blood_bank/logic/cubit/blood_bank_cubit.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital_info/view/widgets/details_section.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital_info/view/widgets/image_name_distance_section.dart';
 
-class HospitalAndClinicProfile extends StatelessWidget {
-  const HospitalAndClinicProfile(
-      {super.key, required this.hospitalAndClinicData});
-  final HospitalAndClinicData hospitalAndClinicData;
+class BloodBankProfileBody extends StatelessWidget {
+  const BloodBankProfileBody({super.key, required this.bloodBankData});
+  final BloodCenters bloodBankData;
 
   @override
   Widget build(BuildContext context) {
@@ -32,12 +31,11 @@ class HospitalAndClinicProfile extends StatelessWidget {
                   right: 0,
                   top: 50.h,
                   child: ImageNameAndDistanceSection(
-                    distance:
-                        hospitalAndClinicData.distance?.toStringAsFixed(5) ??
-                            "",
-                    pngImage: hospitalAndClinicData.image ?? "",
-                    title: "hospitalProfile".tr(context),
-                    name: hospitalAndClinicData.name ?? "",
+                    isImage: false,
+                    distance: bloodBankData.distance?.toStringAsFixed(2) ?? "",
+                    pngImage: bloodBankData.image ?? "",
+                    title: "bloodBankProfile".tr(context),
+                    name: bloodBankData.name ?? "",
                   )),
             ],
           ),
@@ -50,22 +48,20 @@ class HospitalAndClinicProfile extends StatelessWidget {
                   child: Column(
                     children: [
                       DetailsSection(
-                        text: hospitalAndClinicData.details ?? "",
+                        text: bloodBankData.address ?? "",
                       ),
                       verticalSpace(20),
                       BlocProvider(
-                        create: (context) => HospitalCubit(getIt()),
+                        create: (context) => BloodBankCubit(getIt()),
                         child: Builder(builder: (context) {
                           return CustomListTile(
                             title: "location".tr(context),
                             image: AppAsset.location,
                             isSvgImage: true,
                             onTap: () {
-                              context.read<HospitalCubit>().goToMap(
-                                  lat: hospitalAndClinicData.location?.x
-                                      .toString(),
-                                  lng: hospitalAndClinicData.location?.y
-                                      .toString());
+                              context.read<BloodBankCubit>().goToMap(
+                                  lat: bloodBankData.location?.x.toString(),
+                                  lng: bloodBankData.location?.y.toString());
                             },
                           );
                         }),

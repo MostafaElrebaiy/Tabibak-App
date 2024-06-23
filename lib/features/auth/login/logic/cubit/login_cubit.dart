@@ -29,10 +29,7 @@ class LoginCubit extends Cubit<LoginState> {
         emit(LoginState.success(loginResponse));
       },
       failure: (error) {
-        emit(LoginState.error(
-            error: error.apiErrorModel.data!.isEmpty
-                ? error.apiErrorModel.message ?? "Please try again later"
-                : (error.apiErrorModel.data?[0] ?? 'Please try again later')));
+        emit(LoginState.error(error: error.apiErrorModel.message ?? ''));
       },
     );
   }

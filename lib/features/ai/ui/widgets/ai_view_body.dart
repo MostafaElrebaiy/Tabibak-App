@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/core/theme/styles.dart';
 import 'package:tabibk/core/widgets/custom_widget/app_text_button.dart';
@@ -78,14 +79,14 @@ class AIViewBody extends StatelessWidget {
                 } else if (state is ImageError) {
                   return Center(
                       child: Text(
-                    "There is an problem, Plesae try again later",
+                    "ThereIsAnProblem".tr(context),
                     style:
                         AppStyle.f18BalckW400Mulish.copyWith(color: Colors.red),
                   ));
                 } else {
                   return Center(
                       child: Text(
-                    "Plesae select a Image to upload",
+                    "plesaeSelectImageToUpload".tr(context),
                     style: AppStyle.f18BalckW400Mulish,
                   ));
                 }
@@ -97,14 +98,14 @@ class AIViewBody extends StatelessWidget {
             child: Column(
               children: [
                 AppTextButton(
-                    buttonText: 'Pick Image from gallery',
+                    buttonText: 'pickImageFromGallery'.tr(context),
                     onPressed: () {
                       BlocProvider.of<ImageCubit>(context)
                           .pickGalleryImage(source: ImageSource.gallery);
                     }),
                 verticalSpace(10),
                 AppTextButton(
-                    buttonText: 'Pick Image from camera',
+                    buttonText: 'pickImageFromCamera'.tr(context),
                     onPressed: () {
                       BlocProvider.of<ImageCubit>(context)
                           .pickGalleryImage(source: ImageSource.camera);

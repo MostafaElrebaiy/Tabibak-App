@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/app_assets.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
 import 'package:tabibk/core/theme/styles.dart';
-import 'package:tabibk/core/utilities/custom_error_widget.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/data/model/department_model/department_response.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/logic/clinic/clinic_cubit.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/logic/department/department_cubit.dart';
@@ -25,7 +25,7 @@ class HospitalBody extends StatelessWidget {
       children: [
         Container(
             margin: EdgeInsets.only(left: 16.w, right: 16.w, top: 10.h),
-            child: Text("Departments",
+            child: Text("Departments".tr(context),
                 style: AppStyle.f22blackW700Mulish
                     .copyWith(fontWeight: FontWeight.w500))),
         BlocBuilder<DepartmentCubit, DepartmentState>(
@@ -117,7 +117,19 @@ class HospitalBody extends StatelessWidget {
                   ),
                 );
               },
-              error: (error) => CustomErrorWidget(errorMessage: error),
+              error: (error) => Container(
+                margin: EdgeInsets.only(
+                  bottom: 10.h,
+                ),
+                height: 130.h,
+                child: Center(
+                  child: Text(
+                    error,
+                    style: AppStyle.f16BlackW700Mulish
+                        .copyWith(color: AppColor.red),
+                  ),
+                ),
+              ),
             );
           },
         ),

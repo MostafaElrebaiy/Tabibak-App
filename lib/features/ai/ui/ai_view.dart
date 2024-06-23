@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tabibk/core/di/dependancy_injection.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/theme/styles.dart';
 import 'package:tabibk/core/widgets/build_custom_app_bar.dart';
 import 'package:tabibk/features/ai/logic/cubit/ai_model_cubit.dart';
@@ -17,7 +18,7 @@ class ImageUploadScreen extends StatelessWidget {
       child: Scaffold(
         appBar: buildCustomAppBar(
           backarrow: false,
-          text1: "AI Model",
+          text1: 'aiModel'.tr(context),
           style1: AppStyle.f20WhiteW600,
           actions: [],
         ),

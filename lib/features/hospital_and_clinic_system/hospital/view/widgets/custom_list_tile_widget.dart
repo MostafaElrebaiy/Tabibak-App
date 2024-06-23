@@ -37,7 +37,14 @@ class CustomListTileWidget extends StatelessWidget {
         splashColor: AppColor.primaryBlue.withOpacity(0.1),
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(AppSize.s12))),
-        leading: imageWidget,
+        leading: SizedBox(
+          width: 70.w,
+          height: 70.h,
+          
+          child: ClipRRect(
+            
+            child: imageWidget, ),
+        ),
         dense: false,
         enableFeedback: true,
         horizontalTitleGap: 20,

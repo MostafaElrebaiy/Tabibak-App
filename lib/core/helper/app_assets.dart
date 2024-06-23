@@ -22,6 +22,8 @@ abstract class AppAsset {
   static const String comatrixImage = '$_basePathPng/comatrex.png';
   static const String staticImageProfile =
       '$_basePathPng/static_image_profile.png';
+  static const String staticProfileImage =
+      '$_basePathPng/static_pharmacy_image.jpg';
 
   // ----------------- SVG Images ----------------- //
   static const String splash = '$_basePathSvg/tabibk.svg';
@@ -41,6 +43,7 @@ abstract class AppAsset {
   static const String numberTwo = '$_basePathSvg/numberTwo.svg';
   static const String location = '$_basePathSvg/location.svg';
   static const String timeIcon = '$_basePathSvg/time_icon.svg';
+  static const String lang = '$_basePathSvg/lang.svg';
 
   static const String emptyIcon = '$_basePathSvg/empty.svg';
   static const String profileIcon = '$_basePathSvg/profile.svg';

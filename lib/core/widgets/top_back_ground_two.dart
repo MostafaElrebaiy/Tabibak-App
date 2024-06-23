@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/extensions.dart';
+import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/core/routing/routes.dart';
 import 'package:tabibk/core/theme/styles.dart';
 
@@ -29,7 +30,7 @@ class TopBackgroundTwo extends StatelessWidget {
       Positioned(
         left: Localizations.localeOf(context).languageCode == 'ar' ? null : 10,
         right: Localizations.localeOf(context).languageCode == 'ar' ? 10 : null,
-        top: 35,
+        top: 45.h,
         child: Row(
           children: [
             thereIsBackButton
@@ -45,9 +46,7 @@ class TopBackgroundTwo extends StatelessWidget {
                           : context.pop();
                     },
                   )
-                : SizedBox(
-                    width: 25.w,
-                  ),
+                : horizontalSpace(25),
             if (thereTitle)
               Row(
                 children: [

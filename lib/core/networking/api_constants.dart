@@ -12,7 +12,7 @@ class ApiConstants {
   static const String pharmacyBestDeals = "products/best_deals";
   static const String bloodBank = "blood_bank?x={lat}&y={lng}&type={bloodType}";
   static const String hospitals = "hospitals?x={lat}&y={lng}&{id}";
-  static const String clinics =   "clinics?x={lat}&y={lng}&{id}";
+  static const String clinics = "clinics?x={lat}&y={lng}&{id}";
   static const String departments = "departments";
   static const String userDetail = "user";
   static const String updateProfile = "profile";
@@ -28,7 +28,7 @@ class ApiErrors {
   static const String conflictError = "Conflict Error";
   static const String internalServerError = "Internal Server Error";
   static const String unknownError = "Unknown Error";
-  static const String timeoutError = "Timeout Error";
+  static const String timeoutError = "Timeout please try again later";
   static const String defaultError = "Please try again later";
   static const String cacheError = "Cache Error";
   static const String noInternetError = "No Internet Error";

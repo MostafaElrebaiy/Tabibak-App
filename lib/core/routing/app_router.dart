@@ -13,20 +13,25 @@ import 'package:tabibk/features/auth/signup/logic/sign_up_cubit.dart';
 import 'package:tabibk/features/auth/update_password/ui/successfully_update_pass.dart';
 import 'package:tabibk/features/auth/update_password/ui/update_password.dart';
 import 'package:tabibk/features/blood_bank/data/model/blood_bank_response.dart';
+import 'package:tabibk/features/blood_bank/ui/widgets/blood_bank_profile.dart';
 import 'package:tabibk/features/blood_bank/ui/widgets/search_result_of_blood_type.dart';
 import 'package:tabibk/features/check_out/view/check_out_view.dart';
 import 'package:tabibk/features/check_out/view/widgets/add_shipping_screen.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/clinic_info/view/clinic_info_view.dart';
+import 'package:tabibk/features/hospital_and_clinic_system/hospital/data/model/hospital_model/hospital_and_clinic_response.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/view/hospital_screen_view.dart';
-import 'package:tabibk/features/hospital_and_clinic_system/hospital_info/view/hospital_info_view.dart';
 import 'package:tabibk/features/home/ui/home_screen.dart';
+import 'package:tabibk/features/hospital_and_clinic_system/hospital_info/view/hospital_info_view.dart';
 import 'package:tabibk/features/on_boarding/view/on_boarding_view.dart';
 import 'package:tabibk/features/on_boarding/view/widgets/on_boarding_last_screen.dart';
 import 'package:tabibk/features/pharmacy/data/model/arg_pharmacy/search_result_model.dart';
+import 'package:tabibk/features/pharmacy/data/model/pharmacy_medicine/pharmacy_medicien_response.dart';
+import 'package:tabibk/features/pharmacy/data/model/search_pharmacy/search_pharmacy_response.dart';
 import 'package:tabibk/features/pharmacy/logic/pharmacy_search_cubit/pharmacy_cubit.dart';
 import 'package:tabibk/features/pharmacy/ui/widgets/pharmacy_details_screen/pharmacy_details_screen.dart';
 import 'package:tabibk/features/pharmacy/ui/pharmacy_screen.dart';
 import 'package:tabibk/features/pharmacy/ui/phrmacy_search_result.dart';
+import 'package:tabibk/features/pharmacy/ui/widgets/pharmacy_profile.dart';
 import 'package:tabibk/features/product/view/product_view.dart';
 import 'package:tabibk/features/profile_screens/edit_profile_screen/logic/update_profile/update_profile_cubit.dart';
 import 'package:tabibk/features/profile_screens/edit_profile_screen/view/edit_profile_view.dart';
@@ -67,7 +72,11 @@ class AppRouter {
       case Routes.clinicInfoView:
         return CustomPageRoute(child: const ClinicInfoView());
       case Routes.hospitalInfoView:
-        return CustomPageRoute(child: const HospitalInfoView());
+        final HospitalAndClinicData hospitalAndClinicData =
+            settings.arguments as HospitalAndClinicData;
+        return CustomPageRoute(
+            child:
+                HospitalInfoView(hospitalAndClinicData: hospitalAndClinicData));
       case Routes.profileView:
         return CustomPageRoute(child: const ProfileView());
       case Routes.editProfileView:
@@ -99,7 +108,10 @@ class AppRouter {
           create: (context) => getIt<SignupCubit>(),
           child: const SignUpScreen(),
         ));
-
+      case Routes.bloodBankProfile:
+        final BloodCenters bloodCenters = settings.arguments as BloodCenters;
+        return CustomPageRoute(
+            child: BloodBankProfile(bloodBankData: bloodCenters));
       case Routes.loginScreen:
         return CustomPageRoute(
             child: BlocProvider(
@@ -132,7 +144,9 @@ class AppRouter {
       case Routes.pharmacy:
         return CustomPageRoute(child: const PharmacyScreen());
       case Routes.pharmacyDetailsScreen:
-        return CustomPageRoute(child: const PharmacyDetailsScreen());
+        final MedicinData medicineData = settings.arguments as MedicinData;
+        return CustomPageRoute(
+            child: PharmacyDetailsScreen(medicineData: medicineData));
       case Routes.bloodBank:
         return CustomPageRoute(child: const BloodBankScreen());
       case Routes.bloodBankSearchScreen:
@@ -158,6 +172,10 @@ class AppRouter {
           create: (context) => ImageCubit(getIt()),
           child: const ImageUploadScreen(),
         ));
+      case Routes.pharmacyProfile:
+        final Pharmacies pharmacy = settings.arguments as Pharmacies;
+
+        return CustomPageRoute(child: PharmacyProfile(pharmacy: pharmacy));
 
       default:
         return null;

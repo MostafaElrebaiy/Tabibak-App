@@ -35,6 +35,7 @@ class UpdateProfileCubit extends Cubit<UpdateProfileState> {
   }
 
   Future<void> updateUserProfile() async {
+    
     emit(const UpdateProfileState.loading());
     final response = await updateProfileRepo.updateProfile(
       CacheHelper.getCacheData(key: AppConstant.token),

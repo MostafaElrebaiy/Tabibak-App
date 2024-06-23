@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/app_assets.dart';
 import 'package:tabibk/core/helper/app_localization.dart';
-import 'package:tabibk/core/helper/app_string.dart';
 import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
+import 'package:tabibk/core/theme/app_colors.dart';
+import 'package:tabibk/core/utilities/app_divider.dart';
+import 'package:tabibk/features/pharmacy/data/model/pharmacy_medicine/pharmacy_medicien_response.dart';
 import '../../../../../../core/theme/styles.dart';
 
 class PharmacyDetailsBody extends StatelessWidget {
-  const PharmacyDetailsBody({super.key});
+  const PharmacyDetailsBody({super.key, required this.medicineData});
+  final MedicinData medicineData;
 
   @override
   Widget build(BuildContext context) {
@@ -25,8 +29,14 @@ class PharmacyDetailsBody extends StatelessWidget {
                   margin: const EdgeInsets.symmetric(horizontal: 10),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    image: const DecorationImage(
-                      image: AssetImage(AppAsset.comatrixImage),
+                    image: DecorationImage(
+                      image: medicineData.image == null
+                          ? const AssetImage(
+                              AppAsset.comatrixImage,
+                            )
+                          : NetworkImage(
+                              medicineData.image!,
+                            ) as ImageProvider<Object>,
                       fit: BoxFit.contain,
                     ),
                   ),
@@ -37,35 +47,67 @@ class PharmacyDetailsBody extends StatelessWidget {
                   horizontal: AppPadding.p12.w, vertical: AppPadding.p10.h),
               child: Column(
                 children: [
-                  // Row(
-                  //   children: [
-                  //     Text(" ⭐ 4.3(80 ${AppString.reviews.tr(context)})")
-                  //   ],
-                  // ),
-                  verticalSpace(10),
-                  Row(
+                  const AppDivider(),
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        "Mebo Scar Cream",
-                        style: AppStyle.font16blackRegular,
+                        "${"name".tr(context)}   ",
+                        style: AppStyle.f20BlackW700.copyWith(
+                          color: AppColor.primaryBlue,
+                        ),
                       ),
-                      const Spacer(),
+                      // const Spacer(),
                       Text(
-                        "424.25 ${AppString.egp.tr(context)}",
-                        style: AppStyle.font16primaryBlueBold,
+                        medicineData.name ?? "",
+                        style: AppStyle.f20BlackW700.copyWith(
+                          fontWeight: FontWeight.w400,
+                        ),
                       ),
                     ],
                   ),
                   verticalSpace(10),
-
-                  ListTile(
-                    style: ListTileStyle.list,
-                    title: Text(
-                      AppString.productdetails.tr(context),
-                      style: AppStyle.font16blackRegular,
-                    ),
-                    trailing: const Icon(Icons.add),
-                    onTap: () {},
+                  const AppDivider(),
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        "${"details".tr(context)}   ",
+                        style: AppStyle.f20BlackW700.copyWith(
+                          color: AppColor.primaryBlue,
+                        ),
+                      ),
+                      Flexible(
+                        child: Text(
+                          textAlign: TextAlign.center,
+                          medicineData.details ?? "",
+                          style: AppStyle.f20BlackW700.copyWith(
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  verticalSpace(10),
+                  const AppDivider(),
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Flexible(
+                        child: Text(
+                          "${"price".tr(context)} ",
+                          style: AppStyle.f20BlackW700.copyWith(
+                            color: AppColor.primaryBlue,
+                          ),
+                        ),
+                      ),
+                      Text(
+                        "${medicineData.price.toString()} ${"egp".tr(context)}",
+                        style: AppStyle.f20BlackW700.copyWith(
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),

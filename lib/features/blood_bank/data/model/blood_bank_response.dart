@@ -4,7 +4,7 @@ part 'blood_bank_response.g.dart';
 @JsonSerializable()
 class BloodBankResponse {
   String? message;
-  Data? data;
+  BloodBankData? data;
   int? code;
 
   BloodBankResponse({this.message, this.data, this.code});
@@ -13,16 +13,16 @@ class BloodBankResponse {
       _$BloodBankResponseFromJson(json);
 }
 
-
 @JsonSerializable()
-class Data {
+class BloodBankData {
   @JsonKey(name: 'blood_types')
   BloodTypes? bloodTypes;
   @JsonKey(name: 'blood_centers')
   List<BloodCenters>? bloodCenters;
 
-  Data({this.bloodTypes, this.bloodCenters});
-  factory Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);
+  BloodBankData({this.bloodTypes, this.bloodCenters});
+  factory BloodBankData.fromJson(Map<String, dynamic> json) =>
+      _$BloodBankDataFromJson(json);
 }
 
 @JsonSerializable()
@@ -41,11 +41,12 @@ class BloodCenters {
   int? id;
   String? name;
   String? address;
+  String? image;
   double? distance;
   Location? location;
 
   BloodCenters(
-      {this.id, this.name, this.address, this.distance, this.location});
+      {this.id, this.name, this.address, this.distance, this.location, this.image});
 
   factory BloodCenters.fromJson(Map<String, dynamic> json) =>
       _$BloodCentersFromJson(json);

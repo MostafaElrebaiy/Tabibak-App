@@ -27,6 +27,7 @@ class MedicineCubit extends Cubit<MedicineState> {
   }
 
   Future<void> searchForMedicien({required medicineName}) async {
+    if (isClosed) return;
     emit(const MedicineState.loading());
 
     if (lat == null || lng == null) {

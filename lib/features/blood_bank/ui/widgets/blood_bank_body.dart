@@ -14,7 +14,6 @@ class BloodBankBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => BloodBankCubit(getIt()),
-      
       child: Column(
         children: [
           const TopSectionBloodBankBody(),

@@ -11,7 +11,7 @@ SearchMedicineResponse _$SearchMedicineResponseFromJson(
     SearchMedicineResponse(
       message: json['message'] as String?,
       data: (json['data'] as List<dynamic>?)
-          ?.map((e) => Data.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => SearchMdicinData.fromJson(e as Map<String, dynamic>))
           .toList(),
       code: (json['code'] as num?)?.toInt(),
     );
@@ -24,7 +24,8 @@ Map<String, dynamic> _$SearchMedicineResponseToJson(
       'code': instance.code,
     };
 
-Data _$DataFromJson(Map<String, dynamic> json) => Data(
+SearchMdicinData _$SearchMdicinDataFromJson(Map<String, dynamic> json) =>
+    SearchMdicinData(
       id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
       price: (json['price'] as num?)?.toInt(),
@@ -35,7 +36,8 @@ Data _$DataFromJson(Map<String, dynamic> json) => Data(
       updatedAt: json['updatedAt'] as String?,
     );
 
-Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
+Map<String, dynamic> _$SearchMdicinDataToJson(SearchMdicinData instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'price': instance.price,
