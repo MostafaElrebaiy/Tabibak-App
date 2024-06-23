@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/extensions.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/view/widgets/custom_list_tile_widget.dart';
 import 'package:tabibk/features/pharmacy/data/model/search_pharmacy/search_pharmacy_response.dart';
@@ -25,7 +26,7 @@ class PharmacySearchResult extends StatelessWidget {
       appBar: buildCustomAppBar(
         backarrow: true,
         toolbarHeight: 70,
-        text1: "Pharmacies",
+        text1: "pharmacies".tr(context),
         style1: AppStyle.f20WhiteW600,
       ),
       body: BlocBuilder<PharmacyCubit, PharmacyState>(
