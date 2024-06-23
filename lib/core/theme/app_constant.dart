@@ -14,6 +14,7 @@ class AppConstant {
   static const String token = 'token';
   static const String image = 'image';
   static const String lang = 'lang';
+  static const String mailTo = 'apptabibak@gmail.com';
   static const List<Widget> listOfScreens = [
     PharmacyScreen(),
     HospitalScreenView(),

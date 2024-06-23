@@ -8,7 +8,6 @@ import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
 import 'package:tabibk/core/theme/styles.dart';
-import 'package:tabibk/core/utilities/custom_error_widget.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/data/model/department_model/department_response.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/logic/clinic/clinic_cubit.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/logic/department/department_cubit.dart';
@@ -118,7 +117,19 @@ class HospitalBody extends StatelessWidget {
                   ),
                 );
               },
-              error: (error) => CustomErrorWidget(errorMessage: error),
+              error: (error) => Container(
+                margin: EdgeInsets.only(
+                  bottom: 10.h,
+                ),
+                height: 130.h,
+                child: Center(
+                  child: Text(
+                    error,
+                    style: AppStyle.f16BlackW700Mulish
+                        .copyWith(color: AppColor.red),
+                  ),
+                ),
+              ),
             );
           },
         ),

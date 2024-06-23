@@ -8,8 +8,10 @@ import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/networking/shared_preferences.dart';
 import 'package:tabibk/core/routing/routes.dart';
+import 'package:tabibk/core/theme/app_constant.dart';
 import 'package:tabibk/core/widgets/cutom_list_tile.dart';
 import 'package:tabibk/features/profile_screens/profile/logic/user_details/user_details_cubit.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ProfileViewListItems extends StatelessWidget {
   const ProfileViewListItems({super.key});
@@ -53,7 +55,15 @@ class ProfileViewListItems extends StatelessWidget {
                   image: AppAsset.contactUsIcon,
                   thereTrailing: true,
                   isSvgImage: true,
-                  onTap: () {}),
+                  onTap: () {
+                    launchUrl(Uri(
+                      scheme: 'mailto',
+                      path: AppConstant.mailTo,
+                      query: encondeQueryParameters(<String, String>{
+                        'subject': "Please write your subject here",
+                      }),
+                    ));
+                  }),
               verticalSpace(25),
               CustomListTile(
                   title: AppLocalization.of(context)!.translate("logout"),
@@ -70,4 +80,21 @@ class ProfileViewListItems extends StatelessWidget {
       ],
     );
   }
+
+  String? encondeQueryParameters(Map<String, String> params) {
+    return params.entries
+        .map((MapEntry<String, String> e) =>
+            '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+        .join('&');
+  }
+}
+
+Future<void> _urlLauncher(Uri _emailLaunchUri) async {
+  try {
+    if (await canLaunchUrl(_emailLaunchUri)) {
+      await launchUrl(_emailLaunchUri);
+    } else {
+      throw 'Could not launch $_emailLaunchUri';
+    }
+  } catch (_) {}
 }
