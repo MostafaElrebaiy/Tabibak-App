@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/app_assets.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/extensions.dart';
 import 'package:tabibk/core/routing/routes.dart';
 import 'package:tabibk/core/theme/app_constant.dart';
@@ -25,7 +26,7 @@ class HostpitalTabBody extends StatelessWidget {
           return state.when(
               initial: () => Center(
                     child: Text(
-                      "Plesae select a department",
+                      "plesaeSelectDepartment".tr(context),
                       style: AppStyle.f18BalckW400Mulish,
                     ),
                   ),
@@ -33,14 +34,13 @@ class HostpitalTabBody extends StatelessWidget {
                     child: CircularProgressIndicator(),
                   ),
               success: (hosptials) {
-                HospitalAndClinicResponse hosptial = hosptials as HospitalAndClinicResponse;
+                HospitalAndClinicResponse hosptial =
+                    hosptials as HospitalAndClinicResponse;
                 List<HospitalAndClinicData>? hospitalData = hosptial.data;
                 return ListView.builder(
                   itemCount: hospitalData?.length ?? 0,
                   itemBuilder: (context, index) => CustomListTileWidget(
-                    distance:
-                        hospitalData?[index].distance.toString() ??
-                            "",
+                    distance: hospitalData?[index].distance.toString() ?? "",
                     imageWidget: hospitalData?[index].image == null
                         ? Image.asset(
                             AppAsset.heartattackImage,

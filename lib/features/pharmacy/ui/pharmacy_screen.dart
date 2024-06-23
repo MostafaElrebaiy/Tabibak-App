@@ -49,9 +49,9 @@ class PharmacyScreen extends StatelessWidget {
                   text2: state.when(
                       initial: () => "",
                       loading: () => "...",
-                      success: (userDetails) =>
-                          toCapitalize(userDetails.data?.name ?? 'Back'),
-                      error: (error) => "Back"),
+                      success: (userDetails) => toCapitalize(
+                          userDetails.data?.name ?? "welcomeBack".tr(context)),
+                      error: (error) => "welcomeBack".tr(context)),
                   style2: AppStyle.f14primaryBlueW700.copyWith(
                     fontSize: 16.sp,
                   ),

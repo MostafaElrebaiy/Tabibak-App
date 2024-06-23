@@ -21,7 +21,7 @@ import 'package:tabibk/features/hospital_and_clinic_system/clinic_info/view/clin
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/data/model/hospital_model/hospital_and_clinic_response.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/view/hospital_screen_view.dart';
 import 'package:tabibk/features/home/ui/home_screen.dart';
-import 'package:tabibk/features/hospital_and_clinic_system/hospital_info/view/widgets/hospital_info_body.dart';
+import 'package:tabibk/features/hospital_and_clinic_system/hospital_info/view/hospital_info_view.dart';
 import 'package:tabibk/features/on_boarding/view/on_boarding_view.dart';
 import 'package:tabibk/features/on_boarding/view/widgets/on_boarding_last_screen.dart';
 import 'package:tabibk/features/pharmacy/data/model/arg_pharmacy/search_result_model.dart';
@@ -72,9 +72,12 @@ class AppRouter {
       case Routes.clinicInfoView:
         return CustomPageRoute(child: const ClinicInfoView());
       case Routes.hospitalInfoView:
-            final BloodCenters bloodBankData = settings.arguments as BloodCenters;
-        return CustomPageRoute(child: BloodBankProfile(bloodBankData: bloodBankData));
-              case Routes.profileView:
+        final HospitalAndClinicData hospitalAndClinicData =
+            settings.arguments as HospitalAndClinicData;
+        return CustomPageRoute(
+            child:
+                HospitalInfoView(hospitalAndClinicData: hospitalAndClinicData));
+      case Routes.profileView:
         return CustomPageRoute(child: const ProfileView());
       case Routes.editProfileView:
         UserDetailsResponse? userDetailsResponse;
@@ -105,7 +108,10 @@ class AppRouter {
           create: (context) => getIt<SignupCubit>(),
           child: const SignUpScreen(),
         ));
-
+      case Routes.bloodBankProfile:
+        final BloodCenters bloodCenters = settings.arguments as BloodCenters;
+        return CustomPageRoute(
+            child: BloodBankProfile(bloodBankData: bloodCenters));
       case Routes.loginScreen:
         return CustomPageRoute(
             child: BlocProvider(
@@ -138,8 +144,9 @@ class AppRouter {
       case Routes.pharmacy:
         return CustomPageRoute(child: const PharmacyScreen());
       case Routes.pharmacyDetailsScreen:
-      final MedicinData medicineData = settings.arguments as MedicinData;
-        return CustomPageRoute(child:  PharmacyDetailsScreen(medicineData: medicineData));
+        final MedicinData medicineData = settings.arguments as MedicinData;
+        return CustomPageRoute(
+            child: PharmacyDetailsScreen(medicineData: medicineData));
       case Routes.bloodBank:
         return CustomPageRoute(child: const BloodBankScreen());
       case Routes.bloodBankSearchScreen:
@@ -165,14 +172,10 @@ class AppRouter {
           create: (context) => ImageCubit(getIt()),
           child: const ImageUploadScreen(),
         ));
-        case Routes.pharmacyProfile:
+      case Routes.pharmacyProfile:
         final Pharmacies pharmacy = settings.arguments as Pharmacies;
-        
-        return CustomPageRoute(
 
-            child:  PharmacyProfile( pharmacy: pharmacy));
-
-   
+        return CustomPageRoute(child: PharmacyProfile(pharmacy: pharmacy));
 
       default:
         return null;

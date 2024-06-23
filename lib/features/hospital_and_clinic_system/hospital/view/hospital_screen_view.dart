@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tabibk/core/di/dependancy_injection.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/widgets/build_custom_app_bar.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/logic/clinic/clinic_cubit.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/logic/department/department_cubit.dart';
@@ -24,7 +25,7 @@ class HospitalScreenView extends StatelessWidget {
       child: Scaffold(
         appBar: buildCustomAppBar(
           backarrow: false,
-          text1: "Hospitals and Clinics",
+          text1: "hospitalsAndClinics".tr(context),
           style1: AppStyle.f20WhiteW600,
           actions: [],
         ),

@@ -12,10 +12,12 @@ class CustomListTile extends StatelessWidget {
       required this.image,
       required this.isSvgImage,
       this.onTap,
-      this.thereTrailing = false});
+      this.thereTrailing = false,
+      this.isLangIcon = false});
   final String title;
   final String image;
   final bool isSvgImage;
+  final bool isLangIcon;
   final bool thereTrailing;
   final VoidCallback? onTap;
   @override
@@ -42,7 +44,14 @@ class CustomListTile extends StatelessWidget {
         contentPadding: EdgeInsets.zero,
         onTap: onTap,
         splashColor: AppColor.primaryBlue.withOpacity(0.1),
-        leading: isSvgImage ? SvgPicture.asset(image) : Image.asset(image),
+        leading: isSvgImage
+            ? (isLangIcon
+                ? Padding(
+                    padding: EdgeInsets.all(10.w),
+                    child: SvgPicture.asset(image),
+                  )
+                : SvgPicture.asset(image))
+            : Image.asset(image),
         title: Text(
           title,
           style: AppStyle.f16BlackW700Mulish,

@@ -43,7 +43,9 @@ class CustomExpansionTile extends StatelessWidget {
                 style: AppStyle.f16BlackW700Mulish,
               )
             : Padding(
-                padding: EdgeInsets.only(left: AppPadding.p20.w),
+                padding: EdgeInsetsDirectional.symmetric(
+                  horizontal: 25.w,
+                ),
                 child: Text(
                   title,
                   style: AppStyle.f16BlackW700Mulish,

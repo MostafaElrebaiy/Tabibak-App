@@ -31,11 +31,10 @@ class ProfileViewListItems extends StatelessWidget {
                 thereTrailing: true,
                 isSvgImage: true,
                 onTap: () async {
-                  final bool result = await context.pushNamed(
-                      Routes.editProfileView,
+                  final result = await context.pushNamed(Routes.editProfileView,
                       arguments: BlocProvider.of<UserDetailsCubit>(context)
                           .userDetailsResponse);
-                  if (result) {
+                  if (result == true) {
                     BlocProvider.of<UserDetailsCubit>(context).getUserDetails();
                   }
                 },
@@ -43,7 +42,8 @@ class ProfileViewListItems extends StatelessWidget {
               verticalSpace(25),
               CustomListTile(
                   title: AppLocalization.of(context)!.translate("language"),
-                  image: AppAsset.emptyIcon,
+                  image: AppAsset.lang,
+                  isLangIcon: true,
                   thereTrailing: true,
                   isSvgImage: true,
                   onTap: () => context.pushNamed(Routes.languageProfileView)),

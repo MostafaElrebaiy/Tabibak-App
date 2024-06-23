@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/app_assets.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
@@ -25,7 +26,7 @@ class HospitalBody extends StatelessWidget {
       children: [
         Container(
             margin: EdgeInsets.only(left: 16.w, right: 16.w, top: 10.h),
-            child: Text("Departments",
+            child: Text("Departments".tr(context),
                 style: AppStyle.f22blackW700Mulish
                     .copyWith(fontWeight: FontWeight.w500))),
         BlocBuilder<DepartmentCubit, DepartmentState>(

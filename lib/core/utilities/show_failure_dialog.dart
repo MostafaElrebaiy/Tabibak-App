@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:tabibk/core/helper/app_assets.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/extensions.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
 import 'package:tabibk/core/theme/styles.dart';
@@ -27,7 +28,7 @@ Future<dynamic> showFailureDialog(BuildContext context, String error,
             route;
           },
           child: Text(
-            'Got it',
+            "gotIt".tr(context),
             style: AppStyle.font16primaryBlueBold,
           ),
         ),

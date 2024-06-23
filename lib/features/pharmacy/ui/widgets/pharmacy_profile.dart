@@ -8,7 +8,7 @@ import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/widgets/cutom_list_tile.dart';
 import 'package:tabibk/core/widgets/top_back_ground_two.dart';
-import 'package:tabibk/features/hospital_and_clinic_system/hospital_info/view/widgets/doctors_section.dart';
+import 'package:tabibk/features/hospital_and_clinic_system/hospital_info/view/widgets/details_section.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital_info/view/widgets/image_name_distance_section.dart';
 import 'package:tabibk/features/pharmacy/data/model/search_pharmacy/search_pharmacy_response.dart';
 import 'package:tabibk/features/pharmacy/logic/pharmacy_search_cubit/pharmacy_cubit.dart';
@@ -33,7 +33,6 @@ class PharmacyProfile extends StatelessWidget {
                   top: 50.h,
                   child: ImageNameAndDistanceSection(
                     distance: pharmacy.distance?.toStringAsFixed(5) ?? "",
-                    isDoctor: false,
                     pngImage: AppAsset.staticProfileImage,
                     title: "Pharmacy Profile",
                     name: pharmacy.name ?? "",

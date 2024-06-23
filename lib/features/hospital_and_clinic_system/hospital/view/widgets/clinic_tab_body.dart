@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/app_assets.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/extensions.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/routing/routes.dart';
@@ -24,7 +25,7 @@ class ClinicTabBody extends StatelessWidget {
           return state.when(
               initial: () => Center(
                     child: Text(
-                      "Plesae select a department",
+                      "plesaeSelectDepartment".tr(context),
                       style: AppStyle.f18BalckW400Mulish,
                     ),
                   ),

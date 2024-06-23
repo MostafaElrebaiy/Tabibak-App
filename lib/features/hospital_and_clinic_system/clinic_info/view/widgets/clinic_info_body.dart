@@ -29,7 +29,6 @@ class ClinicInfoBody extends StatelessWidget {
                 name: "drName".tr(context),
                 distance: "4.5K",
                 pngImage: AppAsset.doctorImage,
-                isDoctor: true,
                 title: "cardiologyAndThoracology".tr(context),
               ),
             ),

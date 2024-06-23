@@ -10,12 +10,12 @@ import 'package:tabibk/core/widgets/cutom_list_tile.dart';
 import 'package:tabibk/core/widgets/top_back_ground_two.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/data/model/hospital_model/hospital_and_clinic_response.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/logic/hospital/hospital_cubit.dart';
-import 'package:tabibk/features/hospital_and_clinic_system/hospital_info/view/widgets/doctors_section.dart';
+import 'package:tabibk/features/hospital_and_clinic_system/hospital_info/view/widgets/details_section.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital_info/view/widgets/image_name_distance_section.dart';
-import 'package:tabibk/features/pharmacy/logic/pharmacy_search_cubit/pharmacy_cubit.dart';
 
 class HospitalAndClinicProfile extends StatelessWidget {
-  const HospitalAndClinicProfile({super.key, required this.hospitalAndClinicData});
+  const HospitalAndClinicProfile(
+      {super.key, required this.hospitalAndClinicData});
   final HospitalAndClinicData hospitalAndClinicData;
 
   @override
@@ -25,7 +25,6 @@ class HospitalAndClinicProfile extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Stack(
-            alignment: Alignment.centerLeft,
             children: [
               const TopBackgroundTwo(),
               Positioned(
@@ -33,14 +32,13 @@ class HospitalAndClinicProfile extends StatelessWidget {
                   right: 0,
                   top: 50.h,
                   child: ImageNameAndDistanceSection(
-                    distance: hospitalAndClinicData.distance?.toStringAsFixed(5) ?? "",
-                    isDoctor: false,
+                    distance:
+                        hospitalAndClinicData.distance?.toStringAsFixed(5) ??
+                            "",
                     pngImage: hospitalAndClinicData.image ?? "",
-                    
-                    title: "Pharmacy Profile",
+                    title: "hospitalProfile".tr(context),
                     name: hospitalAndClinicData.name ?? "",
                   )),
-
             ],
           ),
           Expanded(
@@ -53,26 +51,24 @@ class HospitalAndClinicProfile extends StatelessWidget {
                     children: [
                       DetailsSection(
                         text: hospitalAndClinicData.details ?? "",
-                      
-                     ),
-
+                      ),
                       verticalSpace(20),
                       BlocProvider(
-                        create: (context) => PharmacyCubit(getIt()),
-                        child: Builder(
-                          builder: (context) {
-                            return CustomListTile(
-                              title: "location".tr(context),
-                              image: AppAsset.location,
-                              isSvgImage: true,
-                              onTap: () {
-                                context.read<HospitalCubit>().goToMap(
-                                    lat: hospitalAndClinicData.location?.x.toString(),
-                                    lng: hospitalAndClinicData.location?.y.toString());
-                              },
-                            );
-                          }
-                        ),
+                        create: (context) => HospitalCubit(getIt()),
+                        child: Builder(builder: (context) {
+                          return CustomListTile(
+                            title: "location".tr(context),
+                            image: AppAsset.location,
+                            isSvgImage: true,
+                            onTap: () {
+                              context.read<HospitalCubit>().goToMap(
+                                  lat: hospitalAndClinicData.location?.x
+                                      .toString(),
+                                  lng: hospitalAndClinicData.location?.y
+                                      .toString());
+                            },
+                          );
+                        }),
                       ),
                     ],
                   ),

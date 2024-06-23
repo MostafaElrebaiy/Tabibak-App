@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/utilities/to_capitalize.dart';
 import 'package:tabibk/core/widgets/top_back_ground_two.dart';
 import 'package:tabibk/features/profile_screens/profile/logic/user_details/user_details_cubit.dart';
@@ -18,8 +19,8 @@ class ProfileViewBody extends StatelessWidget {
       children: [
         Stack(
           children: [
-            const TopBackgroundTwo(
-                thereTitle: true, thereIsBackButton: false, title: 'Profile'),
+             TopBackgroundTwo(
+                thereTitle: true, thereIsBackButton: false, title: 'profile'.tr(context)),
             Positioned(
               left: 0,
               right: 0,

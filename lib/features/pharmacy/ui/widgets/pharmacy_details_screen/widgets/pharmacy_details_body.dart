@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/app_assets.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
+import 'package:tabibk/core/utilities/app_divider.dart';
 import 'package:tabibk/features/pharmacy/data/model/pharmacy_medicine/pharmacy_medicien_response.dart';
 import '../../../../../../core/theme/styles.dart';
 
@@ -27,7 +30,7 @@ class PharmacyDetailsBody extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     image: DecorationImage(
-                      image:medicineData.image == null
+                      image: medicineData.image == null
                           ? const AssetImage(
                               AppAsset.comatrixImage,
                             )
@@ -44,14 +47,14 @@ class PharmacyDetailsBody extends StatelessWidget {
                   horizontal: AppPadding.p12.w, vertical: AppPadding.p10.h),
               child: Column(
                 children: [
-                  verticalSpace(10),
-                  Row(
+                  const AppDivider(),
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                         "Name:   ",
+                        "${"name".tr(context)}   ",
                         style: AppStyle.f20BlackW700.copyWith(
                           color: AppColor.primaryBlue,
-
                         ),
                       ),
                       // const Spacer(),
@@ -64,18 +67,19 @@ class PharmacyDetailsBody extends StatelessWidget {
                     ],
                   ),
                   verticalSpace(10),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  const AppDivider(),
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                         "Details:   ",
+                        "${"details".tr(context)}   ",
                         style: AppStyle.f20BlackW700.copyWith(
                           color: AppColor.primaryBlue,
-                      
                         ),
                       ),
                       Flexible(
                         child: Text(
+                          textAlign: TextAlign.center,
                           medicineData.details ?? "",
                           style: AppStyle.f20BlackW700.copyWith(
                             fontWeight: FontWeight.w400,
@@ -84,20 +88,21 @@ class PharmacyDetailsBody extends StatelessWidget {
                       ),
                     ],
                   ),
-                   verticalSpace(10),
-                  Row(
+                  verticalSpace(10),
+                  const AppDivider(),
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       Flexible(
                         child: Text(
-                           "Price:   ",
+                          "${"price".tr(context)} ",
                           style: AppStyle.f20BlackW700.copyWith(
                             color: AppColor.primaryBlue,
-                        
                           ),
                         ),
                       ),
                       Text(
-                        medicineData.price.toString(),
+                        "${medicineData.price.toString()} ${"egp".tr(context)}",
                         style: AppStyle.f20BlackW700.copyWith(
                           fontWeight: FontWeight.w400,
                         ),

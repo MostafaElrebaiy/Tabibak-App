@@ -6,12 +6,12 @@ class BloodBankProfile extends StatelessWidget {
   const BloodBankProfile({super.key, required this.bloodBankData});
   final BloodCenters bloodBankData;
 
-  
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:BloodBankProfileBody(bloodBankData: bloodBankData,)  ,
+      body: BloodBankProfileBody(
+        bloodBankData: bloodBankData,
+      ),
     );
   }
 }

@@ -6,12 +6,11 @@ class HospitalInfoView extends StatelessWidget {
   const HospitalInfoView({super.key, required this.hospitalAndClinicData});
   final HospitalAndClinicData hospitalAndClinicData;
 
-  
-
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      body: HospitalAndClinicProfile( hospitalAndClinicData: hospitalAndClinicData),
+    return Scaffold(
+      body: HospitalAndClinicProfile(
+          hospitalAndClinicData: hospitalAndClinicData),
     );
   }
 }
