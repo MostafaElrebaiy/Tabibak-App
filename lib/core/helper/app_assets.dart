@@ -22,6 +22,8 @@ abstract class AppAsset {
   static const String comatrixImage = '$_basePathPng/comatrex.png';
   static const String staticImageProfile =
       '$_basePathPng/static_image_profile.png';
+  static const String staticProfileImage =
+      '$_basePathPng/static_pharmacy_image.jpg';
 
   // ----------------- SVG Images ----------------- //
   static const String splash = '$_basePathSvg/tabibk.svg';

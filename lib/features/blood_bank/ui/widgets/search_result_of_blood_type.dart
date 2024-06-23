@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/di/dependancy_injection.dart';
+import 'package:tabibk/core/helper/extensions.dart';
+import 'package:tabibk/core/routing/routes.dart';
 import 'package:tabibk/features/blood_bank/data/model/blood_bank_response.dart';
 import 'package:tabibk/features/blood_bank/logic/cubit/blood_bank_cubit.dart';
 import 'package:tabibk/features/blood_bank/logic/cubit/blood_bank_state.dart';
@@ -20,7 +22,7 @@ class SearchResultOfBloodType extends StatelessWidget {
       appBar: buildCustomAppBar(
         backarrow: true,
         toolbarHeight: 70,
-        text1: "Blood Bank Result",
+        text1: "Blood Bank Centers",
         style1: AppStyle.f20WhiteW600,
       ),
       body: Container(
@@ -41,11 +43,11 @@ class SearchResultOfBloodType extends StatelessWidget {
                           .toString() ??
                       '',
                   onTap: () {
-                    BlocProvider.of<BloodBankCubit>(context).goToMap(
-                        lat: bloodBankResponse
-                            .data?.bloodCenters?[index].location?.x as String,
-                        lng: bloodBankResponse
-                            .data?.bloodCenters?[index].location?.y as String);
+                    context.pushNamed(
+                      Routes.hospitalInfoView,
+                      arguments: bloodBankResponse.data?.bloodCenters?[index],
+                    );
+                  
                   },
                 );
               },

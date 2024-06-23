@@ -316,7 +316,7 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<HospitalResponse> getHospitals(
+  Future<HospitalAndClinicResponse> getHospitals(
     String token,
     double lat,
     int departmentId,
@@ -327,8 +327,8 @@ class _ApiService implements ApiService {
     final _headers = <String, dynamic>{r'Authorization': token};
     _headers.removeWhere((k, v) => v == null);
     const Map<String, dynamic>? _data = null;
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<HospitalResponse>(Options(
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<HospitalAndClinicResponse>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -344,7 +344,7 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = HospitalResponse.fromJson(_result.data!);
+    final value = HospitalAndClinicResponse.fromJson(_result.data!);
     return value;
   }
 
@@ -377,7 +377,7 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<ClinicResponse> getClinics(
+  Future<HospitalAndClinicResponse> getClinics(
     String token,
     double lat,
     int departmentId,
@@ -388,8 +388,8 @@ class _ApiService implements ApiService {
     final _headers = <String, dynamic>{r'Authorization': token};
     _headers.removeWhere((k, v) => v == null);
     const Map<String, dynamic>? _data = null;
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<ClinicResponse>(Options(
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<HospitalAndClinicResponse>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -405,7 +405,7 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = ClinicResponse.fromJson(_result.data!);
+    final value = HospitalAndClinicResponse.fromJson(_result.data!);
     return value;
   }
 

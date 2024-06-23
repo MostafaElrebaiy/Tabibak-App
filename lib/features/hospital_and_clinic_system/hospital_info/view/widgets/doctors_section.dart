@@ -1,46 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:tabibk/core/helper/app_assets.dart';
-import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/theme/styles.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital_info/view/widgets/custom_expansion_tile.dart';
 import 'package:tabibk/features/product/view/widgets/build_divider_widget.dart';
 
-class DoctorsSection extends StatelessWidget {
-  const DoctorsSection({super.key});
-
+class DetailsSection extends StatelessWidget {
+  const DetailsSection({super.key, required this.text});
+final String text;
+  
   @override
   Widget build(BuildContext context) {
     return CustomExpansionTile(
-      title: 'Doctors',
-      svgImage: AppAsset.timeIcon,
+      title: 'Details',
+      isThereSVG: false,
       children: [
         const BuildDivider(),
-        ListTile(
-          leading: Image.asset(AppAsset.doctorImage),
-          title: Text(
-            "${"dr".tr(context)}${"abdallhMostafa".tr(context)}",
-            style: AppStyle.f16BlackW700Mulish
-                .copyWith(fontWeight: FontWeight.w500),
-          ),
-        ),
-        const BuildDivider(),
-        ListTile(
-          leading: Image.asset(AppAsset.doctorImage),
-          title: Text(
-            "Dr.${"abdallhMostafa".tr(context)}",
-            style: AppStyle.f16BlackW700Mulish
-                .copyWith(fontWeight: FontWeight.w500),
-          ),
-        ),
-        const BuildDivider(),
-        ListTile(
-          leading: Image.asset(AppAsset.doctorImage),
-          title: Text(
-            "Dr.${"abdallhMostafa".tr(context)}",
-            style: AppStyle.f16BlackW700Mulish
-                .copyWith(fontWeight: FontWeight.w500),
-          ),
-        ),
+        Text(text,style: AppStyle.f16BlackW700Mulish,),
+  
+      
       ],
     );
   }

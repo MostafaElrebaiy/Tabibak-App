@@ -4,7 +4,7 @@ part 'pharmacy_medicien_response.g.dart';
 @JsonSerializable()
 class PharmacyMedicineResponse {
   String? message;
-  List<Data>? data;
+  List<MedicinData>? data;
   int? code;
 
   PharmacyMedicineResponse({this.message, this.data, this.code});
@@ -14,7 +14,7 @@ class PharmacyMedicineResponse {
 }
 
 @JsonSerializable()
-class Data {
+class MedicinData {
   int? id;
   String? name;
   int? price;
@@ -24,7 +24,7 @@ class Data {
   String? createdAt;
   String? updatedAt;
 
-  Data(
+  MedicinData(
       {this.id,this.name,
       this.price,
       this.count,
@@ -33,8 +33,8 @@ class Data {
       this.createdAt,
       this.updatedAt});
 
-factory Data.fromJson(Map<String, dynamic> json) =>
-      _$DataFromJson(json);
+factory MedicinData.fromJson(Map<String, dynamic> json) =>
+      _$MedicinDataFromJson(json);
 
   
   }

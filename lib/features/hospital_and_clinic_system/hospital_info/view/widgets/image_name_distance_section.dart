@@ -28,7 +28,7 @@ class ImageNameAndDistanceSection extends StatelessWidget {
         verticalSpace(5),
         CircleAvatar(
           backgroundColor: AppColor.primaryBlue,
-          backgroundImage: AssetImage(pngImage),
+          backgroundImage: NetworkImage(pngImage),
           radius: 50.w,
         ),
         verticalSpace(10),

@@ -12,9 +12,8 @@ import 'package:tabibk/features/auth/update_password/data/models/reset_password_
 import 'package:tabibk/features/profile_screens/edit_profile_screen/data/model/update_profile_response.dart';
 import 'package:tabibk/features/profile_screens/profile/data/model/user_details_response.dart';
 import 'package:tabibk/features/blood_bank/data/model/blood_bank_response.dart';
-import 'package:tabibk/features/hospital_and_clinic_system/hospital/data/model/clinic_model/clinic_response.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/data/model/department_model/department_response.dart';
-import 'package:tabibk/features/hospital_and_clinic_system/hospital/data/model/hospital_model/hospital_response.dart';
+import 'package:tabibk/features/hospital_and_clinic_system/hospital/data/model/hospital_model/hospital_and_clinic_response.dart';
 import 'package:tabibk/features/pharmacy/data/model/pharmacy_medicine/pharmacy_medicien_response.dart';
 import '../../features/auth/forget_password/data/models/forget_request_body.dart';
 import '../../features/auth/forget_password/data/models/forget_response.dart';
@@ -72,7 +71,7 @@ abstract class ApiService {
     @Path('lng') double lng,
   );
   @GET(ApiConstants.hospitals)
-  Future<HospitalResponse> getHospitals(
+  Future<HospitalAndClinicResponse> getHospitals(
     @Header('Authorization') String token,
     @Path('lat') double lat,
     @Query('department_id') int departmentId,
@@ -85,7 +84,7 @@ abstract class ApiService {
   );
 
   @GET(ApiConstants.clinics)
-  Future<ClinicResponse> getClinics(
+  Future<HospitalAndClinicResponse> getClinics(
     @Header('Authorization') String token,
     @Path('lat') double lat,
     @Query('department_id') int departmentId,

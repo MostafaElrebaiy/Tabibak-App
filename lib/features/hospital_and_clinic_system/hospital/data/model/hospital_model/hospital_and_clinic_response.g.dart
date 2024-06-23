@@ -1,28 +1,33 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'clinic_response.dart';
+part of 'hospital_and_clinic_response.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-ClinicResponse _$ClinicResponseFromJson(Map<String, dynamic> json) =>
-    ClinicResponse(
+HospitalAndClinicResponse _$HospitalAndClinicResponseFromJson(
+        Map<String, dynamic> json) =>
+    HospitalAndClinicResponse(
       message: json['message'] as String?,
       data: (json['data'] as List<dynamic>?)
-          ?.map((e) => Data.fromJson(e as Map<String, dynamic>))
+          ?.map(
+              (e) => HospitalAndClinicData.fromJson(e as Map<String, dynamic>))
           .toList(),
       code: (json['code'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$ClinicResponseToJson(ClinicResponse instance) =>
+Map<String, dynamic> _$HospitalAndClinicResponseToJson(
+        HospitalAndClinicResponse instance) =>
     <String, dynamic>{
       'message': instance.message,
       'data': instance.data,
       'code': instance.code,
     };
 
-Data _$DataFromJson(Map<String, dynamic> json) => Data(
+HospitalAndClinicData _$HospitalAndClinicDataFromJson(
+        Map<String, dynamic> json) =>
+    HospitalAndClinicData(
       id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
       details: json['details'] as String?,
@@ -33,7 +38,9 @@ Data _$DataFromJson(Map<String, dynamic> json) => Data(
       distance: (json['distance'] as num?)?.toDouble(),
     );
 
-Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
+Map<String, dynamic> _$HospitalAndClinicDataToJson(
+        HospitalAndClinicData instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'details': instance.details,

@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/app_assets.dart';
+import 'package:tabibk/core/helper/extensions.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
+import 'package:tabibk/core/routing/routes.dart';
 import 'package:tabibk/core/theme/styles.dart';
 import 'package:tabibk/core/utilities/custom_error_widget.dart';
-import 'package:tabibk/features/hospital_and_clinic_system/hospital/data/model/clinic_model/clinic_response.dart';
+import 'package:tabibk/features/hospital_and_clinic_system/hospital/data/model/hospital_model/hospital_and_clinic_response.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/logic/clinic/clinic_cubit.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/view/widgets/custom_list_tile_widget.dart';
 
@@ -36,8 +38,8 @@ class ClinicTabBody extends StatelessWidget {
                 );
               },
               success: (clinics) {
-                ClinicResponse clinic = clinics as ClinicResponse;
-                List<Data>? clinicList = clinic.data;
+                HospitalAndClinicResponse clinic = clinics as HospitalAndClinicResponse;
+                List<HospitalAndClinicData>? clinicList = clinic.data;
                 return ListView.builder(
                   itemCount: clinic.data?.length ?? 0,
                   itemBuilder: (context, index) => CustomListTileWidget(
@@ -51,10 +53,9 @@ class ClinicTabBody extends StatelessWidget {
                             clinicList![index].image!,
                           ),
                     onTap: () {
-                      context.read<ClinicCubit>().goToMap(
-                            lat: clinicList?[index].location?.x as String,
-                            lng: clinicList?[index].location?.y as String,
-                          );
+                      context.pushNamed(Routes.hospitalInfoView,
+                          arguments: clinicList?[index]);
+                    
                     },
                   ),
                 );

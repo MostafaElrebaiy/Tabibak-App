@@ -11,7 +11,7 @@ BloodBankResponse _$BloodBankResponseFromJson(Map<String, dynamic> json) =>
       message: json['message'] as String?,
       data: json['data'] == null
           ? null
-          : Data.fromJson(json['data'] as Map<String, dynamic>),
+          : BloodBankData.fromJson(json['data'] as Map<String, dynamic>),
       code: (json['code'] as num?)?.toInt(),
     );
 
@@ -22,7 +22,8 @@ Map<String, dynamic> _$BloodBankResponseToJson(BloodBankResponse instance) =>
       'code': instance.code,
     };
 
-Data _$DataFromJson(Map<String, dynamic> json) => Data(
+BloodBankData _$BloodBankDataFromJson(Map<String, dynamic> json) =>
+    BloodBankData(
       bloodTypes: json['blood_types'] == null
           ? null
           : BloodTypes.fromJson(json['blood_types'] as Map<String, dynamic>),
@@ -31,7 +32,8 @@ Data _$DataFromJson(Map<String, dynamic> json) => Data(
           .toList(),
     );
 
-Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
+Map<String, dynamic> _$BloodBankDataToJson(BloodBankData instance) =>
+    <String, dynamic>{
       'blood_types': instance.bloodTypes,
       'blood_centers': instance.bloodCenters,
     };
@@ -57,6 +59,7 @@ BloodCenters _$BloodCentersFromJson(Map<String, dynamic> json) => BloodCenters(
       location: json['location'] == null
           ? null
           : Location.fromJson(json['location'] as Map<String, dynamic>),
+      image: json['image'] as String?,
     );
 
 Map<String, dynamic> _$BloodCentersToJson(BloodCenters instance) =>
@@ -64,6 +67,7 @@ Map<String, dynamic> _$BloodCentersToJson(BloodCenters instance) =>
       'id': instance.id,
       'name': instance.name,
       'address': instance.address,
+      'image': instance.image,
       'distance': instance.distance,
       'location': instance.location,
     };

@@ -8,15 +8,14 @@ import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/widgets/cutom_list_tile.dart';
 import 'package:tabibk/core/widgets/top_back_ground_two.dart';
-import 'package:tabibk/features/hospital_and_clinic_system/hospital/data/model/hospital_model/hospital_and_clinic_response.dart';
-import 'package:tabibk/features/hospital_and_clinic_system/hospital/logic/hospital/hospital_cubit.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital_info/view/widgets/doctors_section.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital_info/view/widgets/image_name_distance_section.dart';
+import 'package:tabibk/features/pharmacy/data/model/search_pharmacy/search_pharmacy_response.dart';
 import 'package:tabibk/features/pharmacy/logic/pharmacy_search_cubit/pharmacy_cubit.dart';
 
-class HospitalAndClinicProfile extends StatelessWidget {
-  const HospitalAndClinicProfile({super.key, required this.hospitalAndClinicData});
-  final HospitalAndClinicData hospitalAndClinicData;
+class PharmacyProfile extends StatelessWidget {
+  const PharmacyProfile({super.key, required this.pharmacy});
+  final Pharmacies pharmacy;
 
   @override
   Widget build(BuildContext context) {
@@ -33,12 +32,11 @@ class HospitalAndClinicProfile extends StatelessWidget {
                   right: 0,
                   top: 50.h,
                   child: ImageNameAndDistanceSection(
-                    distance: hospitalAndClinicData.distance?.toStringAsFixed(5) ?? "",
+                    distance: pharmacy.distance?.toStringAsFixed(5) ?? "",
                     isDoctor: false,
-                    pngImage: hospitalAndClinicData.image ?? "",
-                    
+                    pngImage: AppAsset.staticProfileImage,
                     title: "Pharmacy Profile",
-                    name: hospitalAndClinicData.name ?? "",
+                    name: pharmacy.name ?? "",
                   )),
 
             ],
@@ -52,7 +50,7 @@ class HospitalAndClinicProfile extends StatelessWidget {
                   child: Column(
                     children: [
                       DetailsSection(
-                        text: hospitalAndClinicData.details ?? "",
+                        text: pharmacy.details ?? "",
                       
                      ),
 
@@ -66,9 +64,9 @@ class HospitalAndClinicProfile extends StatelessWidget {
                               image: AppAsset.location,
                               isSvgImage: true,
                               onTap: () {
-                                context.read<HospitalCubit>().goToMap(
-                                    lat: hospitalAndClinicData.location?.x.toString(),
-                                    lng: hospitalAndClinicData.location?.y.toString());
+                                context.read<PharmacyCubit>().goToMap(
+                                    lat: pharmacy.location?.x.toString(),
+                                    lng: pharmacy.location?.y.toString());
                               },
                             );
                           }

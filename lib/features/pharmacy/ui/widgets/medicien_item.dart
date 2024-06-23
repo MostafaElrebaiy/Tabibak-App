@@ -11,7 +11,7 @@ import '../../../../core/theme/app_colors.dart';
 
 class MedicineItem extends StatelessWidget {
   const MedicineItem({super.key, required this.medicine});
-  final Data medicine;
+  final MedicinData medicine;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,7 +25,8 @@ class MedicineItem extends StatelessWidget {
       child: Center(
         child: GestureDetector(
           onTap: () {
-            context.pushNamed(Routes.pharmacyDetailsScreen);
+            context.pushNamed(Routes.pharmacyDetailsScreen,
+                arguments: medicine);
           },
           child: Column(
             children: [
