@@ -37,9 +37,9 @@ class ClinicTabBody extends StatelessWidget {
               },
               success: (clinics) {
                 ClinicResponse clinic = clinics as ClinicResponse;
-                List<Clinics>? clinicList = clinic.data?.clinics;
+                List<Data>? clinicList = clinic.data;
                 return ListView.builder(
-                  itemCount: clinic.data?.clinics?.length ?? 0,
+                  itemCount: clinic.data?.length ?? 0,
                   itemBuilder: (context, index) => CustomListTileWidget(
                     distance: clinicList?[index].distance.toString() ?? "",
                     title: clinicList?[index].name ?? "",

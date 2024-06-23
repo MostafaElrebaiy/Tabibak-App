@@ -32,7 +32,7 @@ class ResetPasswordCubit extends Cubit<ResetPasswordState> {
       },
       failure: (error) {
         emit(ResetPasswordState.resetPasswordError(
-            error: error.apiErrorModel.data?[0] ?? ''));
+            error: error.apiErrorModel.message ??''));
       },
     );
   }

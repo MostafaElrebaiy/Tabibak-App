@@ -9,9 +9,9 @@ part of 'hospital_response.dart';
 HospitalResponse _$HospitalResponseFromJson(Map<String, dynamic> json) =>
     HospitalResponse(
       message: json['message'] as String?,
-      data: json['data'] == null
-          ? null
-          : Data.fromJson(json['data'] as Map<String, dynamic>),
+      data: (json['data'] as List<dynamic>?)
+          ?.map((e) => Data.fromJson(e as Map<String, dynamic>))
+          .toList(),
       code: (json['code'] as num?)?.toInt(),
     );
 
@@ -23,50 +23,23 @@ Map<String, dynamic> _$HospitalResponseToJson(HospitalResponse instance) =>
     };
 
 Data _$DataFromJson(Map<String, dynamic> json) => Data(
-      department: json['department'] == null
-          ? null
-          : Department.fromJson(json['department'] as Map<String, dynamic>),
-      hospitals: (json['hospitals'] as List<dynamic>?)
-          ?.map((e) => Hospitals.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
-      'department': instance.department,
-      'hospitals': instance.hospitals,
-    };
-
-Department _$DepartmentFromJson(Map<String, dynamic> json) => Department(
-      id: (json['id'] as num?)?.toInt(),
-      name: json['name'] as String?,
-      details: json['details'] as String?,
-    );
-
-Map<String, dynamic> _$DepartmentToJson(Department instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'details': instance.details,
-    };
-
-Hospitals _$HospitalsFromJson(Map<String, dynamic> json) => Hospitals(
       id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
       details: json['details'] as String?,
       image: json['image'] as String?,
-      distance: (json['distance'] as num?)?.toDouble(),
       location: json['location'] == null
           ? null
           : Location.fromJson(json['location'] as Map<String, dynamic>),
+      distance: (json['distance'] as num?)?.toDouble(),
     );
 
-Map<String, dynamic> _$HospitalsToJson(Hospitals instance) => <String, dynamic>{
+Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'details': instance.details,
       'image': instance.image,
-      'distance': instance.distance,
       'location': instance.location,
+      'distance': instance.distance,
     };
 
 Location _$LocationFromJson(Map<String, dynamic> json) => Location(

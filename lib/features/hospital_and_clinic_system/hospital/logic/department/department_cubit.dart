@@ -15,6 +15,7 @@ class DepartmentCubit extends Cubit<DepartmentState> {
   double? lat, lng;
 
   Future<void> getDepartment() async {
+    if (isClosed) return;
     emit(const DepartmentState.loading());
     final locationData = await locationService.getLocation();
 

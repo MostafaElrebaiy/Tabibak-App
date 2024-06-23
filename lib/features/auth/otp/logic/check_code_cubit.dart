@@ -21,7 +21,7 @@ class CheckCodeCubit extends Cubit<CheckCodeState> {
       },
       failure: (error) {
         emit(CheckCodeState.checkCodeError(
-            error: error.apiErrorModel.data?[0] ?? ''));
+            error: error.apiErrorModel.message ?? ''));
       },
     );
   }

@@ -32,12 +32,12 @@ class HostpitalTabBody extends StatelessWidget {
                   ),
               success: (hosptials) {
                 HospitalResponse hosptial = hosptials as HospitalResponse;
-                List<Hospitals>? hospitalData = hosptial.data?.hospitals;
+                List<Data>? hospitalData = hosptial.data;
                 return ListView.builder(
                   itemCount: hospitalData?.length ?? 0,
                   itemBuilder: (context, index) => CustomListTileWidget(
                     distance:
-                        hosptial.data?.hospitals?[index].distance.toString() ??
+                        hospitalData?[index].distance.toString() ??
                             "",
                     imageWidget: hospitalData?[index].image == null
                         ? Image.asset(

@@ -24,8 +24,8 @@ class OnBoardingLastScreen extends StatelessWidget {
             ),
             verticalSpace(AppSize.s37),
             OnBoardingText(
-                headLine: "pharmacies".tr(context),
-                textBody: "lorem".tr(context)),
+                headLine: "tabibak".tr(context),
+                textBody: "tabibakDescription".tr(context)),
             verticalSpace(AppSize.s30),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

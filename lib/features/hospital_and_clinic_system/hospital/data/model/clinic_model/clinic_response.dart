@@ -4,54 +4,45 @@ part 'clinic_response.g.dart';
 @JsonSerializable()
 class ClinicResponse {
   String? message;
-  Data? data;
+  List<Data>? data;
   int? code;
 
   ClinicResponse({this.message, this.data, this.code});
-  factory ClinicResponse.fromJson(Map<String, dynamic> json) =>
-      _$ClinicResponseFromJson(json);
-}
+  factory ClinicResponse.fromJson(Map<String, dynamic> json) => _$ClinicResponseFromJson(json);
+  
 
+
+}
 @JsonSerializable()
+
 class Data {
-  Department? department;
-  List<Clinics>? clinics;
-
-  Data({this.department, this.clinics});
-  factory Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);
-}
-
-@JsonSerializable()
-class Department {
-  int? id;
-  String? name;
-  String? details;
-
-  Department({this.id, this.name, this.details});
-  factory Department.fromJson(Map<String, dynamic> json) =>
-      _$DepartmentFromJson(json);
-}
-
-@JsonSerializable()
-class Clinics {
   int? id;
   String? name;
   String? details;
   String? image;
-  double? distance;
   Location? location;
+  double? distance;
 
-  Clinics({this.id, this.name,this.image, this.details, this.distance, this.location});
-  factory Clinics.fromJson(Map<String, dynamic> json) =>
-      _$ClinicsFromJson(json);
+  
+
+  Data({this.id, this.name, this.details, this.image, this.location, this.distance});
+  factory Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);
+  
+
+
+
+  
 }
-
 @JsonSerializable()
+
 class Location {
   String? x;
   String? y;
 
   Location({this.x, this.y});
-  factory Location.fromJson(Map<String, dynamic> json) =>
-      _$LocationFromJson(json);
+  factory Location.fromJson(Map<String, dynamic> json) => _$LocationFromJson(json);
+  
+
+
+  
 }

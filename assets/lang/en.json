@@ -71,7 +71,8 @@
    "anotherDepartments": "Another Departments",
    "productDetails": "Product Details",
    "hospitalsAndClinics": "Hospitals and Clinics",
-   "lorem": "Lorem ipsum dolor, sit amet consectetu\nadipisicing elit.Voluptatibus\nodit ipsa deleniti eius.",
+   "pharmacyAndBloodbankHeadLine": "Pharamacy and Blood Bank",
+   "pharmacyAndBloodBank": "You can find the medicines in the pharmacy\nand search for blood donors and\nblood types in the blood bank.",
    "welcome": "Welcome  ",
    "categories": "Categories",
    "bestDeals": "Best Deals",
@@ -100,5 +101,7 @@
    "noMedicineFound": "Sorry, there is no medicine with this name, try another one",
    "searchMedicine" :"Search for medicine...",
    "passwordConfirm" :"Password Confirmaion",
-   "enterPasswordAgain" :"Enter your password again"
+   "enterPasswordAgain" :"Enter your password again",
+   "tabibakDescription" :"Tabibak is a medical application\nthat helps you to find the nearest\nhospitals, clinics, pharmacies,\nblood type , and blood banks.",
+   "hospitalsAndClinicsDetails" :"You can find the nearest\nhospitals and clinics\nand know their locations."
 }
