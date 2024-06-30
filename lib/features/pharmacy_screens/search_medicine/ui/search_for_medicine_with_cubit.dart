@@ -8,16 +8,16 @@ import 'package:tabibk/core/helper/app_string.dart';
 import 'package:tabibk/core/helper/extensions.dart';
 import 'package:tabibk/core/routing/routes.dart';
 import 'package:tabibk/core/theme/styles.dart';
+import 'package:tabibk/features/pharmacy_screens/search_medicine/ui/widgets/custom_list_tile_for_search.dart';
 import 'package:tabibk/features/pharmacy_screens/search_phamacy/data/model/arg_pharmacy/search_result_model.dart';
 import 'package:tabibk/features/pharmacy_screens/search_medicine/data/model/search_medicine_response.dart';
 import 'package:tabibk/features/pharmacy_screens/search_medicine/logic/medicine_cubit.dart';
 import 'package:tabibk/features/pharmacy_screens/search_medicine/logic/medicine_state.dart';
-import 'package:tabibk/features/pharmacy_screens/pharmacy/ui/widgets/custom_list_tile_for_search.dart';
-import '../../../../../core/helper/spacing.dart';
-import '../../../../../core/widgets/build_search_scetion.dart';
+import '../../../../core/helper/spacing.dart';
+import '../../../../core/widgets/build_search_scetion.dart';
 
-class SearchForMedicineWithCubit extends StatelessWidget {
-  const SearchForMedicineWithCubit({super.key});
+class SearchForMedicine extends StatelessWidget {
+  const SearchForMedicine({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +76,7 @@ class SearchForMedicineWithCubit extends StatelessWidget {
                       itemCount: medicine.data?.length ?? 0,
                       itemBuilder: (context, index) => GestureDetector(
                             onTap: () {
-                              context.pushNamed(Routes.pharmacySearchResult,
+                              context.pushNamed(Routes.SearhPharmacyView,
                                   arguments: ArgResultPharmacy(
                                     medicineName:
                                         medicine.data?[index].name ?? " ",

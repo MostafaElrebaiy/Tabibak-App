@@ -5,9 +5,8 @@ import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
 
 // ignore: must_be_immutable
-class CategoriesScetion extends StatelessWidget {
-  CategoriesScetion(
-      {required this.image, required this.categoryName, super.key});
+class CategoryItem extends StatelessWidget {
+  CategoryItem({required this.image, required this.categoryName, super.key});
   String image;
   String categoryName;
 

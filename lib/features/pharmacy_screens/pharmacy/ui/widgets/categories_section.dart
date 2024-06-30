@@ -4,7 +4,7 @@ import 'package:tabibk/core/helper/app_assets.dart';
 import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/app_string.dart';
 import 'package:tabibk/core/helper/spacing.dart';
-import 'package:tabibk/features/pharmacy_screens/pharmacy/ui/widgets/categories_scetion.dart';
+import 'package:tabibk/features/pharmacy_screens/pharmacy/ui/widgets/category_item.dart';
 import 'package:tabibk/features/pharmacy_screens/pharmacy/ui/widgets/titles_of_section.dart';
 
 class CategoriesSection extends StatelessWidget {
@@ -30,7 +30,7 @@ class CategoriesSection extends StatelessWidget {
             // shrinkWrap: true,
             separatorBuilder: (context, index) => horizontalSpace(10),
             itemBuilder: (context, index) {
-              return CategoriesScetion(
+              return CategoryItem(
                 image: categories[index]['image']!,
                 categoryName: categories[index]['title']!.tr(context),
               );

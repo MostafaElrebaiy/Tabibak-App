@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tabibk/features/pharmacy_screens/recommended_medicine/data/model/pharmacy_medicien_response.dart';
-import '../../../../../../core/theme/styles.dart';
-import '../../../../../../core/widgets/build_custom_app_bar.dart';
+import '../../../core/theme/styles.dart';
+import '../../../core/widgets/build_custom_app_bar.dart';
 import 'widgets/pharmacy_details_body.dart';
 
 class PharmacyDetailsScreen extends StatelessWidget {

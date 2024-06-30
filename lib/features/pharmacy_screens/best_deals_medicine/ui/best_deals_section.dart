@@ -6,7 +6,7 @@ import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/features/pharmacy_screens/recommended_medicine/data/model/pharmacy_medicien_response.dart';
 import 'package:tabibk/features/pharmacy_screens/best_deals_medicine/logic/pharmacy_best_deal_medicine_cubit.dart';
 import 'package:tabibk/features/pharmacy_screens/best_deals_medicine/logic/pharmacy_best_deal_medicine_state.dart';
-import 'package:tabibk/features/pharmacy_screens/pharmacy/ui/widgets/medicien_item.dart';
+import 'package:tabibk/features/pharmacy_screens/recommended_medicine/ui/widgets/medicien_item.dart';
 import 'package:tabibk/features/pharmacy_screens/pharmacy/ui/widgets/titles_of_section.dart';
 
 class BestDealsSection extends StatelessWidget {

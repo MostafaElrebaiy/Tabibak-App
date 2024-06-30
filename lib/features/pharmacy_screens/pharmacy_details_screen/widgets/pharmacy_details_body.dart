@@ -8,7 +8,7 @@ import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
 import 'package:tabibk/core/utilities/app_divider.dart';
 import 'package:tabibk/features/pharmacy_screens/recommended_medicine/data/model/pharmacy_medicien_response.dart';
-import '../../../../../../../core/theme/styles.dart';
+import '../../../../core/theme/styles.dart';
 
 class PharmacyDetailsBody extends StatelessWidget {
   const PharmacyDetailsBody({super.key, required this.medicineData});

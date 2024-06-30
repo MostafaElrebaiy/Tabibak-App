@@ -12,7 +12,7 @@ import 'package:tabibk/features/blood_bank/logic/cubit/blood_bank_state.dart';
 import '../../../../core/helper/app_assets.dart';
 import '../../../../core/theme/styles.dart';
 import '../../../../core/widgets/build_custom_app_bar.dart';
-import '../../../hospital_and_clinic_system/hospital/view/widgets/custom_list_tile_widget.dart';
+import '../../../../core/widgets/custom_list_tile_widget.dart';
 
 class SearchResultOfBloodType extends StatelessWidget {
   const SearchResultOfBloodType({super.key, required this.bloodBankResponse});

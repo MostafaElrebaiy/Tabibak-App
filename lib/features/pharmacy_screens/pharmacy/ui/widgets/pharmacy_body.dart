@@ -6,10 +6,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/theme/app_constant.dart';
 import 'package:tabibk/features/pharmacy_screens/best_deals_medicine/logic/pharmacy_best_deal_medicine_cubit.dart';
 import 'package:tabibk/features/pharmacy_screens/recommended_medicine/logic/pharmacy_recommended_medicine_cubit.dart';
-import 'package:tabibk/features/pharmacy_screens/pharmacy/ui/widgets/recommended_bestdeals_screen/best_deals_section.dart';
+import 'package:tabibk/features/pharmacy_screens/best_deals_medicine/ui/best_deals_section.dart';
 import 'package:tabibk/features/pharmacy_screens/pharmacy/ui/widgets/categories_section.dart';
-import 'package:tabibk/features/pharmacy_screens/pharmacy/ui/widgets/recommended_bestdeals_screen/recommended_section.dart';
-import 'package:tabibk/features/pharmacy_screens/pharmacy/ui/widgets/search_for_medicine_with_cubit.dart';
+import 'package:tabibk/features/pharmacy_screens/recommended_medicine/ui/recommended_section.dart';
+import 'package:tabibk/features/pharmacy_screens/search_medicine/ui/search_for_medicine_with_cubit.dart';
 import '../../../../../core/helper/spacing.dart';
 
 class PharmacyBody extends StatefulWidget {
@@ -41,7 +41,7 @@ class _PharmacyBodyState extends State<PharmacyBody> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                const SearchForMedicineWithCubit(),
+                const SearchForMedicine(),
                 verticalSpace(15),
                 SizedBox(
                     height: height * 0.25, child: const CategoriesSection()),

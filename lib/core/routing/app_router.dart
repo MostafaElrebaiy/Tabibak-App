@@ -27,10 +27,10 @@ import 'package:tabibk/features/on_boarding/view/widgets/on_boarding_last_screen
 import 'package:tabibk/features/pharmacy_screens/search_phamacy/data/model/arg_pharmacy/search_result_model.dart';
 import 'package:tabibk/features/pharmacy_screens/recommended_medicine/data/model/pharmacy_medicien_response.dart';
 import 'package:tabibk/features/pharmacy_screens/search_phamacy/data/model/search_pharmacy_response.dart';
-import 'package:tabibk/features/pharmacy_screens/pharmacy/ui/widgets/pharmacy_details_screen/pharmacy_details_screen.dart';
+import 'package:tabibk/features/pharmacy_screens/pharmacy_details_screen/pharmacy_details_screen.dart';
 import 'package:tabibk/features/pharmacy_screens/pharmacy/ui/pharmacy_screen.dart';
-import 'package:tabibk/features/pharmacy_screens/pharmacy/ui/phrmacy_search_result.dart';
-import 'package:tabibk/features/pharmacy_screens/pharmacy/ui/widgets/pharmacy_profile.dart';
+import 'package:tabibk/features/pharmacy_screens/search_phamacy/ui/search_pharmacy_view.dart';
+import 'package:tabibk/features/pharmacy_screens/pharmcy_profile/ui/pharmacy_profile.dart';
 import 'package:tabibk/features/pharmacy_screens/search_phamacy/logic/pharmacy_cubit.dart';
 import 'package:tabibk/features/product/view/product_view.dart';
 import 'package:tabibk/features/profile_screens/edit_profile_screen/logic/update_profile/update_profile_cubit.dart';
@@ -155,7 +155,7 @@ class AppRouter {
         return CustomPageRoute(
             child:
                 SearchResultOfBloodType(bloodBankResponse: bloodBankResponse));
-      case Routes.pharmacySearchResult:
+      case Routes.SearhPharmacyView:
         ArgResultPharmacy arg;
         arg = settings.arguments as ArgResultPharmacy;
         return CustomPageRoute(
@@ -163,7 +163,7 @@ class AppRouter {
           create: (context) => PharmacyCubit(getIt())
             ..searchForMedicien(
                 medicineName: arg.medicineName, lat: arg.lat, lng: arg.lng),
-          child: const PharmacySearchResult(),
+          child: const SearhPharmacyView(),
         ));
 
       case Routes.uploadImage:

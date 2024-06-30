@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/extensions.dart';
-import 'package:tabibk/features/hospital_and_clinic_system/hospital/view/widgets/custom_list_tile_widget.dart';
+import 'package:tabibk/core/widgets/custom_list_tile_widget.dart';
 import 'package:tabibk/features/pharmacy_screens/search_phamacy/data/model/search_pharmacy_response.dart';
 import 'package:tabibk/features/pharmacy_screens/search_phamacy/logic/pharmacy_cubit.dart';
 import 'package:tabibk/features/pharmacy_screens/search_phamacy/logic/pharmacy_state.dart';
@@ -12,8 +12,8 @@ import '../../../../../core/routing/routes.dart';
 import '../../../../../core/theme/styles.dart';
 import '../../../../../core/widgets/build_custom_app_bar.dart';
 
-class PharmacySearchResult extends StatelessWidget {
-  const PharmacySearchResult({super.key});
+class SearhPharmacyView extends StatelessWidget {
+  const SearhPharmacyView({super.key});
   // final SearchPharmacyResponse searchPharmacyResponse;
 
   @override
