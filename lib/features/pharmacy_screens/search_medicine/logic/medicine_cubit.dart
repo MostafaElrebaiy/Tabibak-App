@@ -1,13 +1,13 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tabibk/core/networking/location_service.dart';
-import 'package:tabibk/features/pharmacy_screens/pharmacy/data/model/search_medicine/search_medicine_request.dart';
-import 'package:tabibk/features/pharmacy_screens/pharmacy/data/repo/search_medicine_repo.dart';
-import 'package:tabibk/features/pharmacy_screens/pharmacy/logic/medicine_search_cubit/pharmacy_search_cubit/medicine_state.dart';
+import 'package:tabibk/features/pharmacy_screens/search_medicine/data/model/search_medicine_request.dart';
+import 'package:tabibk/features/pharmacy_screens/search_medicine/data/repo/search_medicine_repo.dart';
+import 'package:tabibk/features/pharmacy_screens/search_medicine/logic/medicine_state.dart';
 
-import '../../../../../../core/networking/shared_preferences.dart';
-import '../../../../../../core/theme/app_constant.dart';
-import '../../../data/model/search_medicine/search_medicine_response.dart';
+import '../../../../core/networking/shared_preferences.dart';
+import '../../../../core/theme/app_constant.dart';
+import '../data/model/search_medicine_response.dart';
 
 class MedicineCubit extends Cubit<MedicineState> {
   MedicineCubit(

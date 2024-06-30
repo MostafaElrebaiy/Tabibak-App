@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/app_assets.dart';
 import 'package:tabibk/core/helper/extensions.dart';
 import 'package:tabibk/core/theme/styles.dart';
-import 'package:tabibk/features/pharmacy_screens/pharmacy/data/model/pharmacy_medicine/pharmacy_medicien_response.dart';
+import 'package:tabibk/features/pharmacy_screens/recommended_medicine/data/model/pharmacy_medicien_response.dart';
 
 import '../../../../../core/helper/value_manager.dart';
 import '../../../../../core/routing/routes.dart';

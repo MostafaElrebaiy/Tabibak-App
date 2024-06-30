@@ -10,8 +10,8 @@ import 'package:tabibk/core/widgets/cutom_list_tile.dart';
 import 'package:tabibk/core/widgets/top_back_ground_two.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital_info/view/widgets/details_section.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital_info/view/widgets/image_name_distance_section.dart';
-import 'package:tabibk/features/pharmacy_screens/pharmacy/data/model/search_pharmacy/search_pharmacy_response.dart';
-import 'package:tabibk/features/pharmacy_screens/pharmacy/logic/pharmacy_search_cubit/pharmacy_cubit.dart';
+import 'package:tabibk/features/pharmacy_screens/search_phamacy/data/model/search_pharmacy_response.dart';
+import 'package:tabibk/features/pharmacy_screens/search_phamacy/logic/pharmacy_cubit.dart';
 
 class PharmacyProfile extends StatelessWidget {
   const PharmacyProfile({super.key, required this.pharmacy});
@@ -32,13 +32,12 @@ class PharmacyProfile extends StatelessWidget {
                   right: 0,
                   top: 50.h,
                   child: ImageNameAndDistanceSection(
-                    isImage: false, 
+                    isImage: false,
                     distance: pharmacy.distance?.toStringAsFixed(5) ?? "",
                     pngImage: pharmacy.image ?? "",
                     title: "Pharmacy Profile",
                     name: pharmacy.name ?? "",
                   )),
-
             ],
           ),
           Expanded(
@@ -51,26 +50,22 @@ class PharmacyProfile extends StatelessWidget {
                     children: [
                       DetailsSection(
                         text: pharmacy.details ?? "",
-                      
-                     ),
-
+                      ),
                       verticalSpace(20),
                       BlocProvider(
                         create: (context) => PharmacyCubit(getIt()),
-                        child: Builder(
-                          builder: (context) {
-                            return CustomListTile(
-                              title: "location".tr(context),
-                              image: AppAsset.location,
-                              isSvgImage: true,
-                              onTap: () {
-                                context.read<PharmacyCubit>().goToMap(
-                                    lat: pharmacy.location?.x.toString(),
-                                    lng: pharmacy.location?.y.toString());
-                              },
-                            );
-                          }
-                        ),
+                        child: Builder(builder: (context) {
+                          return CustomListTile(
+                            title: "location".tr(context),
+                            image: AppAsset.location,
+                            isSvgImage: true,
+                            onTap: () {
+                              context.read<PharmacyCubit>().goToMap(
+                                  lat: pharmacy.location?.x.toString(),
+                                  lng: pharmacy.location?.y.toString());
+                            },
+                          );
+                        }),
                       ),
                     ],
                   ),

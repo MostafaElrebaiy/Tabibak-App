@@ -1,9 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tabibk/core/networking/shared_preferences.dart';
 import 'package:tabibk/core/theme/app_constant.dart';
-import 'package:tabibk/features/pharmacy_screens/pharmacy/data/model/pharmacy_medicine/pharmacy_medicine_request.dart';
-import 'package:tabibk/features/pharmacy_screens/pharmacy/data/repo/pharmacy_recommended_repo.dart';
-import 'package:tabibk/features/pharmacy_screens/pharmacy/logic/pharmacy_recommended_medicine/pharmacy_recommended_medicine_state.dart';
+import 'package:tabibk/features/pharmacy_screens/recommended_medicine/data/model/pharmacy_medicine_request.dart';
+import 'package:tabibk/features/pharmacy_screens/recommended_medicine/data/repo/pharmacy_recommended_repo.dart';
+import 'package:tabibk/features/pharmacy_screens/recommended_medicine/logic/pharmacy_recommended_medicine_state.dart';
 
 class PharmacyRecommendedMedicineCubit
     extends Cubit<PharmacyRecommendedMedicineState> {

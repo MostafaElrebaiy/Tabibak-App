@@ -1,5 +1,5 @@
-import 'package:tabibk/features/pharmacy_screens/pharmacy/data/model/search_medicine/search_medicine_request.dart';
-import 'package:tabibk/features/pharmacy_screens/pharmacy/data/model/search_medicine/search_medicine_response.dart';
+import 'package:tabibk/features/pharmacy_screens/search_medicine/data/model/search_medicine_request.dart';
+import 'package:tabibk/features/pharmacy_screens/search_medicine/data/model/search_medicine_response.dart';
 import '../../../../../../../core/networking/api_error_handler.dart';
 import '../../../../../../../core/networking/api_result.dart';
 import '../../../../../../../core/networking/api_service.dart';

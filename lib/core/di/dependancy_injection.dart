@@ -14,11 +14,11 @@ import 'package:tabibk/features/hospital_and_clinic_system/hospital/data/repo/ho
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/logic/clinic/clinic_cubit.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/logic/department/department_cubit.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/logic/hospital/hospital_cubit.dart';
-import 'package:tabibk/features/pharmacy_screens/pharmacy/data/repo/pharmacy_best_deals_repo.dart';
-import 'package:tabibk/features/pharmacy_screens/pharmacy/data/repo/search_pharmacy_repo.dart';
-import 'package:tabibk/features/pharmacy_screens/pharmacy/logic/pharmacy_best_deal_medicine/pharmacy_best_deal_medicine_cubit.dart';
-import 'package:tabibk/features/pharmacy_screens/pharmacy/logic/pharmacy_recommended_medicine/pharmacy_recommended_medicine_cubit.dart';
-import 'package:tabibk/features/pharmacy_screens/pharmacy/logic/pharmacy_search_cubit/pharmacy_cubit.dart';
+import 'package:tabibk/features/pharmacy_screens/best_deals_medicine/data/repo/pharmacy_best_deals_repo.dart';
+import 'package:tabibk/features/pharmacy_screens/search_phamacy/data/repo/search_pharmacy_repo.dart';
+import 'package:tabibk/features/pharmacy_screens/best_deals_medicine/logic/pharmacy_best_deal_medicine_cubit.dart';
+import 'package:tabibk/features/pharmacy_screens/recommended_medicine/logic/pharmacy_recommended_medicine_cubit.dart';
+import 'package:tabibk/features/pharmacy_screens/search_phamacy/logic/pharmacy_cubit.dart';
 import 'package:tabibk/features/profile_screens/edit_profile_screen/data/repo/update_profile_repo.dart';
 import 'package:tabibk/features/profile_screens/profile/data/repo/user_details_repo.dart';
 import 'package:tabibk/features/profile_screens/edit_profile_screen/logic/update_profile/update_profile_cubit.dart';
@@ -32,9 +32,9 @@ import '../../features/auth/signup/data/repo/sign_up_repo.dart';
 import '../../features/auth/signup/logic/sign_up_cubit.dart';
 import '../../features/auth/update_password/data/repo/reset_password_repo.dart';
 import '../../features/auth/update_password/logic/reset_password_cubit.dart';
-import '../../features/pharmacy_screens/pharmacy/data/repo/pharmacy_recommended_repo.dart';
-import '../../features/pharmacy_screens/pharmacy/data/repo/search_medicine_repo.dart';
-import '../../features/pharmacy_screens/pharmacy/logic/medicine_search_cubit/pharmacy_search_cubit/medicine_cubit.dart';
+import '../../features/pharmacy_screens/recommended_medicine/data/repo/pharmacy_recommended_repo.dart';
+import '../../features/pharmacy_screens/search_medicine/data/repo/search_medicine_repo.dart';
+import '../../features/pharmacy_screens/search_medicine/logic/medicine_cubit.dart';
 
 final getIt = GetIt.instance;
 Future<void> setupGetIt() async {
@@ -114,5 +114,4 @@ Future<void> setupGetIt() async {
   getIt.registerFactory<HttpService>(() => HttpService());
   getIt.registerFactory<ImageRepository>(() => ImageRepository(getIt()));
   getIt.registerFactory<ImageCubit>(() => ImageCubit(getIt()));
-
 }

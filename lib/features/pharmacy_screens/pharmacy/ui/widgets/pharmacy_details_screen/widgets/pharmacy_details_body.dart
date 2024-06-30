@@ -7,7 +7,7 @@ import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
 import 'package:tabibk/core/utilities/app_divider.dart';
-import 'package:tabibk/features/pharmacy_screens/pharmacy/data/model/pharmacy_medicine/pharmacy_medicien_response.dart';
+import 'package:tabibk/features/pharmacy_screens/recommended_medicine/data/model/pharmacy_medicien_response.dart';
 import '../../../../../../../core/theme/styles.dart';
 
 class PharmacyDetailsBody extends StatelessWidget {

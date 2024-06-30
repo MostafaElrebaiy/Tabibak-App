@@ -4,16 +4,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/app_string.dart';
 import 'package:tabibk/core/utilities/to_capitalize.dart';
-import 'package:tabibk/features/pharmacy_screens/pharmacy/logic/pharmacy_best_deal_medicine/pharmacy_best_deal_medicine_cubit.dart';
-import 'package:tabibk/features/pharmacy_screens/pharmacy/logic/pharmacy_recommended_medicine/pharmacy_recommended_medicine_cubit.dart';
+import 'package:tabibk/features/pharmacy_screens/best_deals_medicine/logic/pharmacy_best_deal_medicine_cubit.dart';
+import 'package:tabibk/features/pharmacy_screens/recommended_medicine/logic/pharmacy_recommended_medicine_cubit.dart';
+import 'package:tabibk/features/pharmacy_screens/search_phamacy/logic/pharmacy_cubit.dart';
 import 'package:tabibk/features/profile_screens/profile/logic/user_details/user_details_cubit.dart';
 import 'package:tabibk/features/profile_screens/profile/logic/user_details/user_details_state.dart';
-
 import '../../../../core/di/dependancy_injection.dart';
 import '../../../../core/theme/styles.dart';
 import '../../../../core/widgets/build_custom_app_bar.dart';
-import '../logic/medicine_search_cubit/pharmacy_search_cubit/medicine_cubit.dart';
-import '../logic/pharmacy_search_cubit/pharmacy_cubit.dart';
+import '../../search_medicine/logic/medicine_cubit.dart';
 import 'widgets/pharmacy_body.dart';
 
 class PharmacyScreen extends StatelessWidget {

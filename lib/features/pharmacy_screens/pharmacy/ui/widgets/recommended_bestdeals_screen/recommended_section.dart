@@ -3,9 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/app_string.dart';
 import 'package:tabibk/core/helper/spacing.dart';
-import 'package:tabibk/features/pharmacy_screens/pharmacy/data/model/pharmacy_medicine/pharmacy_medicien_response.dart';
-import 'package:tabibk/features/pharmacy_screens/pharmacy/logic/pharmacy_recommended_medicine/pharmacy_recommended_medicine_cubit.dart';
-import 'package:tabibk/features/pharmacy_screens/pharmacy/logic/pharmacy_recommended_medicine/pharmacy_recommended_medicine_state.dart';
+import 'package:tabibk/features/pharmacy_screens/recommended_medicine/data/model/pharmacy_medicien_response.dart';
+import 'package:tabibk/features/pharmacy_screens/recommended_medicine/logic/pharmacy_recommended_medicine_cubit.dart';
+import 'package:tabibk/features/pharmacy_screens/recommended_medicine/logic/pharmacy_recommended_medicine_state.dart';
 import 'package:tabibk/features/pharmacy_screens/pharmacy/ui/widgets/medicien_item.dart';
 import 'package:tabibk/features/pharmacy_screens/pharmacy/ui/widgets/titles_of_section.dart';
 
@@ -39,7 +39,7 @@ class RecommendedSection extends StatelessWidget {
                       itemCount: medicine.data!.length),
                 );
               },
-              error: (error) =>  Text(error),
+              error: (error) => Text(error),
             );
           },
         ),
