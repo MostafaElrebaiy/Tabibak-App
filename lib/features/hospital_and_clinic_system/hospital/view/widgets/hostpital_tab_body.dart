@@ -10,7 +10,7 @@ import 'package:tabibk/core/theme/styles.dart';
 import 'package:tabibk/core/utilities/custom_error_widget.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/data/model/hospital_model/hospital_and_clinic_response.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/logic/hospital/hospital_cubit.dart';
-import 'package:tabibk/features/hospital_and_clinic_system/hospital/view/widgets/custom_list_tile_widget.dart';
+import 'package:tabibk/core/widgets/custom_list_tile_widget.dart';
 
 class HostpitalTabBody extends StatelessWidget {
   const HostpitalTabBody({super.key});

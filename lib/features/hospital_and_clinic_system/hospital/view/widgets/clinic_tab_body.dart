@@ -10,7 +10,7 @@ import 'package:tabibk/core/theme/styles.dart';
 import 'package:tabibk/core/utilities/custom_error_widget.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/data/model/hospital_model/hospital_and_clinic_response.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/logic/clinic/clinic_cubit.dart';
-import 'package:tabibk/features/hospital_and_clinic_system/hospital/view/widgets/custom_list_tile_widget.dart';
+import 'package:tabibk/core/widgets/custom_list_tile_widget.dart';
 
 class ClinicTabBody extends StatelessWidget {
   const ClinicTabBody({super.key});
@@ -39,7 +39,8 @@ class ClinicTabBody extends StatelessWidget {
                 );
               },
               success: (clinics) {
-                HospitalAndClinicResponse clinic = clinics as HospitalAndClinicResponse;
+                HospitalAndClinicResponse clinic =
+                    clinics as HospitalAndClinicResponse;
                 List<HospitalAndClinicData>? clinicList = clinic.data;
                 return ListView.builder(
                   itemCount: clinic.data?.length ?? 0,
@@ -56,7 +57,6 @@ class ClinicTabBody extends StatelessWidget {
                     onTap: () {
                       context.pushNamed(Routes.hospitalInfoView,
                           arguments: clinicList?[index]);
-                    
                     },
                   ),
                 );

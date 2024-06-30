@@ -27,8 +27,6 @@ class Routes {
   static const String uploadImage = "/uploadImage";
   static const String pharmacyProfile = "/pharmacyProfile";
   static const String bloodBankProfile = "/bloodBankProfile";
-  
 
-
-  static const String pharmacySearchResult = "/pharmacySearchResult";
+  static const String SearhPharmacyView = "/SearhPharmacyView";
 }
