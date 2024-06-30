@@ -8,4 +8,4 @@ Tabibak is a Medical App and has 4 Systems:
 
 Abstraction about Tabibak App
 
-TABIBAK provides user facilities to find the nearest hospital, clinic, pharmacy, or blood bank provided that the place can quickly provide the necessary services to the patient. TABIBAK also provides a part that classifies a group of diseases with high competence to help the patient diagnose his/her health condition
+TABIBAK provides user facilities to find the nearest hospital, clinic, pharmacy, or blood bank provided that the place can quickly provide the necessary services to the patient. TABIBAK also provides a part that classifies a group of diseases with high competence to help the patient diagnose his/her health condition.
