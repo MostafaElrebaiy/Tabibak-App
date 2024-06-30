@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tabibk/core/helper/app_assets.dart';
 import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
@@ -28,11 +29,17 @@ class ImageNameAndDistanceSection extends StatelessWidget {
         Text(title, style: AppStyle.f20WhiteW600),
         verticalSpace(5),
         isImage
-            ? CircleAvatar(
+            ? (pngImage.isEmpty
+                ? CircleAvatar(
                 backgroundColor: AppColor.primaryBlue,
-                backgroundImage: NetworkImage(pngImage),
+                backgroundImage: const AssetImage(AppAsset.staticProfileImage) ,
                 radius: 50.w,
               )
+                : CircleAvatar(
+                backgroundColor: AppColor.primaryBlue,
+                backgroundImage: NetworkImage(pngImage) ,
+                radius: 50.w,
+              ))
             : verticalSpace(60),
         verticalSpace(10),
         Flexible(

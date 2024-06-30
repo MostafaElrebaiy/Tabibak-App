@@ -33,11 +33,7 @@ class CustomListTileWidget extends StatelessWidget {
         ),
       ),
       child: ListTile(
-        onTap: onTap,
-        splashColor: AppColor.primaryBlue.withOpacity(0.1),
-        shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(AppSize.s12))),
-        leading: SizedBox(
+        trailing: SizedBox(
           width: 70.w,
           height: 70.h,
           
@@ -45,6 +41,11 @@ class CustomListTileWidget extends StatelessWidget {
             
             child: imageWidget, ),
         ),
+        onTap: onTap,
+        splashColor: AppColor.primaryBlue.withOpacity(0.1),
+        shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(AppSize.s12))),
+        
         dense: false,
         enableFeedback: true,
         horizontalTitleGap: 20,

@@ -14,13 +14,13 @@ import 'package:tabibk/features/profile_screens/profile/data/model/user_details_
 import 'package:tabibk/features/blood_bank/data/model/blood_bank_response.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/data/model/department_model/department_response.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/data/model/hospital_model/hospital_and_clinic_response.dart';
-import 'package:tabibk/features/pharmacy/data/model/pharmacy_medicine/pharmacy_medicien_response.dart';
+import 'package:tabibk/features/pharmacy_screens/pharmacy/data/model/pharmacy_medicine/pharmacy_medicien_response.dart';
 import '../../features/auth/forget_password/data/models/forget_request_body.dart';
 import '../../features/auth/forget_password/data/models/forget_response.dart';
 import '../../features/auth/otp/data/models/check_code_request_body.dart';
 import '../../features/auth/otp/data/models/check_code_response.dart';
-import '../../features/pharmacy/data/model/search_medicine/search_medicine_response.dart';
-import '../../features/pharmacy/data/model/search_pharmacy/search_pharmacy_response.dart';
+import '../../features/pharmacy_screens/pharmacy/data/model/search_medicine/search_medicine_response.dart';
+import '../../features/pharmacy_screens/pharmacy/data/model/search_pharmacy/search_pharmacy_response.dart';
 part 'api_service.g.dart';
 
 @RestApi(baseUrl: ApiConstants.apiBaseUrl)
