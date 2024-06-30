@@ -64,7 +64,7 @@ class PharmacySearchResult extends StatelessWidget {
               );
             },
             error: (message) => Center(
-              child: Text(message),
+              child: Text(message, style: AppStyle.f18BalckW400Mulish),
             ),
           );
         },
