@@ -18,6 +18,8 @@ dependencies:
   firebase_core: ^2.31.0
   flutter:
     sdk: flutter
+  # Add beautiful animated effects & builders in Flutter, via an easy, customizable & powerful API
+  flutter_animate: ^4.5.0
   flutter_bloc: ^8.1.4
   flutter_localizations:
     sdk: flutter

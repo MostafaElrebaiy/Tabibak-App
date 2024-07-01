@@ -39,7 +39,7 @@ import 'package:tabibk/features/profile_screens/language_profile_view/logic/cubi
 import 'package:tabibk/features/profile_screens/language_profile_view/view/language_profile_view.dart';
 import 'package:tabibk/features/profile_screens/profile/data/model/user_details_response.dart';
 import 'package:tabibk/features/profile_screens/profile/view/profile_view.dart';
-import 'package:tabibk/features/splash/view/widgets/second_splash_screen.dart';
+import 'package:tabibk/features/splash/view/widgets/splash_view_body.dart';
 import '../../features/auth/login/ui/login_screen.dart';
 import '../../features/auth/signup/ui/signup_screen.dart';
 import '../../features/auth/update_password/logic/reset_password_cubit.dart';
@@ -57,8 +57,8 @@ class AppRouter {
       // case Routes.splashScreen:
       //   return CustomPageRoute(child: const SplashView());
 
-      case Routes.secondSplashScreen:
-        return CustomPageRoute(child: const SecondSplashScreen());
+      case Routes.splashViewBody:
+        return CustomPageRoute(child: const SplashViewBody());
 
       case Routes.secondOnBoardingScreen:
         return CustomPageRoute(child: const OnBoardingLastScreen());

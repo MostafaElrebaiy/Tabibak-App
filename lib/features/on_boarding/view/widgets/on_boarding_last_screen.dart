@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/extensions.dart';
 import 'package:tabibk/core/helper/spacing.dart';
@@ -35,16 +35,14 @@ class OnBoardingLastScreen extends StatelessWidget {
                     onPressed: () {
                       context.pushReplacementNamed(Routes.loginScreen);
                     }),
-                SizedBox(
-                  height: AppSize.s10.h,
-                ),
+                verticalSpace(10),
                 buildCreateAccountButton(
                     text: "createAccount".tr(context),
                     onTap: () {
                       context.pushReplacementNamed(Routes.signUpScreen);
                     }),
               ],
-            ),
+            ).animate().fade(duration: 500.milliseconds),
           ],
         ),
       ),

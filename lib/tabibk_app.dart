@@ -9,13 +9,13 @@ import 'package:tabibk/core/theming/app_theme.dart';
 
 import 'core/routing/app_router.dart';
 import 'core/routing/routes.dart';
+
 Locale? lang;
 
 class TabibkApp extends StatelessWidget {
   final AppRouter appRouter;
   final String? token;
-  const TabibkApp({super.key, required this.appRouter,this
-  .token});
+  const TabibkApp({super.key, required this.appRouter, this.token});
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +30,7 @@ class TabibkApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       child: MaterialApp(
-    
-    locale: CacheHelper.getCacheData(key: AppConstant.lang) == "ar"
+        locale: CacheHelper.getCacheData(key: AppConstant.lang) == "ar"
             ? const Locale("ar")
             : const Locale("en"),
         supportedLocales: const <Locale>[
@@ -55,7 +54,9 @@ class TabibkApp extends StatelessWidget {
         },
         theme: AppTheme.lightTheme,
         debugShowCheckedModeBanner: false,
-        initialRoute: token != null && token !="" ? Routes.homeScreen : Routes.secondSplashScreen,
+        initialRoute: token != null && token != ""
+            ? Routes.homeScreen
+            : Routes.splashViewBody,
         onGenerateRoute: appRouter.generateRoute,
       ),
     );
