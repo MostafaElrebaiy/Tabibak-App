@@ -1,6 +1,9 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lottie/lottie.dart';
 import 'package:tabibk/core/helper/app_assets.dart';
 import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/extensions.dart';
@@ -44,16 +47,29 @@ class HostpitalTabBody extends StatelessWidget {
                     imageWidget: hospitalData?[index].image == null
                         ? Image.asset(
                             AppAsset.heartattackImage,
+                            fit: BoxFit.cover,
                           )
-                        : Image.network(
-                            hospitalData![index].image!,
+                        : CachedNetworkImage(
+                            imageUrl: hospitalData![index].image!,
+                            height: 100.h,
+                            fit: BoxFit.cover,
+                            width: 100.w,
+                            errorWidget: (context, url, error) => Image.asset(
+                              AppAsset.heartattackImage,
+                              height: 100.h,
+                              width: 100.w,
+                              fit: BoxFit.cover,
+                            ),
+                            placeholder: (context, url) =>
+                                Lottie.asset(AppAsset.loadingJson2),
                           ),
                     title: hospitalData?[index].name ?? "",
                     onTap: () {
                       context.pushNamed(Routes.hospitalInfoView,
                           arguments: hospitalData?[index]);
                     },
-                  ),
+                  ).animate().fade(
+                      duration: AppConstant.animationDuration.milliseconds),
                 );
               },
               error: (error) => CustomErrorWidget(errorMessage: error));

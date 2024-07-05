@@ -50,9 +50,7 @@ class _HomeState extends State<Home> {
                 });
               },
             ),
-            
-            
-            body: snapshot.data == ConnectivityResult.none
+            body: (snapshot.data == ConnectivityResult.none)
                 ? Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,

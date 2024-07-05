@@ -1,11 +1,15 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lottie/lottie.dart';
 import 'package:tabibk/core/helper/app_assets.dart';
 import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/extensions.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/routing/routes.dart';
+import 'package:tabibk/core/theme/app_constant.dart';
 import 'package:tabibk/core/theme/styles.dart';
 import 'package:tabibk/core/utilities/custom_error_widget.dart';
 import 'package:tabibk/features/hospital_and_clinic_system/hospital/data/model/hospital_model/hospital_and_clinic_response.dart';
@@ -51,14 +55,26 @@ class ClinicTabBody extends StatelessWidget {
                         ? Image.asset(
                             AppAsset.heartattackImage,
                           )
-                        : Image.network(
-                            clinicList![index].image!,
+                        : CachedNetworkImage(
+                            imageUrl: clinicList![index].image!,
+                            height: 100.h,
+                            fit: BoxFit.cover,
+                            width: 100.w,
+                            errorWidget: (context, url, error) => Image.asset(
+                              AppAsset.heartattackImage,
+                              height: 100.h,
+                              width: 100.w,
+                              fit: BoxFit.cover,
+                            ),
+                            placeholder: (context, url) =>
+                                Lottie.asset(AppAsset.loadingJson2),
                           ),
                     onTap: () {
                       context.pushNamed(Routes.hospitalInfoView,
                           arguments: clinicList?[index]);
                     },
-                  ),
+                  ).animate().fade(
+                      duration: AppConstant.animationDuration.milliseconds),
                 );
               },
               error: (error) => CustomErrorWidget(errorMessage: error));

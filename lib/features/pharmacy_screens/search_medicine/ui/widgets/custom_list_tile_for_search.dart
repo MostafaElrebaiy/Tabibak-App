@@ -1,5 +1,7 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lottie/lottie.dart';
 import 'package:tabibk/core/helper/app_assets.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
@@ -18,7 +20,7 @@ class CustomListTileForSearch extends StatelessWidget {
   final String title;
   final String details;
   final String price;
-  final String image;
+  final String? image;
   final bool thereTrailing;
   final VoidCallback? onTap;
   @override
@@ -69,20 +71,24 @@ class CustomListTileForSearch extends StatelessWidget {
                 width: 10.w), // Add some spacing between the text and image
             ClipRRect(
               borderRadius: BorderRadius.circular(6),
-              child: Image.network(
-                image,
-                height: 100.h,
-                width: 100.w,
-                fit: BoxFit.cover,
-                errorBuilder: (context, error, stackTrace) {
-                  return Image.asset(
-                    AppAsset.comatrixImage,
-                    height: 100.h,
-                    width: 100.w,
-                    fit: BoxFit.cover,
-                  );
-                },
-              ),
+              child: image == null || image!.isEmpty
+                  ? Image.asset(
+                      AppAsset.comatrixImage,
+                      height: 100.h,
+                      width: 100.w,
+                    )
+                  : CachedNetworkImage(
+                      imageUrl: image!,
+                      height: 100.h,
+                      width: 100.w,
+                      errorWidget: (context, url, error) => Image.asset(
+                        AppAsset.comatrixImage,
+                        height: 100.h,
+                        width: 100.w,
+                      ),
+                      placeholder: (context, url) =>
+                          Center(child: Lottie.asset(AppAsset.loadingJson2)),
+                    ),
             ),
           ],
         ),

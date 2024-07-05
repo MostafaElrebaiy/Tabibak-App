@@ -20,7 +20,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   }
 
   void _navigateToOnBoardingScreen() async {
-    await Future.delayed(const Duration(milliseconds: 3100),
+    await Future.delayed(const Duration(milliseconds: 3000),
         () => context.pushReplacementNamed(Routes.onBoardingView));
   }
 
@@ -41,13 +41,16 @@ class _SplashViewBodyState extends State<SplashViewBody> {
             decoration: TextDecoration.none,
             fontWeight: FontWeight.w800,
           ),
-        ).animate().fade(duration: 700.milliseconds).shimmer(
-            delay: 700.milliseconds,
-            duration: 1500.milliseconds,
-            padding: 40,
-            angle: 0,
-            color: AppColor.black,
-            size: 1),
+        )
+            .animate()
+            .fade(delay: 300.milliseconds, duration: 700.milliseconds)
+            .shimmer(
+                delay: 1000.milliseconds,
+                duration: 1500.milliseconds,
+                padding: 40,
+                angle: 0,
+                color: AppColor.primaryBlue,
+                size: 1),
       ),
 
       // TweenAnimationBuilder<Offset>(

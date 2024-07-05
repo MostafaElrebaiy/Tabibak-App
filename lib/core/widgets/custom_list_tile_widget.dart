@@ -33,19 +33,14 @@ class CustomListTileWidget extends StatelessWidget {
         ),
       ),
       child: ListTile(
-        trailing: SizedBox(
-          width: 70.w,
-          height: 70.h,
-          
-          child: ClipRRect(
-            
-            child: imageWidget, ),
+        trailing: ClipRRect(
+          borderRadius: BorderRadius.circular(AppSize.s12),
+          child: imageWidget,
         ),
         onTap: onTap,
         splashColor: AppColor.primaryBlue.withOpacity(0.1),
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(AppSize.s12))),
-        
         dense: false,
         enableFeedback: true,
         horizontalTitleGap: 20,

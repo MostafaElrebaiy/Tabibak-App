@@ -95,7 +95,7 @@ class SearchForMedicine extends StatelessWidget {
                                   price:
                                       medicine.data?[index].price.toString() ??
                                           " ",
-                                  image: medicine.data?[index].image ?? " ",
+                                  image: medicine.data?[index].image,
                                 ),
                               ],
                             ),

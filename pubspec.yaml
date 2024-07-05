@@ -39,6 +39,7 @@ dependencies:
   persistent_bottom_nav_bar: ^5.0.2
   retrofit: ^4.1.0
   shared_preferences: ^2.2.3
+  # A Flutter package for displaying stories just like Whatsapp & Instagram.
   shimmer: ^3.0.0
   timer_count_down: ^2.2.2
   url_launcher: ^6.2.6
