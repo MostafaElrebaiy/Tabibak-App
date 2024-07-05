@@ -21,7 +21,7 @@ class HospitalBody extends StatefulWidget {
 }
 
 class _HospitalBodyState extends State<HospitalBody> {
-  int selectedDepartmentId = 0;
+  int selectedDepartmentId = -1;
 
   @override
   Widget build(BuildContext context) {

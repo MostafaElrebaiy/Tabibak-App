@@ -19,16 +19,14 @@ class CustomListTileWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedContainer(
-      duration: const Duration(milliseconds: 250),
-      curve: Curves.easeIn,
+    return Container(
       margin: const EdgeInsets.only(bottom: AppPadding.p4),
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.all(Radius.circular(AppSize.s12)),
         border: Border(
           bottom: BorderSide(
             width: 5,
-            color: AppColor.black.withOpacity(0.1),
+            color: AppColor.primaryBlue.withOpacity(0.2),
           ),
         ),
       ),
