@@ -109,7 +109,8 @@ class AppRouter {
           child: const SignUpScreen(),
         ));
       case Routes.bloodBankProfile:
-        final BloodCenters bloodCenters = settings.arguments as BloodCenters;
+        final BloodBankCenter bloodCenters =
+            settings.arguments as BloodBankCenter;
         return CustomPageRoute(
             child: BloodBankProfile(bloodBankData: bloodCenters));
       case Routes.loginScreen:

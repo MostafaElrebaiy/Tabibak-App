@@ -4,13 +4,13 @@ import 'package:tabibk/features/blood_bank/ui/widgets/blood_bank_profile_body.da
 
 class BloodBankProfile extends StatelessWidget {
   const BloodBankProfile({super.key, required this.bloodBankData});
-  final BloodCenters bloodBankData;
+  final BloodBankCenter bloodBankData;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: BloodBankProfileBody(
-        bloodBankData: bloodBankData,
+        bloodBankCenter: bloodBankData,
       ),
     );
   }
