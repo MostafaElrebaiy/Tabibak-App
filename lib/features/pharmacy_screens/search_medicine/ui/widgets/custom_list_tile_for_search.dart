@@ -1,11 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lottie/lottie.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:tabibk/core/helper/app_assets.dart';
 import 'package:tabibk/core/helper/value_manager.dart';
 import 'package:tabibk/core/theme/app_colors.dart';
 import 'package:tabibk/core/theme/styles.dart';
+import 'package:tabibk/core/utilities/set_shimmer_radius_and_color_decroation.dart';
 
 class CustomListTileForSearch extends StatelessWidget {
   const CustomListTileForSearch({
@@ -81,13 +82,36 @@ class CustomListTileForSearch extends StatelessWidget {
                       imageUrl: image!,
                       height: 100.h,
                       width: 100.w,
-                      errorWidget: (context, url, error) => Image.asset(
-                        AppAsset.comatrixImage,
-                        height: 100.h,
-                        width: 100.w,
+                      progressIndicatorBuilder:
+                          (context, url, downloadProgress) =>
+                              Shimmer.fromColors(
+                        baseColor: AppColor.lightGray,
+                        highlightColor: AppColor.white,
+                        child: Container(
+                            width: 100.w,
+                            height: 100.h,
+                            decoration: setShimmerRadiusAndColorDecroation()),
                       ),
-                      placeholder: (context, url) =>
-                          Center(child: Lottie.asset(AppAsset.loadingJson2)),
+                      imageBuilder: (context, imageProvider) => Container(
+                        width: 100.w,
+                        height: 100.h,
+                        decoration: BoxDecoration(
+                          color: AppColor.white,
+                          borderRadius: BorderRadius.all(Radius.circular(12.r)),
+                          image: DecorationImage(
+                            image: imageProvider,
+                          ),
+                        ),
+                      ),
+                      fadeInDuration: const Duration(milliseconds: 250),
+                      errorWidget: (context, url, error) => Container(
+                        decoration: setShimmerRadiusAndColorDecroation(),
+                        child: Image.asset(
+                          AppAsset.comatrixImage,
+                          height: 100.h,
+                          width: 100.w,
+                        ),
+                      ),
                     ),
             ),
           ],

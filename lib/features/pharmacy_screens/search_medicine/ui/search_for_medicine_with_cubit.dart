@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lottie/lottie.dart';
-import 'package:tabibk/core/helper/app_assets.dart';
 import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/app_string.dart';
 import 'package:tabibk/core/helper/extensions.dart';
 import 'package:tabibk/core/routing/routes.dart';
 import 'package:tabibk/core/theme/styles.dart';
 import 'package:tabibk/features/pharmacy_screens/search_medicine/ui/widgets/custom_list_tile_for_search.dart';
+import 'package:tabibk/features/pharmacy_screens/search_medicine/ui/widgets/custom_list_tile_shimmer_loading_for_search.dart';
 import 'package:tabibk/features/pharmacy_screens/search_phamacy/data/model/arg_pharmacy/search_result_model.dart';
 import 'package:tabibk/features/pharmacy_screens/search_medicine/data/model/search_medicine_response.dart';
 import 'package:tabibk/features/pharmacy_screens/search_medicine/logic/medicine_cubit.dart';
@@ -40,17 +38,9 @@ class SearchForMedicine extends StatelessWidget {
           },
           widget: state.when(
             initial: () => const SizedBox.shrink(),
-            loading: () => Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                verticalSpace(20),
-                Lottie.asset(
-                  AppAsset.loadingJson4,
-                  height: 100.h,
-                  fit: BoxFit.fill,
-                ),
-              ],
-            ),
+            loading: () => SizedBox(
+                height: MediaQuery.of(context).size.height * 0.4,
+                child: const CustomListTileShimmerLoadingForSearch()),
             success: (medicineResponse) {
               SearchMedicineResponse medicine =
                   medicineResponse as SearchMedicineResponse;

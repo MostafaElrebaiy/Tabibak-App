@@ -25,8 +25,8 @@ class CustomListTileWidget extends StatelessWidget {
         borderRadius: const BorderRadius.all(Radius.circular(AppSize.s12)),
         border: Border(
           bottom: BorderSide(
-            width: 5,
-            color: AppColor.primaryBlue.withOpacity(0.2),
+            width: 2,
+            color: AppColor.primaryBlue.withOpacity(0.9),
           ),
         ),
       ),
