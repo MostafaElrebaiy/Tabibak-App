@@ -66,7 +66,7 @@ class SearchForMedicine extends StatelessWidget {
                       itemCount: medicine.data?.length ?? 0,
                       itemBuilder: (context, index) => GestureDetector(
                             onTap: () {
-                              context.pushNamed(Routes.SearhPharmacyView,
+                              context.pushNamed(Routes.searhPharmacyView,
                                   arguments: ArgResultPharmacy(
                                     medicineName:
                                         medicine.data?[index].name ?? " ",

@@ -156,7 +156,7 @@ class AppRouter {
         return CustomPageRoute(
             child:
                 SearchResultOfBloodType(bloodBankResponse: bloodBankResponse));
-      case Routes.SearhPharmacyView:
+      case Routes.searhPharmacyView:
         ArgResultPharmacy arg;
         arg = settings.arguments as ArgResultPharmacy;
         return CustomPageRoute(

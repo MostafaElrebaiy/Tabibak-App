@@ -28,5 +28,5 @@ class Routes {
   static const String pharmacyProfile = "/pharmacyProfile";
   static const String bloodBankProfile = "/bloodBankProfile";
 
-  static const String SearhPharmacyView = "/SearhPharmacyView";
+  static const String searhPharmacyView = "/SearhPharmacyView";
 }

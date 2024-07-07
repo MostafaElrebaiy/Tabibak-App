@@ -57,7 +57,7 @@ class ProfileViewListItems extends StatelessWidget {
                   thereTrailing: true,
                   isSvgImage: true,
                   onTap: () {
-                    launchUrl(Uri(
+                    _urlLauncher(Uri(
                       scheme: 'mailto',
                       path: AppConstant.mailTo,
                       query: encondeQueryParameters(<String, String>{
@@ -90,12 +90,12 @@ class ProfileViewListItems extends StatelessWidget {
   }
 }
 
-Future<void> _urlLauncher(Uri _emailLaunchUri) async {
+Future<void> _urlLauncher(Uri emailLaunchUri) async {
   try {
-    if (await canLaunchUrl(_emailLaunchUri)) {
-      await launchUrl(_emailLaunchUri);
+    if (await canLaunchUrl(emailLaunchUri)) {
+      await launchUrl(emailLaunchUri);
     } else {
-      throw 'Could not launch $_emailLaunchUri';
+      throw 'Could not launch $emailLaunchUri';
     }
   } catch (_) {}
 }

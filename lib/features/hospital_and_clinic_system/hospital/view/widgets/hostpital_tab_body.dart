@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lottie/lottie.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:tabibk/core/helper/app_assets.dart';
 import 'package:tabibk/core/helper/app_localization.dart';
@@ -29,11 +30,15 @@ class HostpitalTabBody extends StatelessWidget {
       child: BlocBuilder<HospitalCubit, HospitalState>(
         builder: (context, state) {
           return state.when(
-              initial: () => Center(
-                    child: Text(
-                      "plesaeSelectDepartment".tr(context),
-                      style: AppStyle.f18BalckW400Mulish,
-                    ),
+              initial: () => Column(
+                    children: [
+                      Lottie.asset(AppAsset.chooseDepartmentJson_2,
+                          width: 200.w, height: 200.h, fit: BoxFit.fitHeight),
+                      Text(
+                        "plesaeSelectDepartment".tr(context),
+                        style: AppStyle.f18BalckW400Mulish,
+                      ),
+                    ],
                   ),
               loading: () => const CustomListTileShimmerLoading(),
               success: (hosptials) {

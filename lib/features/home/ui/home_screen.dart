@@ -74,7 +74,7 @@ class _HomeState extends State<Home> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   LottieBuilder.asset(
-                    AppAsset.noInternetJson3,
+                    AppAsset.noInternetJson1,
                     height: 150,
                   ),
                   verticalSpace(20),
