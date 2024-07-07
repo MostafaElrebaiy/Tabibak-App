@@ -57,12 +57,13 @@ android {
     productFlavors {
         production {
             dimension "default"
-            resValue "string", "app_name", "Tabibk productin"
+            resValue "string", "app_name", "Tabibk production"
         }
         development {
             dimension "default"
             applicationIdSuffix ".dev"
             resValue "string", "app_name", "Tabibk Development"
+            versionNameSuffix "-dev"
         }
         
     }

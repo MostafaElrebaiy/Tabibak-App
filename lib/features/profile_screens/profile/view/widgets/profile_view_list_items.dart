@@ -60,6 +60,7 @@ class ProfileViewListItems extends StatelessWidget {
                     _urlLauncher(Uri(
                       scheme: 'mailto',
                       path: AppConstant.mailTo,
+                      
                       query: encondeQueryParameters(<String, String>{
                         'subject': "Please write your subject here",
                       }),

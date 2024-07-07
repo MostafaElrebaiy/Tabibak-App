@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/features/auth/login/logic/cubit/login_cubit.dart';
 
 import '../../../../../core/widgets/custom_widget/app_text_button.dart';
@@ -11,7 +12,7 @@ class LoginButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppTextButton(
-      buttonText: 'Login',
+      buttonText: "login".tr(context),
       textStyle: AppStyle.font16WhiteSemiBold,
       onPressed: () {
         // context.pushReplacementNamed(Routes.homeScreen);

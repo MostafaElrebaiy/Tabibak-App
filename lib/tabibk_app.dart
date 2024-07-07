@@ -30,6 +30,7 @@ class TabibkApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       child: MaterialApp(
+        
         locale: CacheHelper.getCacheData(key: AppConstant.lang) == "ar"
             ? const Locale("ar")
             : const Locale("en"),

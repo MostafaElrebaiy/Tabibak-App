@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/extensions.dart';
 
 import '../../../../../core/routing/routes.dart';
@@ -15,7 +16,7 @@ class LoginForgetPassword extends StatelessWidget {
         onTap: () {
           context.pushReplacementNamed(Routes.forgetPasswordScreen);
         },
-        child: Text('    Forgot Password ?',
+        child: Text("forgetPassword".tr(context),
             style: AppStyle.font12primaryBlueSemiBold),
       ),
     );

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
 import '../../../../core/helper/spacing.dart';
 import '../../../../core/theme/styles.dart';
 import '../logic/check_code_cubit.dart';
@@ -25,21 +26,24 @@ class OtpScreen extends StatelessWidget {
             child: Column(
               children: [
                 Align(
-                  alignment: Alignment.centerLeft,
+                  alignment:
+                      Localizations.localeOf(context).languageCode == 'ar'
+                          ? Alignment.centerRight
+                          : Alignment.centerLeft,
                   child:
-                      Text('OTP Verification', style: AppStyle.font24BlackBold),
+                      Text("OTP".tr(context), style: AppStyle.font24BlackBold),
                 ),
                 Align(
                   alignment: Alignment.center,
                   child: Text(
-                      'We will send you one-time password to you mobile number',
+                      "CodeWillSend".tr(context),
                       style: AppStyle.font14GrayRegular),
                 ),
                 verticalSpace(30),
                 const OtpTextField1(),
                 verticalSpace(25),
                 const Resend(),
-                const OtpTimer(), 
+                const OtpTimer(),
                 const OtpBlocListener(),
               ],
             ),

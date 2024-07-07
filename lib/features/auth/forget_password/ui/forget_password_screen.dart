@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/spacing.dart';
 import '../../../../core/widgets/custom_widget/app_text_button.dart';
 import '../../../../core/theme/styles.dart';
@@ -31,7 +32,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                 verticalSpace(50),
                 const ForgetPasswordTextFormFeild(),
                 AppTextButton(
-                  buttonText: 'Send',
+                  buttonText: "send".tr(context),
                   textStyle: AppStyle.font16WhiteSemiBold,
                   onPressed: () {
                     // context.pushNamed(Routes.otpScreen);

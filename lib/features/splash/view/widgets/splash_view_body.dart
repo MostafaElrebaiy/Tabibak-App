@@ -20,7 +20,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   }
 
   void _navigateToOnBoardingScreen() async {
-    await Future.delayed(const Duration(milliseconds: 3000),
+    await Future.delayed(const Duration(milliseconds: 2600),
         () => context.pushReplacementNamed(Routes.onBoardingView));
   }
 
