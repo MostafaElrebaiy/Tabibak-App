@@ -42,8 +42,11 @@ class CustomListTileWidget extends StatelessWidget {
         dense: false,
         enableFeedback: true,
         horizontalTitleGap: 20,
-        contentPadding: EdgeInsets.symmetric(
-            vertical: AppPadding.p16.h, horizontal: AppPadding.p16.w),
+        contentPadding: EdgeInsetsDirectional.only(
+          start: AppPadding.p16.w,
+          end: AppPadding.p16.w,
+          top: AppPadding.p16.h,
+        ),
         title: Padding(
           padding: EdgeInsets.only(bottom: AppPadding.p8.h),
           child: RichText(
@@ -52,10 +55,7 @@ class CustomListTileWidget extends StatelessWidget {
                 // TextSpan(
                 //     text: isHospital ? "hp".tr(context) : "dr".tr(context),
                 //     style: AppStyle.f22blackW700Mulish),
-                TextSpan(
-                    text: title,
-                    style: AppStyle.f22blackW700Mulish
-                        .copyWith(fontWeight: FontWeight.w400))
+                TextSpan(text: title, style: AppStyle.f18BalckW400Mulish)
               ],
             ),
           ),
@@ -68,14 +68,13 @@ class CustomListTileWidget extends StatelessWidget {
               children: [
                 Text(
                   distance.length > 5 ? distance.substring(0, 6) : distance,
-                  style: AppStyle.f22blackW700Mulish
-                      .copyWith(color: AppColor.colorACB8C2),
+                  style: AppStyle.f18BalckW400Mulish.copyWith(
+                      color: AppColor.colorACB8C2, fontWeight: FontWeight.w800),
                 ),
                 horizontalSpace(5),
-                Icon(
+                const Icon(
                   Icons.location_on_outlined,
                   color: AppColor.primaryBlue,
-                  size: AppSize.s26.w,
                 ),
               ],
             ),

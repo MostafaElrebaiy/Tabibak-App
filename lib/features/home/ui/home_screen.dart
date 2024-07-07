@@ -1,4 +1,3 @@
-import 'package:connectivity/connectivity.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -21,13 +20,18 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int _currentIndex = 0;
+  bool isInternet = true;
+  
+
+  @override
+  void initState() {
+    
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder<ConnectivityResult>(
-        stream: Connectivity().onConnectivityChanged,
-        builder: (context, snapshot) {
-          return Scaffold(
+    return Scaffold(
             bottomNavigationBar: CurvedNavigationBar(
               index: _currentIndex,
               backgroundColor: AppColor.white,
@@ -50,7 +54,7 @@ class _HomeState extends State<Home> {
                 });
               },
             ),
-            body: (snapshot.data == ConnectivityResult.none)
+            body: !isInternet
                 ? Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -67,6 +71,5 @@ class _HomeState extends State<Home> {
                   )
                 : AppConstant.listOfScreens[_currentIndex],
           );
-        });
   }
 }

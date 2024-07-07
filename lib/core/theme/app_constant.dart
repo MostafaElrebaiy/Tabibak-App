@@ -6,6 +6,7 @@ import 'package:tabibk/features/pharmacy_screens/pharmacy/ui/pharmacy_screen.dar
 import 'package:tabibk/features/profile_screens/profile/view/profile_view.dart';
 
 class AppConstant {
+  AppConstant._();
   static const String arabicFontFamily = 'Cairo';
   static const String englishFontFamily = 'Mulish';
   static const double appHorizontalPadding = 24;

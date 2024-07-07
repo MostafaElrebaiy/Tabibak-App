@@ -21,7 +21,7 @@ class CustomExpansionTile extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: AppColor.white,
-        borderRadius: BorderRadius.circular(AppSize.s12),
+        borderRadius: BorderRadius.circular(32.r),
         border: Border.all(
           color: AppColor.gray.withOpacity(0.4),
         ),

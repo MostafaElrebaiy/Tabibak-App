@@ -37,7 +37,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
           'Tabibak',
           style: TextStyle(
             color: AppColor.white,
-            fontSize: 70.sp,
+            fontSize: 60.sp,
             decoration: TextDecoration.none,
             fontWeight: FontWeight.w800,
           ),
