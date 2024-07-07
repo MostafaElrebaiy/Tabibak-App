@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/app_assets.dart';
 import 'package:tabibk/core/helper/spacing.dart';
@@ -32,7 +31,7 @@ class ImageNameAndDistanceSection extends StatelessWidget {
             ? (pngImage.isEmpty
                 ? CircleAvatar(
                 backgroundColor: AppColor.primaryBlue,
-                backgroundImage: const AssetImage(AppAsset.staticProfileImage) ,
+                backgroundImage: const AssetImage(AppAsset.hospitalImage) ,
                 radius: 50.w,
               )
                 : CircleAvatar(

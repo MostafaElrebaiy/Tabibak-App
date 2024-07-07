@@ -27,7 +27,7 @@ class _OnBoardingBodyState extends State<OnBoardingBody> {
   Widget build(BuildContext context) {
     List<OnBoardingContent> onBoardingContent = [
       OnBoardingContent(
-          headLine: "pharmacyAndBloodbankHeadLine".tr(context),
+          headLine: ("pharmacyAndBloodbankHeadLine".tr(context)),
           textBody: "pharmacyAndBloodBank".tr(context),
           shape: AppAsset.onBoardingShape1),
       OnBoardingContent(

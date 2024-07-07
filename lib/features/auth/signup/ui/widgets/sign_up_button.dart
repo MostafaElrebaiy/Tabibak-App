@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
 
 import '../../../../../core/widgets/custom_widget/app_text_button.dart';
 import '../../../../../core/theme/styles.dart';
@@ -11,7 +12,7 @@ class SignUpButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppTextButton(
-      buttonText: 'Sign Up',
+      buttonText: "signUp".tr(context),
       textStyle: AppStyle.font16WhiteSemiBold,
       onPressed: () {
         validateThenDoSignup(context);

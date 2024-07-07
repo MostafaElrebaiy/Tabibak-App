@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tabibk/core/helper/app_assets.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
 import '../../../../../core/theme/styles.dart';
 import '../../../../../core/widgets/custom_widget/image1_curve_top_bk.dart';
 
@@ -28,7 +29,7 @@ class SignUpTopBackground extends StatelessWidget {
           top: 205.h,
           left: 18.w,
           child: Text(
-            'Create Account',
+            "createAccount".tr(context),
             style: AppStyle.font24WhiteBold,
           ),
         ),

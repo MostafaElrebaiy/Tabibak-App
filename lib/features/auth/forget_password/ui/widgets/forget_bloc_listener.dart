@@ -22,7 +22,7 @@ class ForgetBlocListener extends StatelessWidget {
             forgetLoading: () => showLoadingDialog(context),
             forgetSuccess: (loginResponse) {
               context.pop();
-              context.pushReplacementNamed(Routes.otpScreen);
+              context.pushNamed(Routes.otpScreen);
             },
             forgetError: (error) {
               context.pop();

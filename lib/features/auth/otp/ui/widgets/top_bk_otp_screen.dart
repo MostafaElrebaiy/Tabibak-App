@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/extensions.dart';
 
-import '../../../../../core/routing/routes.dart';
 import '../../../../../core/theme/app_colors.dart';
 import '../../../../../core/widgets/custom_widget/image2_curve_top_bk.dart';
 
@@ -18,16 +17,19 @@ class TopBackgroundOTPScreen extends StatelessWidget {
           painter: ForgetImage(),
         ),
         Positioned(
-          left: 10,
-          top: 35,
+          left:
+              Localizations.localeOf(context).languageCode == 'ar' ? null : 10,
+          right:
+              Localizations.localeOf(context).languageCode == 'ar' ? 10 : null,
+          top: 50,
           child: IconButton(
             icon: const Icon(
               Icons.arrow_back_rounded,
               color: AppColor.white,
-              size: 35,
+              size: 30,
             ),
             onPressed: () {
-              context.pushNamed(Routes.forgetPasswordScreen);
+              context.pop();
             },
           ),
         ),

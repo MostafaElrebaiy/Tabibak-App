@@ -19,38 +19,34 @@ class CustomListTileWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedContainer(
-      duration: const Duration(milliseconds: 250),
-      curve: Curves.easeIn,
+    return Container(
       margin: const EdgeInsets.only(bottom: AppPadding.p4),
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.all(Radius.circular(AppSize.s12)),
         border: Border(
           bottom: BorderSide(
-            width: 5,
-            color: AppColor.black.withOpacity(0.1),
+            width: 2,
+            color: AppColor.primaryBlue.withOpacity(0.9),
           ),
         ),
       ),
       child: ListTile(
-        trailing: SizedBox(
-          width: 70.w,
-          height: 70.h,
-          
-          child: ClipRRect(
-            
-            child: imageWidget, ),
+        trailing: ClipRRect(
+          borderRadius: BorderRadius.circular(AppSize.s12),
+          child: imageWidget,
         ),
         onTap: onTap,
         splashColor: AppColor.primaryBlue.withOpacity(0.1),
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(AppSize.s12))),
-        
         dense: false,
         enableFeedback: true,
         horizontalTitleGap: 20,
-        contentPadding: EdgeInsets.symmetric(
-            vertical: AppPadding.p16.h, horizontal: AppPadding.p16.w),
+        contentPadding: EdgeInsetsDirectional.only(
+          start: AppPadding.p16.w,
+          end: AppPadding.p16.w,
+          top: AppPadding.p16.h,
+        ),
         title: Padding(
           padding: EdgeInsets.only(bottom: AppPadding.p8.h),
           child: RichText(
@@ -59,10 +55,7 @@ class CustomListTileWidget extends StatelessWidget {
                 // TextSpan(
                 //     text: isHospital ? "hp".tr(context) : "dr".tr(context),
                 //     style: AppStyle.f22blackW700Mulish),
-                TextSpan(
-                    text: title,
-                    style: AppStyle.f22blackW700Mulish
-                        .copyWith(fontWeight: FontWeight.w400))
+                TextSpan(text: title, style: AppStyle.f18BalckW400Mulish)
               ],
             ),
           ),
@@ -75,14 +68,13 @@ class CustomListTileWidget extends StatelessWidget {
               children: [
                 Text(
                   distance.length > 5 ? distance.substring(0, 6) : distance,
-                  style: AppStyle.f22blackW700Mulish
-                      .copyWith(color: AppColor.colorACB8C2),
+                  style: AppStyle.f18BalckW400Mulish.copyWith(
+                      color: AppColor.colorACB8C2, fontWeight: FontWeight.w800),
                 ),
                 horizontalSpace(5),
-                Icon(
+                const Icon(
                   Icons.location_on_outlined,
                   color: AppColor.primaryBlue,
-                  size: AppSize.s26.w,
                 ),
               ],
             ),

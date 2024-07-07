@@ -14,8 +14,8 @@ import 'package:tabibk/features/hospital_and_clinic_system/hospital_info/view/wi
 import 'package:tabibk/features/hospital_and_clinic_system/hospital_info/view/widgets/image_name_distance_section.dart';
 
 class BloodBankProfileBody extends StatelessWidget {
-  const BloodBankProfileBody({super.key, required this.bloodBankData});
-  final BloodCenters bloodBankData;
+  const BloodBankProfileBody({super.key, required this.bloodBankCenter});
+  final BloodBankCenter bloodBankCenter;
 
   @override
   Widget build(BuildContext context) {
@@ -31,11 +31,12 @@ class BloodBankProfileBody extends StatelessWidget {
                   right: 0,
                   top: 50.h,
                   child: ImageNameAndDistanceSection(
-                    isImage: false,
-                    distance: bloodBankData.distance?.toStringAsFixed(2) ?? "",
-                    pngImage: bloodBankData.image ?? "",
+                    isImage: true,
+                    distance:
+                        bloodBankCenter.distance?.toStringAsFixed(2) ?? "",
+                    pngImage: '',
                     title: "bloodBankProfile".tr(context),
-                    name: bloodBankData.name ?? "",
+                    name: bloodBankCenter.name ?? "",
                   )),
             ],
           ),
@@ -48,7 +49,7 @@ class BloodBankProfileBody extends StatelessWidget {
                   child: Column(
                     children: [
                       DetailsSection(
-                        text: bloodBankData.address ?? "",
+                        text: bloodBankCenter.address ?? "",
                       ),
                       verticalSpace(20),
                       BlocProvider(
@@ -60,8 +61,8 @@ class BloodBankProfileBody extends StatelessWidget {
                             isSvgImage: true,
                             onTap: () {
                               context.read<BloodBankCubit>().goToMap(
-                                  lat: bloodBankData.location?.x.toString(),
-                                  lng: bloodBankData.location?.y.toString());
+                                  lat: bloodBankCenter.location?.x.toString(),
+                                  lng: bloodBankCenter.location?.y.toString());
                             },
                           );
                         }),

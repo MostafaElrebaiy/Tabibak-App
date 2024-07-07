@@ -79,4 +79,8 @@ abstract class AppAsset {
   static const String loadingJson6 = '$_basePathJson/loading 6.json';
   static const String loadingJson7 = '$_basePathJson/loading 7.json';
   static const String loadingJson8 = '$_basePathJson/loading 8.json';
+  static const String chooseDepartmentJson_1 = '$_basePathJson/choose_department_json_1.json';
+  static const String chooseDepartmentJson_2 = '$_basePathJson/choose_department_json_2.json';
+  static const String chooseDepartmentJson_3 = '$_basePathJson/choose_department_json_3.json';
+  static const String chooseDepartmentJson_4 = '$_basePathJson/choose_department_json_4.json';
 }

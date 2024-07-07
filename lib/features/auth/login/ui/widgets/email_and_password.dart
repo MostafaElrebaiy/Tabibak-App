@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/features/auth/login/logic/cubit/login_cubit.dart';
 import '../../../../../core/helper/spacing.dart';
 import '../../../../../core/widgets/custom_widget/app_text_form_field.dart';
@@ -28,7 +29,9 @@ class _EmailAndPasswordTextState extends State<EmailAndPasswordText> {
                 FocusScope.of(context)
                     .requestFocus(context.read<LoginCubit>().password);
               },
-              hintText: 'Email or Phone',
+              hintText: "email".tr(context),
+              textInputAction: TextInputAction.next,
+              textInputType:   TextInputType.emailAddress,
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Please enter a valid password';
@@ -50,7 +53,8 @@ class _EmailAndPasswordTextState extends State<EmailAndPasswordText> {
                   icon: Icon(
                       isOsecured ? Icons.visibility_off : Icons.visibility)),
               isObscureText: isOsecured,
-              hintText: 'Password',
+              hintText: "password".tr(context),
+                 textInputAction: TextInputAction.done,
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Please enter a valid password';

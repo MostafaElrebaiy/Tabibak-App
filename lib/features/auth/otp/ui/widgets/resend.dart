@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
 import '../../../../../core/theme/styles.dart';
 import '../../../forget_password/logic/forget_password_cubit.dart';
 
@@ -12,7 +13,7 @@ class Resend extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          'If didn’t receive a code! ',
+         "ResendCode".tr(context),
           style: AppStyle.font112DarkGrayRegular,
         ),
         GestureDetector(
@@ -20,7 +21,7 @@ class Resend extends StatelessWidget {
             validateToSendEmail(context);
           },
           child: Text(
-            ' Resend',
+            "resend".tr(context),
             style: AppStyle.font12primaryBlueSemiBold,
           ),
         ),

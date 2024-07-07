@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tabibk/core/helper/app_assets.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
 
 import '../../../../../core/theme/styles.dart';
 import '../../../../../core/widgets/custom_widget/image1_curve_top_bk.dart';
@@ -26,7 +27,7 @@ class TopBackgroundLoginScreen extends StatelessWidget {
           top: 255.h,
           left: 23.w,
           child: Text(
-            'Welcome!',
+            "welcome".tr(context),
             style: AppStyle.font24WhiteBold,
           ),
         ),

@@ -3,11 +3,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/app_string.dart';
 import 'package:tabibk/core/helper/spacing.dart';
+import 'package:tabibk/core/utilities/error_text_widget.dart';
 import 'package:tabibk/features/pharmacy_screens/recommended_medicine/data/model/pharmacy_medicien_response.dart';
 import 'package:tabibk/features/pharmacy_screens/recommended_medicine/logic/pharmacy_recommended_medicine_cubit.dart';
 import 'package:tabibk/features/pharmacy_screens/recommended_medicine/logic/pharmacy_recommended_medicine_state.dart';
 import 'package:tabibk/features/pharmacy_screens/recommended_medicine/ui/widgets/medicien_item.dart';
 import 'package:tabibk/features/pharmacy_screens/pharmacy/ui/widgets/titles_of_section.dart';
+import 'package:tabibk/features/pharmacy_screens/recommended_medicine/ui/widgets/medicien_item_shimmer_loading.dart';
 
 class RecommendedSection extends StatelessWidget {
   const RecommendedSection({super.key});
@@ -24,7 +26,7 @@ class RecommendedSection extends StatelessWidget {
             PharmacyRecommendedMedicineState>(
           builder: (context, state) {
             return state.when(
-              loading: () => const CircularProgressIndicator(),
+              loading: () => const MedicienItemShimmerLoading(),
               success: (data) {
                 PharmacyMedicineResponse medicine =
                     data as PharmacyMedicineResponse;
@@ -39,7 +41,8 @@ class RecommendedSection extends StatelessWidget {
                       itemCount: medicine.data!.length),
                 );
               },
-              error: (error) => Text(error),
+              error: (errorMessage) =>
+                  ErrorTextWidget(errorMessage: errorMessage),
             );
           },
         ),

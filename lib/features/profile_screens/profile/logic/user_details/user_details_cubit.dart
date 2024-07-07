@@ -12,6 +12,8 @@ class UserDetailsCubit extends Cubit<UserDetailsState> {
   final UserDetailsRepo userDetailsRepo;
   UserDetailsResponse? userDetailsResponse;
   Future<void> getUserDetails() async {
+    if (isClosed) return;
+
     emit(const UserDetailsState.loading());
     final response = await userDetailsRepo.getUserDetails(UserDetailsRequest(
         token: CacheHelper.getCacheData(key: AppConstant.token)));

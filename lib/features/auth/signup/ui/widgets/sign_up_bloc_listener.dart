@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/extensions.dart';
 import 'package:tabibk/core/utilities/show_failure_dialog.dart';
 import 'package:tabibk/core/utilities/show_loading_dialog.dart';
@@ -25,8 +26,8 @@ class SignupBlocListener extends StatelessWidget {
           return showSuccessDialog(
               context: context,
              routeName:  Routes.loginScreen,
-              title: 'Success',
-              message: 'Account created successfully');
+              title: "success".tr(context),
+              message: "accountCreatedSuccessfully".tr(context));
         },
         signupError: (error) {
           context.pop();

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/extensions.dart';
 
 import '../../../../../core/routing/routes.dart';
@@ -13,7 +14,7 @@ class LoginCreateAccount extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          'Doesn’t have account on dicover? ',
+          "dontHaveAccount".tr(context) ,
           style: AppStyle.font112DarkGrayRegular,
         ),
         GestureDetector(
@@ -21,7 +22,7 @@ class LoginCreateAccount extends StatelessWidget {
             context.pushReplacementNamed(Routes.signUpScreen);
           },
           child: Text(
-            ' Create Account',
+            "createAccount".tr(context),
             style: AppStyle.font12primaryBlueSemiBold,
           ),
         ),

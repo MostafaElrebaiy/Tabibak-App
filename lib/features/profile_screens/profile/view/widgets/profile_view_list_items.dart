@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabibk/core/helper/app_assets.dart';
@@ -56,9 +57,10 @@ class ProfileViewListItems extends StatelessWidget {
                   thereTrailing: true,
                   isSvgImage: true,
                   onTap: () {
-                    launchUrl(Uri(
+                    _urlLauncher(Uri(
                       scheme: 'mailto',
                       path: AppConstant.mailTo,
+                      
                       query: encondeQueryParameters(<String, String>{
                         'subject': "Please write your subject here",
                       }),
@@ -77,7 +79,7 @@ class ProfileViewListItems extends StatelessWidget {
             ],
           ),
         ),
-      ],
+      ].animate().fade(duration: AppConstant.animationDuration.milliseconds),
     );
   }
 
@@ -89,12 +91,12 @@ class ProfileViewListItems extends StatelessWidget {
   }
 }
 
-Future<void> _urlLauncher(Uri _emailLaunchUri) async {
+Future<void> _urlLauncher(Uri emailLaunchUri) async {
   try {
-    if (await canLaunchUrl(_emailLaunchUri)) {
-      await launchUrl(_emailLaunchUri);
+    if (await canLaunchUrl(emailLaunchUri)) {
+      await launchUrl(emailLaunchUri);
     } else {
-      throw 'Could not launch $_emailLaunchUri';
+      throw 'Could not launch $emailLaunchUri';
     }
   } catch (_) {}
 }

@@ -11,8 +11,12 @@ class DepartmentCubit extends Cubit<DepartmentState> {
       : super(const DepartmentState.initial());
   final DepartmentRepo _departmentRepo;
   final LocationService locationService = LocationService();
-
+  int selectedDepartmentId = 1;
   double? lat, lng;
+
+  void setSelectedDepartmentId(int index) {
+    selectedDepartmentId = index;
+  }
 
   Future<void> getDepartment() async {
     if (isClosed) return;

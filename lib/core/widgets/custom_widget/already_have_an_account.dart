@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/extensions.dart';
 
 import '../../routing/routes.dart';
@@ -13,7 +14,7 @@ class AlreadyHaveAnAccount extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          'Already have an account? ',
+          "alreadyHaveAccount".tr(context),
           style: AppStyle.font112DarkGrayRegular,
         ),
         GestureDetector(
@@ -21,7 +22,7 @@ class AlreadyHaveAnAccount extends StatelessWidget {
             context.pushReplacementNamed(Routes.loginScreen);
           },
           child: Text(
-            ' Login',
+            "login".tr(context),
             style: AppStyle.font12primaryBlueSemiBold,
           ),
         ),

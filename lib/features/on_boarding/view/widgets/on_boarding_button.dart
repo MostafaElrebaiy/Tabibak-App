@@ -20,9 +20,12 @@ class OnBoardingButton extends StatelessWidget {
           shape: BoxShape.circle,
           color: AppColor.primaryBlue,
         ),
-        child: SvgPicture.asset(
-          AppAsset.buttonArrowRight,
-        ),
+        // chage the icon base on the app language
+        child: Localizations.localeOf(context).languageCode == 'ar'
+            ? const Icon(Icons.arrow_forward_ios_rounded, color: Colors.white)
+            : SvgPicture.asset(
+                AppAsset.buttonArrowRight,
+              ),
       ),
     );
   }

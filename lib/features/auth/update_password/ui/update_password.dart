@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/core/helper/extensions.dart';
 import 'package:tabibk/core/helper/spacing.dart';
 import 'package:tabibk/features/auth/update_password/logic/reset_password_cubit.dart';
@@ -51,18 +52,18 @@ class UpdatePasswordScreen extends StatelessWidget {
               children: [
                 Align(
                     alignment: Alignment.centerLeft,
-                    child: Text('Update Password',
+                    child: Text("updatePassword".tr(context),
                         style: AppStyle.font24BlackBold)),
                 Align(
                   alignment: Alignment.centerLeft,
-                  child: Text('Please enter your new password.',
+                  child: Text("updatePasswordText".tr(context),
                       style: AppStyle.font14GrayRegular),
                 ),
                 verticalSpace(50),
                 const UpdatePasswordTextField(),
                 verticalSpace(30),
                 AppTextButton(
-                  buttonText: 'Send',
+                  buttonText: "send".tr(context),
                   textStyle: AppStyle.font16WhiteSemiBold,
                   onPressed: () {
                     context.read<ResetPasswordCubit>().codeController.text =

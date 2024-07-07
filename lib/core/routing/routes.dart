@@ -1,6 +1,6 @@
 class Routes {
   // static const String splashScreen = "/";
-  static const String secondSplashScreen = "/secondSplashScreen";
+  static const String splashViewBody = "/splashViewBody";
   static const String onBoardingView = "/onBoardingView";
   static const String loginScreen = "/loginScreen";
   static const String signUpScreen = "/signUpScreen";
@@ -28,5 +28,5 @@ class Routes {
   static const String pharmacyProfile = "/pharmacyProfile";
   static const String bloodBankProfile = "/bloodBankProfile";
 
-  static const String SearhPharmacyView = "/SearhPharmacyView";
+  static const String searhPharmacyView = "/SearhPharmacyView";
 }

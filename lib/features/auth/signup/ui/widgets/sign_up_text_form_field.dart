@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tabibk/core/helper/app_localization.dart';
 import 'package:tabibk/features/auth/signup/logic/sign_up_state.dart';
 import '../../../../../core/widgets/custom_widget/app_text_form_field.dart';
 import '../../../../../core/helper/spacing.dart';
@@ -28,12 +29,13 @@ class _SignUpTextFormFieldState extends State<SignUpTextFormField> {
                   .requestFocus(context.read<SignupCubit>().email);
             },
             focusNode: context.read<SignupCubit>().name,
-            hintText: 'Name',
+            hintText: "name".tr(context),
+            textInputAction: TextInputAction.next,
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Please enter a valid Name';
+                return 'pleaseEnterAValidName'.tr(context);
               } else if (value.length < 3) {
-                return 'At Least 3 Characters';
+                return 'atLeast3Characters'.tr(context);
               }
               return null;
             },
@@ -46,10 +48,12 @@ class _SignUpTextFormFieldState extends State<SignUpTextFormField> {
                   .requestFocus(context.read<SignupCubit>().password);
             },
             focusNode: context.read<SignupCubit>().email,
-            hintText: 'Email',
+            hintText: "email".tr(context),
+            textInputAction: TextInputAction.next,
+
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Please enter a valid Email';
+                return "pleaseEnterAValidEmail".tr(context);
               }
             },
             controller: context.read<SignupCubit>().emailController,
@@ -70,12 +74,14 @@ class _SignUpTextFormFieldState extends State<SignUpTextFormField> {
                 icon: Icon(
                     isObscureText2 ? Icons.visibility_off : Icons.visibility)),
             isObscureText: isObscureText2,
-            hintText: 'Password',
+            hintText: "password".tr(context),
+            textInputAction: TextInputAction.next,
+
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Please enter a valid password';
+                return "pleaseEnterAValidPassword".tr(context);
               } else if (value.length < 8) {
-                return 'Password must be at least 8 characters';
+                return "atLeast8Characters".tr(context);
               }
               return null;
             },
@@ -98,13 +104,15 @@ class _SignUpTextFormFieldState extends State<SignUpTextFormField> {
               },
             ),
             isObscureText: isObscureText1,
-            hintText: 'Confirm Password',
+            hintText: "confirmPassword".tr(context),
+            textInputAction: TextInputAction.done,
+
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Please enter a valid password';
+                return "pleaseEnterAValidPassword".tr(context);
               } else if (value !=
                   context.read<SignupCubit>().passwordController.text) {
-                return 'Password does not match';
+                return "passwordsDoNotMatch".tr(context);
               }
               return null;
             },

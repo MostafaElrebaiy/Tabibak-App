@@ -1,5 +1,7 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:tabibk/core/helper/app_assets.dart';
 import 'package:tabibk/core/helper/extensions.dart';
 import 'package:tabibk/core/theme/styles.dart';
@@ -36,18 +38,48 @@ class MedicineItem extends StatelessWidget {
                       height: 100.h,
                       width: 100.w,
                     )
-                  : Image.network(
-                      medicine.image!,
-                      height: 100.h,
-                      width: 100.w,
-                      errorBuilder: (context, error, stackTrace) {
-                        return Image.asset(
+                  : CachedNetworkImage(
+                      imageUrl: medicine.image!, //ToDo: add static url
+                      fit: BoxFit.cover,
+                      progressIndicatorBuilder: (context, url,
+                              downloadProgress) =>
+                          Shimmer.fromColors(
+                              baseColor: AppColor.lightGray,
+                              highlightColor: AppColor.white,
+                              child: Container(
+                                width: 100.w,
+                                height: 100.h,
+                                decoration: BoxDecoration(
+                                  color: AppColor.white,
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(12.r)),
+                                ),
+                              )),
+                      imageBuilder: (context, imageProvider) => Container(
+                        width: 100.w,
+                        height: 100.h,
+                        decoration: BoxDecoration(
+                          color: AppColor.white,
+                          borderRadius: BorderRadius.all(Radius.circular(12.r)),
+                          image: DecorationImage(
+                            image: imageProvider,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                      fadeInDuration: const Duration(milliseconds: 250),
+                      errorWidget: (context, url, error) => Container(
+                        margin: EdgeInsets.only(right: 16.w),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(12.r)),
+                        ),
+                        child: Image.asset(
                           AppAsset.comatrixImage,
-                          height: 100.h,
-                          width: 100.w,
-                        );
-                      },
+                          fit: BoxFit.cover,
+                        ),
+                      ),
                     ),
+            
               Text(
                 medicine.name ?? "",
                 style: AppStyle.f16BlackW700Mulish.copyWith(
