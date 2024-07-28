@@ -48,25 +48,28 @@ android {
         applicationId "com.example.tabibk"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
-        minSdkVersion 23
+        minSdkVersion flutter.minSdkVersion
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
+
+
     flavorDimensions "default"
     productFlavors {
-        production {
-            dimension "default"
-            resValue "string", "app_name", "Tabibk production"
-        }
         development {
             dimension "default"
             applicationIdSuffix ".dev"
             resValue "string", "app_name", "Tabibk Development"
             versionNameSuffix "-dev"
         }
-        
+        production {
+            dimension "default"
+            resValue "string", "app_name", "Tabibk Production"
+        }
     }
+    apply plugin: 'com.google.gms.google-services'
+
 
     buildTypes {
         release {

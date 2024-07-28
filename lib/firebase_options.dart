@@ -50,19 +50,20 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDa4d1CIGpOC_8PgmJmt1UHkD2F8V8x6nA',
-    appId: '1:1058109783904:android:9114486c713f67fdb0e805',
-    messagingSenderId: '1058109783904',
-    projectId: 'tabibk-d85c0',
-    storageBucket: 'tabibk-d85c0.appspot.com',
+    apiKey: 'AIzaSyBmLG2KFe9IBYf0qFbV0ZXUgst1rHQ2Mas',
+    appId: '1:752786945350:android:681765ee27c2e98634a147',
+    messagingSenderId: '752786945350',
+    projectId: 'tabibk-86cd8',
+    storageBucket: 'tabibk-86cd8.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyA7EDW3ADPVv1pLfOjMc_c_JcIvJSabdwI',
-    appId: '1:1058109783904:ios:e764a115928f6d02b0e805',
-    messagingSenderId: '1058109783904',
-    projectId: 'tabibk-d85c0',
-    storageBucket: 'tabibk-d85c0.appspot.com',
+    apiKey: 'AIzaSyBk63s2lxOHjYRDLV10JkVgyRyrzLPR3E0',
+    appId: '1:752786945350:ios:fd144c59ae28073834a147',
+    messagingSenderId: '752786945350',
+    projectId: 'tabibk-86cd8',
+    storageBucket: 'tabibk-86cd8.appspot.com',
     iosBundleId: 'com.example.tabibk',
   );
+
 }
