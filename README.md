@@ -25,11 +25,11 @@ Tabibak App aims to enhance the healthcare experience by providing an easy-to-us
    - Other Tools: Firebase (Authentication, Database, etc.)
    
 ## 🌟 Key Features
-Doctor Search and Filtering: Find healthcare professionals by specialty, location, and availability.
-Appointment Booking: Schedule and manage appointments.
-User Authentication: Secure login and registration system.
-Medical History: Access past appointments and health records.
-Notifications: Stay updated with reminders and alerts.
+- Doctor Search and Filtering: Find healthcare professionals by specialty, location, and availability.
+- Appointment Booking: Schedule and manage appointments.
+- User Authentication: Secure login and registration system.
+- Medical History: Access past appointments and health records.
+- Notifications: Stay updated with reminders and alerts.
 
 ## 👥 Target Audience
 - Patients looking for convenient healthcare access.
