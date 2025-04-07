@@ -11,6 +11,9 @@ class PharmacyMedicineResponse {
 
   factory PharmacyMedicineResponse.fromJson(Map<String, dynamic> json) =>
       _$PharmacyMedicineResponseFromJson(json);
+
+  Map<String, dynamic> toJson() => _$PharmacyMedicineResponseToJson(this);
+
 }
 
 @JsonSerializable()

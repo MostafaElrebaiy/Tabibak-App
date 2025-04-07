@@ -13,7 +13,7 @@ class DioFactory {
       dio!
         ..options.connectTimeout = timeOut
         ..options.receiveTimeout = timeOut;
-      addDioInterceptors();
+      // addDioInterceptors();
       return dio!;
     } else {
       return dio!;

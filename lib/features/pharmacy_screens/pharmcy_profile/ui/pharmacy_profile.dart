@@ -35,7 +35,7 @@ class PharmacyProfile extends StatelessWidget {
                     isImage: false,
                     distance: pharmacy.distance?.toStringAsFixed(5) ?? "",
                     pngImage: pharmacy.image ?? "",
-                    title: "Pharmacy Profile",
+                    title: "pharmacyProfile".tr(context),
                     name: pharmacy.name ?? "",
                   )),
             ],

@@ -12,26 +12,33 @@ class TopBackgroundLoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      Stack(children: [
-        CustomPaint(
-          size: Size(double.infinity.w, 360.h),
-          painter: LoginImage(),
+    return Column(
+      children: [
+        Stack(
+          children: [
+            CustomPaint(
+              size: Size(double.infinity.w, 360.h),
+              painter: LoginImage(),
+            ),
+            Positioned(
+              top: 114.h,
+              left: 1.w,
+              child: SvgPicture.asset(
+                AppAsset.onBoardingLogo,
+                height: 150.h,
+              ),
+            ),
+            Positioned(
+              top: 255.h,
+              left: 23.w,
+              child: Text(
+                "welcome".tr(context),
+                style: AppStyle.font24WhiteBold,
+              ),
+            ),
+          ],
         ),
-        Positioned(
-          top: 114.h,
-          left: 1.w,
-          child: SvgPicture.asset(AppAsset.onBoardingLogo, height: 150.h,  ),
-        ),
-        Positioned(
-          top: 255.h,
-          left: 23.w,
-          child: Text(
-            "welcome".tr(context),
-            style: AppStyle.font24WhiteBold,
-          ),
-        ),
-      ]),
-    ]);
+      ],
+    );
   }
 }

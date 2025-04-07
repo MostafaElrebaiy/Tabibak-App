@@ -17,7 +17,7 @@ Future showSuccessDialog(
     builder: (BuildContext context) {
       return AlertDialog(
         backgroundColor: AppColor.white,
-        icon: Lottie.asset(AppAsset.successTwo, height: 100),
+        icon: Lottie.asset(AppAsset.successThree, height: 100),
         content: Text(
           message,
           textAlign: TextAlign.center,

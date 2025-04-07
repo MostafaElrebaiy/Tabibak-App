@@ -6,7 +6,7 @@ part of 'api_service.dart';
 // RetrofitGenerator
 // **************************************************************************
 
-// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
+// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element
 
 class _ApiService implements ApiService {
   _ApiService(
@@ -44,8 +44,8 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = LoginResponse.fromJson(_result.data!);
-    return value;
+    final _value = LoginResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -72,8 +72,8 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = SignUpResponse.fromJson(_result.data!);
-    return value;
+    final _value = SignUpResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -100,8 +100,8 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = ForgetResponse.fromJson(_result.data!);
-    return value;
+    final _value = ForgetResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -129,8 +129,8 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = CheckCodeResponse.fromJson(_result.data!);
-    return value;
+    final _value = CheckCodeResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -158,8 +158,8 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = ResetPasswordResponse.fromJson(_result.data!);
-    return value;
+    final _value = ResetPasswordResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -191,8 +191,8 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = SearchPharmacyResponse.fromJson(_result.data!);
-    return value;
+    final _value = SearchPharmacyResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -222,8 +222,8 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = SearchMedicineResponse.fromJson(_result.data!);
-    return value;
+    final _value = SearchMedicineResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -250,8 +250,8 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = PharmacyMedicineResponse.fromJson(_result.data!);
-    return value;
+    final _value = PharmacyMedicineResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -278,8 +278,8 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = PharmacyMedicineResponse.fromJson(_result.data!);
-    return value;
+    final _value = PharmacyMedicineResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -311,8 +311,8 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = BloodBankResponse.fromJson(_result.data!);
-    return value;
+    final _value = BloodBankResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -344,8 +344,8 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = HospitalAndClinicResponse.fromJson(_result.data!);
-    return value;
+    final _value = HospitalAndClinicResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -372,8 +372,8 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = DepartmentResponse.fromJson(_result.data!);
-    return value;
+    final _value = DepartmentResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -405,8 +405,8 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = HospitalAndClinicResponse.fromJson(_result.data!);
-    return value;
+    final _value = HospitalAndClinicResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -433,8 +433,8 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = UserDetailsResponse.fromJson(_result.data!);
-    return value;
+    final _value = UserDetailsResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -494,8 +494,8 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = UpdateProfileResponse.fromJson(_result.data!);
-    return value;
+    final _value = UpdateProfileResponse.fromJson(_result.data!);
+    return _value;
   }
 
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {
